@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B32E63DE17A2EC25004236A0 /* libDTCoreText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B32E63D317A2EAC3004236A0 /* libDTCoreText.a */; };
+		B32E63E017A2EC41004236A0 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B32E63DF17A2EC41004236A0 /* libxml2.dylib */; };
+		B32E63E217A2EC49004236A0 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B32E63E117A2EC49004236A0 /* ImageIO.framework */; };
+		B32E63E417A2EC4F004236A0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B32E63E317A2EC4F004236A0 /* QuartzCore.framework */; };
+		B32E63E617A2EC59004236A0 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B32E63E517A2EC59004236A0 /* CoreText.framework */; };
+		B32E63E817A2EC61004236A0 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B32E63E717A2EC61004236A0 /* MobileCoreServices.framework */; };
 		B3E374D717A291D40086447E /* NSSet+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E374D617A291D40086447E /* NSSet+Additions.m */; };
 		B3EF657D17A11C7E00369805 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EF657C17A11C7E00369805 /* UIKit.framework */; };
 		B3EF657F17A11C7E00369805 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EF657E17A11C7E00369805 /* Foundation.framework */; };
@@ -31,6 +37,55 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		B32E63CE17A2EAC3004236A0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B32E63C217A2EAC0004236A0 /* DTCoreText.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1D6058910D05DD3D006BFB54;
+			remoteInfo = DemoApp;
+		};
+		B32E63D017A2EAC3004236A0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B32E63C217A2EAC0004236A0 /* DTCoreText.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A70F119B14863198009202BF;
+			remoteInfo = "Static Framework";
+		};
+		B32E63D217A2EAC3004236A0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B32E63C217A2EAC0004236A0 /* DTCoreText.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A70F11DE148632CD009202BF;
+			remoteInfo = "Static Library";
+		};
+		B32E63D417A2EAC3004236A0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B32E63C217A2EAC0004236A0 /* DTCoreText.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A788CA681486456100E1AFD9;
+			remoteInfo = UnitTest;
+		};
+		B32E63D617A2EAC3004236A0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B32E63C217A2EAC0004236A0 /* DTCoreText.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A7949A5814CC456000A8CCDE;
+			remoteInfo = MacUnitTest;
+		};
+		B32E63D817A2EAC3004236A0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B32E63C217A2EAC0004236A0 /* DTCoreText.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A7F7EFCD1573603100F5A4D0;
+			remoteInfo = "Static Library (no DTFoundation)";
+		};
+		B32E63DA17A2EAC3004236A0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B32E63C217A2EAC0004236A0 /* DTCoreText.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E2262DC61638331500BFDAD7;
+			remoteInfo = "Mac Framework";
+		};
 		B3EF65B717A1258300369805 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B3EF65AC17A1257A00369805 /* MailCore.xcodeproj */;
@@ -62,6 +117,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B32E63C217A2EAC0004236A0 /* DTCoreText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DTCoreText.xcodeproj; path = Externals/DTCoreText/DTCoreText.xcodeproj; sourceTree = "<group>"; };
+		B32E63DF17A2EC41004236A0 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		B32E63E117A2EC49004236A0 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		B32E63E317A2EC4F004236A0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		B32E63E517A2EC59004236A0 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		B32E63E717A2EC61004236A0 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		B3E374D517A291D30086447E /* NSSet+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSSet+Additions.h"; sourceTree = "<group>"; };
 		B3E374D617A291D40086447E /* NSSet+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSSet+Additions.m"; sourceTree = "<group>"; };
 		B3EF657917A11C7E00369805 /* MailClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MailClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,6 +158,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B32E63E817A2EC61004236A0 /* MobileCoreServices.framework in Frameworks */,
+				B32E63E617A2EC59004236A0 /* CoreText.framework in Frameworks */,
+				B32E63E417A2EC4F004236A0 /* QuartzCore.framework in Frameworks */,
+				B32E63E217A2EC49004236A0 /* ImageIO.framework in Frameworks */,
+				B32E63E017A2EC41004236A0 /* libxml2.dylib in Frameworks */,
+				B32E63DE17A2EC25004236A0 /* libDTCoreText.a in Frameworks */,
 				B3EF65ED17A130AF00369805 /* libiconv.dylib in Frameworks */,
 				B3EF65EB17A130A500369805 /* libcrypto.a in Frameworks */,
 				B3EF65E917A1309800369805 /* libsasl2.a in Frameworks */,
@@ -113,9 +180,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B32E63C317A2EAC0004236A0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B32E63CF17A2EAC3004236A0 /* RTDemoApp.app */,
+				B32E63D117A2EAC3004236A0 /* DTCoreText.framework */,
+				B32E63D317A2EAC3004236A0 /* libDTCoreText.a */,
+				B32E63D517A2EAC3004236A0 /* UnitTest.octest */,
+				B32E63D717A2EAC3004236A0 /* MacUnitTest.octest */,
+				B32E63D917A2EAC3004236A0 /* libDTCoreText_no_DTFoundation.a */,
+				B32E63DB17A2EAC3004236A0 /* DTCoreText.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		B3EF657017A11C7D00369805 = {
 			isa = PBXGroup;
 			children = (
+				B32E63E717A2EC61004236A0 /* MobileCoreServices.framework */,
+				B32E63E517A2EC59004236A0 /* CoreText.framework */,
+				B32E63E317A2EC4F004236A0 /* QuartzCore.framework */,
+				B32E63E117A2EC49004236A0 /* ImageIO.framework */,
+				B32E63DF17A2EC41004236A0 /* libxml2.dylib */,
+				B32E63C217A2EAC0004236A0 /* DTCoreText.xcodeproj */,
 				B3EF65AC17A1257A00369805 /* MailCore.xcodeproj */,
 				B3EF658417A11C7E00369805 /* MailClient */,
 				B3EF657B17A11C7E00369805 /* Frameworks */,
@@ -231,6 +318,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = B32E63C317A2EAC0004236A0 /* Products */;
+					ProjectRef = B32E63C217A2EAC0004236A0 /* DTCoreText.xcodeproj */;
+				},
+				{
 					ProductGroup = B3EF65AD17A1257A00369805 /* Products */;
 					ProjectRef = B3EF65AC17A1257A00369805 /* MailCore.xcodeproj */;
 				},
@@ -243,6 +334,55 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		B32E63CF17A2EAC3004236A0 /* RTDemoApp.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = RTDemoApp.app;
+			remoteRef = B32E63CE17A2EAC3004236A0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B32E63D117A2EAC3004236A0 /* DTCoreText.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = DTCoreText.framework;
+			remoteRef = B32E63D017A2EAC3004236A0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B32E63D317A2EAC3004236A0 /* libDTCoreText.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libDTCoreText.a;
+			remoteRef = B32E63D217A2EAC3004236A0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B32E63D517A2EAC3004236A0 /* UnitTest.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = UnitTest.octest;
+			remoteRef = B32E63D417A2EAC3004236A0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B32E63D717A2EAC3004236A0 /* MacUnitTest.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = MacUnitTest.octest;
+			remoteRef = B32E63D617A2EAC3004236A0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B32E63D917A2EAC3004236A0 /* libDTCoreText_no_DTFoundation.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libDTCoreText_no_DTFoundation.a;
+			remoteRef = B32E63D817A2EAC3004236A0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B32E63DB17A2EAC3004236A0 /* DTCoreText.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = DTCoreText.framework;
+			remoteRef = B32E63DA17A2EAC3004236A0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		B3EF65B817A1258300369805 /* MailCore.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -390,7 +530,9 @@
 				GCC_PREFIX_HEADER = "MailClient/MailClient-Prefix.pch";
 				"HEADER_SEARCH_PATHS[arch=*]" = "\"$(BUILT_PRODUCTS_DIR)/../../include\"";
 				INFOPLIST_FILE = "MailClient/MailClient-Info.plist";
+				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"USER_HEADER_SEARCH_PATHS[arch=*]" = "Externals/DTCoreText/Core/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -402,7 +544,9 @@
 				GCC_PREFIX_HEADER = "MailClient/MailClient-Prefix.pch";
 				"HEADER_SEARCH_PATHS[arch=*]" = "\"$(BUILT_PRODUCTS_DIR)/../../include\"";
 				INFOPLIST_FILE = "MailClient/MailClient-Info.plist";
+				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"USER_HEADER_SEARCH_PATHS[arch=*]" = "Externals/DTCoreText/Core/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
