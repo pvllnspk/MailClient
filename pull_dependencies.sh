@@ -8,6 +8,7 @@ git clone https://github.com/MailCore/MailCore.git
 cd MailCore/
 git submodule update --init
 cd -
+cd MailClient/
 
 # pull DTCoreText
 cd Externals/
