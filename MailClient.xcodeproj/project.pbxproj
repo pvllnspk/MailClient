@@ -197,11 +197,6 @@
 		B3EF657017A11C7D00369805 = {
 			isa = PBXGroup;
 			children = (
-				B32E63E717A2EC61004236A0 /* MobileCoreServices.framework */,
-				B32E63E517A2EC59004236A0 /* CoreText.framework */,
-				B32E63E317A2EC4F004236A0 /* QuartzCore.framework */,
-				B32E63E117A2EC49004236A0 /* ImageIO.framework */,
-				B32E63DF17A2EC41004236A0 /* libxml2.dylib */,
 				B32E63C217A2EAC0004236A0 /* DTCoreText.xcodeproj */,
 				B3EF65AC17A1257A00369805 /* MailCore.xcodeproj */,
 				B3EF658417A11C7E00369805 /* MailClient */,
@@ -221,10 +216,15 @@
 		B3EF657B17A11C7E00369805 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B32E63DF17A2EC41004236A0 /* libxml2.dylib */,
 				B3EF65EC17A130AF00369805 /* libiconv.dylib */,
 				B3EF65EA17A130A500369805 /* libcrypto.a */,
 				B3EF65E817A1309800369805 /* libsasl2.a */,
 				B3EF65E617A1308600369805 /* libssl.a */,
+				B32E63E717A2EC61004236A0 /* MobileCoreServices.framework */,
+				B32E63E517A2EC59004236A0 /* CoreText.framework */,
+				B32E63E317A2EC4F004236A0 /* QuartzCore.framework */,
+				B32E63E117A2EC49004236A0 /* ImageIO.framework */,
 				B3EF65EE17A130B700369805 /* CFNetwork.framework */,
 				B3EF657C17A11C7E00369805 /* UIKit.framework */,
 				B3EF657E17A11C7E00369805 /* Foundation.framework */,
