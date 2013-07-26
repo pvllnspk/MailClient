@@ -27,7 +27,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *subjectLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *toLabel;
-@property (weak, nonatomic) IBOutlet UITextView *bodyLabel;
+@property (weak, nonatomic) IBOutlet DTAttributedTextView *bodyTextView;
 
 @end;
 
@@ -67,7 +67,6 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 
                 DLog(@"Success %d",[_messages count]);
-                DLog(@"Messages %@",_messages);
                 
                 [self hideMessagesSpinner];
                 [self.messagesTableView reloadData];
@@ -165,19 +164,33 @@
     [self.dateLabel setText:[NSDateFormatter localizedStringFromDate:message.senderDate
                                                            dateStyle:NSDateFormatterShortStyle
                                                            timeStyle:NSDateFormatterFullStyle]];
-    [self.bodyLabel setText:@"Loading ..."];
+    
+    NSString *body =  @"<p><h1>       Loading ...</h1></p>";
+    NSData *data = [body dataUsingEncoding:NSUTF8StringEncoding];
+    NSDictionary *builderOptions = @{DTDefaultFontFamily: @"Helvetica"};
+    DTHTMLAttributedStringBuilder *stringBuilder = [[DTHTMLAttributedStringBuilder alloc] initWithHTML:data
+                                                                                               options:builderOptions
+                                                                                    documentAttributes:nil];
+    self.bodyTextView.attributedString =[stringBuilder generatedAttributedString];
     
     dispatch_async(_backgroundQueue, ^{
         
         DLog(@"attempt to fetch a message body");
-        BOOL isHTML;
-//        NSString *body = [message bodyPreferringPlainText:&isHTML];
+        BOOL isHTML = '\0';
         NSString *body = [message htmlBody];
+        NSData *data = [body dataUsingEncoding:NSUTF8StringEncoding];
+       
+        NSDictionary *builderOptions = @{DTDefaultFontFamily: @"Helvetica"};
+        DTHTMLAttributedStringBuilder *stringBuilder = [[DTHTMLAttributedStringBuilder alloc] initWithHTML:data
+                                                                                                   options:builderOptions
+                                                                                        documentAttributes:nil];
         
         dispatch_async(dispatch_get_main_queue(), ^{
             
-            DLog(@"Success %d",[_messages count]);
-            [self.bodyLabel setText:body];
+            DLog(@"Success isHTML: %s",isHTML? "true" : "false");
+            
+            self.bodyTextView.attributedString = [stringBuilder generatedAttributedString];
+            self.bodyTextView.contentInset = UIEdgeInsetsMake(20, 15, 15, 15);
             
             [self hideMessagesSpinner];
             [self.messagesTableView reloadData];

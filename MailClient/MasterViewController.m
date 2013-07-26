@@ -9,7 +9,6 @@
 #import "MasterViewController.h"
 #import "DetailViewController.h"
 #import "AppDelegate.h"
-#import "DTCoreText.h" 
 
 #if 1 // Set to 1 to enable MasterViewController Logging
 #define MVCLog(x, ...) NSLog(x, ## __VA_ARGS__);
@@ -36,15 +35,6 @@
 {
     [super viewDidLoad];
     MVCLog(@"viewDidLoad");
-    
-    
-    NSString *html = @"<p>Some Text</p>";
-    NSData *data = [html dataUsingEncoding:NSUTF8StringEncoding];
-    
-    NSAttributedString *attrString = [[NSAttributedString alloc] initWithHTMLData:data
-                                                               documentAttributes:NULL];
-    NSLog(@"%@", attrString);
-    
     
     [self initSpinner];
     [self showSpinner];
