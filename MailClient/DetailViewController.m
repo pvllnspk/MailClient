@@ -34,8 +34,9 @@
 @implementation DetailViewController
 {
     CTCoreFolder *_folder;
-    NSArray *_messages;
+    NSMutableArray*_messages;
     UIActivityIndicatorView *_messagesSpinner;
+    UIActivityIndicatorView *_messageSpinner;
     
     dispatch_queue_t _backgroundQueue;
 }
@@ -57,6 +58,8 @@
     
     if (_folder) {
         
+        [_messages removeAllObjects];
+        [self.messagesTableView reloadData];
         [self showMessagesSpinner];
         
         dispatch_async(_backgroundQueue, ^{
@@ -86,6 +89,7 @@
     _backgroundQueue = dispatch_queue_create("dispatch_queue_#2", 0);
     
     [self initMessagesSpinner];
+    [self initMessageSpinner];
     
     [self updateMessages];
     
@@ -122,7 +126,7 @@
 }
 
 #pragma mark
-#pragma mark Left Panel Spinner
+#pragma mark Panels Spinners
 
 -(void) initMessagesSpinner
 {
@@ -149,6 +153,31 @@
     [_messagesSpinner stopAnimating];
 }
 
+-(void) initMessageSpinner
+{
+    DVCLog(@"initMessagesSpinner");
+    _messageSpinner = [[UIActivityIndicatorView alloc]
+                        initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    _messageSpinner.center = CGPointMake(self.bodyView.bounds.size.width / 2.0f, self.bodyView.bounds.size.height / 2.0f);
+    _messageSpinner.autoresizingMask = (UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleLeftMargin
+                                         | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleTopMargin);
+    _messageSpinner.hidesWhenStopped = YES;
+    [_messageSpinner setColor:[UIColor grayColor]];
+    [self.bodyView addSubview:_messageSpinner];
+}
+
+-(void) showMessageSpinner
+{
+    DVCLog(@"showMessagesSpinner");
+    [_messageSpinner startAnimating];
+}
+
+-(void) hideMessageSpinner
+{
+    DVCLog(@"hideMessagesSpinner");
+    [_messageSpinner stopAnimating];
+}
+
 
 #pragma mark
 #pragma mark Misc
@@ -165,13 +194,7 @@
                                                            dateStyle:NSDateFormatterShortStyle
                                                            timeStyle:NSDateFormatterFullStyle]];
     
-    NSString *body =  @"<p><h1>       Loading ...</h1></p>";
-    NSData *data = [body dataUsingEncoding:NSUTF8StringEncoding];
-    NSDictionary *builderOptions = @{DTDefaultFontFamily: @"Helvetica"};
-    DTHTMLAttributedStringBuilder *stringBuilder = [[DTHTMLAttributedStringBuilder alloc] initWithHTML:data
-                                                                                               options:builderOptions
-                                                                                    documentAttributes:nil];
-    self.bodyTextView.attributedString =[stringBuilder generatedAttributedString];
+    [self showMessageSpinner];
     
     dispatch_async(_backgroundQueue, ^{
         
@@ -192,6 +215,7 @@
             self.bodyTextView.attributedString = [stringBuilder generatedAttributedString];
             self.bodyTextView.contentInset = UIEdgeInsetsMake(20, 15, 15, 15);
             
+            [self hideMessageSpinner];
             [self hideMessagesSpinner];
             [self.messagesTableView reloadData];
             

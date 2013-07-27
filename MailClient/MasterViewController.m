@@ -49,8 +49,8 @@
                                            port:993
                                  connectionType:CTConnectionTypeTLS
                                        authType:CTImapAuthTypePlain
-                                          login:@"findiosjob@gmail.com"
-                                       password:@"7092findiosjob"];
+                                          login:@"iosmailclienttest@gmail.com"
+                                       password:@"testiosmailclienttest"];
         
         
         if (!success)
