@@ -8,6 +8,7 @@
 
 #import "DetailViewController.h"
 #import "NSSet+Additions.h"
+#import "NSString+Additions.h"
 
 #if 1 // Set to 1 to enable DetailViewController Logging
 #define DVCLog(x, ...) NSLog(x, ## __VA_ARGS__);
@@ -34,7 +35,10 @@
 @implementation DetailViewController
 {
     CTCoreFolder *_folder;
-    NSMutableArray*_messages;
+   
+    NSMutableArray *_messages;
+    NSMutableArray *_searchResults;
+    
     UIActivityIndicatorView *_messagesSpinner;
     UIActivityIndicatorView *_messageSpinner;
     
@@ -66,6 +70,7 @@
             
             DLog(@"attempt to fetch messages from folder %@",[_folder path]);
             _messages = [_folder messagesFromSequenceNumber:1 to:0 withFetchAttributes:CTFetchAttrEnvelope];
+            _searchResults = [_messages mutableCopy];
                        
             dispatch_async(dispatch_get_main_queue(), ^{
                 
@@ -102,12 +107,12 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return[_messages count];
+    return [_searchResults count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"MessageCell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil)
@@ -115,14 +120,26 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-    CTCoreMessage *message = [_messages objectAtIndex:indexPath.row];
-    cell.textLabel.text = [message subject];
+    CTCoreMessage *message = [_searchResults objectAtIndex:indexPath.row];
+    UILabel *fromLabel = (UILabel *)[cell viewWithTag:101];
+    UILabel *dateLabel = (UILabel *)[cell viewWithTag:102];
+    UILabel *subjectLabel = (UILabel *)[cell viewWithTag:103];
+    UILabel *descriptionLabel = (UILabel *)[cell viewWithTag:104];
+    [subjectLabel setText:message.subject];
+    [fromLabel setText:[message.from toStringSeparatingByComma]];
+    [dateLabel setText:[NSDateFormatter localizedStringFromDate:message.senderDate
+                                                           dateStyle:NSDateFormatterShortStyle
+                                                           timeStyle:nil]];
+    BOOL isHTML;
+    NSString *shortBody = [message bodyPreferringPlainText:&isHTML];
+    shortBody = [shortBody substringToIndex: MIN(100, [shortBody length])];
+   [descriptionLabel setText:shortBody];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self setMessage:[_messages objectAtIndex:indexPath.row]];
+    [self setMessage:[_searchResults objectAtIndex:indexPath.row]];
 }
 
 #pragma mark
@@ -158,26 +175,27 @@
     DVCLog(@"initMessagesSpinner");
     _messageSpinner = [[UIActivityIndicatorView alloc]
                         initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-    _messageSpinner.center = CGPointMake(self.bodyView.bounds.size.width / 2.0f, self.bodyView.bounds.size.height / 2.0f);
+    _messageSpinner.center = CGPointMake(self.rootView.bounds.size.width / 2.0f, self.rootView.bounds.size.height / 2.0f);
     _messageSpinner.autoresizingMask = (UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleLeftMargin
                                          | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleTopMargin);
     _messageSpinner.hidesWhenStopped = YES;
     [_messageSpinner setColor:[UIColor grayColor]];
-    [self.bodyView addSubview:_messageSpinner];
+    [self.rootView addSubview:_messageSpinner];
 }
 
 -(void) showMessageSpinner
 {
+    self.bodyView.hidden = YES;
     DVCLog(@"showMessagesSpinner");
     [_messageSpinner startAnimating];
 }
 
 -(void) hideMessageSpinner
 {
+    self.bodyView.hidden = NO;
     DVCLog(@"hideMessagesSpinner");
     [_messageSpinner stopAnimating];
 }
-
 
 #pragma mark
 #pragma mark Misc
@@ -186,7 +204,7 @@
 {
     DVCLog(@"setMessage: %@",message.subject);
     
-    [self showBodyView];
+    [self showMessageSpinner];
     [self.subjectLabel setText:message.subject];
     [self.fromLabel setText:[message.from toStringSeparatingByComma]];
     [self.toLabel setText:[message.to toStringSeparatingByComma]];
@@ -194,19 +212,26 @@
                                                            dateStyle:NSDateFormatterShortStyle
                                                            timeStyle:NSDateFormatterFullStyle]];
     
-    [self showMessageSpinner];
+    NSString *body = [message htmlBody];
+    NSData *data = [body dataUsingEncoding:NSUTF8StringEncoding];
+    
+    NSDictionary *builderOptions = @{DTDefaultFontFamily: @"Helvetica"};
+    DTHTMLAttributedStringBuilder *stringBuilder = [[DTHTMLAttributedStringBuilder alloc] initWithHTML:data
+                                                                                               options:builderOptions
+                                                                                    documentAttributes:nil];
+    self.bodyTextView.attributedString = @"";
     
     dispatch_async(_backgroundQueue, ^{
         
         DLog(@"attempt to fetch a message body");
         BOOL isHTML = '\0';
         NSString *body = [message htmlBody];
-        NSData *data = [body dataUsingEncoding:NSUTF8StringEncoding];
-       
-        NSDictionary *builderOptions = @{DTDefaultFontFamily: @"Helvetica"};
-        DTHTMLAttributedStringBuilder *stringBuilder = [[DTHTMLAttributedStringBuilder alloc] initWithHTML:data
+        
+        NSData *emtyData = [@"" dataUsingEncoding:NSUTF8StringEncoding];
+        DTHTMLAttributedStringBuilder *emptyStringBuilder = [[DTHTMLAttributedStringBuilder alloc] initWithHTML:data
                                                                                                    options:builderOptions
                                                                                         documentAttributes:nil];
+        self.bodyTextView.attributedString = [emptyStringBuilder generatedAttributedString];
         
         dispatch_async(dispatch_get_main_queue(), ^{
             
@@ -214,6 +239,7 @@
             
             self.bodyTextView.attributedString = [stringBuilder generatedAttributedString];
             self.bodyTextView.contentInset = UIEdgeInsetsMake(20, 15, 15, 15);
+            self.bodyTextView.textDelegate = self;
             
             [self hideMessageSpinner];
             [self hideMessagesSpinner];
@@ -222,6 +248,30 @@
         });
     });
 }
+
+#pragma mark - DTAttributedTextContentViewDelegate
+
+- (UIView *)attributedTextContentView:(DTAttributedTextContentView *)attributedTextContentView
+                          viewForLink:(NSURL *)url
+                           identifier:(NSString *)identifier
+                                frame:(CGRect)frame
+{
+    DTLinkButton *linkButton = [[DTLinkButton alloc] initWithFrame:frame];
+    linkButton.URL = url;
+    [linkButton addTarget:self
+                   action:@selector(linkButtonClicked:)
+         forControlEvents:UIControlEventTouchUpInside];
+    
+    return linkButton;
+}
+
+#pragma mark - Events
+
+- (IBAction)linkButtonClicked:(DTLinkButton *)sender
+{
+    [[UIApplication sharedApplication] openURL:sender.URL];
+}
+
 
 -(void)showBodyView
 {
@@ -234,5 +284,30 @@
     DVCLog(@"hideBodyView");
     _bodyView.hidden = YES;
 }
+
+
+#pragma mark
+#pragma mark UISearchDisplayController Delegate Methods
+
+-(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
+{
+    [_searchResults removeAllObjects];
+    
+    if(searchText && searchText.length>0){
+        for(CTCoreMessage *message in _messages){
+            if([message.subject contains:searchText]){
+                [_searchResults addObject:message];
+            }
+        }
+    }else{
+        [_searchResults addObjectsFromArray:_messages];
+    }
+    
+    DVCLog(@"filterContentForSearchText %@  -  %d", searchText,[_searchResults count]);
+    [_messagesTableView reloadData];
+}
+
+
+
 
 @end

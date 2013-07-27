@@ -14,6 +14,7 @@
 		B32E63E617A2EC59004236A0 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B32E63E517A2EC59004236A0 /* CoreText.framework */; };
 		B32E63E817A2EC61004236A0 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B32E63E717A2EC61004236A0 /* MobileCoreServices.framework */; };
 		B3E374D717A291D40086447E /* NSSet+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E374D617A291D40086447E /* NSSet+Additions.m */; };
+		B3E81CDA17A473000023BA24 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E81CD917A473000023BA24 /* NSString+Additions.m */; };
 		B3EF657D17A11C7E00369805 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EF657C17A11C7E00369805 /* UIKit.framework */; };
 		B3EF657F17A11C7E00369805 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EF657E17A11C7E00369805 /* Foundation.framework */; };
 		B3EF658117A11C7E00369805 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EF658017A11C7E00369805 /* CoreGraphics.framework */; };
@@ -125,6 +126,8 @@
 		B32E63E717A2EC61004236A0 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		B3E374D517A291D30086447E /* NSSet+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSSet+Additions.h"; sourceTree = "<group>"; };
 		B3E374D617A291D40086447E /* NSSet+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSSet+Additions.m"; sourceTree = "<group>"; };
+		B3E81CD817A473000023BA24 /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
+		B3E81CD917A473000023BA24 /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
 		B3EF657917A11C7E00369805 /* MailClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MailClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3EF657C17A11C7E00369805 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B3EF657E17A11C7E00369805 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -248,6 +251,8 @@
 				B3EF658517A11C7E00369805 /* Supporting Files */,
 				B3E374D517A291D30086447E /* NSSet+Additions.h */,
 				B3E374D617A291D40086447E /* NSSet+Additions.m */,
+				B3E81CD817A473000023BA24 /* NSString+Additions.h */,
+				B3E81CD917A473000023BA24 /* NSString+Additions.m */,
 			);
 			path = MailClient;
 			sourceTree = "<group>";
@@ -432,6 +437,7 @@
 				B3EF659E17A11C7E00369805 /* MasterViewController.m in Sources */,
 				B3EF65A117A11C7E00369805 /* DetailViewController.m in Sources */,
 				B3E374D717A291D40086447E /* NSSet+Additions.m in Sources */,
+				B3E81CDA17A473000023BA24 /* NSString+Additions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
