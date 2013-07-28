@@ -7,34 +7,48 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B327FD1117A53CD300D3D29F /* copymove-cell-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = B327FD0A17A53CD300D3D29F /* copymove-cell-bg.png */; };
+		B327FD1217A53CD300D3D29F /* item-counter.png in Resources */ = {isa = PBXBuildFile; fileRef = B327FD0B17A53CD300D3D29F /* item-counter.png */; };
+		B327FD1317A53CD300D3D29F /* item-counter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B327FD0C17A53CD300D3D29F /* item-counter@2x.png */; };
+		B327FD1417A53CD300D3D29F /* item-icon-folder-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = B327FD0D17A53CD300D3D29F /* item-icon-folder-selected.png */; };
+		B327FD1517A53CD300D3D29F /* item-icon-folder-selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B327FD0E17A53CD300D3D29F /* item-icon-folder-selected@2x.png */; };
+		B327FD1617A53CD300D3D29F /* item-icon-folder.png in Resources */ = {isa = PBXBuildFile; fileRef = B327FD0F17A53CD300D3D29F /* item-icon-folder.png */; };
+		B327FD1717A53CD300D3D29F /* item-icon-folder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B327FD1017A53CD300D3D29F /* item-icon-folder@2x.png */; };
+		B327FD1A17A5702800D3D29F /* MCTreeItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B327FD1917A5702800D3D29F /* MCTreeItem.m */; };
+		B327FD1D17A570DA00D3D29F /* MCTreeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B327FD1C17A570DA00D3D29F /* MCTreeTableViewCell.m */; };
+		B327FD2017A5730400D3D29F /* mail_open.png in Resources */ = {isa = PBXBuildFile; fileRef = B327FD1E17A5730300D3D29F /* mail_open.png */; };
+		B327FD2117A5730400D3D29F /* mail.png in Resources */ = {isa = PBXBuildFile; fileRef = B327FD1F17A5730300D3D29F /* mail.png */; };
+		B327FD2417A5745B00D3D29F /* CircleArrowDown_sml.png in Resources */ = {isa = PBXBuildFile; fileRef = B327FD2217A5745B00D3D29F /* CircleArrowDown_sml.png */; };
+		B327FD2517A5745B00D3D29F /* CircleArrowRight_sml.png in Resources */ = {isa = PBXBuildFile; fileRef = B327FD2317A5745B00D3D29F /* CircleArrowRight_sml.png */; };
+		B327FD3017A59A9500D3D29F /* MCController.m in Sources */ = {isa = PBXBuildFile; fileRef = B327FD2F17A59A9500D3D29F /* MCController.m */; };
 		B32E63DE17A2EC25004236A0 /* libDTCoreText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B32E63D317A2EAC3004236A0 /* libDTCoreText.a */; };
 		B32E63E017A2EC41004236A0 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B32E63DF17A2EC41004236A0 /* libxml2.dylib */; };
 		B32E63E217A2EC49004236A0 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B32E63E117A2EC49004236A0 /* ImageIO.framework */; };
 		B32E63E417A2EC4F004236A0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B32E63E317A2EC4F004236A0 /* QuartzCore.framework */; };
 		B32E63E617A2EC59004236A0 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B32E63E517A2EC59004236A0 /* CoreText.framework */; };
 		B32E63E817A2EC61004236A0 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B32E63E717A2EC61004236A0 /* MobileCoreServices.framework */; };
-		B3E374D717A291D40086447E /* NSSet+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E374D617A291D40086447E /* NSSet+Additions.m */; };
-		B3E81CDA17A473000023BA24 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E81CD917A473000023BA24 /* NSString+Additions.m */; };
 		B3EF657D17A11C7E00369805 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EF657C17A11C7E00369805 /* UIKit.framework */; };
 		B3EF657F17A11C7E00369805 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EF657E17A11C7E00369805 /* Foundation.framework */; };
 		B3EF658117A11C7E00369805 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EF658017A11C7E00369805 /* CoreGraphics.framework */; };
 		B3EF658317A11C7E00369805 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EF658217A11C7E00369805 /* CoreData.framework */; };
 		B3EF658917A11C7E00369805 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B3EF658717A11C7E00369805 /* InfoPlist.strings */; };
 		B3EF658B17A11C7E00369805 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B3EF658A17A11C7E00369805 /* main.m */; };
-		B3EF658F17A11C7E00369805 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B3EF658E17A11C7E00369805 /* AppDelegate.m */; };
 		B3EF659117A11C7E00369805 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B3EF659017A11C7E00369805 /* Default.png */; };
 		B3EF659317A11C7E00369805 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3EF659217A11C7E00369805 /* Default@2x.png */; };
 		B3EF659517A11C7E00369805 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3EF659417A11C7E00369805 /* Default-568h@2x.png */; };
 		B3EF659817A11C7E00369805 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3EF659617A11C7E00369805 /* MainStoryboard.storyboard */; };
 		B3EF659B17A11C7E00369805 /* MailClient.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B3EF659917A11C7E00369805 /* MailClient.xcdatamodeld */; };
-		B3EF659E17A11C7E00369805 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3EF659D17A11C7E00369805 /* MasterViewController.m */; };
-		B3EF65A117A11C7E00369805 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3EF65A017A11C7E00369805 /* DetailViewController.m */; };
 		B3EF65E517A1307000369805 /* libmailcore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EF65BA17A1258300369805 /* libmailcore.a */; };
 		B3EF65E717A1308600369805 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EF65E617A1308600369805 /* libssl.a */; };
 		B3EF65E917A1309800369805 /* libsasl2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EF65E817A1309800369805 /* libsasl2.a */; };
 		B3EF65EB17A130A500369805 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EF65EA17A130A500369805 /* libcrypto.a */; };
 		B3EF65ED17A130AF00369805 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EF65EC17A130AF00369805 /* libiconv.dylib */; };
 		B3EF65EF17A130B700369805 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EF65EE17A130B700369805 /* CFNetwork.framework */; };
+		B3EFA06117A522F000012134 /* NSSet+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B3EFA05E17A522F000012134 /* NSSet+Additions.m */; };
+		B3EFA06217A522F000012134 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B3EFA06017A522F000012134 /* NSString+Additions.m */; };
+		B3EFA06617A5239100012134 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B3EFA06517A5239100012134 /* AppDelegate.m */; };
+		B3EFA06C17A523B800012134 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3EFA06917A523B800012134 /* DetailViewController.m */; };
+		B3EFA06D17A523B800012134 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3EFA06B17A523B800012134 /* MasterViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,16 +132,29 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B327FD0A17A53CD300D3D29F /* copymove-cell-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "copymove-cell-bg.png"; sourceTree = "<group>"; };
+		B327FD0B17A53CD300D3D29F /* item-counter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "item-counter.png"; sourceTree = "<group>"; };
+		B327FD0C17A53CD300D3D29F /* item-counter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "item-counter@2x.png"; sourceTree = "<group>"; };
+		B327FD0D17A53CD300D3D29F /* item-icon-folder-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "item-icon-folder-selected.png"; sourceTree = "<group>"; };
+		B327FD0E17A53CD300D3D29F /* item-icon-folder-selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "item-icon-folder-selected@2x.png"; sourceTree = "<group>"; };
+		B327FD0F17A53CD300D3D29F /* item-icon-folder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "item-icon-folder.png"; sourceTree = "<group>"; };
+		B327FD1017A53CD300D3D29F /* item-icon-folder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "item-icon-folder@2x.png"; sourceTree = "<group>"; };
+		B327FD1817A5702800D3D29F /* MCTreeItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCTreeItem.h; path = MCTreeView/MCTreeItem.h; sourceTree = "<group>"; };
+		B327FD1917A5702800D3D29F /* MCTreeItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCTreeItem.m; path = MCTreeView/MCTreeItem.m; sourceTree = "<group>"; };
+		B327FD1B17A570DA00D3D29F /* MCTreeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCTreeTableViewCell.h; path = MCTreeView/MCTreeTableViewCell.h; sourceTree = "<group>"; };
+		B327FD1C17A570DA00D3D29F /* MCTreeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCTreeTableViewCell.m; path = MCTreeView/MCTreeTableViewCell.m; sourceTree = "<group>"; };
+		B327FD1E17A5730300D3D29F /* mail_open.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mail_open.png; sourceTree = "<group>"; };
+		B327FD1F17A5730300D3D29F /* mail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mail.png; sourceTree = "<group>"; };
+		B327FD2217A5745B00D3D29F /* CircleArrowDown_sml.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CircleArrowDown_sml.png; sourceTree = "<group>"; };
+		B327FD2317A5745B00D3D29F /* CircleArrowRight_sml.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CircleArrowRight_sml.png; sourceTree = "<group>"; };
+		B327FD2E17A59A9500D3D29F /* MCController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCController.h; path = Misc/MCController.h; sourceTree = "<group>"; };
+		B327FD2F17A59A9500D3D29F /* MCController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCController.m; path = Misc/MCController.m; sourceTree = "<group>"; };
 		B32E63C217A2EAC0004236A0 /* DTCoreText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DTCoreText.xcodeproj; path = Externals/DTCoreText/DTCoreText.xcodeproj; sourceTree = "<group>"; };
 		B32E63DF17A2EC41004236A0 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		B32E63E117A2EC49004236A0 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		B32E63E317A2EC4F004236A0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B32E63E517A2EC59004236A0 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		B32E63E717A2EC61004236A0 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		B3E374D517A291D30086447E /* NSSet+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSSet+Additions.h"; sourceTree = "<group>"; };
-		B3E374D617A291D40086447E /* NSSet+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSSet+Additions.m"; sourceTree = "<group>"; };
-		B3E81CD817A473000023BA24 /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
-		B3E81CD917A473000023BA24 /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
 		B3EF657917A11C7E00369805 /* MailClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MailClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3EF657C17A11C7E00369805 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B3EF657E17A11C7E00369805 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -137,23 +164,27 @@
 		B3EF658817A11C7E00369805 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B3EF658A17A11C7E00369805 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B3EF658C17A11C7E00369805 /* MailClient-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MailClient-Prefix.pch"; sourceTree = "<group>"; };
-		B3EF658D17A11C7E00369805 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		B3EF658E17A11C7E00369805 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B3EF659017A11C7E00369805 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		B3EF659217A11C7E00369805 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		B3EF659417A11C7E00369805 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		B3EF659717A11C7E00369805 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		B3EF659A17A11C7E00369805 /* MailClient.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MailClient.xcdatamodel; sourceTree = "<group>"; };
-		B3EF659C17A11C7E00369805 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
-		B3EF659D17A11C7E00369805 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		B3EF659F17A11C7E00369805 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		B3EF65A017A11C7E00369805 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		B3EF65AC17A1257A00369805 /* MailCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MailCore.xcodeproj; path = ../MailCore/MailCore.xcodeproj; sourceTree = "<group>"; };
 		B3EF65E617A1308600369805 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = "../MailCore/iOSPorts/ports/security/openssl/build/Release-iphoneos/libssl.a"; sourceTree = "<group>"; };
 		B3EF65E817A1309800369805 /* libsasl2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libsasl2.a; path = "../MailCore/iOSPorts/ports/security/cyrus-sasl/build/Release-iphoneos/libsasl2.a"; sourceTree = "<group>"; };
 		B3EF65EA17A130A500369805 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = "../MailCore/iOSPorts/ports/security/openssl/build/Release-iphoneos/libcrypto.a"; sourceTree = "<group>"; };
 		B3EF65EC17A130AF00369805 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 		B3EF65EE17A130B700369805 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		B3EFA05D17A522F000012134 /* NSSet+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSSet+Additions.h"; sourceTree = "<group>"; };
+		B3EFA05E17A522F000012134 /* NSSet+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSSet+Additions.m"; sourceTree = "<group>"; };
+		B3EFA05F17A522F000012134 /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
+		B3EFA06017A522F000012134 /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
+		B3EFA06417A5239100012134 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B3EFA06517A5239100012134 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B3EFA06817A523B800012134 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		B3EFA06917A523B800012134 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		B3EFA06A17A523B800012134 /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		B3EFA06B17A523B800012134 /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +214,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B327FCFF17A53C7A00D3D29F /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				B327FD2217A5745B00D3D29F /* CircleArrowDown_sml.png */,
+				B327FD2317A5745B00D3D29F /* CircleArrowRight_sml.png */,
+				B327FD1E17A5730300D3D29F /* mail_open.png */,
+				B327FD1F17A5730300D3D29F /* mail.png */,
+				B327FD0A17A53CD300D3D29F /* copymove-cell-bg.png */,
+				B327FD0B17A53CD300D3D29F /* item-counter.png */,
+				B327FD0C17A53CD300D3D29F /* item-counter@2x.png */,
+				B327FD0D17A53CD300D3D29F /* item-icon-folder-selected.png */,
+				B327FD0E17A53CD300D3D29F /* item-icon-folder-selected@2x.png */,
+				B327FD0F17A53CD300D3D29F /* item-icon-folder.png */,
+				B327FD1017A53CD300D3D29F /* item-icon-folder@2x.png */,
+				B3EF659017A11C7E00369805 /* Default.png */,
+				B3EF659217A11C7E00369805 /* Default@2x.png */,
+				B3EF659417A11C7E00369805 /* Default-568h@2x.png */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		B327FD2617A597EA00D3D29F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		B327FD2D17A59A6300D3D29F /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				B327FD2E17A59A9500D3D29F /* MCController.h */,
+				B327FD2F17A59A9500D3D29F /* MCController.m */,
+			);
+			name = Misc;
+			sourceTree = "<group>";
+		};
 		B32E63C317A2EAC0004236A0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -240,19 +308,15 @@
 		B3EF658417A11C7E00369805 /* MailClient */ = {
 			isa = PBXGroup;
 			children = (
-				B3EF658D17A11C7E00369805 /* AppDelegate.h */,
-				B3EF658E17A11C7E00369805 /* AppDelegate.m */,
 				B3EF659617A11C7E00369805 /* MainStoryboard.storyboard */,
-				B3EF659C17A11C7E00369805 /* MasterViewController.h */,
-				B3EF659D17A11C7E00369805 /* MasterViewController.m */,
-				B3EF659F17A11C7E00369805 /* DetailViewController.h */,
-				B3EF65A017A11C7E00369805 /* DetailViewController.m */,
 				B3EF659917A11C7E00369805 /* MailClient.xcdatamodeld */,
+				B3EFA06317A5239100012134 /* Application */,
+				B3EFA06717A523B800012134 /* View Controllers */,
+				B327FD2617A597EA00D3D29F /* Models */,
+				B327FD2D17A59A6300D3D29F /* Misc */,
+				B3EFA05C17A522F000012134 /* Categories */,
+				B3EFA05817A5219800012134 /* MCTreeView */,
 				B3EF658517A11C7E00369805 /* Supporting Files */,
-				B3E374D517A291D30086447E /* NSSet+Additions.h */,
-				B3E374D617A291D40086447E /* NSSet+Additions.m */,
-				B3E81CD817A473000023BA24 /* NSString+Additions.h */,
-				B3E81CD917A473000023BA24 /* NSString+Additions.m */,
 			);
 			path = MailClient;
 			sourceTree = "<group>";
@@ -260,13 +324,11 @@
 		B3EF658517A11C7E00369805 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B327FCFF17A53C7A00D3D29F /* Assets */,
 				B3EF658617A11C7E00369805 /* MailClient-Info.plist */,
 				B3EF658717A11C7E00369805 /* InfoPlist.strings */,
 				B3EF658A17A11C7E00369805 /* main.m */,
 				B3EF658C17A11C7E00369805 /* MailClient-Prefix.pch */,
-				B3EF659017A11C7E00369805 /* Default.png */,
-				B3EF659217A11C7E00369805 /* Default@2x.png */,
-				B3EF659417A11C7E00369805 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -279,6 +341,48 @@
 				B3EF65BC17A1258300369805 /* Tests.octest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		B3EFA05817A5219800012134 /* MCTreeView */ = {
+			isa = PBXGroup;
+			children = (
+				B327FD1817A5702800D3D29F /* MCTreeItem.h */,
+				B327FD1917A5702800D3D29F /* MCTreeItem.m */,
+				B327FD1B17A570DA00D3D29F /* MCTreeTableViewCell.h */,
+				B327FD1C17A570DA00D3D29F /* MCTreeTableViewCell.m */,
+			);
+			name = MCTreeView;
+			sourceTree = "<group>";
+		};
+		B3EFA05C17A522F000012134 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				B3EFA05D17A522F000012134 /* NSSet+Additions.h */,
+				B3EFA05E17A522F000012134 /* NSSet+Additions.m */,
+				B3EFA05F17A522F000012134 /* NSString+Additions.h */,
+				B3EFA06017A522F000012134 /* NSString+Additions.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		B3EFA06317A5239100012134 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				B3EFA06417A5239100012134 /* AppDelegate.h */,
+				B3EFA06517A5239100012134 /* AppDelegate.m */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		B3EFA06717A523B800012134 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B3EFA06A17A523B800012134 /* MasterViewController.h */,
+				B3EFA06B17A523B800012134 /* MasterViewController.m */,
+				B3EFA06817A523B800012134 /* DetailViewController.h */,
+				B3EFA06917A523B800012134 /* DetailViewController.m */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -421,6 +525,17 @@
 				B3EF659317A11C7E00369805 /* Default@2x.png in Resources */,
 				B3EF659517A11C7E00369805 /* Default-568h@2x.png in Resources */,
 				B3EF659817A11C7E00369805 /* MainStoryboard.storyboard in Resources */,
+				B327FD1117A53CD300D3D29F /* copymove-cell-bg.png in Resources */,
+				B327FD1217A53CD300D3D29F /* item-counter.png in Resources */,
+				B327FD1317A53CD300D3D29F /* item-counter@2x.png in Resources */,
+				B327FD1417A53CD300D3D29F /* item-icon-folder-selected.png in Resources */,
+				B327FD1517A53CD300D3D29F /* item-icon-folder-selected@2x.png in Resources */,
+				B327FD1617A53CD300D3D29F /* item-icon-folder.png in Resources */,
+				B327FD1717A53CD300D3D29F /* item-icon-folder@2x.png in Resources */,
+				B327FD2017A5730400D3D29F /* mail_open.png in Resources */,
+				B327FD2117A5730400D3D29F /* mail.png in Resources */,
+				B327FD2417A5745B00D3D29F /* CircleArrowDown_sml.png in Resources */,
+				B327FD2517A5745B00D3D29F /* CircleArrowRight_sml.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,12 +547,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3EF658B17A11C7E00369805 /* main.m in Sources */,
-				B3EF658F17A11C7E00369805 /* AppDelegate.m in Sources */,
 				B3EF659B17A11C7E00369805 /* MailClient.xcdatamodeld in Sources */,
-				B3EF659E17A11C7E00369805 /* MasterViewController.m in Sources */,
-				B3EF65A117A11C7E00369805 /* DetailViewController.m in Sources */,
-				B3E374D717A291D40086447E /* NSSet+Additions.m in Sources */,
-				B3E81CDA17A473000023BA24 /* NSString+Additions.m in Sources */,
+				B3EFA06117A522F000012134 /* NSSet+Additions.m in Sources */,
+				B3EFA06217A522F000012134 /* NSString+Additions.m in Sources */,
+				B3EFA06617A5239100012134 /* AppDelegate.m in Sources */,
+				B3EFA06C17A523B800012134 /* DetailViewController.m in Sources */,
+				B3EFA06D17A523B800012134 /* MasterViewController.m in Sources */,
+				B327FD1A17A5702800D3D29F /* MCTreeItem.m in Sources */,
+				B327FD1D17A570DA00D3D29F /* MCTreeTableViewCell.m in Sources */,
+				B327FD3017A59A9500D3D29F /* MCController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MCTreeTableViewCell.h"
 
 @class DetailViewController;
 
@@ -14,6 +15,5 @@
 
 @property (strong, nonatomic) DetailViewController *detailViewController;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-
 
 @end
