@@ -15,5 +15,6 @@
 
 @property (strong, nonatomic) DetailViewController *detailViewController;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIView *topBarView;
 
 @end

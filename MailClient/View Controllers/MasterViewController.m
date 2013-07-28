@@ -38,6 +38,8 @@
     [super viewDidLoad];
     MVCLog(@"viewDidLoad");
     
+    [_topBarView setBackgroundColor:[UIColor colorWithRed:1 green:0.976 blue:0.957 alpha:1]];
+    
 	[_tableView setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight];
 	[_tableView setBackgroundColor:[UIColor colorWithRed:1 green:0.976 blue:0.957 alpha:1] /*#fff9f4*/];
 	[_tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];

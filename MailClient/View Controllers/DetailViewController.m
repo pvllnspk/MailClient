@@ -18,6 +18,9 @@
 
 @interface DetailViewController()
 
+@property (weak, nonatomic) IBOutlet UIView *topBarView;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+
 //Left Panel
 @property (weak, nonatomic) IBOutlet UITableView *messagesTableView;
 
@@ -91,6 +94,21 @@
     [super viewDidLoad];
     DVCLog(@"viewDidLoad");
     
+    for (UIView *subview in _searchBar.subviews){
+        if ([subview isKindOfClass:NSClassFromString(@"UISearchBarBackground")]){
+            [subview removeFromSuperview];
+            break;
+        }
+    }
+    [_searchBar setBackgroundColor:[UIColor colorWithRed:1 green:0.976 blue:0.957 alpha:1]];
+    
+    
+    [_topBarView setBackgroundColor:[UIColor colorWithRed:1 green:0.976 blue:0.957 alpha:1]];
+    
+//    [_messagesTableView setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight];
+//	[_messagesTableView setBackgroundColor:[UIColor colorWithRed:1 green:0.976 blue:0.957 alpha:1] /*#fff9f4*/];
+//	[_messagesTableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    
     _backgroundQueue = dispatch_queue_create("dispatch_queue_#2", 0);
     
     [self initMessagesSpinner];
@@ -118,6 +136,7 @@
     if (cell == nil)
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        //        cell.backgroundView = [[UIImageView alloc] initWithImage:[[UIImage imageNamed:@"copymove-cell-bg"] stretchableImageWithLeftCapWidth:0.0 topCapHeight:5.0]];
     }
     
     CTCoreMessage *message = [_searchResults objectAtIndex:indexPath.row];
@@ -128,12 +147,15 @@
     [subjectLabel setText:message.subject];
     [fromLabel setText:[message.from toStringSeparatingByComma]];
     [dateLabel setText:[NSDateFormatter localizedStringFromDate:message.senderDate
-                                                           dateStyle:NSDateFormatterShortStyle
-                                                           timeStyle:nil]];
+                                                      dateStyle:NSDateFormatterShortStyle
+                                                      timeStyle:nil]];
     BOOL isHTML;
     NSString *shortBody = [message bodyPreferringPlainText:&isHTML];
     shortBody = [shortBody substringToIndex: MIN(100, [shortBody length])];
-   [descriptionLabel setText:shortBody];
+    [descriptionLabel setText:shortBody];
+    
+//    cell.backgroundView = [[UIImageView alloc] initWithImage:[[UIImage imageNamed:@"copymove-cell-bg"] stretchableImageWithLeftCapWidth:0.0 topCapHeight:5.0]];
+    
     return cell;
 }
 
