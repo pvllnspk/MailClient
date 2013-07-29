@@ -10,6 +10,7 @@
 #import "NSSet+Additions.h"
 #import "NSString+Additions.h"
 
+
 #if 1 // Set to 1 to enable DetailViewController Logging
 #define DVCLog(x, ...) NSLog(x, ## __VA_ARGS__);
 #else
@@ -44,6 +45,8 @@
     
     UIActivityIndicatorView *_messagesSpinner;
     UIActivityIndicatorView *_messageSpinner;
+    
+    UIRefreshControl *_refreshControl;
     
     dispatch_queue_t _backgroundQueue;
 }
@@ -85,7 +88,12 @@
             });
         });
         
-        [self.messagesTableView reloadData];
+        [_messagesTableView reloadData];
+        
+        //restore tableview scroll
+//        [_messagesTableView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:NO];
+        
+        [_refreshControl endRefreshing];
     }
 }
 
@@ -93,6 +101,13 @@
 {
     [super viewDidLoad];
     DVCLog(@"viewDidLoad");
+    
+    
+    _refreshControl = [[UIRefreshControl alloc] init];
+    [_refreshControl setTintColor:[UIColor colorWithWhite:.75f alpha:1.0]];
+    [_refreshControl addTarget:self action:@selector(updateMessages) forControlEvents:UIControlEventValueChanged];
+    [_messagesTableView addSubview:_refreshControl];
+    
     
     for (UIView *subview in _searchBar.subviews){
         if ([subview isKindOfClass:NSClassFromString(@"UISearchBarBackground")]){

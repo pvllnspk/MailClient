@@ -27,6 +27,8 @@
 		B32E63E417A2EC4F004236A0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B32E63E317A2EC4F004236A0 /* QuartzCore.framework */; };
 		B32E63E617A2EC59004236A0 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B32E63E517A2EC59004236A0 /* CoreText.framework */; };
 		B32E63E817A2EC61004236A0 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B32E63E717A2EC61004236A0 /* MobileCoreServices.framework */; };
+		B3D479B117A6F89E0067C957 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D479B017A6F89E0067C957 /* Security.framework */; };
+		B3EC9BCC17A6D0FC00F3C78B /* TITokenField.m in Sources */ = {isa = PBXBuildFile; fileRef = B3EC9BCA17A6D0FC00F3C78B /* TITokenField.m */; };
 		B3EF657D17A11C7E00369805 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EF657C17A11C7E00369805 /* UIKit.framework */; };
 		B3EF657F17A11C7E00369805 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EF657E17A11C7E00369805 /* Foundation.framework */; };
 		B3EF658117A11C7E00369805 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EF658017A11C7E00369805 /* CoreGraphics.framework */; };
@@ -155,6 +157,9 @@
 		B32E63E317A2EC4F004236A0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B32E63E517A2EC59004236A0 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		B32E63E717A2EC61004236A0 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		B3D479B017A6F89E0067C957 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		B3EC9BC917A6D0FC00F3C78B /* TITokenField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TITokenField.h; sourceTree = "<group>"; };
+		B3EC9BCA17A6D0FC00F3C78B /* TITokenField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TITokenField.m; sourceTree = "<group>"; };
 		B3EF657917A11C7E00369805 /* MailClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MailClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3EF657C17A11C7E00369805 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B3EF657E17A11C7E00369805 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -192,6 +197,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3D479B117A6F89E0067C957 /* Security.framework in Frameworks */,
+				B3EF65EF17A130B700369805 /* CFNetwork.framework in Frameworks */,
 				B32E63E817A2EC61004236A0 /* MobileCoreServices.framework in Frameworks */,
 				B32E63E617A2EC59004236A0 /* CoreText.framework in Frameworks */,
 				B32E63E417A2EC4F004236A0 /* QuartzCore.framework in Frameworks */,
@@ -203,7 +210,6 @@
 				B3EF65E917A1309800369805 /* libsasl2.a in Frameworks */,
 				B3EF65E717A1308600369805 /* libssl.a in Frameworks */,
 				B3EF65E517A1307000369805 /* libmailcore.a in Frameworks */,
-				B3EF65EF17A130B700369805 /* CFNetwork.framework in Frameworks */,
 				B3EF657D17A11C7E00369805 /* UIKit.framework in Frameworks */,
 				B3EF657F17A11C7E00369805 /* Foundation.framework in Frameworks */,
 				B3EF658117A11C7E00369805 /* CoreGraphics.framework in Frameworks */,
@@ -265,6 +271,23 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		B3EC9BC517A6D0FC00F3C78B /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				B3EC9BC617A6D0FC00F3C78B /* TITokenField */,
+			);
+			path = Vendor;
+			sourceTree = SOURCE_ROOT;
+		};
+		B3EC9BC617A6D0FC00F3C78B /* TITokenField */ = {
+			isa = PBXGroup;
+			children = (
+				B3EC9BC917A6D0FC00F3C78B /* TITokenField.h */,
+				B3EC9BCA17A6D0FC00F3C78B /* TITokenField.m */,
+			);
+			path = TITokenField;
+			sourceTree = "<group>";
+		};
 		B3EF657017A11C7D00369805 = {
 			isa = PBXGroup;
 			children = (
@@ -287,6 +310,7 @@
 		B3EF657B17A11C7E00369805 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B3D479B017A6F89E0067C957 /* Security.framework */,
 				B32E63DF17A2EC41004236A0 /* libxml2.dylib */,
 				B3EF65EC17A130AF00369805 /* libiconv.dylib */,
 				B3EF65EA17A130A500369805 /* libcrypto.a */,
@@ -317,6 +341,7 @@
 				B3EFA05C17A522F000012134 /* Categories */,
 				B3EFA05817A5219800012134 /* MCTreeView */,
 				B3EF658517A11C7E00369805 /* Supporting Files */,
+				B3EC9BC517A6D0FC00F3C78B /* Vendor */,
 			);
 			path = MailClient;
 			sourceTree = "<group>";
@@ -556,6 +581,7 @@
 				B327FD1A17A5702800D3D29F /* MCTreeItem.m in Sources */,
 				B327FD1D17A570DA00D3D29F /* MCTreeTableViewCell.m in Sources */,
 				B327FD3017A59A9500D3D29F /* MCController.m in Sources */,
+				B3EC9BCC17A6D0FC00F3C78B /* TITokenField.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

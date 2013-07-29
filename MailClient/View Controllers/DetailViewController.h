@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DetailViewController : UIViewController <UISplitViewControllerDelegate, UISearchDisplayDelegate, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface DetailViewController : UIViewController <UISplitViewControllerDelegate, UISearchDisplayDelegate,
+UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate>
 
 -(void) setFolder:(CTCoreFolder*) folder;
 
