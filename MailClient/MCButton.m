@@ -33,7 +33,7 @@
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [super touchesBegan:touches withEvent:event];
-    [UIView animateWithDuration:0.2 animations:^
+    [UIView animateWithDuration:0.3 animations:^
      {
          [_selectionView setAlpha:0.1];
      }];
@@ -42,7 +42,7 @@
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [super touchesEnded:touches withEvent:event];
-    [UIView animateWithDuration:0.1 animations:^
+    [UIView animateWithDuration:0.3 animations:^
      {
          [_selectionView setAlpha:0.4];
      }];

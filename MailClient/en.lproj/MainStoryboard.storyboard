@@ -29,7 +29,33 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FOg-qo-Ts4">
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R3H-KC-Db4" customClass="MCButton">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="I0Y-ON-bHh"/>
+                                            <constraint firstAttribute="width" constant="60" id="o8B-yU-SLV"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <size key="titleShadowOffset" width="0.20000000000000001" height="0.0"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Add">
+                                                    <attributes>
+                                                        <color key="NSColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <font key="NSFont" size="18" name="Helvetica"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" red="0.65306122450000004" green="0.65306122450000004" blue="0.65306122450000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="R3H-KC-Db4" firstAttribute="centerY" secondItem="FOg-qo-Ts4" secondAttribute="centerY" type="default" id="DcN-fE-o69"/>
+                                    <constraint firstItem="R3H-KC-Db4" firstAttribute="leading" secondItem="FOg-qo-Ts4" secondAttribute="leading" constant="14" id="TY5-4Q-PNl"/>
+                                    <constraint firstItem="R3H-KC-Db4" firstAttribute="top" secondItem="FOg-qo-Ts4" secondAttribute="top" constant="14" id="v9L-qw-M7i"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.88775510204081631" green="0.88775510204081631" blue="0.88775510204081631" alpha="1" colorSpace="calibratedRGB"/>
@@ -42,7 +68,6 @@
                             <constraint firstItem="j1Y-wt-LME" firstAttribute="leading" secondItem="Z7Q-xS-5RY" secondAttribute="leading" constant="-346" id="ZQx-tq-8E4"/>
                             <constraint firstItem="HjD-pc-YXU" firstAttribute="top" secondItem="Z7Q-xS-5RY" secondAttribute="top" constant="58" id="ZbU-Bo-EmO"/>
                             <constraint firstItem="jhQ-F6-mEr" firstAttribute="trailing" secondItem="Z7Q-xS-5RY" secondAttribute="trailing" type="default" id="aES-AQ-p6M"/>
-                            <constraint firstAttribute="bottom" secondItem="FOg-qo-Ts4" secondAttribute="bottom" constant="690" id="cJO-eG-PKA"/>
                             <constraint firstItem="jhQ-F6-mEr" firstAttribute="bottom" secondItem="Z7Q-xS-5RY" secondAttribute="bottom" type="default" id="cpe-ot-oC1"/>
                             <constraint firstItem="jhQ-F6-mEr" firstAttribute="leading" secondItem="Z7Q-xS-5RY" secondAttribute="leading" type="default" id="drW-ui-W4S"/>
                             <constraint firstItem="HjD-pc-YXU" firstAttribute="trailing" secondItem="Z7Q-xS-5RY" secondAttribute="trailing" type="default" id="fbm-CA-GEc"/>
@@ -263,7 +288,6 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VQw-pV-mq2" customClass="MCButton">
                                         <constraints>
                                             <constraint firstAttribute="width" constant="60" id="2l5-ND-tTp"/>
-                                            <constraint firstAttribute="height" constant="30" id="eUb-Aq-9T1"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <size key="titleShadowOffset" width="0.20000000000000001" height="0.0"/>
@@ -278,11 +302,118 @@
                                             </attributedString>
                                         </state>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JiA-dD-IsJ" customClass="MCButton">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="PcI-oS-rXK"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <size key="titleShadowOffset" width="0.20000000000000001" height="0.0"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Reply">
+                                                    <attributes>
+                                                        <color key="NSColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <font key="NSFont" size="18" name="Helvetica"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lC3-hD-B8s" customClass="MCButton">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="77" id="eZ6-1a-yYi"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <size key="titleShadowOffset" width="0.20000000000000001" height="0.0"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Forward">
+                                                    <attributes>
+                                                        <color key="NSColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <font key="NSFont" size="18" name="Helvetica"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eMn-An-jXo" customClass="MCButton">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="gjj-8p-ehL"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <size key="titleShadowOffset" width="0.20000000000000001" height="0.0"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Junk">
+                                                    <attributes>
+                                                        <color key="NSColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <font key="NSFont" size="18" name="Helvetica"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pDd-wU-O7b" customClass="MCButton">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="JZG-hO-q5R"/>
+                                            <constraint firstAttribute="width" constant="60" id="euy-5g-meY"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <size key="titleShadowOffset" width="0.20000000000000001" height="0.0"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Delete">
+                                                    <attributes>
+                                                        <color key="NSColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <font key="NSFont" size="18" name="Helvetica"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jEq-II-l9y" customClass="MCButton">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="DyL-r6-NSu"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <size key="titleShadowOffset" width="0.20000000000000001" height="0.0"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Archive">
+                                                    <attributes>
+                                                        <color key="NSColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <font key="NSFont" size="18" name="Helvetica"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.81960791349411011" green="0.81960791349411011" blue="0.81960791349411011" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
-                                    <constraint firstItem="VQw-pV-mq2" firstAttribute="centerY" secondItem="y2H-6E-olN" secondAttribute="centerY" type="default" id="ETn-zG-L2A"/>
-                                    <constraint firstAttribute="trailing" secondItem="VQw-pV-mq2" secondAttribute="trailing" constant="14" id="yWj-ol-GQw"/>
+                                    <constraint firstItem="lC3-hD-B8s" firstAttribute="bottom" secondItem="VQw-pV-mq2" secondAttribute="bottom" type="default" id="3YF-zo-8Bc"/>
+                                    <constraint firstItem="pDd-wU-O7b" firstAttribute="centerY" secondItem="y2H-6E-olN" secondAttribute="centerY" type="default" id="FeO-Do-kkU"/>
+                                    <constraint firstItem="lC3-hD-B8s" firstAttribute="bottom" secondItem="JiA-dD-IsJ" secondAttribute="bottom" type="default" id="HYH-nw-RyQ"/>
+                                    <constraint firstItem="jEq-II-l9y" firstAttribute="bottom" secondItem="eMn-An-jXo" secondAttribute="bottom" type="default" id="NBv-gH-B8m"/>
+                                    <constraint firstItem="pDd-wU-O7b" firstAttribute="leading" secondItem="y2H-6E-olN" secondAttribute="leading" constant="179" id="O51-Sh-ub3"/>
+                                    <constraint firstAttribute="trailing" secondItem="JiA-dD-IsJ" secondAttribute="trailing" constant="176" id="QDl-C7-wvg"/>
+                                    <constraint firstItem="jEq-II-l9y" firstAttribute="top" secondItem="pDd-wU-O7b" secondAttribute="top" type="default" id="SLD-yg-YOB"/>
+                                    <constraint firstItem="eMn-An-jXo" firstAttribute="bottom" secondItem="JiA-dD-IsJ" secondAttribute="bottom" type="default" id="Xf9-hc-Dt8"/>
+                                    <constraint firstItem="lC3-hD-B8s" firstAttribute="top" secondItem="VQw-pV-mq2" secondAttribute="top" type="default" id="YKj-ZR-hGv"/>
+                                    <constraint firstItem="jEq-II-l9y" firstAttribute="top" secondItem="eMn-An-jXo" secondAttribute="top" type="default" id="Yuh-7j-HBc"/>
+                                    <constraint firstAttribute="trailing" secondItem="lC3-hD-B8s" secondAttribute="trailing" constant="82" id="aBC-Ki-ss2"/>
+                                    <constraint firstAttribute="trailing" secondItem="eMn-An-jXo" secondAttribute="trailing" constant="262" id="hBY-3y-LAv"/>
+                                    <constraint firstItem="jEq-II-l9y" firstAttribute="bottom" secondItem="pDd-wU-O7b" secondAttribute="bottom" type="default" id="igE-zD-ytU"/>
+                                    <constraint firstItem="jEq-II-l9y" firstAttribute="leading" secondItem="y2H-6E-olN" secondAttribute="leading" constant="292" id="lQM-IZ-YHD"/>
+                                    <constraint firstItem="pDd-wU-O7b" firstAttribute="top" secondItem="y2H-6E-olN" secondAttribute="top" constant="14" id="pJR-A6-KMF"/>
+                                    <constraint firstItem="eMn-An-jXo" firstAttribute="top" secondItem="JiA-dD-IsJ" secondAttribute="top" type="default" id="tKR-kC-o1q"/>
+                                    <constraint firstItem="lC3-hD-B8s" firstAttribute="top" secondItem="JiA-dD-IsJ" secondAttribute="top" type="default" id="wv1-Gt-tk9"/>
+                                    <constraint firstItem="VQw-pV-mq2" firstAttribute="leading" secondItem="lC3-hD-B8s" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="zwg-R8-r8o"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yTh-Y6-Uvo">
@@ -312,7 +443,6 @@
                             <constraint firstItem="rCN-PS-FTj" firstAttribute="trailing" secondItem="EPp-36-ds9" secondAttribute="trailing" type="default" id="Hbd-dG-7rt"/>
                             <constraint firstItem="iRQ-94-DfY" firstAttribute="top" secondItem="26" secondAttribute="top" constant="60" id="Qeq-wn-Xwk"/>
                             <constraint firstItem="LF3-Rr-0tM" firstAttribute="bottom" secondItem="26" secondAttribute="bottom" type="default" id="Qnn-kk-ioc"/>
-                            <constraint firstAttribute="bottom" secondItem="y2H-6E-olN" secondAttribute="bottom" constant="690" id="Rqt-As-86f"/>
                             <constraint firstItem="iRQ-94-DfY" firstAttribute="leading" secondItem="26" secondAttribute="leading" type="default" id="SA8-uN-9bU"/>
                             <constraint firstItem="iRQ-94-DfY" firstAttribute="top" secondItem="nf4-zH-yiv" secondAttribute="top" type="default" id="XGw-Qz-dQD"/>
                             <constraint firstItem="yTh-Y6-Uvo" firstAttribute="top" secondItem="26" secondAttribute="top" constant="58" id="YBY-QL-8uW"/>
