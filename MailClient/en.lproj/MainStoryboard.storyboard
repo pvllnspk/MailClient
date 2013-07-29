@@ -21,7 +21,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="14" translatesAutoresizingMaskIntoConstraints="NO" id="jhQ-F6-mEr">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="709" id="lgn-dt-OHo"/>
+                                    <constraint firstAttribute="height" constant="688" id="gJX-Ej-Wfu"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="dataSource" destination="51u-lv-AV3" id="sup-qK-nm5"/>
@@ -37,18 +37,18 @@
                             <constraint firstItem="FOg-qo-Ts4" firstAttribute="trailing" secondItem="Z7Q-xS-5RY" secondAttribute="trailing" type="default" id="5Cs-dw-3Gf"/>
                             <constraint firstItem="HjD-pc-YXU" firstAttribute="leading" secondItem="Z7Q-xS-5RY" secondAttribute="leading" type="default" id="8Fo-vQ-7ux"/>
                             <constraint firstAttribute="trailing" secondItem="j1Y-wt-LME" secondAttribute="trailing" constant="-27" id="A1j-QI-qjz"/>
-                            <constraint firstItem="HjD-pc-YXU" firstAttribute="top" secondItem="Z7Q-xS-5RY" secondAttribute="top" constant="38" id="LuT-PU-LnP"/>
+                            <constraint firstItem="FOg-qo-Ts4" firstAttribute="top" secondItem="Z7Q-xS-5RY" secondAttribute="top" type="default" id="NId-1W-cCH"/>
                             <constraint firstItem="FOg-qo-Ts4" firstAttribute="leading" secondItem="Z7Q-xS-5RY" secondAttribute="leading" type="default" id="Xuf-TS-LRf"/>
                             <constraint firstItem="j1Y-wt-LME" firstAttribute="leading" secondItem="Z7Q-xS-5RY" secondAttribute="leading" constant="-346" id="ZQx-tq-8E4"/>
+                            <constraint firstItem="HjD-pc-YXU" firstAttribute="top" secondItem="Z7Q-xS-5RY" secondAttribute="top" constant="58" id="ZbU-Bo-EmO"/>
                             <constraint firstItem="jhQ-F6-mEr" firstAttribute="trailing" secondItem="Z7Q-xS-5RY" secondAttribute="trailing" type="default" id="aES-AQ-p6M"/>
+                            <constraint firstAttribute="bottom" secondItem="FOg-qo-Ts4" secondAttribute="bottom" constant="690" id="cJO-eG-PKA"/>
+                            <constraint firstItem="jhQ-F6-mEr" firstAttribute="bottom" secondItem="Z7Q-xS-5RY" secondAttribute="bottom" type="default" id="cpe-ot-oC1"/>
                             <constraint firstItem="jhQ-F6-mEr" firstAttribute="leading" secondItem="Z7Q-xS-5RY" secondAttribute="leading" type="default" id="drW-ui-W4S"/>
                             <constraint firstItem="HjD-pc-YXU" firstAttribute="trailing" secondItem="Z7Q-xS-5RY" secondAttribute="trailing" type="default" id="fbm-CA-GEc"/>
-                            <constraint firstAttribute="bottom" secondItem="FOg-qo-Ts4" secondAttribute="bottom" constant="710" id="oPZ-JV-eFh"/>
-                            <constraint firstItem="FOg-qo-Ts4" firstAttribute="top" secondItem="Z7Q-xS-5RY" secondAttribute="top" type="default" id="qw4-Sq-gwT"/>
                             <constraint firstItem="j1Y-wt-LME" firstAttribute="top" secondItem="Z7Q-xS-5RY" secondAttribute="top" constant="-100" id="shx-oR-5bo"/>
                             <constraint firstAttribute="bottom" secondItem="j1Y-wt-LME" secondAttribute="bottom" constant="748" id="t6e-Og-pfr"/>
-                            <constraint firstItem="jhQ-F6-mEr" firstAttribute="bottom" secondItem="Z7Q-xS-5RY" secondAttribute="bottom" type="default" id="v1i-W6-fad"/>
-                            <constraint firstAttribute="bottom" secondItem="HjD-pc-YXU" secondAttribute="bottom" constant="709" id="vwX-ze-dje"/>
+                            <constraint firstAttribute="bottom" secondItem="HjD-pc-YXU" secondAttribute="bottom" constant="689" id="xip-Zp-HRe"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
@@ -72,7 +72,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="82" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="rCN-PS-FTj">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="664" id="Rfv-h8-Ltu"/>
+                                    <constraint firstAttribute="height" constant="642" id="v48-M6-eee"/>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="MessageCell" rowHeight="82" id="0cy-NN-SVg">
@@ -259,7 +259,31 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y2H-6E-olN">
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VQw-pV-mq2" customClass="MCButton">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="2l5-ND-tTp"/>
+                                            <constraint firstAttribute="height" constant="30" id="eUb-Aq-9T1"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <size key="titleShadowOffset" width="0.20000000000000001" height="0.0"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Write">
+                                                    <attributes>
+                                                        <color key="NSColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <font key="NSFont" size="18" name="Helvetica"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" red="0.81960791349411011" green="0.81960791349411011" blue="0.81960791349411011" alpha="1" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstItem="VQw-pV-mq2" firstAttribute="centerY" secondItem="y2H-6E-olN" secondAttribute="centerY" type="default" id="ETn-zG-L2A"/>
+                                    <constraint firstAttribute="trailing" secondItem="VQw-pV-mq2" secondAttribute="trailing" constant="14" id="yWj-ol-GQw"/>
+                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yTh-Y6-Uvo">
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -276,30 +300,30 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="EPp-36-ds9" firstAttribute="top" secondItem="iRQ-94-DfY" secondAttribute="bottom" type="default" id="1ST-fd-iWp"/>
-                            <constraint firstAttribute="bottom" secondItem="y2H-6E-olN" secondAttribute="bottom" constant="710" id="3KQ-nv-7cm"/>
+                            <constraint firstItem="y2H-6E-olN" firstAttribute="top" secondItem="26" secondAttribute="top" type="default" id="0Ir-uU-Ne3"/>
+                            <constraint firstItem="LF3-Rr-0tM" firstAttribute="trailing" secondItem="EPp-36-ds9" secondAttribute="trailing" type="default" id="1An-Ec-Nwl"/>
+                            <constraint firstItem="EPp-36-ds9" firstAttribute="top" secondItem="iRQ-94-DfY" secondAttribute="bottom" type="default" id="4W4-Ug-dIR"/>
                             <constraint firstItem="nf4-zH-yiv" firstAttribute="bottom" secondItem="26" secondAttribute="bottom" type="default" id="5Zv-OU-jKI"/>
+                            <constraint firstItem="rCN-PS-FTj" firstAttribute="bottom" secondItem="26" secondAttribute="bottom" type="default" id="6Fc-u2-NSZ"/>
                             <constraint firstItem="EPp-36-ds9" firstAttribute="leading" secondItem="26" secondAttribute="leading" type="default" id="Dp9-yV-Qma"/>
+                            <constraint firstAttribute="bottom" secondItem="EPp-36-ds9" secondAttribute="bottom" constant="643" id="E2E-Tb-hhy"/>
                             <constraint firstItem="rCN-PS-FTj" firstAttribute="leading" secondItem="26" secondAttribute="leading" type="default" id="EVS-a5-DAo"/>
                             <constraint firstItem="y2H-6E-olN" firstAttribute="trailing" secondItem="26" secondAttribute="trailing" type="default" id="FuK-l7-Log"/>
                             <constraint firstItem="rCN-PS-FTj" firstAttribute="trailing" secondItem="EPp-36-ds9" secondAttribute="trailing" type="default" id="Hbd-dG-7rt"/>
-                            <constraint firstAttribute="bottom" secondItem="EPp-36-ds9" secondAttribute="bottom" constant="664" id="LEy-Bu-DDq"/>
-                            <constraint firstItem="yTh-Y6-Uvo" firstAttribute="top" secondItem="26" secondAttribute="top" constant="38" id="NEy-ir-QHS"/>
+                            <constraint firstItem="iRQ-94-DfY" firstAttribute="top" secondItem="26" secondAttribute="top" constant="60" id="Qeq-wn-Xwk"/>
                             <constraint firstItem="LF3-Rr-0tM" firstAttribute="bottom" secondItem="26" secondAttribute="bottom" type="default" id="Qnn-kk-ioc"/>
+                            <constraint firstAttribute="bottom" secondItem="y2H-6E-olN" secondAttribute="bottom" constant="690" id="Rqt-As-86f"/>
                             <constraint firstItem="iRQ-94-DfY" firstAttribute="leading" secondItem="26" secondAttribute="leading" type="default" id="SA8-uN-9bU"/>
-                            <constraint firstItem="rCN-PS-FTj" firstAttribute="trailing" secondItem="LF3-Rr-0tM" secondAttribute="trailing" type="default" id="TGH-7d-aq2"/>
+                            <constraint firstItem="iRQ-94-DfY" firstAttribute="top" secondItem="nf4-zH-yiv" secondAttribute="top" type="default" id="XGw-Qz-dQD"/>
+                            <constraint firstItem="yTh-Y6-Uvo" firstAttribute="top" secondItem="26" secondAttribute="top" constant="58" id="YBY-QL-8uW"/>
                             <constraint firstItem="nf4-zH-yiv" firstAttribute="trailing" secondItem="26" secondAttribute="trailing" type="default" id="aQV-f9-pwd"/>
                             <constraint firstItem="LF3-Rr-0tM" firstAttribute="leading" secondItem="iRQ-94-DfY" secondAttribute="trailing" type="default" id="bsm-vF-v69"/>
                             <constraint firstItem="yTh-Y6-Uvo" firstAttribute="trailing" secondItem="26" secondAttribute="trailing" type="default" id="dM0-OS-Lzj"/>
                             <constraint firstItem="LF3-Rr-0tM" firstAttribute="top" secondItem="26" secondAttribute="top" type="default" id="hSy-G8-Mph"/>
                             <constraint firstItem="nf4-zH-yiv" firstAttribute="leading" secondItem="26" secondAttribute="leading" constant="294" id="haA-bM-fr6"/>
                             <constraint firstItem="y2H-6E-olN" firstAttribute="leading" secondItem="26" secondAttribute="leading" type="default" id="l8L-I3-t5L"/>
-                            <constraint firstItem="iRQ-94-DfY" firstAttribute="top" secondItem="26" secondAttribute="top" constant="39" id="lxJ-8t-sBd"/>
-                            <constraint firstItem="nf4-zH-yiv" firstAttribute="top" secondItem="26" secondAttribute="top" constant="60" id="n5V-Jx-AsH"/>
-                            <constraint firstItem="iRQ-94-DfY" firstAttribute="top" secondItem="yTh-Y6-Uvo" secondAttribute="bottom" type="default" id="pND-JB-COq"/>
                             <constraint firstItem="yTh-Y6-Uvo" firstAttribute="leading" secondItem="26" secondAttribute="leading" type="default" id="rFF-Sr-hKq"/>
-                            <constraint firstItem="rCN-PS-FTj" firstAttribute="bottom" secondItem="26" secondAttribute="bottom" type="default" id="vOU-WL-BDZ"/>
-                            <constraint firstItem="y2H-6E-olN" firstAttribute="top" secondItem="26" secondAttribute="top" type="default" id="yQ1-zS-RLg"/>
+                            <constraint firstAttribute="bottom" secondItem="yTh-Y6-Uvo" secondAttribute="bottom" constant="689" id="xCL-A4-2Tp"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
@@ -340,20 +364,9 @@
         </scene>
     </scenes>
     <classes>
-        <class className="DTAttributedTextView" superclassName="UIScrollView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DTAttributedTextView.h"/>
-            <relationships>
-                <relationship kind="outlet" name="backgroundView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="textDelegate"/>
-            </relationships>
-        </class>
-        <class className="DTLinkButton" superclassName="UIButton">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DTLinkButton.h"/>
-        </class>
         <class className="DetailViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailViewController.h"/>
             <relationships>
-                <relationship kind="action" name="linkButtonClicked:" candidateClass="DTLinkButton"/>
                 <relationship kind="outlet" name="bodyTextView" candidateClass="DTAttributedTextView"/>
                 <relationship kind="outlet" name="bodyView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
@@ -365,6 +378,9 @@
                 <relationship kind="outlet" name="toLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="topBarView" candidateClass="UIView"/>
             </relationships>
+        </class>
+        <class className="MCButton" superclassName="UIButton">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MCButton.h"/>
         </class>
         <class className="MasterViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MasterViewController.h"/>

@@ -28,6 +28,9 @@
 		B32E63E617A2EC59004236A0 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B32E63E517A2EC59004236A0 /* CoreText.framework */; };
 		B32E63E817A2EC61004236A0 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B32E63E717A2EC61004236A0 /* MobileCoreServices.framework */; };
 		B3D479B117A6F89E0067C957 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D479B017A6F89E0067C957 /* Security.framework */; };
+		B3D479C417A70AE70067C957 /* create-email-nav-bar-button.png in Resources */ = {isa = PBXBuildFile; fileRef = B3D479C217A70AE40067C957 /* create-email-nav-bar-button.png */; };
+		B3D479C517A70AE70067C957 /* create-email-nav-bar-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3D479C317A70AE50067C957 /* create-email-nav-bar-button@2x.png */; };
+		B3D479D517A70D470067C957 /* MCButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D479D417A70D470067C957 /* MCButton.m */; };
 		B3EC9BCC17A6D0FC00F3C78B /* TITokenField.m in Sources */ = {isa = PBXBuildFile; fileRef = B3EC9BCA17A6D0FC00F3C78B /* TITokenField.m */; };
 		B3EF657D17A11C7E00369805 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EF657C17A11C7E00369805 /* UIKit.framework */; };
 		B3EF657F17A11C7E00369805 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EF657E17A11C7E00369805 /* Foundation.framework */; };
@@ -158,6 +161,10 @@
 		B32E63E517A2EC59004236A0 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		B32E63E717A2EC61004236A0 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		B3D479B017A6F89E0067C957 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		B3D479C217A70AE40067C957 /* create-email-nav-bar-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "create-email-nav-bar-button.png"; sourceTree = "<group>"; };
+		B3D479C317A70AE50067C957 /* create-email-nav-bar-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "create-email-nav-bar-button@2x.png"; sourceTree = "<group>"; };
+		B3D479D317A70D470067C957 /* MCButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCButton.h; sourceTree = "<group>"; };
+		B3D479D417A70D470067C957 /* MCButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCButton.m; sourceTree = "<group>"; };
 		B3EC9BC917A6D0FC00F3C78B /* TITokenField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TITokenField.h; sourceTree = "<group>"; };
 		B3EC9BCA17A6D0FC00F3C78B /* TITokenField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TITokenField.m; sourceTree = "<group>"; };
 		B3EF657917A11C7E00369805 /* MailClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MailClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -223,6 +230,8 @@
 		B327FCFF17A53C7A00D3D29F /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				B3D479C217A70AE40067C957 /* create-email-nav-bar-button.png */,
+				B3D479C317A70AE50067C957 /* create-email-nav-bar-button@2x.png */,
 				B327FD2217A5745B00D3D29F /* CircleArrowDown_sml.png */,
 				B327FD2317A5745B00D3D29F /* CircleArrowRight_sml.png */,
 				B327FD1E17A5730300D3D29F /* mail_open.png */,
@@ -253,6 +262,8 @@
 			children = (
 				B327FD2E17A59A9500D3D29F /* MCController.h */,
 				B327FD2F17A59A9500D3D29F /* MCController.m */,
+				B3D479D317A70D470067C957 /* MCButton.h */,
+				B3D479D417A70D470067C957 /* MCButton.m */,
 			);
 			name = Misc;
 			sourceTree = "<group>";
@@ -561,6 +572,8 @@
 				B327FD2117A5730400D3D29F /* mail.png in Resources */,
 				B327FD2417A5745B00D3D29F /* CircleArrowDown_sml.png in Resources */,
 				B327FD2517A5745B00D3D29F /* CircleArrowRight_sml.png in Resources */,
+				B3D479C417A70AE70067C957 /* create-email-nav-bar-button.png in Resources */,
+				B3D479C517A70AE70067C957 /* create-email-nav-bar-button@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -582,6 +595,7 @@
 				B327FD1D17A570DA00D3D29F /* MCTreeTableViewCell.m in Sources */,
 				B327FD3017A59A9500D3D29F /* MCController.m in Sources */,
 				B3EC9BCC17A6D0FC00F3C78B /* TITokenField.m in Sources */,
+				B3D479D517A70D470067C957 /* MCButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
