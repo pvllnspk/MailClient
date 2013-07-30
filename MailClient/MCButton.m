@@ -17,7 +17,7 @@
 - (void)awakeFromNib
 {
     static CGRect sectionSize;
-    sectionSize = CGRectMake(0, 0, 60, 40);
+    sectionSize = CGRectMake(0, 0, 3 * self.titleLabel.frame.origin.x+self.titleLabel.frame.size.width, 40);
     
     _selectionView = [[UIView alloc] initWithFrame:sectionSize];
     [_selectionView setBackgroundColor:[UIColor clearColor]];

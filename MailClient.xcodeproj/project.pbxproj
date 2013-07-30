@@ -262,8 +262,6 @@
 			children = (
 				B327FD2E17A59A9500D3D29F /* MCController.h */,
 				B327FD2F17A59A9500D3D29F /* MCController.m */,
-				B3D479D317A70D470067C957 /* MCButton.h */,
-				B3D479D417A70D470067C957 /* MCButton.m */,
 			);
 			name = Misc;
 			sourceTree = "<group>";
@@ -280,6 +278,15 @@
 				B32E63DB17A2EAC3004236A0 /* DTCoreText.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		B3E7D6FF17A850F400C46AF8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B3D479D317A70D470067C957 /* MCButton.h */,
+				B3D479D417A70D470067C957 /* MCButton.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		B3EC9BC517A6D0FC00F3C78B /* Vendor */ = {
@@ -348,9 +355,10 @@
 				B3EFA06317A5239100012134 /* Application */,
 				B3EFA06717A523B800012134 /* View Controllers */,
 				B327FD2617A597EA00D3D29F /* Models */,
-				B327FD2D17A59A6300D3D29F /* Misc */,
+				B3E7D6FF17A850F400C46AF8 /* Views */,
 				B3EFA05C17A522F000012134 /* Categories */,
 				B3EFA05817A5219800012134 /* MCTreeView */,
+				B327FD2D17A59A6300D3D29F /* Misc */,
 				B3EF658517A11C7E00369805 /* Supporting Files */,
 				B3EC9BC517A6D0FC00F3C78B /* Vendor */,
 			);

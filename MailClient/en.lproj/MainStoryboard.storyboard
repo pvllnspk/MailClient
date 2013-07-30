@@ -288,6 +288,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VQw-pV-mq2" customClass="MCButton">
                                         <constraints>
                                             <constraint firstAttribute="width" constant="60" id="2l5-ND-tTp"/>
+                                            <constraint firstAttribute="height" constant="30" id="keF-wD-wkV"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <size key="titleShadowOffset" width="0.20000000000000001" height="0.0"/>
@@ -358,7 +359,6 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pDd-wU-O7b" customClass="MCButton">
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="JZG-hO-q5R"/>
                                             <constraint firstAttribute="width" constant="60" id="euy-5g-meY"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -377,7 +377,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jEq-II-l9y" customClass="MCButton">
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="60" id="DyL-r6-NSu"/>
+                                            <constraint firstAttribute="width" constant="75" id="aEQ-Y2-tQs"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <size key="titleShadowOffset" width="0.20000000000000001" height="0.0"/>
@@ -396,24 +396,24 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.81960791349411011" green="0.81960791349411011" blue="0.81960791349411011" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
-                                    <constraint firstItem="lC3-hD-B8s" firstAttribute="bottom" secondItem="VQw-pV-mq2" secondAttribute="bottom" type="default" id="3YF-zo-8Bc"/>
-                                    <constraint firstItem="pDd-wU-O7b" firstAttribute="centerY" secondItem="y2H-6E-olN" secondAttribute="centerY" type="default" id="FeO-Do-kkU"/>
+                                    <constraint firstAttribute="trailing" secondItem="jEq-II-l9y" secondAttribute="trailing" constant="252" id="E3E-uc-0BW"/>
                                     <constraint firstItem="lC3-hD-B8s" firstAttribute="bottom" secondItem="JiA-dD-IsJ" secondAttribute="bottom" type="default" id="HYH-nw-RyQ"/>
                                     <constraint firstItem="jEq-II-l9y" firstAttribute="bottom" secondItem="eMn-An-jXo" secondAttribute="bottom" type="default" id="NBv-gH-B8m"/>
-                                    <constraint firstItem="pDd-wU-O7b" firstAttribute="leading" secondItem="y2H-6E-olN" secondAttribute="leading" constant="179" id="O51-Sh-ub3"/>
-                                    <constraint firstAttribute="trailing" secondItem="JiA-dD-IsJ" secondAttribute="trailing" constant="176" id="QDl-C7-wvg"/>
+                                    <constraint firstItem="VQw-pV-mq2" firstAttribute="bottom" secondItem="pDd-wU-O7b" secondAttribute="bottom" type="default" id="Ng2-EW-oDJ"/>
+                                    <constraint firstItem="VQw-pV-mq2" firstAttribute="top" secondItem="pDd-wU-O7b" secondAttribute="top" type="default" id="Nka-QI-ZcS"/>
+                                    <constraint firstAttribute="trailing" secondItem="lC3-hD-B8s" secondAttribute="trailing" constant="19" id="QIv-sX-AMk"/>
                                     <constraint firstItem="jEq-II-l9y" firstAttribute="top" secondItem="pDd-wU-O7b" secondAttribute="top" type="default" id="SLD-yg-YOB"/>
+                                    <constraint firstItem="VQw-pV-mq2" firstAttribute="top" secondItem="y2H-6E-olN" secondAttribute="top" constant="14" id="Tsu-93-5j6"/>
+                                    <constraint firstAttribute="trailing" secondItem="eMn-An-jXo" secondAttribute="trailing" constant="178" id="VwT-v2-y8D"/>
                                     <constraint firstItem="eMn-An-jXo" firstAttribute="bottom" secondItem="JiA-dD-IsJ" secondAttribute="bottom" type="default" id="Xf9-hc-Dt8"/>
-                                    <constraint firstItem="lC3-hD-B8s" firstAttribute="top" secondItem="VQw-pV-mq2" secondAttribute="top" type="default" id="YKj-ZR-hGv"/>
                                     <constraint firstItem="jEq-II-l9y" firstAttribute="top" secondItem="eMn-An-jXo" secondAttribute="top" type="default" id="Yuh-7j-HBc"/>
-                                    <constraint firstAttribute="trailing" secondItem="lC3-hD-B8s" secondAttribute="trailing" constant="82" id="aBC-Ki-ss2"/>
-                                    <constraint firstAttribute="trailing" secondItem="eMn-An-jXo" secondAttribute="trailing" constant="262" id="hBY-3y-LAv"/>
+                                    <constraint firstItem="lC3-hD-B8s" firstAttribute="centerY" secondItem="y2H-6E-olN" secondAttribute="centerY" type="default" id="e6d-YK-UYU"/>
+                                    <constraint firstItem="pDd-wU-O7b" firstAttribute="leading" secondItem="y2H-6E-olN" secondAttribute="leading" constant="305" id="fYw-kK-Vdw"/>
+                                    <constraint firstAttribute="trailing" secondItem="JiA-dD-IsJ" secondAttribute="trailing" constant="105" id="g42-bX-EkU"/>
                                     <constraint firstItem="jEq-II-l9y" firstAttribute="bottom" secondItem="pDd-wU-O7b" secondAttribute="bottom" type="default" id="igE-zD-ytU"/>
-                                    <constraint firstItem="jEq-II-l9y" firstAttribute="leading" secondItem="y2H-6E-olN" secondAttribute="leading" constant="292" id="lQM-IZ-YHD"/>
-                                    <constraint firstItem="pDd-wU-O7b" firstAttribute="top" secondItem="y2H-6E-olN" secondAttribute="top" constant="14" id="pJR-A6-KMF"/>
                                     <constraint firstItem="eMn-An-jXo" firstAttribute="top" secondItem="JiA-dD-IsJ" secondAttribute="top" type="default" id="tKR-kC-o1q"/>
+                                    <constraint firstItem="VQw-pV-mq2" firstAttribute="leading" secondItem="y2H-6E-olN" secondAttribute="leading" constant="14" id="w5v-Oq-2NN"/>
                                     <constraint firstItem="lC3-hD-B8s" firstAttribute="top" secondItem="JiA-dD-IsJ" secondAttribute="top" type="default" id="wv1-Gt-tk9"/>
-                                    <constraint firstItem="VQw-pV-mq2" firstAttribute="leading" secondItem="lC3-hD-B8s" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="zwg-R8-r8o"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yTh-Y6-Uvo">
@@ -494,6 +494,13 @@
         </scene>
     </scenes>
     <classes>
+        <class className="DTAttributedTextView" superclassName="UIScrollView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DTAttributedTextView.h"/>
+            <relationships>
+                <relationship kind="outlet" name="backgroundView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="textDelegate"/>
+            </relationships>
+        </class>
         <class className="DetailViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailViewController.h"/>
             <relationships>
