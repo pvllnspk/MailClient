@@ -8,7 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+@class GoogleMailAccount;
+
+// Delegate
+@protocol AddAccountDelegate <NSObject>
+@optional
+- (void)accountAdded:(GoogleMailAccount *)account;
+@end
+
 @interface AddAccountViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+
+@property (nonatomic, assign) id <AddAccountDelegate> delegate;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIView *topBar;

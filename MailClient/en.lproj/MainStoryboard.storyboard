@@ -223,7 +223,7 @@
                                             </attributedString>
                                         </state>
                                         <connections>
-                                            <segue destination="iUj-pA-HEp" kind="modal" modalPresentationStyle="formSheet" id="R3e-xL-eZw"/>
+                                            <segue destination="iUj-pA-HEp" kind="modal" identifier="toAddAccount" modalPresentationStyle="formSheet" id="R3e-xL-eZw"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -670,50 +670,6 @@
             <point key="canvasLocation" x="-687" y="-630"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="AddAccountViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddAccountViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="topBar" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="DTAttributedTextView" superclassName="UIScrollView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DTAttributedTextView.h"/>
-            <relationships>
-                <relationship kind="outlet" name="backgroundView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="textDelegate"/>
-            </relationships>
-        </class>
-        <class className="DetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="bodyTextView" candidateClass="DTAttributedTextView"/>
-                <relationship kind="outlet" name="bodyView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="fromLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="messagesTableView" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="rootView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
-                <relationship kind="outlet" name="subjectLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="toLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="topBarView" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="MCButton" superclassName="UIButton">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MCButton.h"/>
-        </class>
-        <class className="MasterViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MasterViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="topBarView" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

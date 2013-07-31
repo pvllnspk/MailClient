@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "MCTreeTableViewCell.h"
+#import "AddAccountViewController.h"
 
 @class DetailViewController;
 
-@interface MasterViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface MasterViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, AddAccountDelegate>
 
 @property (strong, nonatomic) DetailViewController *detailViewController;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;

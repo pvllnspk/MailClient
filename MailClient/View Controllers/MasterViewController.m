@@ -11,6 +11,7 @@
 #import "AppDelegate.h"
 #import "MCTreeTableViewCell.h"
 #import "MCTreeItem.h"
+#import "AddAccountViewController.h"
 
 #if 1 // Set to 1 to enable MasterViewController Logging
 #define MVCLog(x, ...) NSLog(x, ## __VA_ARGS__);
@@ -320,6 +321,19 @@
 	
 	if ([removeIndexPaths count])
 		[_tableView deleteRowsAtIndexPaths:removeIndexPaths withRowAnimation:UITableViewRowAnimationBottom];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:@"toAddAccount"]){
+        AddAccountViewController *addAccountViewController = segue.destinationViewController;
+        addAccountViewController.delegate = self;
+    }
+}
+
+-(void)accountAdded:(GoogleMailAccount *)account
+{
+    
 }
 
 @end

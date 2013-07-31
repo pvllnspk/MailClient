@@ -32,6 +32,7 @@
 		B3D479C517A70AE70067C957 /* create-email-nav-bar-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3D479C317A70AE50067C957 /* create-email-nav-bar-button@2x.png */; };
 		B3D479D517A70D470067C957 /* MCButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D479D417A70D470067C957 /* MCButton.m */; };
 		B3DA4FD217A998A700420453 /* AddAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DA4FD117A998A700420453 /* AddAccountViewController.m */; };
+		B3DA4FD517A9BD8E00420453 /* GoogleMailAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DA4FD417A9BD8E00420453 /* GoogleMailAccount.m */; };
 		B3EC9BCC17A6D0FC00F3C78B /* TITokenField.m in Sources */ = {isa = PBXBuildFile; fileRef = B3EC9BCA17A6D0FC00F3C78B /* TITokenField.m */; };
 		B3EF657D17A11C7E00369805 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EF657C17A11C7E00369805 /* UIKit.framework */; };
 		B3EF657F17A11C7E00369805 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EF657E17A11C7E00369805 /* Foundation.framework */; };
@@ -168,6 +169,8 @@
 		B3D479D417A70D470067C957 /* MCButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCButton.m; sourceTree = "<group>"; };
 		B3DA4FD017A998A700420453 /* AddAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddAccountViewController.h; sourceTree = "<group>"; };
 		B3DA4FD117A998A700420453 /* AddAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddAccountViewController.m; sourceTree = "<group>"; };
+		B3DA4FD317A9BD8E00420453 /* GoogleMailAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GoogleMailAccount.h; path = Model/GoogleMailAccount.h; sourceTree = "<group>"; };
+		B3DA4FD417A9BD8E00420453 /* GoogleMailAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GoogleMailAccount.m; path = Model/GoogleMailAccount.m; sourceTree = "<group>"; };
 		B3EC9BC917A6D0FC00F3C78B /* TITokenField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TITokenField.h; sourceTree = "<group>"; };
 		B3EC9BCA17A6D0FC00F3C78B /* TITokenField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TITokenField.m; sourceTree = "<group>"; };
 		B3EF657917A11C7E00369805 /* MailClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MailClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -253,11 +256,13 @@
 			name = Assets;
 			sourceTree = "<group>";
 		};
-		B327FD2617A597EA00D3D29F /* Models */ = {
+		B327FD2617A597EA00D3D29F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B3DA4FD317A9BD8E00420453 /* GoogleMailAccount.h */,
+				B3DA4FD417A9BD8E00420453 /* GoogleMailAccount.m */,
 			);
-			name = Models;
+			name = Model;
 			sourceTree = "<group>";
 		};
 		B327FD2D17A59A6300D3D29F /* Misc */ = {
@@ -357,7 +362,7 @@
 				B3EF659917A11C7E00369805 /* MailClient.xcdatamodeld */,
 				B3EFA06317A5239100012134 /* Application */,
 				B3EFA06717A523B800012134 /* View Controllers */,
-				B327FD2617A597EA00D3D29F /* Models */,
+				B327FD2617A597EA00D3D29F /* Model */,
 				B3E7D6FF17A850F400C46AF8 /* Views */,
 				B3EFA05C17A522F000012134 /* Categories */,
 				B3EFA05817A5219800012134 /* MCTreeView */,
@@ -610,6 +615,7 @@
 				B3EC9BCC17A6D0FC00F3C78B /* TITokenField.m in Sources */,
 				B3D479D517A70D470067C957 /* MCButton.m in Sources */,
 				B3DA4FD217A998A700420453 /* AddAccountViewController.m in Sources */,
+				B3DA4FD517A9BD8E00420453 /* GoogleMailAccount.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
