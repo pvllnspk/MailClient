@@ -8,6 +8,7 @@
 
 #import "AddAccountViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import "TimeExecutionTracker.h"
 
 #define Labels [NSArray arrayWithObjects:@"Full Name:", @"Email Address:", @"Password:", nil]
 
@@ -129,6 +130,8 @@
         
         DLog(@"attempt to add an existing account with credentials [%@] and [%@]",_emailAddress.text, _password.text);
         
+        [TimeExecutionTracker startTrackingWithName:@"connection to an account"];
+        
         CTCoreAccount *account = [[CTCoreAccount alloc] init];
         BOOL success = [account connectToServer:@"imap.gmail.com"
                                            port:993
@@ -136,6 +139,8 @@
                                        authType:CTImapAuthTypePlain
                                           login:_emailAddress.text
                                        password:_password.text];
+        
+        [TimeExecutionTracker stopTrackingAndPrint];
         
         
         if (!success){
@@ -168,6 +173,15 @@
 }
 
 
+-(void)addingAccountFailed
+{
+    
+}
+
+-(void)addingAccountSuccessed
+{
+    
+}
 
 #pragma mark
 #pragma mark Panels Spinners
