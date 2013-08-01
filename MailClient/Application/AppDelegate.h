@@ -19,4 +19,6 @@
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
 
++(dispatch_queue_t) serialGlobalBackgroundQueue;
+
 @end

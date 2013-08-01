@@ -19,7 +19,15 @@
 
 @implementation GoogleMailAccount
 
-@synthesize fullName,emailAddress,password;
+-(id)initWithFullName:(NSString *)fullName emailAddress:(NSString *)emailAddress password:(NSString *)password
+{
+    if(self = [super init]){
+        _fullName = fullName;
+        _emailAddress = emailAddress;
+        _password = password;
+    }
+    return(self);
+}
 
 -(BOOL)connect
 {
@@ -28,8 +36,11 @@
                                        port:INCOMING_PORT
                              connectionType:INCOMING_CONNECTION_TYPE
                                    authType:INCOMING_AUTH_TYPE
-                                      login:emailAddress
-                                   password:password];
+                                      login:_emailAddress
+                                   password:_password];
+    
+    _connectionError = account.lastError;
+    
     return success;
 }
 

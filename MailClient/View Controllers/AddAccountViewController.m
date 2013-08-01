@@ -8,7 +8,9 @@
 
 #import "AddAccountViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import "GoogleMailAccount.h"
 #import "TimeExecutionTracker.h"
+#import "AppDelegate.h"
 
 #define Labels [NSArray arrayWithObjects:@"Full Name:", @"Email Address:", @"Password:", nil]
 
@@ -42,6 +44,7 @@
 
     
     [_topBar setBackgroundColor:[UIColor colorWithRed:1 green:0.976 blue:0.957 alpha:1]];
+
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -125,62 +128,58 @@
 {
     [self showSpinner];
     
-    dispatch_queue_t backgroundQueue = dispatch_queue_create("dispatch_queue_#3", 0);
-    dispatch_async(backgroundQueue, ^{
+    dispatch_async([AppDelegate serialGlobalBackgroundQueue], ^{
         
-        DLog(@"attempt to add an existing account with credentials [%@] and [%@]",_emailAddress.text, _password.text);
-        
+        DLog(@"attempt to add an existing account with the credentials [%@] and [%@]",_emailAddress.text, _password.text);
         [TimeExecutionTracker startTrackingWithName:@"connection to an account"];
         
-        CTCoreAccount *account = [[CTCoreAccount alloc] init];
-        BOOL success = [account connectToServer:@"imap.gmail.com"
-                                           port:993
-                                 connectionType:CTConnectionTypeTLS
-                                       authType:CTImapAuthTypePlain
-                                          login:_emailAddress.text
-                                       password:_password.text];
-        
+        GoogleMailAccount* googleAccount = [[GoogleMailAccount alloc]
+                                            initWithFullName:_fullName.text emailAddress:_emailAddress.text password:_password.text];
+        BOOL success = [googleAccount connect];
+
         [TimeExecutionTracker stopTrackingAndPrint];
-        
-        
-        if (!success){
-            DLog(@"Failed %@",account.lastError);
-        }
-        else{
-            DLog(@"Success");
-            
-//            NSSet *subscrubedFolders = [account subscribedFolders];
-//            _subscrubedFoldersArray = [subscrubedFolders allObjects];
-//            
-//            _mailfolders = [[NSMutableArray alloc]init];
-//            for(NSString *mailbox in _subscrubedFoldersArray){
-//                CTCoreFolder *folder = [account folderWithPath:mailbox];
-//                [_mailfolders addObject:folder];
-//            }
-        }
-        
-//        [self initTableViewTree];
         
         dispatch_async(dispatch_get_main_queue(), ^{
             
             [self hideSpinner];
-//            [self.tableView reloadData];
-            //            [[_tableView delegate] tableView:_tableView didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
             
+            if (success){
+                
+                DLog(@"Succes");
+                [self addingAccountSuccessed:googleAccount];
+            }
+            else{
+                
+                DLog(@"Failed %@",googleAccount.connectionError);
+                [self addingAccountFailed];
+            }
         });
     });
-
 }
 
+
+
+
+
+-(void)addingAccountSuccessed:(GoogleMailAccount*) googleAccount
+{
+    [_delegate accountAdded:googleAccount];
+    
+    
+}
 
 -(void)addingAccountFailed
 {
+    _emailAddress.text = @"";
+    _password.text = @"";
     
-}
-
--(void)addingAccountSuccessed
-{
-    
+    CABasicAnimation *movingAnimation =[CABasicAnimation animationWithKeyPath:@"transform.translation.x"];
+    [movingAnimation setDuration:0.2];
+    [movingAnimation setRepeatCount:1];
+    [movingAnimation setAutoreverses:YES];
+    [movingAnimation setFromValue:[NSNumber numberWithFloat:-5]];
+    [movingAnimation setToValue:[NSNumber numberWithFloat:5]];
+    [self.view.layer addAnimation:movingAnimation forKey:@"animateLayer"];
 }
 
 #pragma mark

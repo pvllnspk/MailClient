@@ -125,4 +125,14 @@
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
 
++(dispatch_queue_t) serialGlobalBackgroundQueue
+{
+    static dispatch_once_t queueCreationGuard;
+    static dispatch_queue_t queue;
+    dispatch_once(&queueCreationGuard, ^{
+        queue = dispatch_queue_create("serialGlobalBackgroundQueue_#1", 0);
+    });
+    return queue;
+}
+
 @end

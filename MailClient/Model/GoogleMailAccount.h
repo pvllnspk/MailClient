@@ -14,6 +14,9 @@
 @property(nonatomic,copy) NSString *emailAddress;
 @property(nonatomic,copy) NSString *password;
 
+@property(nonatomic, retain) NSError *connectionError;
+
+-(id)initWithFullName:(NSString*)fullName emailAddress:(NSString*)emailAddress password:(NSString*)password;
 //sync
 -(BOOL) connect;
 
