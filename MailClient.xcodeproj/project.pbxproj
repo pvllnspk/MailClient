@@ -174,6 +174,7 @@
 		B3DA4FD417A9BD8E00420453 /* GoogleMailAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GoogleMailAccount.m; path = Model/GoogleMailAccount.m; sourceTree = "<group>"; };
 		B3DC2B6317AABD44003F0802 /* TimeExecutionTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimeExecutionTracker.h; path = Misc/TimeExecutionTracker.h; sourceTree = "<group>"; };
 		B3DC2B6417AABD44003F0802 /* TimeExecutionTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TimeExecutionTracker.m; path = Misc/TimeExecutionTracker.m; sourceTree = "<group>"; };
+		B3DC2B7117AAE7BA003F0802 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = Misc/Constants.h; sourceTree = "<group>"; };
 		B3EC9BC917A6D0FC00F3C78B /* TITokenField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TITokenField.h; sourceTree = "<group>"; };
 		B3EC9BCA17A6D0FC00F3C78B /* TITokenField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TITokenField.m; sourceTree = "<group>"; };
 		B3EF657917A11C7E00369805 /* MailClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MailClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -275,6 +276,7 @@
 				B327FD2F17A59A9500D3D29F /* MCController.m */,
 				B3DC2B6317AABD44003F0802 /* TimeExecutionTracker.h */,
 				B3DC2B6417AABD44003F0802 /* TimeExecutionTracker.m */,
+				B3DC2B7117AAE7BA003F0802 /* Constants.h */,
 			);
 			name = Misc;
 			sourceTree = "<group>";
@@ -291,6 +293,15 @@
 				B32E63DB17A2EAC3004236A0 /* DTCoreText.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		B3DC2B7017AAE671003F0802 /* Add Account */ = {
+			isa = PBXGroup;
+			children = (
+				B3DA4FD017A998A700420453 /* AddAccountViewController.h */,
+				B3DA4FD117A998A700420453 /* AddAccountViewController.m */,
+			);
+			name = "Add Account";
 			sourceTree = "<group>";
 		};
 		B3E7D6FF17A850F400C46AF8 /* Views */ = {
@@ -438,8 +449,7 @@
 				B3EFA06B17A523B800012134 /* MasterViewController.m */,
 				B3EFA06817A523B800012134 /* DetailViewController.h */,
 				B3EFA06917A523B800012134 /* DetailViewController.m */,
-				B3DA4FD017A998A700420453 /* AddAccountViewController.h */,
-				B3DA4FD117A998A700420453 /* AddAccountViewController.m */,
+				B3DC2B7017AAE671003F0802 /* Add Account */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";

@@ -9,15 +9,8 @@
 #import "AddAccountViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "GoogleMailAccount.h"
-#import "TimeExecutionTracker.h"
-#import "AppDelegate.h"
 
-#define Labels [NSArray arrayWithObjects:@"Full Name:", @"Email Address:", @"Password:", nil]
-
-#define MCCOLOR_TITLE [UIColor colorWithRed:0.4 green:0.357 blue:0.325 alpha:1] /*#665b53*/
-#define MCCOLOR_TITLE_SHADOW [UIColor colorWithRed:1 green:1 blue:1 alpha:1] /*#ffffff*/
-#define MCFONT_TITLE [UIFont fontWithName:@"HelveticaNeue" size:22.0f]
-
+#define LABELS [NSArray arrayWithObjects:@"Full Name:", @"Email Address:", @"Password:", nil]
 
 @implementation AddAccountViewController
 {
@@ -28,24 +21,29 @@
     UIActivityIndicatorView *_spinner;
 }
 
+
+#pragma mark
+#pragma mark View
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
     [self initSpinner];
-
-    _tableView.dataSource = self;
-    _tableView.delegate =self;    
-	[_tableView setBackgroundColor:[UIColor colorWithRed:1 green:0.976 blue:0.957 alpha:1] /*#fff9f4*/];
-    [self.view setBackgroundColor:[UIColor colorWithRed:1 green:0.976 blue:0.957 alpha:1] /*#fff9f4*/];
     
+    [self.view setBackgroundColor:[UIColor colorWithRed:1 green:0.976 blue:0.957 alpha:1] /*#fff9f4*/];
+    [_topBar setBackgroundColor:[UIColor colorWithRed:1 green:0.976 blue:0.957 alpha:1]/*#fff9f4*/];
+    
+    [_tableView setDataSource:self];
+    [_tableView setDelegate:self]; 
+	[_tableView setBackgroundColor:[UIColor colorWithRed:1 green:0.976 blue:0.957 alpha:1] /*#fff9f4*/];
     [_tableView setBackgroundView:nil];
     [_tableView setBackgroundView:[[UIView alloc] init]];
-
-    
-    [_topBar setBackgroundColor:[UIColor colorWithRed:1 green:0.976 blue:0.957 alpha:1]];
-
 }
+
+
+#pragma mark
+#pragma mark TableView
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -65,7 +63,7 @@
         }
         
         UILabel *leftText = (UILabel *)[cell viewWithTag:101];
-         leftText.text = [Labels objectAtIndex:indexPath.row];
+         leftText.text = [LABELS objectAtIndex:indexPath.row];
 		[leftText setFont:MCFONT_TITLE];
 		[leftText setTextColor:MCCOLOR_TITLE];
 		[leftText.layer setShadowColor:MCCOLOR_TITLE_SHADOW.CGColor];
@@ -85,7 +83,7 @@
         }
         
         UILabel *leftText = (UILabel *)[cell viewWithTag:101];
-         leftText.text = [Labels objectAtIndex:indexPath.row];
+         leftText.text = [LABELS objectAtIndex:indexPath.row];
         [leftText setFont:MCFONT_TITLE];
 		[leftText setTextColor:MCCOLOR_TITLE];
 		[leftText.layer setShadowColor:MCCOLOR_TITLE_SHADOW.CGColor];
@@ -108,7 +106,7 @@
         }
         
         UILabel *leftText = (UILabel *)[cell viewWithTag:101];
-        leftText.text = [Labels objectAtIndex:indexPath.row];
+        leftText.text = [LABELS objectAtIndex:indexPath.row];
         [leftText setFont:MCFONT_TITLE];
 		[leftText setTextColor:MCCOLOR_TITLE];
 		[leftText.layer setShadowColor:MCCOLOR_TITLE_SHADOW.CGColor];
@@ -118,6 +116,10 @@
         return cell;
     }
 }
+
+
+#pragma mark
+#pragma mark UI Callbacks
 
 - (IBAction)cancel:(id)sender
 {
@@ -158,14 +160,13 @@
 }
 
 
-
-
+#pragma mark
+#pragma mark Adding Account
 
 -(void)addingAccountSuccessed:(GoogleMailAccount*) googleAccount
 {
     [_delegate accountAdded:googleAccount];
-    
-    
+    [self cancel:nil];
 }
 
 -(void)addingAccountFailed
@@ -182,8 +183,9 @@
     [self.view.layer addAnimation:movingAnimation forKey:@"animateLayer"];
 }
 
+
 #pragma mark
-#pragma mark Panels Spinners
+#pragma mark Spinner
 
 -(void) initSpinner
 {
