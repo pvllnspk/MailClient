@@ -18,6 +18,9 @@
 #define OUTGOING_CONNECTION_TYPE CTSMTPConnectionTypeStartTLS
 
 @implementation GoogleMailAccount
+{
+    CTCoreAccount *_account;
+}
 
 -(id)initWithFullName:(NSString *)fullName emailAddress:(NSString *)emailAddress password:(NSString *)password
 {
@@ -31,17 +34,23 @@
 
 -(BOOL)connect
 {
-    CTCoreAccount *account = [[CTCoreAccount alloc] init];
-    BOOL success = [account connectToServer:INCOMING_SERVER_REMOTE_FOLDERS
+    _account = [[CTCoreAccount alloc] init];
+    BOOL success = [_account connectToServer:INCOMING_SERVER_REMOTE_FOLDERS
                                        port:INCOMING_PORT
                              connectionType:INCOMING_CONNECTION_TYPE
                                    authType:INCOMING_AUTH_TYPE
                                       login:_emailAddress
                                    password:_password];
     
-    _connectionError = account.lastError;
+    _connectionError = _account.lastError;
     
     return success;
+}
+
+-(NSArray*)subscribedFolders
+{
+    NSSet *subFolders = [_account subscribedFolders];
+    return [subFolders allObjects];
 }
 
 @end

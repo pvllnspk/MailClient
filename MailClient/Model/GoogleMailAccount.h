@@ -17,7 +17,7 @@
 @property(nonatomic, retain) NSError *connectionError;
 
 -(id)initWithFullName:(NSString*)fullName emailAddress:(NSString*)emailAddress password:(NSString*)password;
-//sync
 -(BOOL) connect;
+-(NSArray*)subscribedFolders;
 
 @end
