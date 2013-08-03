@@ -152,14 +152,14 @@
 	
 	for (NSInteger i = 0; i < [_tableView numberOfRowsInSection:0]; ++i) {
 		NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
-		MCTreeTableViewCell *cell = (MCTreeTableViewCell *)[_tableView cellForRowAtIndexPath:indexPath];
         
+        MCTreeItem *treeNode = [_displayedTreeItems objectAtIndex:i];
 		for (MCTreeItem *tmpTreeItem in treeItemsToRemove) {
-			if ([cell.treeItem isEqualToSelectingItem:tmpTreeItem])
+			if ([treeNode isEqualToSelectingItem:tmpTreeItem])
 				[result addObject:indexPath];
 		}
 	}
-	return result;
+	return result;  
 }
 
 - (void)tableViewAction:(UITableView *)tableView withIndexPath:(NSIndexPath *)indexPath
@@ -208,27 +208,27 @@
 			}
 		}
 		
-		for (MCTreeItem *tmp2TreeItem in treeItemsToRemove) {
-			[_displayedTreeItems removeObject:tmp2TreeItem];
-			
-			for (MCTreeItem *tmp3TreeItem in selectedTreeItems) {
-				if ([tmp3TreeItem isEqualToSelectingItem:tmp2TreeItem]) {
-					NSLog(@"%@", tmp3TreeItem.base);
-					[selectedTreeItems removeObject:tmp2TreeItem];
-					break;
-				}
-			}
-		}
 		
 		if (!contains) {
 			[tmpTreeItem setSubmersionLevel:tmpTreeItem.submersionLevel];
-			
 			[_displayedTreeItems insertObject:tmpTreeItem atIndex:insertTreeItemIndex];
 			
 			NSIndexPath *indexPth = [NSIndexPath indexPathForRow:insertTreeItemIndex inSection:0];
 			[insertIndexPaths addObject:indexPth];
 		}
 	}
+    
+    for (MCTreeItem *tmp2TreeItem in treeItemsToRemove) {
+        [_displayedTreeItems removeObject:tmp2TreeItem];
+        
+        for (MCTreeItem *tmp3TreeItem in selectedTreeItems) {
+            if ([tmp3TreeItem isEqualToSelectingItem:tmp2TreeItem]) {
+                NSLog(@"%@", tmp3TreeItem.base);
+                [selectedTreeItems removeObject:tmp2TreeItem];
+                break;
+            }
+        }
+    }
 	
 	if ([insertIndexPaths count])
 		[_tableView insertRowsAtIndexPaths:insertIndexPaths withRowAnimation:UITableViewRowAnimationBottom];

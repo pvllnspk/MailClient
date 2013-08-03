@@ -14,7 +14,6 @@
 		B327FD1517A53CD300D3D29F /* item-icon-folder-selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B327FD0E17A53CD300D3D29F /* item-icon-folder-selected@2x.png */; };
 		B327FD1617A53CD300D3D29F /* item-icon-folder.png in Resources */ = {isa = PBXBuildFile; fileRef = B327FD0F17A53CD300D3D29F /* item-icon-folder.png */; };
 		B327FD1717A53CD300D3D29F /* item-icon-folder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B327FD1017A53CD300D3D29F /* item-icon-folder@2x.png */; };
-		B327FD1A17A5702800D3D29F /* MCTreeItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B327FD1917A5702800D3D29F /* MCTreeItem.m */; };
 		B327FD1D17A570DA00D3D29F /* MCTreeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B327FD1C17A570DA00D3D29F /* MCTreeTableViewCell.m */; };
 		B327FD2017A5730400D3D29F /* mail_open.png in Resources */ = {isa = PBXBuildFile; fileRef = B327FD1E17A5730300D3D29F /* mail_open.png */; };
 		B327FD2117A5730400D3D29F /* mail.png in Resources */ = {isa = PBXBuildFile; fileRef = B327FD1F17A5730300D3D29F /* mail.png */; };
@@ -34,6 +33,7 @@
 		B3DA4FD217A998A700420453 /* AddAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DA4FD117A998A700420453 /* AddAccountViewController.m */; };
 		B3DA4FD517A9BD8E00420453 /* GoogleMailAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DA4FD417A9BD8E00420453 /* GoogleMailAccount.m */; };
 		B3DC2B6517AABD44003F0802 /* TimeExecutionTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DC2B6417AABD44003F0802 /* TimeExecutionTracker.m */; };
+		B3DC9A1117AD2ADF0090D198 /* MCTreeItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DC9A1017AD2ADF0090D198 /* MCTreeItem.m */; };
 		B3EC9BCC17A6D0FC00F3C78B /* TITokenField.m in Sources */ = {isa = PBXBuildFile; fileRef = B3EC9BCA17A6D0FC00F3C78B /* TITokenField.m */; };
 		B3EF657D17A11C7E00369805 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EF657C17A11C7E00369805 /* UIKit.framework */; };
 		B3EF657F17A11C7E00369805 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EF657E17A11C7E00369805 /* Foundation.framework */; };
@@ -147,8 +147,6 @@
 		B327FD0E17A53CD300D3D29F /* item-icon-folder-selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "item-icon-folder-selected@2x.png"; sourceTree = "<group>"; };
 		B327FD0F17A53CD300D3D29F /* item-icon-folder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "item-icon-folder.png"; sourceTree = "<group>"; };
 		B327FD1017A53CD300D3D29F /* item-icon-folder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "item-icon-folder@2x.png"; sourceTree = "<group>"; };
-		B327FD1817A5702800D3D29F /* MCTreeItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCTreeItem.h; path = MCTreeView/MCTreeItem.h; sourceTree = "<group>"; };
-		B327FD1917A5702800D3D29F /* MCTreeItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCTreeItem.m; path = MCTreeView/MCTreeItem.m; sourceTree = "<group>"; };
 		B327FD1B17A570DA00D3D29F /* MCTreeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCTreeTableViewCell.h; path = MCTreeView/MCTreeTableViewCell.h; sourceTree = "<group>"; };
 		B327FD1C17A570DA00D3D29F /* MCTreeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCTreeTableViewCell.m; path = MCTreeView/MCTreeTableViewCell.m; sourceTree = "<group>"; };
 		B327FD1E17A5730300D3D29F /* mail_open.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mail_open.png; sourceTree = "<group>"; };
@@ -175,6 +173,8 @@
 		B3DC2B6317AABD44003F0802 /* TimeExecutionTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimeExecutionTracker.h; path = Misc/TimeExecutionTracker.h; sourceTree = "<group>"; };
 		B3DC2B6417AABD44003F0802 /* TimeExecutionTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TimeExecutionTracker.m; path = Misc/TimeExecutionTracker.m; sourceTree = "<group>"; };
 		B3DC2B7117AAE7BA003F0802 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = Misc/Constants.h; sourceTree = "<group>"; };
+		B3DC9A0F17AD2ADF0090D198 /* MCTreeItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCTreeItem.h; path = MCTreeView/MCTreeItem.h; sourceTree = "<group>"; };
+		B3DC9A1017AD2ADF0090D198 /* MCTreeItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCTreeItem.m; path = MCTreeView/MCTreeItem.m; sourceTree = "<group>"; };
 		B3EC9BC917A6D0FC00F3C78B /* TITokenField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TITokenField.h; sourceTree = "<group>"; };
 		B3EC9BCA17A6D0FC00F3C78B /* TITokenField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TITokenField.m; sourceTree = "<group>"; };
 		B3EF657917A11C7E00369805 /* MailClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MailClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -414,8 +414,8 @@
 		B3EFA05817A5219800012134 /* MCTreeView */ = {
 			isa = PBXGroup;
 			children = (
-				B327FD1817A5702800D3D29F /* MCTreeItem.h */,
-				B327FD1917A5702800D3D29F /* MCTreeItem.m */,
+				B3DC9A0F17AD2ADF0090D198 /* MCTreeItem.h */,
+				B3DC9A1017AD2ADF0090D198 /* MCTreeItem.m */,
 				B327FD1B17A570DA00D3D29F /* MCTreeTableViewCell.h */,
 				B327FD1C17A570DA00D3D29F /* MCTreeTableViewCell.m */,
 			);
@@ -624,7 +624,6 @@
 				B3EFA06617A5239100012134 /* AppDelegate.m in Sources */,
 				B3EFA06C17A523B800012134 /* DetailViewController.m in Sources */,
 				B3EFA06D17A523B800012134 /* MasterViewController.m in Sources */,
-				B327FD1A17A5702800D3D29F /* MCTreeItem.m in Sources */,
 				B327FD1D17A570DA00D3D29F /* MCTreeTableViewCell.m in Sources */,
 				B327FD3017A59A9500D3D29F /* MCController.m in Sources */,
 				B3EC9BCC17A6D0FC00F3C78B /* TITokenField.m in Sources */,
@@ -632,6 +631,7 @@
 				B3DA4FD217A998A700420453 /* AddAccountViewController.m in Sources */,
 				B3DA4FD517A9BD8E00420453 /* GoogleMailAccount.m in Sources */,
 				B3DC2B6517AABD44003F0802 /* TimeExecutionTracker.m in Sources */,
+				B3DC9A1117AD2ADF0090D198 /* MCTreeItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
