@@ -53,4 +53,9 @@
     return [subFolders allObjects];
 }
 
+- (CTCoreFolder *)folderWithPath:(NSString *)path
+{
+    return [[CTCoreFolder alloc] initWithPath:path inAccount:_account];
+}
+
 @end

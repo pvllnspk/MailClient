@@ -6,9 +6,4 @@
 //  Copyright (c) 2013 pvllnspk. All rights reserved.
 //
 
-#ifndef MailClient_AppConfig_h
-#define MailClient_AppConfig_h
-
-
-
-#endif
+#define LOAD_TEST_ACCOUNT_AT_START 1

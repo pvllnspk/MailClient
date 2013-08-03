@@ -45,7 +45,10 @@
     
     [self initSpinner];
     
-    [self loadTestAccount];
+    
+    if(LOAD_TEST_ACCOUNT_AT_START){
+        [self loadTestAccount];
+    }
 }
 
 -(void) loadTestAccount
@@ -164,7 +167,17 @@
 
 - (void)tableViewAction:(UITableView *)tableView withIndexPath:(NSIndexPath *)indexPath
 {
-	[self.detailViewController setFolder:[_displayedTreeItems objectAtIndex:(indexPath.row)-1]];
+    MCTreeItem *treeItem = [_displayedTreeItems objectAtIndex:indexPath.row];
+    
+    for(GoogleMailAccount * account in _accounts){
+        if([account.emailAddress isEqualToString:[treeItem.path stringByReplacingOccurrencesOfString:@"/" withString:@""]]){
+            
+            CTCoreFolder *folder = [account folderWithPath:treeItem.base];
+            [self.detailViewController setFolder:folder];
+            return;
+            
+        }
+    }
 }
 
 
@@ -247,10 +260,22 @@
 
 -(void)accountAdded:(GoogleMailAccount *)account
 {
-    [_accounts addObject:account];
-    [_subFolders setObject:[account subscribedFolders] forKey:account.emailAddress];
+    BOOL alreadyAdded = FALSE;
     
-    [self refreshTableViewTree];
+    for(GoogleMailAccount *existAccount in _accounts){
+        if([existAccount.emailAddress isEqualToString:account.emailAddress]){
+            alreadyAdded = TRUE;
+            break;
+        }
+    }
+    
+    if(!alreadyAdded){
+        
+        [_accounts addObject:account];
+        [_subFolders setObject:[account subscribedFolders] forKey:account.emailAddress];
+        
+        [self refreshTableViewTree];
+    }
 }
 
 -(void) refreshTableViewTree

@@ -19,5 +19,6 @@
 -(id)initWithFullName:(NSString*)fullName emailAddress:(NSString*)emailAddress password:(NSString*)password;
 -(BOOL) connect;
 -(NSArray*)subscribedFolders;
+- (CTCoreFolder *)folderWithPath:(NSString *)path;
 
 @end

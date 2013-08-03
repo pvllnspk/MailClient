@@ -175,6 +175,7 @@
 		B3DC2B7117AAE7BA003F0802 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = Misc/Constants.h; sourceTree = "<group>"; };
 		B3DC9A0F17AD2ADF0090D198 /* MCTreeItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCTreeItem.h; path = MCTreeView/MCTreeItem.h; sourceTree = "<group>"; };
 		B3DC9A1017AD2ADF0090D198 /* MCTreeItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCTreeItem.m; path = MCTreeView/MCTreeItem.m; sourceTree = "<group>"; };
+		B3DC9A1C17AD39ED0090D198 /* AppConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppConfig.h; sourceTree = "<group>"; };
 		B3EC9BC917A6D0FC00F3C78B /* TITokenField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TITokenField.h; sourceTree = "<group>"; };
 		B3EC9BCA17A6D0FC00F3C78B /* TITokenField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TITokenField.m; sourceTree = "<group>"; };
 		B3EF657917A11C7E00369805 /* MailClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MailClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -436,6 +437,7 @@
 		B3EFA06317A5239100012134 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				B3DC9A1C17AD39ED0090D198 /* AppConfig.h */,
 				B3EFA06417A5239100012134 /* AppDelegate.h */,
 				B3EFA06517A5239100012134 /* AppDelegate.m */,
 			);
