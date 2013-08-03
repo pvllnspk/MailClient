@@ -178,10 +178,10 @@
             </objects>
             <point key="canvasLocation" x="-148" y="-1422"/>
         </scene>
-        <!--Master View Controller-->
+        <!--Accounts View Controller-->
         <scene sceneID="cla-2o-QzX">
             <objects>
-                <viewController id="51u-lv-AV3" customClass="MasterViewController" sceneMemberID="viewController">
+                <viewController id="51u-lv-AV3" customClass="AccountsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Z7Q-xS-5RY">
                         <rect key="frame" x="0.0" y="20" width="320" height="748"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -263,10 +263,10 @@
             </objects>
             <point key="canvasLocation" x="610" y="-920"/>
         </scene>
-        <!--Detail View Controller - Detail-->
+        <!--Folders View Controller - Detail-->
         <scene sceneID="16">
             <objects>
-                <viewController storyboardIdentifier="" title="Detail" id="4" customClass="DetailViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="" title="Detail" id="4" customClass="FoldersViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="26">
                         <rect key="frame" x="0.0" y="20" width="703" height="748"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

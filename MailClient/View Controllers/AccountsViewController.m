@@ -6,15 +6,16 @@
 //  Copyright (c) 2013 pvllnspk. All rights reserved.
 //
 
-#import "MasterViewController.h"
-#import "DetailViewController.h"
+#import "AccountsViewController.h"
+#import "FoldersViewController.h"
 #import "MCTreeTableViewCell.h"
 #import "MCTreeItem.h"
 #import "AddAccountViewController.h"
 #import "GoogleMailAccount.h"
+#import "PopoverViewController.h"
 
 
-@implementation MasterViewController
+@implementation AccountsViewController
 {
     UIActivityIndicatorView *_spinner;
     
@@ -25,6 +26,8 @@
     NSMutableDictionary* _subFoldersTreeItems;
     
     NSMutableArray* _displayedTreeItems;
+    
+    UIPopoverController *_popoverController;
 }
 
 - (void)viewDidLoad
@@ -45,8 +48,15 @@
     
     [self initSpinner];
     
+    UILongPressGestureRecognizer *longPressGestureRecognizer = [[UILongPressGestureRecognizer alloc]
+                                                                initWithTarget:self action:@selector(tableViewLongPress:)];
+    
+    longPressGestureRecognizer.minimumPressDuration = 1.5;
+    longPressGestureRecognizer.delegate = self;
+    [_tableView addGestureRecognizer:longPressGestureRecognizer];
     
     if(LOAD_TEST_ACCOUNT_AT_START){
+        
         [self loadTestAccount];
     }
 }
@@ -325,5 +335,29 @@
 	}
 }
 
+-(void)tableViewLongPress:(UILongPressGestureRecognizer *)gestureRecognizer
+{
+    if (gestureRecognizer.state == UIGestureRecognizerStateBegan){
+        
+        CGPoint point = [gestureRecognizer locationInView:_tableView];
+        NSIndexPath *indexPath = [_tableView indexPathForRowAtPoint:point];
+        
+        if (indexPath){
+            
+            MCTreeTableViewCell *cell = (MCTreeTableViewCell *)[_tableView cellForRowAtIndexPath:indexPath];
+            
+            if([cell.treeItem.path isEqualToString:@"/"]){
+                
+                PopoverViewController *popoverViewController = [[PopoverViewController alloc]init];
+                
+                CGRect cellFrame = [self.tableView convertRect:[self.tableView rectForRowAtIndexPath:indexPath] toView:[self.tableView superview]];
+                cellFrame.size.height = cell.frame.size.height/2;
+                _popoverController = [[UIPopoverController alloc] initWithContentViewController:popoverViewController];
+                [_popoverController presentPopoverFromRect:cellFrame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+                
+            }
+        }
+    }
+}
 
 @end

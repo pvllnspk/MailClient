@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 pvllnspk. All rights reserved.
 //
 
-#import "DetailViewController.h"
+#import "FoldersViewController.h"
 #import "NSSet+Additions.h"
 #import "NSString+Additions.h"
 
@@ -17,7 +17,7 @@
 #define DVCLog(x, ...)
 #endif
 
-@interface DetailViewController()
+@interface FoldersViewController()
 
 @property (weak, nonatomic) IBOutlet UIView *topBarView;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
@@ -36,7 +36,7 @@
 
 @end;
 
-@implementation DetailViewController
+@implementation FoldersViewController
 {
     CTCoreFolder *_folder;
    

@@ -10,11 +10,11 @@
 #import "MCTreeTableViewCell.h"
 #import "AddAccountViewController.h"
 
-@class DetailViewController;
+@class FoldersViewController;
 
-@interface MasterViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, AddAccountDelegate>
+@interface AccountsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, AddAccountDelegate ,UIGestureRecognizerDelegate>
 
-@property (strong, nonatomic) DetailViewController *detailViewController;
+@property (strong, nonatomic) FoldersViewController *detailViewController;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIView *topBarView;
 

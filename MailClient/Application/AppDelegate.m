@@ -7,8 +7,8 @@
 //
 
 #import "AppDelegate.h"
-#import "MasterViewController.h"
-#import "DetailViewController.h"
+#import "AccountsViewController.h"
+#import "FoldersViewController.h"
 
 @implementation AppDelegate
 
@@ -19,10 +19,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
-    DetailViewController * detailViewController = [splitViewController.viewControllers lastObject];
+    FoldersViewController * detailViewController = [splitViewController.viewControllers lastObject];
     splitViewController.delegate = (id)detailViewController;
     
-    MasterViewController * masterViewController = splitViewController.viewControllers[0];
+    AccountsViewController * masterViewController = splitViewController.viewControllers[0];
     [masterViewController setDetailViewController:detailViewController];
     // detailViewController.managedObjectContext = self.managedObjectContext;
     return YES;

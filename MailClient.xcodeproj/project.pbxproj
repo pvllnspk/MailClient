@@ -34,6 +34,7 @@
 		B3DA4FD517A9BD8E00420453 /* GoogleMailAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DA4FD417A9BD8E00420453 /* GoogleMailAccount.m */; };
 		B3DC2B6517AABD44003F0802 /* TimeExecutionTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DC2B6417AABD44003F0802 /* TimeExecutionTracker.m */; };
 		B3DC9A1117AD2ADF0090D198 /* MCTreeItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DC9A1017AD2ADF0090D198 /* MCTreeItem.m */; };
+		B3DC9A2817ADACA10090D198 /* PopoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DC9A2717ADACA10090D198 /* PopoverViewController.m */; };
 		B3EC9BCC17A6D0FC00F3C78B /* TITokenField.m in Sources */ = {isa = PBXBuildFile; fileRef = B3EC9BCA17A6D0FC00F3C78B /* TITokenField.m */; };
 		B3EF657D17A11C7E00369805 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EF657C17A11C7E00369805 /* UIKit.framework */; };
 		B3EF657F17A11C7E00369805 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EF657E17A11C7E00369805 /* Foundation.framework */; };
@@ -55,8 +56,8 @@
 		B3EFA06117A522F000012134 /* NSSet+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B3EFA05E17A522F000012134 /* NSSet+Additions.m */; };
 		B3EFA06217A522F000012134 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B3EFA06017A522F000012134 /* NSString+Additions.m */; };
 		B3EFA06617A5239100012134 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B3EFA06517A5239100012134 /* AppDelegate.m */; };
-		B3EFA06C17A523B800012134 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3EFA06917A523B800012134 /* DetailViewController.m */; };
-		B3EFA06D17A523B800012134 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3EFA06B17A523B800012134 /* MasterViewController.m */; };
+		B3EFA06C17A523B800012134 /* FoldersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3EFA06917A523B800012134 /* FoldersViewController.m */; };
+		B3EFA06D17A523B800012134 /* AccountsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3EFA06B17A523B800012134 /* AccountsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -176,6 +177,8 @@
 		B3DC9A0F17AD2ADF0090D198 /* MCTreeItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCTreeItem.h; path = MCTreeView/MCTreeItem.h; sourceTree = "<group>"; };
 		B3DC9A1017AD2ADF0090D198 /* MCTreeItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCTreeItem.m; path = MCTreeView/MCTreeItem.m; sourceTree = "<group>"; };
 		B3DC9A1C17AD39ED0090D198 /* AppConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppConfig.h; sourceTree = "<group>"; };
+		B3DC9A2617ADACA10090D198 /* PopoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopoverViewController.h; sourceTree = "<group>"; };
+		B3DC9A2717ADACA10090D198 /* PopoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopoverViewController.m; sourceTree = "<group>"; };
 		B3EC9BC917A6D0FC00F3C78B /* TITokenField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TITokenField.h; sourceTree = "<group>"; };
 		B3EC9BCA17A6D0FC00F3C78B /* TITokenField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TITokenField.m; sourceTree = "<group>"; };
 		B3EF657917A11C7E00369805 /* MailClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MailClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -204,10 +207,10 @@
 		B3EFA06017A522F000012134 /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
 		B3EFA06417A5239100012134 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B3EFA06517A5239100012134 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		B3EFA06817A523B800012134 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		B3EFA06917A523B800012134 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
-		B3EFA06A17A523B800012134 /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
-		B3EFA06B17A523B800012134 /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		B3EFA06817A523B800012134 /* FoldersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoldersViewController.h; sourceTree = "<group>"; };
+		B3EFA06917A523B800012134 /* FoldersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoldersViewController.m; sourceTree = "<group>"; };
+		B3EFA06A17A523B800012134 /* AccountsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountsViewController.h; sourceTree = "<group>"; };
+		B3EFA06B17A523B800012134 /* AccountsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -303,6 +306,33 @@
 				B3DA4FD117A998A700420453 /* AddAccountViewController.m */,
 			);
 			name = "Add Account";
+			sourceTree = "<group>";
+		};
+		B3DC9A1D17ADA5740090D198 /* Accounts */ = {
+			isa = PBXGroup;
+			children = (
+				B3EFA06A17A523B800012134 /* AccountsViewController.h */,
+				B3EFA06B17A523B800012134 /* AccountsViewController.m */,
+			);
+			name = Accounts;
+			sourceTree = "<group>";
+		};
+		B3DC9A1E17ADA59D0090D198 /* Folders */ = {
+			isa = PBXGroup;
+			children = (
+				B3EFA06817A523B800012134 /* FoldersViewController.h */,
+				B3EFA06917A523B800012134 /* FoldersViewController.m */,
+			);
+			name = Folders;
+			sourceTree = "<group>";
+		};
+		B3DC9A1F17ADABD70090D198 /* Popover */ = {
+			isa = PBXGroup;
+			children = (
+				B3DC9A2617ADACA10090D198 /* PopoverViewController.h */,
+				B3DC9A2717ADACA10090D198 /* PopoverViewController.m */,
+			);
+			name = Popover;
 			sourceTree = "<group>";
 		};
 		B3E7D6FF17A850F400C46AF8 /* Views */ = {
@@ -447,11 +477,10 @@
 		B3EFA06717A523B800012134 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				B3EFA06A17A523B800012134 /* MasterViewController.h */,
-				B3EFA06B17A523B800012134 /* MasterViewController.m */,
-				B3EFA06817A523B800012134 /* DetailViewController.h */,
-				B3EFA06917A523B800012134 /* DetailViewController.m */,
+				B3DC9A1D17ADA5740090D198 /* Accounts */,
+				B3DC9A1E17ADA59D0090D198 /* Folders */,
 				B3DC2B7017AAE671003F0802 /* Add Account */,
+				B3DC9A1F17ADABD70090D198 /* Popover */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -624,8 +653,8 @@
 				B3EFA06117A522F000012134 /* NSSet+Additions.m in Sources */,
 				B3EFA06217A522F000012134 /* NSString+Additions.m in Sources */,
 				B3EFA06617A5239100012134 /* AppDelegate.m in Sources */,
-				B3EFA06C17A523B800012134 /* DetailViewController.m in Sources */,
-				B3EFA06D17A523B800012134 /* MasterViewController.m in Sources */,
+				B3EFA06C17A523B800012134 /* FoldersViewController.m in Sources */,
+				B3EFA06D17A523B800012134 /* AccountsViewController.m in Sources */,
 				B327FD1D17A570DA00D3D29F /* MCTreeTableViewCell.m in Sources */,
 				B327FD3017A59A9500D3D29F /* MCController.m in Sources */,
 				B3EC9BCC17A6D0FC00F3C78B /* TITokenField.m in Sources */,
@@ -634,6 +663,7 @@
 				B3DA4FD517A9BD8E00420453 /* GoogleMailAccount.m in Sources */,
 				B3DC2B6517AABD44003F0802 /* TimeExecutionTracker.m in Sources */,
 				B3DC9A1117AD2ADF0090D198 /* MCTreeItem.m in Sources */,
+				B3DC9A2817ADACA10090D198 /* PopoverViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
