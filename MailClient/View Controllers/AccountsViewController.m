@@ -291,11 +291,11 @@
 
 -(void)accountDeleted:(GoogleMailAccount *)account
 {
-    DLog(@" %d   %@ ",[_accounts count], account.emailAddress)
-    
     [_accounts removeObject:account];
     [_subFolders removeObjectForKey:account.emailAddress];
     [self refreshTableViewTree];
+    
+    [_popoverController dismissPopoverAnimated:YES];
 }
 
 -(void) refreshTableViewTree
@@ -365,9 +365,6 @@
                 
                 for(GoogleMailAccount * account in _accounts){
                     if([account.emailAddress isEqualToString:treeItem.base]){
-                        
-                        DLog(@" /n/n/n account %@ /n/n/n",account.emailAddress);
-                        
                         
                         popoverContentViewController.account = account;
                         break;

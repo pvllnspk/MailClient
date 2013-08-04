@@ -18,7 +18,8 @@
 {
     self = [super initWithStyle:style];
     if (self) {
-    
+        
+        self.clearsSelectionOnViewWillAppear = NO;
     }
     return self;
 }
@@ -80,12 +81,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    DLog(@"didSelectRowAtIndexPath 1");
-    
+    [_tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     if(_delegate){
-        DLog(@"didSelectRowAtIndexPath 2 %@",_account);
-        
         [_delegate accountDeleted:_account];
     }
 }
