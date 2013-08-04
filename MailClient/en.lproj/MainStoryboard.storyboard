@@ -738,7 +738,6 @@
                                 <constraints>
                                     <constraint firstItem="fEL-Gi-vIG" firstAttribute="centerX" secondItem="Xky-Gw-kdb" secondAttribute="centerX" type="default" id="5SK-oA-oxg"/>
                                     <constraint firstItem="Njx-Il-cTT" firstAttribute="leading" secondItem="Xky-Gw-kdb" secondAttribute="leading" constant="14" id="BE8-lw-d0J"/>
-                                    <constraint firstItem="Njx-Il-cTT" firstAttribute="top" secondItem="Xky-Gw-kdb" secondAttribute="top" constant="14" id="JQa-oL-DWM"/>
                                     <constraint firstItem="Njx-Il-cTT" firstAttribute="top" secondItem="fEL-Gi-vIG" secondAttribute="top" type="default" id="M7n-lL-e57"/>
                                     <constraint firstItem="dZT-at-hqZ" firstAttribute="bottom" secondItem="fEL-Gi-vIG" secondAttribute="bottom" type="default" id="Muk-3Z-cae"/>
                                     <constraint firstAttribute="trailing" secondItem="dZT-at-hqZ" secondAttribute="trailing" constant="15" id="hrS-Cd-M2u"/>
@@ -747,21 +746,30 @@
                                     <constraint firstItem="fEL-Gi-vIG" firstAttribute="centerY" secondItem="Xky-Gw-kdb" secondAttribute="centerY" type="default" id="tqo-kB-kfK"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xRI-Ji-DuF">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="VE9-xi-HmI" secondAttribute="bottom" constant="689" id="0DI-F2-Eab"/>
                             <constraint firstItem="Xky-Gw-kdb" firstAttribute="leading" secondItem="UAd-Ka-sbu" secondAttribute="leading" type="default" id="3Al-fl-sfR"/>
                             <constraint firstItem="Xky-Gw-kdb" firstAttribute="top" secondItem="UAd-Ka-sbu" secondAttribute="top" type="default" id="7fi-5j-oTH"/>
                             <constraint firstItem="VE9-xi-HmI" firstAttribute="top" secondItem="UAd-Ka-sbu" secondAttribute="top" constant="58" id="Iti-0e-thn"/>
                             <constraint firstItem="Xky-Gw-kdb" firstAttribute="trailing" secondItem="UAd-Ka-sbu" secondAttribute="trailing" type="default" id="JaR-d3-F3A"/>
+                            <constraint firstItem="xRI-Ji-DuF" firstAttribute="bottom" secondItem="UAd-Ka-sbu" secondAttribute="bottom" type="default" id="OBI-I9-WpM"/>
+                            <constraint firstItem="xRI-Ji-DuF" firstAttribute="trailing" secondItem="UAd-Ka-sbu" secondAttribute="trailing" type="default" id="SbR-Bt-Bds"/>
                             <constraint firstItem="VE9-xi-HmI" firstAttribute="trailing" secondItem="UAd-Ka-sbu" secondAttribute="trailing" type="default" id="YsJ-wy-SfP"/>
-                            <constraint firstAttribute="bottom" secondItem="VE9-xi-HmI" secondAttribute="bottom" constant="689" id="oHi-Cy-17n"/>
+                            <constraint firstItem="xRI-Ji-DuF" firstAttribute="leading" secondItem="UAd-Ka-sbu" secondAttribute="leading" type="default" id="d0f-TR-3Go"/>
+                            <constraint firstAttribute="bottom" secondItem="Xky-Gw-kdb" secondAttribute="bottom" constant="690" id="dJP-7L-GzN"/>
+                            <constraint firstItem="xRI-Ji-DuF" firstAttribute="top" secondItem="UAd-Ka-sbu" secondAttribute="top" constant="59" id="pL9-K1-x4a"/>
                             <constraint firstItem="VE9-xi-HmI" firstAttribute="leading" secondItem="UAd-Ka-sbu" secondAttribute="leading" type="default" id="raT-Hp-eBH"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <modalPageSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="bodyView" destination="xRI-Ji-DuF" id="g37-sT-Up8"/>
                         <outlet property="topBar" destination="Xky-Gw-kdb" id="dhO-fM-6Ri"/>
                     </connections>
                 </viewController>
@@ -786,58 +794,6 @@
             <point key="canvasLocation" x="-2703" y="-622"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="AccountsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AccountsViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="topBarView" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="AddAccountViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddAccountViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="topBar" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="ComposeMessageViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ComposeMessageViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancel:"/>
-                <relationship kind="action" name="sendMessage:"/>
-                <relationship kind="outlet" name="topBar" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="DTAttributedTextView" superclassName="UIScrollView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DTAttributedTextView.h"/>
-            <relationships>
-                <relationship kind="outlet" name="backgroundView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="textDelegate"/>
-            </relationships>
-        </class>
-        <class className="FoldersViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FoldersViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="bodyTextView" candidateClass="DTAttributedTextView"/>
-                <relationship kind="outlet" name="bodyView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="fromLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="messagesTableView" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="rootView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
-                <relationship kind="outlet" name="subjectLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="toLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="topBarView" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="MCButton" superclassName="UIButton">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MCButton.h"/>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
