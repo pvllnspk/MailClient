@@ -376,7 +376,7 @@
                 _popoverController = [[UIPopoverController alloc] initWithContentViewController:popoverContentViewController];
                 
                 [_popoverController presentPopoverFromRect:cellFrame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
-                
+
             }
         }
     }

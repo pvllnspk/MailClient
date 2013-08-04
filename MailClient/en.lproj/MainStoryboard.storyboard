@@ -60,14 +60,25 @@
                                             <action selector="save:" destination="iUj-pA-HEp" eventType="touchUpInside" id="1YU-vz-nR0"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" text="Add Account" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jUS-ly-NS7">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="142" id="c2L-dE-0He"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="21"/>
+                                        <color key="textColor" red="0.39130434780000001" green="0.39130434780000001" blue="0.39130434780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.65306122450000004" green="0.65306122450000004" blue="0.65306122450000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="Sh0-be-ncA" firstAttribute="centerY" secondItem="OAY-Pa-wL7" secondAttribute="centerY" type="default" id="KNm-fa-9El"/>
-                                    <constraint firstItem="mfq-IF-mTG" firstAttribute="bottom" secondItem="Sh0-be-ncA" secondAttribute="bottom" type="default" id="KdB-ZQ-Z4i"/>
+                                    <constraint firstItem="jUS-ly-NS7" firstAttribute="centerX" secondItem="OAY-Pa-wL7" secondAttribute="centerX" type="default" id="2Rp-82-lXg"/>
+                                    <constraint firstItem="jUS-ly-NS7" firstAttribute="top" secondItem="Sh0-be-ncA" secondAttribute="top" type="default" id="G7y-R7-AMv"/>
+                                    <constraint firstItem="jUS-ly-NS7" firstAttribute="centerY" secondItem="OAY-Pa-wL7" secondAttribute="centerY" type="default" id="LTQ-VK-yUG"/>
+                                    <constraint firstItem="jUS-ly-NS7" firstAttribute="top" secondItem="mfq-IF-mTG" secondAttribute="top" type="default" id="PKv-qx-W1w"/>
+                                    <constraint firstItem="jUS-ly-NS7" firstAttribute="bottom" secondItem="Sh0-be-ncA" secondAttribute="bottom" type="default" id="Ryf-M1-BZy"/>
                                     <constraint firstAttribute="trailing" secondItem="mfq-IF-mTG" secondAttribute="trailing" constant="15" id="oH2-yK-yVV"/>
+                                    <constraint firstItem="jUS-ly-NS7" firstAttribute="bottom" secondItem="mfq-IF-mTG" secondAttribute="bottom" type="default" id="uHK-CZ-kRc"/>
                                     <constraint firstItem="Sh0-be-ncA" firstAttribute="leading" secondItem="OAY-Pa-wL7" secondAttribute="leading" constant="14" id="uTe-on-Dpl"/>
-                                    <constraint firstItem="mfq-IF-mTG" firstAttribute="top" secondItem="Sh0-be-ncA" secondAttribute="top" type="default" id="ulT-PZ-iYH"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="50" sectionHeaderHeight="50" sectionFooterHeight="50" translatesAutoresizingMaskIntoConstraints="NO" id="ecn-Ja-mat">
@@ -176,7 +187,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y7V-QJ-hun" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-148" y="-1422"/>
+            <point key="canvasLocation" x="-2164" y="-1414"/>
         </scene>
         <!--Accounts View Controller-->
         <scene sceneID="cla-2o-QzX">
@@ -261,7 +272,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j2j-5N-j7y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="610" y="-920"/>
+            <point key="canvasLocation" x="-1406" y="-912"/>
         </scene>
         <!--Folders View Controller - Detail-->
         <scene sceneID="16">
@@ -479,6 +490,9 @@
                                                 </fragment>
                                             </attributedString>
                                         </state>
+                                        <connections>
+                                            <segue destination="mts-SV-A1u" kind="modal" id="K8o-ln-bfJ"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JiA-dD-IsJ" customClass="MCButton">
                                         <constraints>
@@ -651,7 +665,109 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="15" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="448" y="248"/>
+            <point key="canvasLocation" x="-1568" y="256"/>
+        </scene>
+        <!--Compose Message View Controller-->
+        <scene sceneID="9jw-0x-GCI">
+            <objects>
+                <viewController id="mts-SV-A1u" customClass="ComposeMessageViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UAd-Ka-sbu">
+                        <rect key="frame" x="0.0" y="20" width="768" height="748"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VE9-xi-HmI">
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xky-Gw-kdb">
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Njx-Il-cTT" customClass="MCButton">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="Xy5-G2-kcO"/>
+                                            <constraint firstAttribute="width" constant="71" id="sIH-Ee-0ua"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <size key="titleShadowOffset" width="0.20000000000000001" height="0.0"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Cancel">
+                                                    <attributes>
+                                                        <color key="NSColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <font key="NSFont" size="18" name="Helvetica"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                        <connections>
+                                            <action selector="cancel:" destination="mts-SV-A1u" eventType="touchUpInside" id="6gG-lq-upB"/>
+                                            <action selector="cancel:" destination="iUj-pA-HEp" eventType="touchUpInside" id="lSW-Ww-Y5m"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dZT-at-hqZ" customClass="MCButton">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="ZzB-E0-P30"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <size key="titleShadowOffset" width="0.20000000000000001" height="0.0"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Send">
+                                                    <attributes>
+                                                        <color key="NSColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <font key="NSFont" size="18" name="Helvetica"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                        <connections>
+                                            <action selector="save:" destination="iUj-pA-HEp" eventType="touchUpInside" id="32e-Pk-SN8"/>
+                                            <action selector="sendMessage:" destination="mts-SV-A1u" eventType="touchUpInside" id="V9h-i0-dcJ"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" text="New Message" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fEL-Gi-vIG">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="142" id="bRT-ou-eiW"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="21"/>
+                                        <color key="textColor" red="0.39130434780000001" green="0.39130434780000001" blue="0.39130434780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.65306122450000004" green="0.65306122450000004" blue="0.65306122450000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="fEL-Gi-vIG" firstAttribute="centerX" secondItem="Xky-Gw-kdb" secondAttribute="centerX" type="default" id="5SK-oA-oxg"/>
+                                    <constraint firstItem="Njx-Il-cTT" firstAttribute="leading" secondItem="Xky-Gw-kdb" secondAttribute="leading" constant="14" id="BE8-lw-d0J"/>
+                                    <constraint firstItem="Njx-Il-cTT" firstAttribute="top" secondItem="Xky-Gw-kdb" secondAttribute="top" constant="14" id="JQa-oL-DWM"/>
+                                    <constraint firstItem="Njx-Il-cTT" firstAttribute="top" secondItem="fEL-Gi-vIG" secondAttribute="top" type="default" id="M7n-lL-e57"/>
+                                    <constraint firstItem="dZT-at-hqZ" firstAttribute="bottom" secondItem="fEL-Gi-vIG" secondAttribute="bottom" type="default" id="Muk-3Z-cae"/>
+                                    <constraint firstAttribute="trailing" secondItem="dZT-at-hqZ" secondAttribute="trailing" constant="15" id="hrS-Cd-M2u"/>
+                                    <constraint firstItem="Njx-Il-cTT" firstAttribute="bottom" secondItem="fEL-Gi-vIG" secondAttribute="bottom" type="default" id="ioI-XC-aru"/>
+                                    <constraint firstItem="dZT-at-hqZ" firstAttribute="top" secondItem="fEL-Gi-vIG" secondAttribute="top" type="default" id="l8P-g4-uIO"/>
+                                    <constraint firstItem="fEL-Gi-vIG" firstAttribute="centerY" secondItem="Xky-Gw-kdb" secondAttribute="centerY" type="default" id="tqo-kB-kfK"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Xky-Gw-kdb" firstAttribute="leading" secondItem="UAd-Ka-sbu" secondAttribute="leading" type="default" id="3Al-fl-sfR"/>
+                            <constraint firstItem="Xky-Gw-kdb" firstAttribute="top" secondItem="UAd-Ka-sbu" secondAttribute="top" type="default" id="7fi-5j-oTH"/>
+                            <constraint firstItem="VE9-xi-HmI" firstAttribute="top" secondItem="UAd-Ka-sbu" secondAttribute="top" constant="58" id="Iti-0e-thn"/>
+                            <constraint firstItem="Xky-Gw-kdb" firstAttribute="trailing" secondItem="UAd-Ka-sbu" secondAttribute="trailing" type="default" id="JaR-d3-F3A"/>
+                            <constraint firstItem="VE9-xi-HmI" firstAttribute="trailing" secondItem="UAd-Ka-sbu" secondAttribute="trailing" type="default" id="YsJ-wy-SfP"/>
+                            <constraint firstAttribute="bottom" secondItem="VE9-xi-HmI" secondAttribute="bottom" constant="689" id="oHi-Cy-17n"/>
+                            <constraint firstItem="VE9-xi-HmI" firstAttribute="leading" secondItem="UAd-Ka-sbu" secondAttribute="leading" type="default" id="raT-Hp-eBH"/>
+                        </constraints>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <modalPageSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="topBar" destination="Xky-Gw-kdb" id="dhO-fM-6Ri"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lgM-AJ-nww" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-658" y="251"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="18">
@@ -667,9 +783,61 @@
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="17" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-687" y="-630"/>
+            <point key="canvasLocation" x="-2703" y="-622"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="AccountsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AccountsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="topBarView" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="AddAccountViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddAccountViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="topBar" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="ComposeMessageViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ComposeMessageViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancel:"/>
+                <relationship kind="action" name="sendMessage:"/>
+                <relationship kind="outlet" name="topBar" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="DTAttributedTextView" superclassName="UIScrollView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DTAttributedTextView.h"/>
+            <relationships>
+                <relationship kind="outlet" name="backgroundView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="textDelegate"/>
+            </relationships>
+        </class>
+        <class className="FoldersViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FoldersViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="bodyTextView" candidateClass="DTAttributedTextView"/>
+                <relationship kind="outlet" name="bodyView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="fromLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="messagesTableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="rootView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
+                <relationship kind="outlet" name="subjectLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="toLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="topBarView" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="MCButton" superclassName="UIButton">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MCButton.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
