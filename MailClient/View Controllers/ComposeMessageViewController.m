@@ -54,6 +54,31 @@
     [separator2 setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin];
     [_ccField addSubview:separator2];
     [separator2 setBackgroundColor:[UIColor lightGrayColor]];
+    
+    
+    
+    UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(0, 70, 1040, 35)];
+    textField.borderStyle = UITextBorderStyleNone;
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 70, 40)];
+    label.text = @" Subject:";
+    [label setTextColor:MCCOLOR_TITLE];
+    
+    textField.leftViewMode = UITextFieldViewModeAlways;
+    textField.leftView = label;
+    [textField setContentVerticalAlignment:UIControlContentVerticalAlignmentCenter];
+    
+    [_bodyView addSubview:textField];
+    
+    UIView *separator3 = [[UIView alloc] initWithFrame:CGRectMake(0, 105, 1040, 1)];
+    [separator3 setBackgroundColor:[UIColor lightGrayColor]];
+    [_bodyView addSubview:separator3];
+    
+    
+    UITextView *textView= [[UITextView alloc] initWithFrame:CGRectMake(0, 106, 1040, 1000)];
+    [textView setFont:[UIFont fontWithName:@"HelveticaNeue" size:18.0f]];
+    textView.contentInset = UIEdgeInsetsMake(5,5,5,5);
+    [_bodyView addSubview:textView];
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated
