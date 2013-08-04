@@ -1,5 +1,5 @@
 //
-//  PopoverViewController.h
+//  PopoverBackgroundView.h
 //  MailClient
 //
 //  Created by Barney on 8/4/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PopoverViewController : UITableViewController
+@interface PopoverBackgroundView : UIPopoverBackgroundView <UIPopoverControllerDelegate>
 
 @end

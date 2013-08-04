@@ -32,9 +32,10 @@
 		B3D479D517A70D470067C957 /* MCButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D479D417A70D470067C957 /* MCButton.m */; };
 		B3DA4FD217A998A700420453 /* AddAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DA4FD117A998A700420453 /* AddAccountViewController.m */; };
 		B3DA4FD517A9BD8E00420453 /* GoogleMailAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DA4FD417A9BD8E00420453 /* GoogleMailAccount.m */; };
+		B3DAB69117AE629400522F46 /* PopoverBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DAB69017AE629400522F46 /* PopoverBackgroundView.m */; };
 		B3DC2B6517AABD44003F0802 /* TimeExecutionTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DC2B6417AABD44003F0802 /* TimeExecutionTracker.m */; };
 		B3DC9A1117AD2ADF0090D198 /* MCTreeItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DC9A1017AD2ADF0090D198 /* MCTreeItem.m */; };
-		B3DC9A2817ADACA10090D198 /* PopoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DC9A2717ADACA10090D198 /* PopoverViewController.m */; };
+		B3DC9A2817ADACA10090D198 /* PopoverContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DC9A2717ADACA10090D198 /* PopoverContentViewController.m */; };
 		B3EC9BCC17A6D0FC00F3C78B /* TITokenField.m in Sources */ = {isa = PBXBuildFile; fileRef = B3EC9BCA17A6D0FC00F3C78B /* TITokenField.m */; };
 		B3EF657D17A11C7E00369805 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EF657C17A11C7E00369805 /* UIKit.framework */; };
 		B3EF657F17A11C7E00369805 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EF657E17A11C7E00369805 /* Foundation.framework */; };
@@ -171,14 +172,16 @@
 		B3DA4FD117A998A700420453 /* AddAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddAccountViewController.m; sourceTree = "<group>"; };
 		B3DA4FD317A9BD8E00420453 /* GoogleMailAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GoogleMailAccount.h; path = Model/GoogleMailAccount.h; sourceTree = "<group>"; };
 		B3DA4FD417A9BD8E00420453 /* GoogleMailAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GoogleMailAccount.m; path = Model/GoogleMailAccount.m; sourceTree = "<group>"; };
+		B3DAB68F17AE629400522F46 /* PopoverBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopoverBackgroundView.h; sourceTree = "<group>"; };
+		B3DAB69017AE629400522F46 /* PopoverBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopoverBackgroundView.m; sourceTree = "<group>"; };
 		B3DC2B6317AABD44003F0802 /* TimeExecutionTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimeExecutionTracker.h; path = Misc/TimeExecutionTracker.h; sourceTree = "<group>"; };
 		B3DC2B6417AABD44003F0802 /* TimeExecutionTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TimeExecutionTracker.m; path = Misc/TimeExecutionTracker.m; sourceTree = "<group>"; };
 		B3DC2B7117AAE7BA003F0802 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = Misc/Constants.h; sourceTree = "<group>"; };
 		B3DC9A0F17AD2ADF0090D198 /* MCTreeItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCTreeItem.h; path = MCTreeView/MCTreeItem.h; sourceTree = "<group>"; };
 		B3DC9A1017AD2ADF0090D198 /* MCTreeItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCTreeItem.m; path = MCTreeView/MCTreeItem.m; sourceTree = "<group>"; };
 		B3DC9A1C17AD39ED0090D198 /* AppConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppConfig.h; sourceTree = "<group>"; };
-		B3DC9A2617ADACA10090D198 /* PopoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopoverViewController.h; sourceTree = "<group>"; };
-		B3DC9A2717ADACA10090D198 /* PopoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopoverViewController.m; sourceTree = "<group>"; };
+		B3DC9A2617ADACA10090D198 /* PopoverContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopoverContentViewController.h; sourceTree = "<group>"; };
+		B3DC9A2717ADACA10090D198 /* PopoverContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopoverContentViewController.m; sourceTree = "<group>"; };
 		B3EC9BC917A6D0FC00F3C78B /* TITokenField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TITokenField.h; sourceTree = "<group>"; };
 		B3EC9BCA17A6D0FC00F3C78B /* TITokenField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TITokenField.m; sourceTree = "<group>"; };
 		B3EF657917A11C7E00369805 /* MailClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MailClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -329,8 +332,10 @@
 		B3DC9A1F17ADABD70090D198 /* Popover */ = {
 			isa = PBXGroup;
 			children = (
-				B3DC9A2617ADACA10090D198 /* PopoverViewController.h */,
-				B3DC9A2717ADACA10090D198 /* PopoverViewController.m */,
+				B3DC9A2617ADACA10090D198 /* PopoverContentViewController.h */,
+				B3DC9A2717ADACA10090D198 /* PopoverContentViewController.m */,
+				B3DAB68F17AE629400522F46 /* PopoverBackgroundView.h */,
+				B3DAB69017AE629400522F46 /* PopoverBackgroundView.m */,
 			);
 			name = Popover;
 			sourceTree = "<group>";
@@ -663,7 +668,8 @@
 				B3DA4FD517A9BD8E00420453 /* GoogleMailAccount.m in Sources */,
 				B3DC2B6517AABD44003F0802 /* TimeExecutionTracker.m in Sources */,
 				B3DC9A1117AD2ADF0090D198 /* MCTreeItem.m in Sources */,
-				B3DC9A2817ADACA10090D198 /* PopoverViewController.m in Sources */,
+				B3DC9A2817ADACA10090D198 /* PopoverContentViewController.m in Sources */,
+				B3DAB69117AE629400522F46 /* PopoverBackgroundView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

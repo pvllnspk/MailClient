@@ -12,7 +12,8 @@
 #import "MCTreeItem.h"
 #import "AddAccountViewController.h"
 #import "GoogleMailAccount.h"
-#import "PopoverViewController.h"
+#import "PopoverContentViewController.h"
+#import "PopoverBackgroundView.h"
 
 
 @implementation AccountsViewController
@@ -51,7 +52,7 @@
     UILongPressGestureRecognizer *longPressGestureRecognizer = [[UILongPressGestureRecognizer alloc]
                                                                 initWithTarget:self action:@selector(tableViewLongPress:)];
     
-    longPressGestureRecognizer.minimumPressDuration = 1.5;
+    longPressGestureRecognizer.minimumPressDuration = 1.0;
     longPressGestureRecognizer.delegate = self;
     [_tableView addGestureRecognizer:longPressGestureRecognizer];
     
@@ -288,6 +289,15 @@
     }
 }
 
+-(void)accountDeleted:(GoogleMailAccount *)account
+{
+    DLog(@" %d   %@ ",[_accounts count], account.emailAddress)
+    
+    [_accounts removeObject:account];
+    [_subFolders removeObjectForKey:account.emailAddress];
+    [self refreshTableViewTree];
+}
+
 -(void) refreshTableViewTree
 {
     [_accountsTreeItems removeAllObjects];
@@ -348,11 +358,26 @@
             
             if([cell.treeItem.path isEqualToString:@"/"]){
                 
-                PopoverViewController *popoverViewController = [[PopoverViewController alloc]init];
+                PopoverContentViewController *popoverContentViewController = [[PopoverContentViewController alloc]init];
+                popoverContentViewController.delegate = self;
+                
+                MCTreeItem *treeItem = [_displayedTreeItems objectAtIndex:indexPath.row];
+                
+                for(GoogleMailAccount * account in _accounts){
+                    if([account.emailAddress isEqualToString:treeItem.base]){
+                        
+                        DLog(@" /n/n/n account %@ /n/n/n",account.emailAddress);
+                        
+                        
+                        popoverContentViewController.account = account;
+                        break;
+                    }
+                }
                 
                 CGRect cellFrame = [self.tableView convertRect:[self.tableView rectForRowAtIndexPath:indexPath] toView:[self.tableView superview]];
                 cellFrame.size.height = cell.frame.size.height/2;
-                _popoverController = [[UIPopoverController alloc] initWithContentViewController:popoverViewController];
+                _popoverController = [[UIPopoverController alloc] initWithContentViewController:popoverContentViewController];
+                
                 [_popoverController presentPopoverFromRect:cellFrame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
                 
             }

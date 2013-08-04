@@ -9,10 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "MCTreeTableViewCell.h"
 #import "AddAccountViewController.h"
+#import "PopoverContentViewController.h"
 
 @class FoldersViewController;
 
-@interface AccountsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, AddAccountDelegate ,UIGestureRecognizerDelegate>
+@interface AccountsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, AddAccountDelegate ,DeleteAccountDelegate ,UIGestureRecognizerDelegate>
 
 @property (strong, nonatomic) FoldersViewController *detailViewController;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
