@@ -9,6 +9,7 @@
 #import "FoldersViewController.h"
 #import "NSSet+Additions.h"
 #import "NSString+Additions.h"
+#import "ComposeMessageViewController.h"
 
 
 #if 1 // Set to 1 to enable DetailViewController Logging
@@ -344,7 +345,12 @@
     [_messagesTableView reloadData];
 }
 
-
-
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:@"toComposeMessage"]){
+        ComposeMessageViewController *composeMessageViewController = segue.destinationViewController;
+       //
+    }
+}
 
 @end

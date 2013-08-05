@@ -12,80 +12,95 @@
 {
     NSMutableArray *_toRecipients;
 	NSMutableArray *_ccRecipients;
-    NSMutableString *_subject;
-    NSMutableString *_messageBody;
 	
+    JSTokenField *_fromField;
 	JSTokenField *_toField;
 	JSTokenField *_ccField;
+    UITextField *_subjectField;
+    UITextView *_messageBodyView;
 }
+
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    [_topBar setBackgroundColor:[UIColor colorWithRed:1 green:0.976 blue:0.957 alpha:1]/*#fff9f4*/];
+    [self initUI];
+    [self initData];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
 											 selector:@selector(handleTokenFieldFrameDidChange:)
 												 name:JSTokenFieldFrameDidChangeNotification
 											   object:nil];
+    
+    [_fromField addTokenWithTitle:@"iosmailclienttest@gmail.com" representedObject:@"iosmailclienttest@gmail.com"];
+}
+
+-(void) initUI
+{
+    [_topBar setBackgroundColor:BACKGROUND_COLOR];
+    
+    //From field
+    _fromField = [[JSTokenField alloc] initWithFrame:CGRectMake(0, 0, 1040, 35)];
+	[[_fromField label] setText:@"From:"];
+	[_fromField setDelegate:self];
+	[_bodyView addSubview:_fromField];
+    
+    UIView *separator = [[UIView alloc] initWithFrame:CGRectMake(0, _fromField.bounds.size.height-1, _fromField.bounds.size.width, 1)];
+    [separator setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin];
+    [_fromField addSubview:separator];
+    [separator setBackgroundColor:[UIColor lightGrayColor]];
 	
-	_toRecipients = [NSMutableArray array];
-    _ccRecipients = [NSMutableArray array];
-    _subject = [NSMutableString new];
-    _messageBody = [NSMutableString new];
-	
-	_toField = [[JSTokenField alloc] initWithFrame:CGRectMake(0, 0, 1040, 35)];
+    //To field
+	_toField = [[JSTokenField alloc] initWithFrame:CGRectMake(0, 35, 1040, 35)];
 	[[_toField label] setText:@"To:"];
 	[_toField setDelegate:self];
 	[_bodyView addSubview:_toField];
     
-    UIView *separator1 = [[UIView alloc] initWithFrame:CGRectMake(0, _toField.bounds.size.height-1, _toField.bounds.size.width, 1)];
-    [separator1 setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin];
-    [_toField addSubview:separator1];
-    [separator1 setBackgroundColor:[UIColor lightGrayColor]];
+    separator = [[UIView alloc] initWithFrame:CGRectMake(0, _toField.bounds.size.height-1, _toField.bounds.size.width, 1)];
+    [separator setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin];
+    [_toField addSubview:separator];
+    [separator setBackgroundColor:[UIColor lightGrayColor]];
 	
-	_ccField = [[JSTokenField alloc] initWithFrame:CGRectMake(0, 35, 1040, 35)];
+    //CC field
+	_ccField = [[JSTokenField alloc] initWithFrame:CGRectMake(0, 70, 1040, 35)];
 	[[_ccField label] setText:@"CC:"];
 	[_ccField setDelegate:self];
 	[_bodyView addSubview:_ccField];
     
-    UIView *separator2 = [[UIView alloc] initWithFrame:CGRectMake(0, _ccField.bounds.size.height-1, _ccField.bounds.size.width, 1)];
-    [separator2 setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin];
-    [_ccField addSubview:separator2];
-    [separator2 setBackgroundColor:[UIColor lightGrayColor]];
+    separator = [[UIView alloc] initWithFrame:CGRectMake(0, _ccField.bounds.size.height-1, _ccField.bounds.size.width, 1)];
+    [separator setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin];
+    [_ccField addSubview:separator];
+    [separator setBackgroundColor:[UIColor lightGrayColor]];
     
-    
-    
-    UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(0, 70, 1040, 35)];
-    textField.borderStyle = UITextBorderStyleNone;
+    //Subject field
+    _subjectField = [[UITextField alloc] initWithFrame:CGRectMake(0, 105, 1040, 35)];
+    _subjectField.borderStyle = UITextBorderStyleNone;
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 70, 40)];
     label.text = @" Subject:";
-    [label setTextColor:MCCOLOR_TITLE];
+    [label setFont:[UIFont fontWithName:@"HelveticaNeue" size:17.0f]];
+    [label setTextColor:TEXT_COLOR_PRIMARY];
+    _subjectField.leftViewMode = UITextFieldViewModeAlways;
+    _subjectField.leftView = label;
+    [_subjectField setContentVerticalAlignment:UIControlContentVerticalAlignmentCenter];
+    [_bodyView addSubview:_subjectField];
     
-    textField.leftViewMode = UITextFieldViewModeAlways;
-    textField.leftView = label;
-    [textField setContentVerticalAlignment:UIControlContentVerticalAlignmentCenter];
+    separator = [[UIView alloc] initWithFrame:CGRectMake(0, 140, 1040, 1)];
+    [separator setBackgroundColor:[UIColor lightGrayColor]];
+    [_bodyView addSubview:separator];
     
-    [_bodyView addSubview:textField];
-    
-    UIView *separator3 = [[UIView alloc] initWithFrame:CGRectMake(0, 105, 1040, 1)];
-    [separator3 setBackgroundColor:[UIColor lightGrayColor]];
-    [_bodyView addSubview:separator3];
-    
-    
-    UITextView *textView= [[UITextView alloc] initWithFrame:CGRectMake(0, 106, 1040, 1000)];
-    [textView setFont:[UIFont fontWithName:@"HelveticaNeue" size:18.0f]];
-    textView.contentInset = UIEdgeInsetsMake(5,5,5,5);
-    [_bodyView addSubview:textView];
-    
+    //Message Body field
+    _messageBodyView= [[UITextView alloc] initWithFrame:CGRectMake(0, 141, 1040, 1000)];
+    [_messageBodyView setFont:[UIFont fontWithName:@"HelveticaNeue" size:18.0f]];
+    _messageBodyView.contentInset = UIEdgeInsetsMake(5,5,5,5);
+    [_bodyView addSubview:_messageBodyView];
 }
 
--(void)viewWillAppear:(BOOL)animated
+-(void)initData
 {
-    
+    _toRecipients = [NSMutableArray array];
+    _ccRecipients = [NSMutableArray array];
 }
-
 
 -(void)viewDidDisappear:(BOOL)animated
 {
@@ -99,45 +114,118 @@
 
 - (IBAction)sendMessage:(id)sender
 {
+      CTCoreMessage *msg = [[CTCoreMessage alloc] init];
     
+//    NSMutableSet *toRecipients = [NSMutableSet set];
+//    NSMutableSet *ccRecipients = [NSMutableSet set];
+//    
+//    for(NSDictionary *recipient in _toRecipients){
+//        [toRecipients addObject:[CTCoreAddress addressWithName:[recipient valueForKey:@"email"] email:[recipient valueForKey:@"email"]]];
+//    }
+//    
+//    for(NSDictionary *recipient in _ccRecipients){
+//        [ccRecipients addObject:[CTCoreAddress addressWithName:[recipient valueForKey:@"email"] email:[recipient valueForKey:@"email"]]];
+//    }
+//
+//    [msg setTo:toRecipients];
+//    [msg setCc:ccRecipients];
+//    [msg setSubject:_subjectField.text];
+//    [msg setBody:_messageBodyView.text];
+//    
+//    NSError *error;
+//    BOOL success = [CTSMTPConnection sendMessage:msg
+//                                          server:@"smtp.gmail.com"
+//                                        username:@"iosmailclienttest@gmail.com"
+//                                        password:@"testiosmailclienttest@gmail.com"
+//                                            port:587
+//                                  connectionType:CTSMTPConnectionTypeStartTLS
+//                                         useAuth:YES
+//                                           error:&error];
+    
+    
+    NSMutableSet *toRecipients = [NSMutableSet set];
+    NSMutableSet *ccRecipients = [NSMutableSet set];
+    
+    for(NSDictionary *recipient in _toRecipients){
+        [toRecipients addObject:[CTCoreAddress addressWithName:[recipient valueForKey:@"email"] email:[recipient valueForKey:@"email"]]];
+    }
+    
+    for(NSDictionary *recipient in _ccRecipients){
+        [ccRecipients addObject:[CTCoreAddress addressWithName:[recipient valueForKey:@"email"] email:[recipient valueForKey:@"email"]]];
+    }
+    
+    [msg setTo:toRecipients];
+    [msg setCc:ccRecipients];
+    [msg setSubject:_subjectField.text];
+    [msg setBody:_messageBodyView.text];
+    
+    NSError *error;
+    BOOL success = [CTSMTPConnection sendMessage:msg
+                                          server:@"smtp.gmail.com"
+                                        username:@"iosmailclienttest@gmail.com"
+                                        password:@"testiosmailclienttest"
+                                            port:587
+                                  connectionType:CTSMTPConnectionTypeStartTLS
+                                         useAuth:YES
+                                           error:&error];
+    
+    
+  
+
+
+    
+    if (success){
+        
+        DLog(@"Succes...");
+    }
+    else{
+        
+        DLog(@"Failed...");
+    }
 }
-
-
-#pragma mark -
-#pragma mark JSTokenFieldDelegate
 
 
 - (void)tokenField:(JSTokenField *)tokenField didAddToken:(NSString *)title representedObject:(id)obj
 {
-	NSDictionary *recipient = [NSDictionary dictionaryWithObject:obj forKey:title];
-	[_toRecipients addObject:recipient];
-	NSLog(@"Added token for < %@ : %@ >\n%@", title, obj, _toRecipients);
+	NSDictionary *recipient = [NSDictionary dictionaryWithObject:title forKey:@"email"];
     
+    if(tokenField==_toField){
+        
+     	[_toRecipients addObject:recipient];
+    }else if(tokenField==_ccField){
+        
+        [_ccRecipients addObject:recipient];
+    }
 }
 
-- (void)tokenField:(JSTokenField *)tokenField didRemoveTokenAtIndex:(NSUInteger)index
+- (void)tokenField:(JSTokenField *)tokenField didRemoveToken:(NSString *)title representedObject:(id)obj
 {
-	[_toRecipients removeObjectAtIndex:index];
-	NSLog(@"Deleted token %d\n%@", index, _toRecipients);
+    NSDictionary *recipient = [NSDictionary dictionaryWithObject:title forKey:@"email"];
+    
+    if(tokenField==_toField){
+        
+     	[_toRecipients removeObject:recipient];
+    }else if(tokenField==_ccField){
+        
+        [_ccRecipients removeObject:recipient];
+    }
 }
 
-- (BOOL)tokenFieldShouldReturn:(JSTokenField *)tokenField {
+- (BOOL)tokenFieldShouldReturn:(JSTokenField *)tokenField
+{    
     NSMutableString *recipient = [NSMutableString string];
 	
 	NSMutableCharacterSet *charSet = [[NSCharacterSet whitespaceCharacterSet] mutableCopy];
 	[charSet formUnionWithCharacterSet:[NSCharacterSet punctuationCharacterSet]];
 	
     NSString *rawStr = [[tokenField textField] text];
-	for (int i = 0; i < [rawStr length]; i++)
-	{
-		if (![charSet characterIsMember:[rawStr characterAtIndex:i]])
-		{
+	for (int i = 0; i < [rawStr length]; i++){
+		if (![charSet characterIsMember:[rawStr characterAtIndex:i]]){
 			[recipient appendFormat:@"%@",[NSString stringWithFormat:@"%c", [rawStr characterAtIndex:i]]];
 		}
 	}
     
-    if ([rawStr length])
-	{
+    if ([rawStr length]){
 		[tokenField addTokenWithTitle:rawStr representedObject:recipient];
 	}
     
@@ -146,8 +234,7 @@
 
 - (void)handleTokenFieldFrameDidChange:(NSNotification *)note
 {
-	if ([[note object] isEqual:_toField])
-	{
+    if ([[note object] isEqual:_toField]){
 		[UIView animateWithDuration:0.0
 						 animations:^{
 							 [_ccField setFrame:CGRectMake(0, [_toField frame].size.height + [_toField frame].origin.y, [_ccField frame].size.width, [_ccField frame].size.height)];
@@ -155,6 +242,5 @@
 						 completion:nil];
 	}
 }
-
 
 @end

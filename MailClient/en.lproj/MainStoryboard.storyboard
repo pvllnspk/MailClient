@@ -187,7 +187,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y7V-QJ-hun" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2164" y="-1414"/>
+            <point key="canvasLocation" x="-896" y="-838"/>
         </scene>
         <!--Accounts View Controller-->
         <scene sceneID="cla-2o-QzX">
@@ -491,7 +491,7 @@
                                             </attributedString>
                                         </state>
                                         <connections>
-                                            <segue destination="mts-SV-A1u" kind="modal" id="K8o-ln-bfJ"/>
+                                            <segue destination="mts-SV-A1u" kind="modal" identifier="toComposeMessage" id="K8o-ln-bfJ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JiA-dD-IsJ" customClass="MCButton">
