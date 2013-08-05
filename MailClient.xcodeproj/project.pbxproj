@@ -199,9 +199,9 @@
 		B3DC2B7117AAE7BA003F0802 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = Misc/Constants.h; sourceTree = "<group>"; };
 		B3DC9A0F17AD2ADF0090D198 /* MCTreeItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCTreeItem.h; path = MCTreeView/MCTreeItem.h; sourceTree = "<group>"; };
 		B3DC9A1017AD2ADF0090D198 /* MCTreeItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCTreeItem.m; path = MCTreeView/MCTreeItem.m; sourceTree = "<group>"; };
-		B3DC9A1C17AD39ED0090D198 /* AppConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppConfig.h; sourceTree = "<group>"; };
 		B3DC9A2617ADACA10090D198 /* PopoverContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopoverContentViewController.h; sourceTree = "<group>"; };
 		B3DC9A2717ADACA10090D198 /* PopoverContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopoverContentViewController.m; sourceTree = "<group>"; };
+		B3E5B32E17B02B39009FC97B /* AppConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppConfig.h; sourceTree = "<group>"; };
 		B3EF657917A11C7E00369805 /* MailClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MailClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3EF657C17A11C7E00369805 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B3EF657E17A11C7E00369805 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -508,9 +508,9 @@
 		B3EFA06317A5239100012134 /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				B3DC9A1C17AD39ED0090D198 /* AppConfig.h */,
 				B3EFA06417A5239100012134 /* AppDelegate.h */,
 				B3EFA06517A5239100012134 /* AppDelegate.m */,
+				B3E5B32E17B02B39009FC97B /* AppConfig.h */,
 			);
 			path = Application;
 			sourceTree = "<group>";

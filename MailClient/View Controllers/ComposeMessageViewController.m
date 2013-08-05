@@ -18,6 +18,8 @@
 	JSTokenField *_ccField;
     UITextField *_subjectField;
     UITextView *_messageBodyView;
+    
+    UIActivityIndicatorView *_spinner;
 }
 
 
@@ -27,6 +29,7 @@
     
     [self initUI];
     [self initData];
+    [self initSpinner];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
 											 selector:@selector(handleTokenFieldFrameDidChange:)
@@ -114,74 +117,61 @@
 
 - (IBAction)sendMessage:(id)sender
 {
-      CTCoreMessage *msg = [[CTCoreMessage alloc] init];
     
-//    NSMutableSet *toRecipients = [NSMutableSet set];
-//    NSMutableSet *ccRecipients = [NSMutableSet set];
-//    
-//    for(NSDictionary *recipient in _toRecipients){
-//        [toRecipients addObject:[CTCoreAddress addressWithName:[recipient valueForKey:@"email"] email:[recipient valueForKey:@"email"]]];
-//    }
-//    
-//    for(NSDictionary *recipient in _ccRecipients){
-//        [ccRecipients addObject:[CTCoreAddress addressWithName:[recipient valueForKey:@"email"] email:[recipient valueForKey:@"email"]]];
-//    }
-//
-//    [msg setTo:toRecipients];
-//    [msg setCc:ccRecipients];
-//    [msg setSubject:_subjectField.text];
-//    [msg setBody:_messageBodyView.text];
-//    
-//    NSError *error;
-//    BOOL success = [CTSMTPConnection sendMessage:msg
-//                                          server:@"smtp.gmail.com"
-//                                        username:@"iosmailclienttest@gmail.com"
-//                                        password:@"testiosmailclienttest@gmail.com"
-//                                            port:587
-//                                  connectionType:CTSMTPConnectionTypeStartTLS
-//                                         useAuth:YES
-//                                           error:&error];
+    [self showSpinner];
     
-    
-    NSMutableSet *toRecipients = [NSMutableSet set];
-    NSMutableSet *ccRecipients = [NSMutableSet set];
-    
-    for(NSDictionary *recipient in _toRecipients){
-        [toRecipients addObject:[CTCoreAddress addressWithName:[recipient valueForKey:@"email"] email:[recipient valueForKey:@"email"]]];
-    }
-    
-    for(NSDictionary *recipient in _ccRecipients){
-        [ccRecipients addObject:[CTCoreAddress addressWithName:[recipient valueForKey:@"email"] email:[recipient valueForKey:@"email"]]];
-    }
-    
-    [msg setTo:toRecipients];
-    [msg setCc:ccRecipients];
-    [msg setSubject:_subjectField.text];
-    [msg setBody:_messageBodyView.text];
-    
-    NSError *error;
-    BOOL success = [CTSMTPConnection sendMessage:msg
-                                          server:@"smtp.gmail.com"
-                                        username:@"iosmailclienttest@gmail.com"
-                                        password:@"testiosmailclienttest"
-                                            port:587
-                                  connectionType:CTSMTPConnectionTypeStartTLS
-                                         useAuth:YES
-                                           error:&error];
-    
-    
-  
-
-
-    
-    if (success){
+    dispatch_async([AppDelegate serialGlobalBackgroundQueue], ^{
         
-        DLog(@"Succes...");
-    }
-    else{
+        DLog(@"attempt to send an email");
+        [TimeExecutionTracker startTrackingWithName:@"sending an email"];
+       
+        CTCoreMessage *msg = [[CTCoreMessage alloc] init];
         
-        DLog(@"Failed...");
-    }
+        NSMutableSet *toRecipients = [NSMutableSet set];
+        NSMutableSet *ccRecipients = [NSMutableSet set];
+        
+        for(NSDictionary *recipient in _toRecipients){
+            [toRecipients addObject:[CTCoreAddress addressWithName:[recipient valueForKey:@"email"] email:[recipient valueForKey:@"email"]]];
+        }
+        
+        for(NSDictionary *recipient in _ccRecipients){
+            [ccRecipients addObject:[CTCoreAddress addressWithName:[recipient valueForKey:@"email"] email:[recipient valueForKey:@"email"]]];
+        }
+        
+        [msg setTo:toRecipients];
+        [msg setCc:ccRecipients];
+        [msg setSubject:_subjectField.text];
+        [msg setBody:_messageBodyView.text];
+        
+        NSError *error;
+        BOOL success = [CTSMTPConnection sendMessage:msg
+                                              server:@"smtp.gmail.com"
+                                            username:@"iosmailclienttest@gmail.com"
+                                            password:@"testiosmailclienttest"
+                                                port:587
+                                      connectionType:CTSMTPConnectionTypeStartTLS
+                                             useAuth:YES
+                                               error:&error];
+        
+        
+        [TimeExecutionTracker stopTrackingAndPrint];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            [self hideSpinner];
+            
+            if (success){
+                
+                DLog(@"Succes...");
+                [self cancel:nil];
+            }
+            else{
+                
+                DLog(@"Failed...");
+            }
+            
+        });
+    });
 }
 
 
@@ -241,6 +231,29 @@
 						 }
 						 completion:nil];
 	}
+}
+
+
+-(void) initSpinner
+{
+    _spinner = [[UIActivityIndicatorView alloc]
+                initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    _spinner.center = CGPointMake(self.view.bounds.size.width * 3.0f / 5.0f, 34.0f);
+    _spinner.autoresizingMask = (UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleLeftMargin
+                                 | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleTopMargin);
+    _spinner.hidesWhenStopped = YES;
+    [_spinner setColor:[UIColor grayColor]];
+    [self.view addSubview:_spinner];
+}
+
+-(void) showSpinner
+{
+    [_spinner startAnimating];
+}
+
+-(void) hideSpinner
+{
+    [_spinner stopAnimating];
 }
 
 @end
