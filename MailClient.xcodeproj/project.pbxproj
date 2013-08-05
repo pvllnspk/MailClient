@@ -7,18 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B327FD1117A53CD300D3D29F /* copymove-cell-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = B327FD0A17A53CD300D3D29F /* copymove-cell-bg.png */; };
-		B327FD1217A53CD300D3D29F /* item-counter.png in Resources */ = {isa = PBXBuildFile; fileRef = B327FD0B17A53CD300D3D29F /* item-counter.png */; };
-		B327FD1317A53CD300D3D29F /* item-counter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B327FD0C17A53CD300D3D29F /* item-counter@2x.png */; };
-		B327FD1417A53CD300D3D29F /* item-icon-folder-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = B327FD0D17A53CD300D3D29F /* item-icon-folder-selected.png */; };
-		B327FD1517A53CD300D3D29F /* item-icon-folder-selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B327FD0E17A53CD300D3D29F /* item-icon-folder-selected@2x.png */; };
-		B327FD1617A53CD300D3D29F /* item-icon-folder.png in Resources */ = {isa = PBXBuildFile; fileRef = B327FD0F17A53CD300D3D29F /* item-icon-folder.png */; };
-		B327FD1717A53CD300D3D29F /* item-icon-folder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B327FD1017A53CD300D3D29F /* item-icon-folder@2x.png */; };
-		B327FD1D17A570DA00D3D29F /* MCTreeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B327FD1C17A570DA00D3D29F /* MCTreeTableViewCell.m */; };
-		B327FD2017A5730400D3D29F /* mail_open.png in Resources */ = {isa = PBXBuildFile; fileRef = B327FD1E17A5730300D3D29F /* mail_open.png */; };
-		B327FD2117A5730400D3D29F /* mail.png in Resources */ = {isa = PBXBuildFile; fileRef = B327FD1F17A5730300D3D29F /* mail.png */; };
-		B327FD2417A5745B00D3D29F /* CircleArrowDown_sml.png in Resources */ = {isa = PBXBuildFile; fileRef = B327FD2217A5745B00D3D29F /* CircleArrowDown_sml.png */; };
-		B327FD2517A5745B00D3D29F /* CircleArrowRight_sml.png in Resources */ = {isa = PBXBuildFile; fileRef = B327FD2317A5745B00D3D29F /* CircleArrowRight_sml.png */; };
 		B327FD3017A59A9500D3D29F /* MCController.m in Sources */ = {isa = PBXBuildFile; fileRef = B327FD2F17A59A9500D3D29F /* MCController.m */; };
 		B32E63DE17A2EC25004236A0 /* libDTCoreText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B32E63D317A2EAC3004236A0 /* libDTCoreText.a */; };
 		B32E63E017A2EC41004236A0 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B32E63DF17A2EC41004236A0 /* libxml2.dylib */; };
@@ -27,32 +15,53 @@
 		B32E63E617A2EC59004236A0 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B32E63E517A2EC59004236A0 /* CoreText.framework */; };
 		B32E63E817A2EC61004236A0 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B32E63E717A2EC61004236A0 /* MobileCoreServices.framework */; };
 		B3D479B117A6F89E0067C957 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D479B017A6F89E0067C957 /* Security.framework */; };
-		B3D479C417A70AE70067C957 /* create-email-nav-bar-button.png in Resources */ = {isa = PBXBuildFile; fileRef = B3D479C217A70AE40067C957 /* create-email-nav-bar-button.png */; };
-		B3D479C517A70AE70067C957 /* create-email-nav-bar-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3D479C317A70AE50067C957 /* create-email-nav-bar-button@2x.png */; };
-		B3D479D517A70D470067C957 /* MCButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D479D417A70D470067C957 /* MCButton.m */; };
-		B3DA4FD217A998A700420453 /* AddAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DA4FD117A998A700420453 /* AddAccountViewController.m */; };
 		B3DA4FD517A9BD8E00420453 /* GoogleMailAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DA4FD417A9BD8E00420453 /* GoogleMailAccount.m */; };
-		B3DAB69117AE629400522F46 /* PopoverBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DAB69017AE629400522F46 /* PopoverBackgroundView.m */; };
-		B3DAB69B17AEA15700522F46 /* ComposeMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DAB69A17AEA15700522F46 /* ComposeMessageViewController.m */; };
 		B3DAB6A417AEDB1600522F46 /* JSBackspaceReportingTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DAB69E17AEDB1600522F46 /* JSBackspaceReportingTextField.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		B3DAB6A517AEDB1600522F46 /* JSTokenButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DAB6A017AEDB1600522F46 /* JSTokenButton.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		B3DAB6A617AEDB1600522F46 /* JSTokenField.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DAB6A317AEDB1600522F46 /* JSTokenField.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		B3DAB6AB17AEEC7100522F46 /* tokenHighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = B3DAB6A717AEEC7100522F46 /* tokenHighlighted.png */; };
-		B3DAB6AC17AEEC7100522F46 /* tokenHighlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3DAB6A817AEEC7100522F46 /* tokenHighlighted@2x.png */; };
-		B3DAB6AD17AEEC7100522F46 /* tokenNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = B3DAB6A917AEEC7100522F46 /* tokenNormal.png */; };
-		B3DAB6AE17AEEC7100522F46 /* tokenNormal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3DAB6AA17AEEC7100522F46 /* tokenNormal@2x.png */; };
 		B3DC2B6517AABD44003F0802 /* TimeExecutionTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DC2B6417AABD44003F0802 /* TimeExecutionTracker.m */; };
-		B3DC9A1117AD2ADF0090D198 /* MCTreeItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DC9A1017AD2ADF0090D198 /* MCTreeItem.m */; };
-		B3DC9A2817ADACA10090D198 /* PopoverContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DC9A2717ADACA10090D198 /* PopoverContentViewController.m */; };
+		B3E5B33B17B04E8C009FC97B /* AccountsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E5B33017B04E8C009FC97B /* AccountsViewController.m */; };
+		B3E5B33C17B04E8C009FC97B /* AddAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E5B33217B04E8C009FC97B /* AddAccountViewController.m */; };
+		B3E5B33D17B04E8C009FC97B /* ComposeMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E5B33417B04E8C009FC97B /* ComposeMessageViewController.m */; };
+		B3E5B33E17B04E8C009FC97B /* FoldersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E5B33617B04E8C009FC97B /* FoldersViewController.m */; };
+		B3E5B33F17B04E8C009FC97B /* PopoverBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E5B33817B04E8C009FC97B /* PopoverBackgroundView.m */; };
+		B3E5B34017B04E8C009FC97B /* PopoverContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E5B33A17B04E8C009FC97B /* PopoverContentViewController.m */; };
+		B3E5B35E17B04EFF009FC97B /* attachment@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3E5B34317B04EFF009FC97B /* attachment@2x.png */; };
+		B3E5B35F17B04EFF009FC97B /* attachment_header@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3E5B34417B04EFF009FC97B /* attachment_header@2x.png */; };
+		B3E5B36017B04EFF009FC97B /* CircleArrowDown_sml.png in Resources */ = {isa = PBXBuildFile; fileRef = B3E5B34517B04EFF009FC97B /* CircleArrowDown_sml.png */; };
+		B3E5B36117B04EFF009FC97B /* CircleArrowRight_sml.png in Resources */ = {isa = PBXBuildFile; fileRef = B3E5B34617B04EFF009FC97B /* CircleArrowRight_sml.png */; };
+		B3E5B36217B04EFF009FC97B /* copymove-cell-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = B3E5B34717B04EFF009FC97B /* copymove-cell-bg.png */; };
+		B3E5B36317B04EFF009FC97B /* create-email-nav-bar-button.png in Resources */ = {isa = PBXBuildFile; fileRef = B3E5B34817B04EFF009FC97B /* create-email-nav-bar-button.png */; };
+		B3E5B36417B04EFF009FC97B /* create-email-nav-bar-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3E5B34917B04EFF009FC97B /* create-email-nav-bar-button@2x.png */; };
+		B3E5B36517B04EFF009FC97B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3E5B34A17B04EFF009FC97B /* Default-568h@2x.png */; };
+		B3E5B36617B04EFF009FC97B /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B3E5B34B17B04EFF009FC97B /* Default.png */; };
+		B3E5B36717B04EFF009FC97B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3E5B34C17B04EFF009FC97B /* Default@2x.png */; };
+		B3E5B36817B04EFF009FC97B /* item-counter.png in Resources */ = {isa = PBXBuildFile; fileRef = B3E5B34D17B04EFF009FC97B /* item-counter.png */; };
+		B3E5B36917B04EFF009FC97B /* item-counter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3E5B34E17B04EFF009FC97B /* item-counter@2x.png */; };
+		B3E5B36A17B04EFF009FC97B /* item-icon-folder-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = B3E5B34F17B04EFF009FC97B /* item-icon-folder-selected.png */; };
+		B3E5B36B17B04EFF009FC97B /* item-icon-folder-selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3E5B35017B04EFF009FC97B /* item-icon-folder-selected@2x.png */; };
+		B3E5B36C17B04EFF009FC97B /* item-icon-folder.png in Resources */ = {isa = PBXBuildFile; fileRef = B3E5B35117B04EFF009FC97B /* item-icon-folder.png */; };
+		B3E5B36D17B04EFF009FC97B /* item-icon-folder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3E5B35217B04EFF009FC97B /* item-icon-folder@2x.png */; };
+		B3E5B36E17B04EFF009FC97B /* mail.png in Resources */ = {isa = PBXBuildFile; fileRef = B3E5B35317B04EFF009FC97B /* mail.png */; };
+		B3E5B36F17B04EFF009FC97B /* mail_open.png in Resources */ = {isa = PBXBuildFile; fileRef = B3E5B35417B04EFF009FC97B /* mail_open.png */; };
+		B3E5B37017B04EFF009FC97B /* mainSplitterBar.png in Resources */ = {isa = PBXBuildFile; fileRef = B3E5B35517B04EFF009FC97B /* mainSplitterBar.png */; };
+		B3E5B37117B04EFF009FC97B /* mainSplitterBar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3E5B35617B04EFF009FC97B /* mainSplitterBar@2x.png */; };
+		B3E5B37217B04EFF009FC97B /* mainSplitterBarVertical.png in Resources */ = {isa = PBXBuildFile; fileRef = B3E5B35717B04EFF009FC97B /* mainSplitterBarVertical.png */; };
+		B3E5B37317B04EFF009FC97B /* mainSplitterBarVertical@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3E5B35817B04EFF009FC97B /* mainSplitterBarVertical@2x.png */; };
+		B3E5B37417B04EFF009FC97B /* note-background-gradient@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3E5B35917B04EFF009FC97B /* note-background-gradient@2x.png */; };
+		B3E5B37517B04EFF009FC97B /* tokenHighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = B3E5B35A17B04EFF009FC97B /* tokenHighlighted.png */; };
+		B3E5B37617B04EFF009FC97B /* tokenHighlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3E5B35B17B04EFF009FC97B /* tokenHighlighted@2x.png */; };
+		B3E5B37717B04EFF009FC97B /* tokenNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = B3E5B35C17B04EFF009FC97B /* tokenNormal.png */; };
+		B3E5B37817B04EFF009FC97B /* tokenNormal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3E5B35D17B04EFF009FC97B /* tokenNormal@2x.png */; };
+		B3E5B38017B04F37009FC97B /* MCButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E5B37A17B04F37009FC97B /* MCButton.m */; };
+		B3E5B38117B04F37009FC97B /* MCTreeItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E5B37D17B04F37009FC97B /* MCTreeItem.m */; };
+		B3E5B38217B04F37009FC97B /* MCTreeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E5B37F17B04F37009FC97B /* MCTreeTableViewCell.m */; };
 		B3EF657D17A11C7E00369805 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EF657C17A11C7E00369805 /* UIKit.framework */; };
 		B3EF657F17A11C7E00369805 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EF657E17A11C7E00369805 /* Foundation.framework */; };
 		B3EF658117A11C7E00369805 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EF658017A11C7E00369805 /* CoreGraphics.framework */; };
 		B3EF658317A11C7E00369805 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EF658217A11C7E00369805 /* CoreData.framework */; };
 		B3EF658917A11C7E00369805 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B3EF658717A11C7E00369805 /* InfoPlist.strings */; };
 		B3EF658B17A11C7E00369805 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B3EF658A17A11C7E00369805 /* main.m */; };
-		B3EF659117A11C7E00369805 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B3EF659017A11C7E00369805 /* Default.png */; };
-		B3EF659317A11C7E00369805 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3EF659217A11C7E00369805 /* Default@2x.png */; };
-		B3EF659517A11C7E00369805 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3EF659417A11C7E00369805 /* Default-568h@2x.png */; };
 		B3EF659817A11C7E00369805 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3EF659617A11C7E00369805 /* MainStoryboard.storyboard */; };
 		B3EF659B17A11C7E00369805 /* MailClient.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B3EF659917A11C7E00369805 /* MailClient.xcdatamodeld */; };
 		B3EF65E517A1307000369805 /* libmailcore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EF65BA17A1258300369805 /* libmailcore.a */; };
@@ -64,8 +73,6 @@
 		B3EFA06117A522F000012134 /* NSSet+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B3EFA05E17A522F000012134 /* NSSet+Additions.m */; };
 		B3EFA06217A522F000012134 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B3EFA06017A522F000012134 /* NSString+Additions.m */; };
 		B3EFA06617A5239100012134 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B3EFA06517A5239100012134 /* AppDelegate.m */; };
-		B3EFA06C17A523B800012134 /* FoldersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3EFA06917A523B800012134 /* FoldersViewController.m */; };
-		B3EFA06D17A523B800012134 /* AccountsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3EFA06B17A523B800012134 /* AccountsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -149,19 +156,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B327FD0A17A53CD300D3D29F /* copymove-cell-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "copymove-cell-bg.png"; sourceTree = "<group>"; };
-		B327FD0B17A53CD300D3D29F /* item-counter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "item-counter.png"; sourceTree = "<group>"; };
-		B327FD0C17A53CD300D3D29F /* item-counter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "item-counter@2x.png"; sourceTree = "<group>"; };
-		B327FD0D17A53CD300D3D29F /* item-icon-folder-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "item-icon-folder-selected.png"; sourceTree = "<group>"; };
-		B327FD0E17A53CD300D3D29F /* item-icon-folder-selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "item-icon-folder-selected@2x.png"; sourceTree = "<group>"; };
-		B327FD0F17A53CD300D3D29F /* item-icon-folder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "item-icon-folder.png"; sourceTree = "<group>"; };
-		B327FD1017A53CD300D3D29F /* item-icon-folder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "item-icon-folder@2x.png"; sourceTree = "<group>"; };
-		B327FD1B17A570DA00D3D29F /* MCTreeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCTreeTableViewCell.h; path = MCTreeView/MCTreeTableViewCell.h; sourceTree = "<group>"; };
-		B327FD1C17A570DA00D3D29F /* MCTreeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCTreeTableViewCell.m; path = MCTreeView/MCTreeTableViewCell.m; sourceTree = "<group>"; };
-		B327FD1E17A5730300D3D29F /* mail_open.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mail_open.png; sourceTree = "<group>"; };
-		B327FD1F17A5730300D3D29F /* mail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mail.png; sourceTree = "<group>"; };
-		B327FD2217A5745B00D3D29F /* CircleArrowDown_sml.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CircleArrowDown_sml.png; sourceTree = "<group>"; };
-		B327FD2317A5745B00D3D29F /* CircleArrowRight_sml.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CircleArrowRight_sml.png; sourceTree = "<group>"; };
 		B327FD2E17A59A9500D3D29F /* MCController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCController.h; path = Misc/MCController.h; sourceTree = "<group>"; };
 		B327FD2F17A59A9500D3D29F /* MCController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCController.m; path = Misc/MCController.m; sourceTree = "<group>"; };
 		B32E63C217A2EAC0004236A0 /* DTCoreText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DTCoreText.xcodeproj; path = Externals/DTCoreText/DTCoreText.xcodeproj; sourceTree = "<group>"; };
@@ -171,18 +165,8 @@
 		B32E63E517A2EC59004236A0 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		B32E63E717A2EC61004236A0 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		B3D479B017A6F89E0067C957 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		B3D479C217A70AE40067C957 /* create-email-nav-bar-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "create-email-nav-bar-button.png"; sourceTree = "<group>"; };
-		B3D479C317A70AE50067C957 /* create-email-nav-bar-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "create-email-nav-bar-button@2x.png"; sourceTree = "<group>"; };
-		B3D479D317A70D470067C957 /* MCButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCButton.h; sourceTree = "<group>"; };
-		B3D479D417A70D470067C957 /* MCButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCButton.m; sourceTree = "<group>"; };
-		B3DA4FD017A998A700420453 /* AddAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddAccountViewController.h; sourceTree = "<group>"; };
-		B3DA4FD117A998A700420453 /* AddAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddAccountViewController.m; sourceTree = "<group>"; };
 		B3DA4FD317A9BD8E00420453 /* GoogleMailAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GoogleMailAccount.h; path = Model/GoogleMailAccount.h; sourceTree = "<group>"; };
 		B3DA4FD417A9BD8E00420453 /* GoogleMailAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GoogleMailAccount.m; path = Model/GoogleMailAccount.m; sourceTree = "<group>"; };
-		B3DAB68F17AE629400522F46 /* PopoverBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopoverBackgroundView.h; sourceTree = "<group>"; };
-		B3DAB69017AE629400522F46 /* PopoverBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopoverBackgroundView.m; sourceTree = "<group>"; };
-		B3DAB69917AEA15700522F46 /* ComposeMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComposeMessageViewController.h; sourceTree = "<group>"; };
-		B3DAB69A17AEA15700522F46 /* ComposeMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComposeMessageViewController.m; sourceTree = "<group>"; };
 		B3DAB69D17AEDB1600522F46 /* JSBackspaceReportingTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSBackspaceReportingTextField.h; sourceTree = "<group>"; };
 		B3DAB69E17AEDB1600522F46 /* JSBackspaceReportingTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSBackspaceReportingTextField.m; sourceTree = "<group>"; };
 		B3DAB69F17AEDB1600522F46 /* JSTokenButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSTokenButton.h; sourceTree = "<group>"; };
@@ -190,18 +174,55 @@
 		B3DAB6A117AEDB1600522F46 /* JSTokenField-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JSTokenField-Prefix.pch"; sourceTree = "<group>"; };
 		B3DAB6A217AEDB1600522F46 /* JSTokenField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSTokenField.h; sourceTree = "<group>"; };
 		B3DAB6A317AEDB1600522F46 /* JSTokenField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSTokenField.m; sourceTree = "<group>"; };
-		B3DAB6A717AEEC7100522F46 /* tokenHighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tokenHighlighted.png; sourceTree = "<group>"; };
-		B3DAB6A817AEEC7100522F46 /* tokenHighlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tokenHighlighted@2x.png"; sourceTree = "<group>"; };
-		B3DAB6A917AEEC7100522F46 /* tokenNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tokenNormal.png; sourceTree = "<group>"; };
-		B3DAB6AA17AEEC7100522F46 /* tokenNormal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tokenNormal@2x.png"; sourceTree = "<group>"; };
 		B3DC2B6317AABD44003F0802 /* TimeExecutionTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimeExecutionTracker.h; path = Misc/TimeExecutionTracker.h; sourceTree = "<group>"; };
 		B3DC2B6417AABD44003F0802 /* TimeExecutionTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TimeExecutionTracker.m; path = Misc/TimeExecutionTracker.m; sourceTree = "<group>"; };
 		B3DC2B7117AAE7BA003F0802 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = Misc/Constants.h; sourceTree = "<group>"; };
-		B3DC9A0F17AD2ADF0090D198 /* MCTreeItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCTreeItem.h; path = MCTreeView/MCTreeItem.h; sourceTree = "<group>"; };
-		B3DC9A1017AD2ADF0090D198 /* MCTreeItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCTreeItem.m; path = MCTreeView/MCTreeItem.m; sourceTree = "<group>"; };
-		B3DC9A2617ADACA10090D198 /* PopoverContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopoverContentViewController.h; sourceTree = "<group>"; };
-		B3DC9A2717ADACA10090D198 /* PopoverContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopoverContentViewController.m; sourceTree = "<group>"; };
 		B3E5B32E17B02B39009FC97B /* AppConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppConfig.h; sourceTree = "<group>"; };
+		B3E5B32F17B04E8C009FC97B /* AccountsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountsViewController.h; sourceTree = "<group>"; };
+		B3E5B33017B04E8C009FC97B /* AccountsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountsViewController.m; sourceTree = "<group>"; };
+		B3E5B33117B04E8C009FC97B /* AddAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddAccountViewController.h; sourceTree = "<group>"; };
+		B3E5B33217B04E8C009FC97B /* AddAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddAccountViewController.m; sourceTree = "<group>"; };
+		B3E5B33317B04E8C009FC97B /* ComposeMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComposeMessageViewController.h; sourceTree = "<group>"; };
+		B3E5B33417B04E8C009FC97B /* ComposeMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComposeMessageViewController.m; sourceTree = "<group>"; };
+		B3E5B33517B04E8C009FC97B /* FoldersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoldersViewController.h; sourceTree = "<group>"; };
+		B3E5B33617B04E8C009FC97B /* FoldersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoldersViewController.m; sourceTree = "<group>"; };
+		B3E5B33717B04E8C009FC97B /* PopoverBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopoverBackgroundView.h; sourceTree = "<group>"; };
+		B3E5B33817B04E8C009FC97B /* PopoverBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopoverBackgroundView.m; sourceTree = "<group>"; };
+		B3E5B33917B04E8C009FC97B /* PopoverContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopoverContentViewController.h; sourceTree = "<group>"; };
+		B3E5B33A17B04E8C009FC97B /* PopoverContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopoverContentViewController.m; sourceTree = "<group>"; };
+		B3E5B34317B04EFF009FC97B /* attachment@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "attachment@2x.png"; sourceTree = "<group>"; };
+		B3E5B34417B04EFF009FC97B /* attachment_header@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "attachment_header@2x.png"; sourceTree = "<group>"; };
+		B3E5B34517B04EFF009FC97B /* CircleArrowDown_sml.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CircleArrowDown_sml.png; sourceTree = "<group>"; };
+		B3E5B34617B04EFF009FC97B /* CircleArrowRight_sml.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CircleArrowRight_sml.png; sourceTree = "<group>"; };
+		B3E5B34717B04EFF009FC97B /* copymove-cell-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "copymove-cell-bg.png"; sourceTree = "<group>"; };
+		B3E5B34817B04EFF009FC97B /* create-email-nav-bar-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "create-email-nav-bar-button.png"; sourceTree = "<group>"; };
+		B3E5B34917B04EFF009FC97B /* create-email-nav-bar-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "create-email-nav-bar-button@2x.png"; sourceTree = "<group>"; };
+		B3E5B34A17B04EFF009FC97B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		B3E5B34B17B04EFF009FC97B /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		B3E5B34C17B04EFF009FC97B /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		B3E5B34D17B04EFF009FC97B /* item-counter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "item-counter.png"; sourceTree = "<group>"; };
+		B3E5B34E17B04EFF009FC97B /* item-counter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "item-counter@2x.png"; sourceTree = "<group>"; };
+		B3E5B34F17B04EFF009FC97B /* item-icon-folder-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "item-icon-folder-selected.png"; sourceTree = "<group>"; };
+		B3E5B35017B04EFF009FC97B /* item-icon-folder-selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "item-icon-folder-selected@2x.png"; sourceTree = "<group>"; };
+		B3E5B35117B04EFF009FC97B /* item-icon-folder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "item-icon-folder.png"; sourceTree = "<group>"; };
+		B3E5B35217B04EFF009FC97B /* item-icon-folder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "item-icon-folder@2x.png"; sourceTree = "<group>"; };
+		B3E5B35317B04EFF009FC97B /* mail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mail.png; sourceTree = "<group>"; };
+		B3E5B35417B04EFF009FC97B /* mail_open.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mail_open.png; sourceTree = "<group>"; };
+		B3E5B35517B04EFF009FC97B /* mainSplitterBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainSplitterBar.png; sourceTree = "<group>"; };
+		B3E5B35617B04EFF009FC97B /* mainSplitterBar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mainSplitterBar@2x.png"; sourceTree = "<group>"; };
+		B3E5B35717B04EFF009FC97B /* mainSplitterBarVertical.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainSplitterBarVertical.png; sourceTree = "<group>"; };
+		B3E5B35817B04EFF009FC97B /* mainSplitterBarVertical@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mainSplitterBarVertical@2x.png"; sourceTree = "<group>"; };
+		B3E5B35917B04EFF009FC97B /* note-background-gradient@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "note-background-gradient@2x.png"; sourceTree = "<group>"; };
+		B3E5B35A17B04EFF009FC97B /* tokenHighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tokenHighlighted.png; sourceTree = "<group>"; };
+		B3E5B35B17B04EFF009FC97B /* tokenHighlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tokenHighlighted@2x.png"; sourceTree = "<group>"; };
+		B3E5B35C17B04EFF009FC97B /* tokenNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tokenNormal.png; sourceTree = "<group>"; };
+		B3E5B35D17B04EFF009FC97B /* tokenNormal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tokenNormal@2x.png"; sourceTree = "<group>"; };
+		B3E5B37917B04F37009FC97B /* MCButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCButton.h; path = Views/MCButton.h; sourceTree = "<group>"; };
+		B3E5B37A17B04F37009FC97B /* MCButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCButton.m; path = Views/MCButton.m; sourceTree = "<group>"; };
+		B3E5B37C17B04F37009FC97B /* MCTreeItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCTreeItem.h; sourceTree = "<group>"; };
+		B3E5B37D17B04F37009FC97B /* MCTreeItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCTreeItem.m; sourceTree = "<group>"; };
+		B3E5B37E17B04F37009FC97B /* MCTreeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCTreeTableViewCell.h; sourceTree = "<group>"; };
+		B3E5B37F17B04F37009FC97B /* MCTreeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCTreeTableViewCell.m; sourceTree = "<group>"; };
 		B3EF657917A11C7E00369805 /* MailClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MailClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3EF657C17A11C7E00369805 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B3EF657E17A11C7E00369805 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -211,9 +232,6 @@
 		B3EF658817A11C7E00369805 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B3EF658A17A11C7E00369805 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B3EF658C17A11C7E00369805 /* MailClient-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MailClient-Prefix.pch"; sourceTree = "<group>"; };
-		B3EF659017A11C7E00369805 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		B3EF659217A11C7E00369805 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		B3EF659417A11C7E00369805 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		B3EF659717A11C7E00369805 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		B3EF659A17A11C7E00369805 /* MailClient.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MailClient.xcdatamodel; sourceTree = "<group>"; };
 		B3EF65AC17A1257A00369805 /* MailCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MailCore.xcodeproj; path = ../MailCore/MailCore.xcodeproj; sourceTree = "<group>"; };
@@ -228,10 +246,6 @@
 		B3EFA06017A522F000012134 /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
 		B3EFA06417A5239100012134 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B3EFA06517A5239100012134 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		B3EFA06817A523B800012134 /* FoldersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoldersViewController.h; sourceTree = "<group>"; };
-		B3EFA06917A523B800012134 /* FoldersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoldersViewController.m; sourceTree = "<group>"; };
-		B3EFA06A17A523B800012134 /* AccountsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountsViewController.h; sourceTree = "<group>"; };
-		B3EFA06B17A523B800012134 /* AccountsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -262,33 +276,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B327FCFF17A53C7A00D3D29F /* Assets */ = {
-			isa = PBXGroup;
-			children = (
-				B3DAB6A717AEEC7100522F46 /* tokenHighlighted.png */,
-				B3DAB6A817AEEC7100522F46 /* tokenHighlighted@2x.png */,
-				B3DAB6A917AEEC7100522F46 /* tokenNormal.png */,
-				B3DAB6AA17AEEC7100522F46 /* tokenNormal@2x.png */,
-				B3D479C217A70AE40067C957 /* create-email-nav-bar-button.png */,
-				B3D479C317A70AE50067C957 /* create-email-nav-bar-button@2x.png */,
-				B327FD2217A5745B00D3D29F /* CircleArrowDown_sml.png */,
-				B327FD2317A5745B00D3D29F /* CircleArrowRight_sml.png */,
-				B327FD1E17A5730300D3D29F /* mail_open.png */,
-				B327FD1F17A5730300D3D29F /* mail.png */,
-				B327FD0A17A53CD300D3D29F /* copymove-cell-bg.png */,
-				B327FD0B17A53CD300D3D29F /* item-counter.png */,
-				B327FD0C17A53CD300D3D29F /* item-counter@2x.png */,
-				B327FD0D17A53CD300D3D29F /* item-icon-folder-selected.png */,
-				B327FD0E17A53CD300D3D29F /* item-icon-folder-selected@2x.png */,
-				B327FD0F17A53CD300D3D29F /* item-icon-folder.png */,
-				B327FD1017A53CD300D3D29F /* item-icon-folder@2x.png */,
-				B3EF659017A11C7E00369805 /* Default.png */,
-				B3EF659217A11C7E00369805 /* Default@2x.png */,
-				B3EF659417A11C7E00369805 /* Default-568h@2x.png */,
-			);
-			name = Assets;
-			sourceTree = "<group>";
-		};
 		B327FD2617A597EA00D3D29F /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -324,15 +311,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B3DAB69817AEA10000522F46 /* Compose Message */ = {
-			isa = PBXGroup;
-			children = (
-				B3DAB69917AEA15700522F46 /* ComposeMessageViewController.h */,
-				B3DAB69A17AEA15700522F46 /* ComposeMessageViewController.m */,
-			);
-			name = "Compose Message";
-			sourceTree = "<group>";
-		};
 		B3DAB69C17AEDB1600522F46 /* JSTokenField */ = {
 			isa = PBXGroup;
 			children = (
@@ -347,49 +325,66 @@
 			path = JSTokenField;
 			sourceTree = "<group>";
 		};
-		B3DC2B7017AAE671003F0802 /* Add Account */ = {
+		B3E5B34117B04EFF009FC97B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				B3DA4FD017A998A700420453 /* AddAccountViewController.h */,
-				B3DA4FD117A998A700420453 /* AddAccountViewController.m */,
+				B3E5B34217B04EFF009FC97B /* Images */,
 			);
-			name = "Add Account";
+			path = Resources;
 			sourceTree = "<group>";
 		};
-		B3DC9A1D17ADA5740090D198 /* Accounts */ = {
+		B3E5B34217B04EFF009FC97B /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				B3EFA06A17A523B800012134 /* AccountsViewController.h */,
-				B3EFA06B17A523B800012134 /* AccountsViewController.m */,
+				B3E5B34317B04EFF009FC97B /* attachment@2x.png */,
+				B3E5B34417B04EFF009FC97B /* attachment_header@2x.png */,
+				B3E5B34517B04EFF009FC97B /* CircleArrowDown_sml.png */,
+				B3E5B34617B04EFF009FC97B /* CircleArrowRight_sml.png */,
+				B3E5B34717B04EFF009FC97B /* copymove-cell-bg.png */,
+				B3E5B34817B04EFF009FC97B /* create-email-nav-bar-button.png */,
+				B3E5B34917B04EFF009FC97B /* create-email-nav-bar-button@2x.png */,
+				B3E5B34A17B04EFF009FC97B /* Default-568h@2x.png */,
+				B3E5B34B17B04EFF009FC97B /* Default.png */,
+				B3E5B34C17B04EFF009FC97B /* Default@2x.png */,
+				B3E5B34D17B04EFF009FC97B /* item-counter.png */,
+				B3E5B34E17B04EFF009FC97B /* item-counter@2x.png */,
+				B3E5B34F17B04EFF009FC97B /* item-icon-folder-selected.png */,
+				B3E5B35017B04EFF009FC97B /* item-icon-folder-selected@2x.png */,
+				B3E5B35117B04EFF009FC97B /* item-icon-folder.png */,
+				B3E5B35217B04EFF009FC97B /* item-icon-folder@2x.png */,
+				B3E5B35317B04EFF009FC97B /* mail.png */,
+				B3E5B35417B04EFF009FC97B /* mail_open.png */,
+				B3E5B35517B04EFF009FC97B /* mainSplitterBar.png */,
+				B3E5B35617B04EFF009FC97B /* mainSplitterBar@2x.png */,
+				B3E5B35717B04EFF009FC97B /* mainSplitterBarVertical.png */,
+				B3E5B35817B04EFF009FC97B /* mainSplitterBarVertical@2x.png */,
+				B3E5B35917B04EFF009FC97B /* note-background-gradient@2x.png */,
+				B3E5B35A17B04EFF009FC97B /* tokenHighlighted.png */,
+				B3E5B35B17B04EFF009FC97B /* tokenHighlighted@2x.png */,
+				B3E5B35C17B04EFF009FC97B /* tokenNormal.png */,
+				B3E5B35D17B04EFF009FC97B /* tokenNormal@2x.png */,
 			);
-			name = Accounts;
+			path = Images;
 			sourceTree = "<group>";
 		};
-		B3DC9A1E17ADA59D0090D198 /* Folders */ = {
+		B3E5B37B17B04F37009FC97B /* MCTreeView */ = {
 			isa = PBXGroup;
 			children = (
-				B3EFA06817A523B800012134 /* FoldersViewController.h */,
-				B3EFA06917A523B800012134 /* FoldersViewController.m */,
+				B3E5B37C17B04F37009FC97B /* MCTreeItem.h */,
+				B3E5B37D17B04F37009FC97B /* MCTreeItem.m */,
+				B3E5B37E17B04F37009FC97B /* MCTreeTableViewCell.h */,
+				B3E5B37F17B04F37009FC97B /* MCTreeTableViewCell.m */,
 			);
-			name = Folders;
-			sourceTree = "<group>";
-		};
-		B3DC9A1F17ADABD70090D198 /* Popover */ = {
-			isa = PBXGroup;
-			children = (
-				B3DC9A2617ADACA10090D198 /* PopoverContentViewController.h */,
-				B3DC9A2717ADACA10090D198 /* PopoverContentViewController.m */,
-				B3DAB68F17AE629400522F46 /* PopoverBackgroundView.h */,
-				B3DAB69017AE629400522F46 /* PopoverBackgroundView.m */,
-			);
-			name = Popover;
+			name = MCTreeView;
+			path = Views/MCTreeView;
 			sourceTree = "<group>";
 		};
 		B3E7D6FF17A850F400C46AF8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				B3D479D317A70D470067C957 /* MCButton.h */,
-				B3D479D417A70D470067C957 /* MCButton.m */,
+				B3E5B37917B04F37009FC97B /* MCButton.h */,
+				B3E5B37A17B04F37009FC97B /* MCButton.m */,
+				B3E5B37B17B04F37009FC97B /* MCTreeView */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -453,7 +448,6 @@
 				B327FD2617A597EA00D3D29F /* Model */,
 				B3E7D6FF17A850F400C46AF8 /* Views */,
 				B3EFA05C17A522F000012134 /* Categories */,
-				B3EFA05817A5219800012134 /* MCTreeView */,
 				B327FD2D17A59A6300D3D29F /* Misc */,
 				B3EF658517A11C7E00369805 /* Supporting Files */,
 				B3EC9BC517A6D0FC00F3C78B /* Vendor */,
@@ -464,7 +458,7 @@
 		B3EF658517A11C7E00369805 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				B327FCFF17A53C7A00D3D29F /* Assets */,
+				B3E5B34117B04EFF009FC97B /* Resources */,
 				B3EF658617A11C7E00369805 /* MailClient-Info.plist */,
 				B3EF658717A11C7E00369805 /* InfoPlist.strings */,
 				B3EF658A17A11C7E00369805 /* main.m */,
@@ -481,17 +475,6 @@
 				B3EF65BC17A1258300369805 /* Tests.octest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		B3EFA05817A5219800012134 /* MCTreeView */ = {
-			isa = PBXGroup;
-			children = (
-				B3DC9A0F17AD2ADF0090D198 /* MCTreeItem.h */,
-				B3DC9A1017AD2ADF0090D198 /* MCTreeItem.m */,
-				B327FD1B17A570DA00D3D29F /* MCTreeTableViewCell.h */,
-				B327FD1C17A570DA00D3D29F /* MCTreeTableViewCell.m */,
-			);
-			name = MCTreeView;
 			sourceTree = "<group>";
 		};
 		B3EFA05C17A522F000012134 /* Categories */ = {
@@ -518,11 +501,18 @@
 		B3EFA06717A523B800012134 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				B3DC9A1D17ADA5740090D198 /* Accounts */,
-				B3DC9A1E17ADA59D0090D198 /* Folders */,
-				B3DC2B7017AAE671003F0802 /* Add Account */,
-				B3DAB69817AEA10000522F46 /* Compose Message */,
-				B3DC9A1F17ADABD70090D198 /* Popover */,
+				B3E5B32F17B04E8C009FC97B /* AccountsViewController.h */,
+				B3E5B33017B04E8C009FC97B /* AccountsViewController.m */,
+				B3E5B33117B04E8C009FC97B /* AddAccountViewController.h */,
+				B3E5B33217B04E8C009FC97B /* AddAccountViewController.m */,
+				B3E5B33317B04E8C009FC97B /* ComposeMessageViewController.h */,
+				B3E5B33417B04E8C009FC97B /* ComposeMessageViewController.m */,
+				B3E5B33517B04E8C009FC97B /* FoldersViewController.h */,
+				B3E5B33617B04E8C009FC97B /* FoldersViewController.m */,
+				B3E5B33717B04E8C009FC97B /* PopoverBackgroundView.h */,
+				B3E5B33817B04E8C009FC97B /* PopoverBackgroundView.m */,
+				B3E5B33917B04E8C009FC97B /* PopoverContentViewController.h */,
+				B3E5B33A17B04E8C009FC97B /* PopoverContentViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -663,27 +653,34 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3EF658917A11C7E00369805 /* InfoPlist.strings in Resources */,
-				B3EF659117A11C7E00369805 /* Default.png in Resources */,
-				B3EF659317A11C7E00369805 /* Default@2x.png in Resources */,
-				B3EF659517A11C7E00369805 /* Default-568h@2x.png in Resources */,
 				B3EF659817A11C7E00369805 /* MainStoryboard.storyboard in Resources */,
-				B327FD1117A53CD300D3D29F /* copymove-cell-bg.png in Resources */,
-				B327FD1217A53CD300D3D29F /* item-counter.png in Resources */,
-				B327FD1317A53CD300D3D29F /* item-counter@2x.png in Resources */,
-				B327FD1417A53CD300D3D29F /* item-icon-folder-selected.png in Resources */,
-				B327FD1517A53CD300D3D29F /* item-icon-folder-selected@2x.png in Resources */,
-				B327FD1617A53CD300D3D29F /* item-icon-folder.png in Resources */,
-				B327FD1717A53CD300D3D29F /* item-icon-folder@2x.png in Resources */,
-				B327FD2017A5730400D3D29F /* mail_open.png in Resources */,
-				B327FD2117A5730400D3D29F /* mail.png in Resources */,
-				B327FD2417A5745B00D3D29F /* CircleArrowDown_sml.png in Resources */,
-				B327FD2517A5745B00D3D29F /* CircleArrowRight_sml.png in Resources */,
-				B3D479C417A70AE70067C957 /* create-email-nav-bar-button.png in Resources */,
-				B3D479C517A70AE70067C957 /* create-email-nav-bar-button@2x.png in Resources */,
-				B3DAB6AB17AEEC7100522F46 /* tokenHighlighted.png in Resources */,
-				B3DAB6AC17AEEC7100522F46 /* tokenHighlighted@2x.png in Resources */,
-				B3DAB6AD17AEEC7100522F46 /* tokenNormal.png in Resources */,
-				B3DAB6AE17AEEC7100522F46 /* tokenNormal@2x.png in Resources */,
+				B3E5B35E17B04EFF009FC97B /* attachment@2x.png in Resources */,
+				B3E5B35F17B04EFF009FC97B /* attachment_header@2x.png in Resources */,
+				B3E5B36017B04EFF009FC97B /* CircleArrowDown_sml.png in Resources */,
+				B3E5B36117B04EFF009FC97B /* CircleArrowRight_sml.png in Resources */,
+				B3E5B36217B04EFF009FC97B /* copymove-cell-bg.png in Resources */,
+				B3E5B36317B04EFF009FC97B /* create-email-nav-bar-button.png in Resources */,
+				B3E5B36417B04EFF009FC97B /* create-email-nav-bar-button@2x.png in Resources */,
+				B3E5B36517B04EFF009FC97B /* Default-568h@2x.png in Resources */,
+				B3E5B36617B04EFF009FC97B /* Default.png in Resources */,
+				B3E5B36717B04EFF009FC97B /* Default@2x.png in Resources */,
+				B3E5B36817B04EFF009FC97B /* item-counter.png in Resources */,
+				B3E5B36917B04EFF009FC97B /* item-counter@2x.png in Resources */,
+				B3E5B36A17B04EFF009FC97B /* item-icon-folder-selected.png in Resources */,
+				B3E5B36B17B04EFF009FC97B /* item-icon-folder-selected@2x.png in Resources */,
+				B3E5B36C17B04EFF009FC97B /* item-icon-folder.png in Resources */,
+				B3E5B36D17B04EFF009FC97B /* item-icon-folder@2x.png in Resources */,
+				B3E5B36E17B04EFF009FC97B /* mail.png in Resources */,
+				B3E5B36F17B04EFF009FC97B /* mail_open.png in Resources */,
+				B3E5B37017B04EFF009FC97B /* mainSplitterBar.png in Resources */,
+				B3E5B37117B04EFF009FC97B /* mainSplitterBar@2x.png in Resources */,
+				B3E5B37217B04EFF009FC97B /* mainSplitterBarVertical.png in Resources */,
+				B3E5B37317B04EFF009FC97B /* mainSplitterBarVertical@2x.png in Resources */,
+				B3E5B37417B04EFF009FC97B /* note-background-gradient@2x.png in Resources */,
+				B3E5B37517B04EFF009FC97B /* tokenHighlighted.png in Resources */,
+				B3E5B37617B04EFF009FC97B /* tokenHighlighted@2x.png in Resources */,
+				B3E5B37717B04EFF009FC97B /* tokenNormal.png in Resources */,
+				B3E5B37817B04EFF009FC97B /* tokenNormal@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -699,21 +696,21 @@
 				B3EFA06117A522F000012134 /* NSSet+Additions.m in Sources */,
 				B3EFA06217A522F000012134 /* NSString+Additions.m in Sources */,
 				B3EFA06617A5239100012134 /* AppDelegate.m in Sources */,
-				B3EFA06C17A523B800012134 /* FoldersViewController.m in Sources */,
-				B3EFA06D17A523B800012134 /* AccountsViewController.m in Sources */,
-				B327FD1D17A570DA00D3D29F /* MCTreeTableViewCell.m in Sources */,
 				B327FD3017A59A9500D3D29F /* MCController.m in Sources */,
-				B3D479D517A70D470067C957 /* MCButton.m in Sources */,
-				B3DA4FD217A998A700420453 /* AddAccountViewController.m in Sources */,
 				B3DA4FD517A9BD8E00420453 /* GoogleMailAccount.m in Sources */,
 				B3DC2B6517AABD44003F0802 /* TimeExecutionTracker.m in Sources */,
-				B3DC9A1117AD2ADF0090D198 /* MCTreeItem.m in Sources */,
-				B3DC9A2817ADACA10090D198 /* PopoverContentViewController.m in Sources */,
-				B3DAB69117AE629400522F46 /* PopoverBackgroundView.m in Sources */,
-				B3DAB69B17AEA15700522F46 /* ComposeMessageViewController.m in Sources */,
 				B3DAB6A417AEDB1600522F46 /* JSBackspaceReportingTextField.m in Sources */,
 				B3DAB6A517AEDB1600522F46 /* JSTokenButton.m in Sources */,
 				B3DAB6A617AEDB1600522F46 /* JSTokenField.m in Sources */,
+				B3E5B33B17B04E8C009FC97B /* AccountsViewController.m in Sources */,
+				B3E5B33C17B04E8C009FC97B /* AddAccountViewController.m in Sources */,
+				B3E5B33D17B04E8C009FC97B /* ComposeMessageViewController.m in Sources */,
+				B3E5B33E17B04E8C009FC97B /* FoldersViewController.m in Sources */,
+				B3E5B33F17B04E8C009FC97B /* PopoverBackgroundView.m in Sources */,
+				B3E5B34017B04E8C009FC97B /* PopoverContentViewController.m in Sources */,
+				B3E5B38017B04F37009FC97B /* MCButton.m in Sources */,
+				B3E5B38117B04F37009FC97B /* MCTreeItem.m in Sources */,
+				B3E5B38217B04F37009FC97B /* MCTreeTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
