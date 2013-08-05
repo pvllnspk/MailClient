@@ -7,6 +7,8 @@
 //
 
 #import "ComposeMessageViewController.h"
+#import <QuartzCore/QuartzCore.h>
+#import "NSString+Additions.h"
 
 @implementation ComposeMessageViewController
 {
@@ -103,6 +105,9 @@
 {
     _toRecipients = [NSMutableArray array];
     _ccRecipients = [NSMutableArray array];
+    
+    _subjectField.text = @"";
+    _messageBodyView.text = @"";
 }
 
 -(void)viewDidDisappear:(BOOL)animated
@@ -117,8 +122,26 @@
 
 - (IBAction)sendMessage:(id)sender
 {
+        
+    NSMutableSet *toRecipients = [NSMutableSet set];
+    NSMutableSet *ccRecipients = [NSMutableSet set];
     
-    [self showSpinner];
+    for(NSDictionary *recipient in _toRecipients){
+        [toRecipients addObject:[CTCoreAddress addressWithName:[recipient valueForKey:@"email"] email:[recipient valueForKey:@"email"]]];
+    }
+    
+    for(NSDictionary *recipient in _ccRecipients){
+        [ccRecipients addObject:[CTCoreAddress addressWithName:[recipient valueForKey:@"email"] email:[recipient valueForKey:@"email"]]];
+    }
+    
+    
+    if([toRecipients count] == 0){
+        
+        [self sendingEmailFailed];
+        return;
+    }
+    
+      [self showSpinner];
     
     dispatch_async([AppDelegate serialGlobalBackgroundQueue], ^{
         
@@ -126,20 +149,12 @@
         [TimeExecutionTracker startTrackingWithName:@"sending an email"];
        
         CTCoreMessage *msg = [[CTCoreMessage alloc] init];
-        
-        NSMutableSet *toRecipients = [NSMutableSet set];
-        NSMutableSet *ccRecipients = [NSMutableSet set];
-        
-        for(NSDictionary *recipient in _toRecipients){
-            [toRecipients addObject:[CTCoreAddress addressWithName:[recipient valueForKey:@"email"] email:[recipient valueForKey:@"email"]]];
-        }
-        
-        for(NSDictionary *recipient in _ccRecipients){
-            [ccRecipients addObject:[CTCoreAddress addressWithName:[recipient valueForKey:@"email"] email:[recipient valueForKey:@"email"]]];
-        }
-        
+                
         [msg setTo:toRecipients];
         [msg setCc:ccRecipients];
+        
+        DLog(@" _subjectField - %@    _subjectField.text - %@  _subjectField.text replaced  - %@ ", _subjectField, _subjectField.text, _subjectField.text);
+        
         [msg setSubject:_subjectField.text];
         [msg setBody:_messageBodyView.text];
         
@@ -163,15 +178,31 @@
             if (success){
                 
                 DLog(@"Succes...");
-                [self cancel:nil];
+                [self sendingEmailSuccessed];
             }
             else{
                 
                 DLog(@"Failed...");
+                [self sendingEmailFailed];
             }
-            
         });
     });
+}
+
+-(void)sendingEmailSuccessed
+{
+    [self cancel:nil];
+}
+
+-(void)sendingEmailFailed
+{    
+    CABasicAnimation *movingAnimation =[CABasicAnimation animationWithKeyPath:@"transform.translation.y"];
+    [movingAnimation setDuration:0.2];
+    [movingAnimation setRepeatCount:1];
+    [movingAnimation setAutoreverses:YES];
+    [movingAnimation setFromValue:[NSNumber numberWithFloat:-5]];
+    [movingAnimation setToValue:[NSNumber numberWithFloat:5]];
+    [self.view.layer addAnimation:movingAnimation forKey:@"animateLayer"];
 }
 
 
