@@ -13,17 +13,11 @@
     #import <Foundation/Foundation.h>
     #import <CoreData/CoreData.h>
     #import <MailCore/MailCore.h>
+    #import "Constants.h"
     #import "AppDelegate.h"
     #import "AppConfig.h"
-    #import "Constants.h"
     #import "TimeExecutionTracker.h"
     #import "DTCoreText.h"
-#endif
-
-#if 1
-#define DLog(x, ...) NSLog(x, ## __VA_ARGS__);
-#else
-#define DLog(x, ...)
 #endif
 
 

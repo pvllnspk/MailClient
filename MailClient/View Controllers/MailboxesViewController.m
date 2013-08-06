@@ -6,17 +6,16 @@
 //  Copyright (c) 2013 pvllnspk. All rights reserved.
 //
 
-#import "AccountsViewController.h"
-#import "FoldersViewController.h"
+#import "MailboxesViewController.h"
 #import "MCTreeTableViewCell.h"
 #import "MCTreeItem.h"
 #import "AddAccountViewController.h"
 #import "GoogleMailAccount.h"
 #import "PopoverContentViewController.h"
-#import "PopoverBackgroundView.h"
+#import "MessagesViewController.h"
 
 
-@implementation AccountsViewController
+@implementation MailboxesViewController
 {
     UIActivityIndicatorView *_spinner;
     
@@ -31,30 +30,13 @@
     UIPopoverController *_popoverController;
 }
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    _accounts = [[NSMutableArray alloc]init];
-    _subFolders = [[NSMutableDictionary alloc]init];
-    _accountsTreeItems = [[NSMutableArray alloc]init];
-    _subFoldersTreeItems = [[NSMutableDictionary alloc]init];
-    
-    [_topBarView setBackgroundColor:[UIColor colorWithRed:1 green:0.976 blue:0.957 alpha:1]];
-    
-	[_tableView setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight];
-	[_tableView setBackgroundColor:[UIColor colorWithRed:1 green:0.976 blue:0.957 alpha:1]];
-	[_tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
-	[_tableView setRowHeight:65.0f];
-    
-    [self initSpinner];
-    
-    UILongPressGestureRecognizer *longPressGestureRecognizer = [[UILongPressGestureRecognizer alloc]
-                                                                initWithTarget:self action:@selector(tableViewLongPress:)];
-    
-    longPressGestureRecognizer.minimumPressDuration = 1.0;
-    longPressGestureRecognizer.delegate = self;
-    [_tableView addGestureRecognizer:longPressGestureRecognizer];
+    [self initData];
+    [self initViews];    
     
     if(LOAD_TEST_ACCOUNT_AT_START){
         
@@ -62,33 +44,26 @@
     }
 }
 
--(void) loadTestAccount
+
+-(void) initData
 {
-    [self showSpinner];
+    _accounts = [NSMutableArray array];
+    _subFolders = [NSMutableDictionary dictionary];
+    _accountsTreeItems = [NSMutableArray array];
+    _subFoldersTreeItems = [NSMutableDictionary dictionary];
+}
+
+-(void) initViews
+{
+    [_topBarView setBackgroundColor:BACKGROUND_COLOR];
     
-    dispatch_async([AppDelegate serialGlobalBackgroundQueue], ^{
-        
-        DLog(@"attempt to connect to the gmail account");
-        
-        GoogleMailAccount *account = [[GoogleMailAccount alloc]
-                                      initWithFullName:@"iosmailclienttest" emailAddress:@"iosmailclienttest@gmail.com" password:@"testiosmailclienttest"];
-        BOOL success = [account connect];
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            
-            if (!success){
-                
-                DLog(@"Failed %@",account.connectionError);
-            }
-            else{
-                
-                DLog(@"Success");
-                [self accountAdded:account];
-            }
-            
-            [self hideSpinner];
-        });
-    });
+	[_tableView setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight];
+	[_tableView setBackgroundColor:BACKGROUND_COLOR];
+	[_tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+	[_tableView setRowHeight:65.0f];
+    
+    [self initSpinner];
+    [self initPopover];
 }
 
 -(void) initSpinner
@@ -103,6 +78,47 @@
     [self.view addSubview:_spinner];
 }
 
+-(void) initPopover
+{
+    UILongPressGestureRecognizer *longPressGestureRecognizer = [[UILongPressGestureRecognizer alloc]
+                                                                initWithTarget:self action:@selector(tableViewLongPress:)];
+    
+    longPressGestureRecognizer.minimumPressDuration = 1.0;
+    longPressGestureRecognizer.delegate = self;
+    [_tableView addGestureRecognizer:longPressGestureRecognizer];
+}
+
+
+-(void) loadTestAccount
+{
+    [self showSpinner];
+    
+    dispatch_async([AppDelegate serialGlobalBackgroundQueue], ^{
+        
+        DLog(@"Attempt to connect to the test account.");
+        
+        GoogleMailAccount *account = [[GoogleMailAccount alloc]
+                                      initWithFullName:@"iosmailclienttest" emailAddress:@"iosmailclienttest@gmail.com" password:@"testiosmailclienttest"];
+        BOOL success = [account connect];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            [self hideSpinner];
+            
+            if (success){
+                
+                DLog(@"Success.");
+                [self accountAdded:account];
+            }
+            else{
+                
+                DLog(@"Failed with error %@ .",account.connectionError);
+            }
+        });
+    });
+}
+
+
 -(void) showSpinner
 {
     [_spinner startAnimating];
@@ -112,6 +128,7 @@
 {
     [_spinner stopAnimating];
 }
+
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -125,12 +142,11 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MCTreeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"selectingTableViewCell"];
+    MCTreeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"mailboxesTableViewCell"];
 	if (!cell)
-		cell = [[MCTreeTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"selectingTableViewCell"];
+		cell = [[MCTreeTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"mailboxesTableViewCell"];
 	
 	MCTreeItem *treeItem = [_displayedTreeItems objectAtIndex:indexPath.row];
-	
 	cell.treeItem = treeItem;
 	
 	if ([treeItem.path isEqualToString:@"/"]){
@@ -140,7 +156,6 @@
 	else{
         cell.countLabel.hidden = YES;
         cell.iconButton.hidden = NO;
-        [cell.countLabel setText:[NSString stringWithFormat:@"%d", [treeItem numberOfSubitems]]];
     }
 
 	[cell.titleTextField setText:[treeItem base]];
@@ -150,6 +165,73 @@
 	
 	return cell;
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{	
+    NSMutableArray *selectedTreeItems = [NSMutableArray array];
+	
+	MCTreeTableViewCell *cell = (MCTreeTableViewCell *)[_tableView cellForRowAtIndexPath:indexPath];
+    
+    if(![cell.treeItem.path isEqualToString:@"/"]){
+        
+        [self tableViewAction:tableView withIndexPath:indexPath];
+    }
+	
+	NSInteger insertTreeItemIndex = [_displayedTreeItems indexOfObject:cell.treeItem];
+	NSMutableArray *insertIndexPaths = [NSMutableArray array];
+	NSMutableArray *insertselectingItems = [self listItemsAtPath:[cell.treeItem.path stringByAppendingPathComponent:cell.treeItem.base]];
+	
+	NSMutableArray *removeIndexPaths = [NSMutableArray array];
+	NSMutableArray *treeItemsToRemove = [NSMutableArray array];
+	
+	for (MCTreeItem *tmpTreeItem in insertselectingItems) {
+		[tmpTreeItem setPath:[cell.treeItem.path stringByAppendingPathComponent:cell.treeItem.base]];
+		[tmpTreeItem setParentSelectingItem:cell.treeItem];
+		
+		[cell.treeItem.ancestorSelectingItems removeAllObjects];
+		[cell.treeItem.ancestorSelectingItems addObjectsFromArray:insertselectingItems];
+		
+		insertTreeItemIndex++;
+		
+		BOOL contains = NO;
+		
+		for (MCTreeItem *tmp2TreeItem in _displayedTreeItems) {
+			if ([tmp2TreeItem isEqualToSelectingItem:tmpTreeItem]) {
+				contains = YES;
+				
+				[self selectingItemsToDelete:tmp2TreeItem saveToArray:treeItemsToRemove];
+				
+				removeIndexPaths = [self removeIndexPathForTreeItems:(NSMutableArray *)treeItemsToRemove];
+			}
+		}
+		
+		if (!contains) {
+			[tmpTreeItem setSubmersionLevel:tmpTreeItem.submersionLevel];
+			[_displayedTreeItems insertObject:tmpTreeItem atIndex:insertTreeItemIndex];
+			
+			NSIndexPath *indexPth = [NSIndexPath indexPathForRow:insertTreeItemIndex inSection:0];
+			[insertIndexPaths addObject:indexPth];
+		}
+	}
+    
+    for (MCTreeItem *tmp2TreeItem in treeItemsToRemove) {
+        [_displayedTreeItems removeObject:tmp2TreeItem];
+        
+        for (MCTreeItem *tmp3TreeItem in selectedTreeItems) {
+            if ([tmp3TreeItem isEqualToSelectingItem:tmp2TreeItem]) {
+                [selectedTreeItems removeObject:tmp2TreeItem];
+                break;
+            }
+        }
+    }
+	
+	if ([insertIndexPaths count])
+		[_tableView insertRowsAtIndexPaths:insertIndexPaths withRowAnimation:UITableViewRowAnimationBottom];
+	
+	if ([removeIndexPaths count])
+		[_tableView deleteRowsAtIndexPaths:removeIndexPaths withRowAnimation:UITableViewRowAnimationBottom];
+}
+
 
 - (void)selectingItemsToDelete:(MCTreeItem *)selItems saveToArray:(NSMutableArray *)deleteSelectingItems
 {
@@ -184,90 +266,13 @@
         if([account.emailAddress isEqualToString:[treeItem.path stringByReplacingOccurrencesOfString:@"/" withString:@""]]){
             
             CTCoreFolder *folder = [account folderWithPath:treeItem.base];
-            [self.detailViewController setFolder:folder];
-            return;
+            [self performSegueWithIdentifier: @"toMessages" sender: folder];
             
+            return;
         }
     }
 }
 
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	
-    NSMutableArray *selectedTreeItems = [NSMutableArray array];
-	
-	MCTreeTableViewCell *cell = (MCTreeTableViewCell *)[_tableView cellForRowAtIndexPath:indexPath];
-    
-    if([cell.treeItem.path isEqualToString:@"/"]){
-        //
-    }else{
-        [self tableViewAction:tableView withIndexPath:indexPath];
-    }
-	
-	NSInteger insertTreeItemIndex = [_displayedTreeItems indexOfObject:cell.treeItem];
-	NSMutableArray *insertIndexPaths = [NSMutableArray array];
-	NSMutableArray *insertselectingItems = [self listItemsAtPath:[cell.treeItem.path stringByAppendingPathComponent:cell.treeItem.base]];
-	
-	NSMutableArray *removeIndexPaths = [NSMutableArray array];
-	NSMutableArray *treeItemsToRemove = [NSMutableArray array];
-	
-	for (MCTreeItem *tmpTreeItem in insertselectingItems) {
-		[tmpTreeItem setPath:[cell.treeItem.path stringByAppendingPathComponent:cell.treeItem.base]];
-		[tmpTreeItem setParentSelectingItem:cell.treeItem];
-		
-		[cell.treeItem.ancestorSelectingItems removeAllObjects];
-		[cell.treeItem.ancestorSelectingItems addObjectsFromArray:insertselectingItems];
-		
-		insertTreeItemIndex++;
-		
-		BOOL contains = NO;
-		
-		for (MCTreeItem *tmp2TreeItem in _displayedTreeItems) {
-			if ([tmp2TreeItem isEqualToSelectingItem:tmpTreeItem]) {
-				contains = YES;
-				
-				[self selectingItemsToDelete:tmp2TreeItem saveToArray:treeItemsToRemove];
-				
-				removeIndexPaths = [self removeIndexPathForTreeItems:(NSMutableArray *)treeItemsToRemove];
-			}
-		}
-		
-		
-		if (!contains) {
-			[tmpTreeItem setSubmersionLevel:tmpTreeItem.submersionLevel];
-			[_displayedTreeItems insertObject:tmpTreeItem atIndex:insertTreeItemIndex];
-			
-			NSIndexPath *indexPth = [NSIndexPath indexPathForRow:insertTreeItemIndex inSection:0];
-			[insertIndexPaths addObject:indexPth];
-		}
-	}
-    
-    for (MCTreeItem *tmp2TreeItem in treeItemsToRemove) {
-        [_displayedTreeItems removeObject:tmp2TreeItem];
-        
-        for (MCTreeItem *tmp3TreeItem in selectedTreeItems) {
-            if ([tmp3TreeItem isEqualToSelectingItem:tmp2TreeItem]) {
-                NSLog(@"%@", tmp3TreeItem.base);
-                [selectedTreeItems removeObject:tmp2TreeItem];
-                break;
-            }
-        }
-    }
-	
-	if ([insertIndexPaths count])
-		[_tableView insertRowsAtIndexPaths:insertIndexPaths withRowAnimation:UITableViewRowAnimationBottom];
-	
-	if ([removeIndexPaths count])
-		[_tableView deleteRowsAtIndexPaths:removeIndexPaths withRowAnimation:UITableViewRowAnimationBottom];
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if([segue.identifier isEqualToString:@"toAddAccount"]){
-        AddAccountViewController *addAccountViewController = segue.destinationViewController;
-        addAccountViewController.delegate = self;
-    }
-}
 
 -(void)accountAdded:(GoogleMailAccount *)account
 {
@@ -297,6 +302,7 @@
     
     [_popoverController dismissPopoverAnimated:YES];
 }
+
 
 -(void) refreshTableViewTree
 {
@@ -345,6 +351,7 @@
 	}
 }
 
+
 -(void)tableViewLongPress:(UILongPressGestureRecognizer *)gestureRecognizer
 {
     if (gestureRecognizer.state == UIGestureRecognizerStateBegan){
@@ -364,8 +371,8 @@
                 MCTreeItem *treeItem = [_displayedTreeItems objectAtIndex:indexPath.row];
                 
                 for(GoogleMailAccount * account in _accounts){
+                    
                     if([account.emailAddress isEqualToString:treeItem.base]){
-                        
                         popoverContentViewController.account = account;
                         break;
                     }
@@ -381,5 +388,31 @@
         }
     }
 }
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:@"toAddAccount"]){
+        
+        AddAccountViewController *addAccountViewController = segue.destinationViewController;
+        addAccountViewController.delegate = self;
+        
+    }
+    else
+        if([segue.identifier isEqualToString:@"toMessages"]){
+            
+            MessagesViewController *messagesViewController = segue.destinationViewController;
+            messagesViewController.delegate = self;
+            [messagesViewController setFolder:(CTCoreFolder *)sender];
+        }
+}
+
+-(void)closeReplaceController
+{
+    DLog(@"closeReplaceController");
+    [self dismissViewControllerAnimated:YES completion:Nil];
+    
+}
+
 
 @end

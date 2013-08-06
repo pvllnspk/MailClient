@@ -10,13 +10,11 @@
 #import "MCTreeTableViewCell.h"
 #import "AddAccountViewController.h"
 #import "PopoverContentViewController.h"
+#import "MessagesViewController.h"
 
-@class FoldersViewController;
+@interface MailboxesViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate, AddAccountDelegate, DeleteAccountDelegate ,CloseReplaceControllerDelegate>
 
-@interface AccountsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, AddAccountDelegate ,DeleteAccountDelegate ,UIGestureRecognizerDelegate>
-
-@property (strong, nonatomic) FoldersViewController *detailViewController;
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIView *topBarView;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
