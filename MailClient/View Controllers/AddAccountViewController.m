@@ -44,6 +44,8 @@
 
 - (IBAction)cancel:(id)sender
 {
+    DLog(@"cancel");
+    
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

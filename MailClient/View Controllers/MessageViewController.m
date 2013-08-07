@@ -22,7 +22,6 @@
     CTCoreMessage *_message;
 }
 
-@synthesize mailboxesBtn;
 
 -(void) setMessage:(CTCoreMessage *)message
 {
@@ -66,20 +65,15 @@
 }
 
 
-#pragma mark - Split view
-
 - (void)splitViewController:(UISplitViewController *)splitController willHideViewController:(UIViewController *)viewController withBarButtonItem:(MCNavButton *)barButtonItem forPopoverController:(UIPopoverController *)popoverController
 {
-    barButtonItem.title = NSLocalizedString(@"Master", @"Master");
+    barButtonItem.title = NSLocalizedString(@"Mailboxes", @"Mailboxes");
     
     NSDictionary *navbarTitleTextAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
                                                MCCOLOR_TITLE,UITextAttributeTextColor,
                                                MCCOLOR_TITLE_SHADOW, UITextAttributeTextShadowColor,
                                                [NSValue valueWithUIOffset:UIOffsetMake(-1, 0)], UITextAttributeTextShadowOffset,
                                                MCFONT_TITLE, UITextAttributeFont, nil];
-    
-    
-    //    UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithTitle:@"Title" style:UIBarButtonItemStyleBordered target:nil action:nil];
     [barButtonItem setTitleTextAttributes:navbarTitleTextAttributes forState:UIControlStateNormal];
     
     [self.navigationItem setLeftBarButtonItem:barButtonItem animated:YES];
