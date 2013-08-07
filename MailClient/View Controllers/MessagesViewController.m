@@ -2,7 +2,7 @@
 //  MessagesViewController.m
 //  MailClient
 //
-//  Created by Barney on 8/6/13.
+//  Created by Barney on 8/7/13.
 //  Copyright (c) 2013 pvllnspk. All rights reserved.
 //
 
@@ -26,15 +26,13 @@
 -(void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
     [self initViews];
 }
 
 
 -(void) initViews
-{
-    [_topBarView setBackgroundColor:BACKGROUND_COLOR];
-    
+{    
     [self initSeacrhBar];
     [self initRefreshControl];
     [self initSpinner];
@@ -126,7 +124,7 @@
         
         [self showSpinner];
         
-        dispatch_async([AppDelegate serialGlobalBackgroundQueue], ^{
+        dispatch_async([AppDelegate serialBackgroundQueue], ^{
             
             DLog(@"Attempt to fetch messages from folder %@ .",[_folder path]);
             
@@ -191,7 +189,7 @@
     DLog(@"returnToMailboxes");
     
     if(_delegate)
-       [_delegate closeReplaceController];
+        [_delegate closeChildController];
 }
 
 
@@ -201,7 +199,6 @@
         // segue.destinationViewController;
     }
 }
-
 
 
 @end

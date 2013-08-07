@@ -2,15 +2,18 @@
 //  AddAccountViewController.m
 //  MailClient
 //
-//  Created by Barney on 7/31/13.
+//  Created by Barney on 8/7/13.
 //  Copyright (c) 2013 pvllnspk. All rights reserved.
 //
 
 #import "AddAccountViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "GoogleMailAccount.h"
+#import "TimeExecutionTracker.h"
+
 
 #define LABELS [NSArray arrayWithObjects:@"Full Name:", @"Email Address:", @"Password:", nil]
+
 
 @implementation AddAccountViewController
 {
@@ -22,28 +25,61 @@
 }
 
 
-#pragma mark
-#pragma mark View
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
     [self initSpinner];
     
-    [self.view setBackgroundColor:[UIColor colorWithRed:1 green:0.976 blue:0.957 alpha:1] /*#fff9f4*/];
-    [_topBar setBackgroundColor:[UIColor colorWithRed:1 green:0.976 blue:0.957 alpha:1]/*#fff9f4*/];
+    [self.view setBackgroundColor:BACKGROUND_COLOR];
     
     [_tableView setDataSource:self];
-    [_tableView setDelegate:self]; 
-	[_tableView setBackgroundColor:[UIColor colorWithRed:1 green:0.976 blue:0.957 alpha:1] /*#fff9f4*/];
+    [_tableView setDelegate:self];
+	[_tableView setBackgroundColor:BACKGROUND_COLOR];
     [_tableView setBackgroundView:nil];
     [_tableView setBackgroundView:[[UIView alloc] init]];
 }
 
 
-#pragma mark
-#pragma mark TableView
+
+- (IBAction)cancel:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)save:(id)sender
+{
+    [self showSpinner];
+    
+    dispatch_async([AppDelegate serialBackgroundQueue], ^{
+        
+        DLog(@"attempt to add an existing account with the credentials [%@] and [%@]",_emailAddress.text, _password.text);
+        [TimeExecutionTracker startTrackingWithName:@"connection to an account"];
+        
+        GoogleMailAccount* googleAccount = [[GoogleMailAccount alloc]
+                                            initWithFullName:_fullName.text emailAddress:_emailAddress.text password:_password.text];
+        BOOL success = [googleAccount connect];
+        
+        [TimeExecutionTracker stopTrackingAndPrint];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            [self hideSpinner];
+            
+            if (success){
+                
+                DLog(@"Succes");
+                [self addingAccountSuccessed:googleAccount];
+            }
+            else{
+                
+                DLog(@"Failed %@",googleAccount.connectionError);
+                [self addingAccountFailed];
+            }
+        });
+    });
+}
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -63,7 +99,7 @@
         }
         
         UILabel *leftText = (UILabel *)[cell viewWithTag:101];
-         leftText.text = [LABELS objectAtIndex:indexPath.row];
+        leftText.text = [LABELS objectAtIndex:indexPath.row];
 		[leftText setFont:MCFONT_TITLE];
 		[leftText setTextColor:MCCOLOR_TITLE];
 		[leftText.layer setShadowColor:MCCOLOR_TITLE_SHADOW.CGColor];
@@ -83,7 +119,7 @@
         }
         
         UILabel *leftText = (UILabel *)[cell viewWithTag:101];
-         leftText.text = [LABELS objectAtIndex:indexPath.row];
+        leftText.text = [LABELS objectAtIndex:indexPath.row];
         [leftText setFont:MCFONT_TITLE];
 		[leftText setTextColor:MCCOLOR_TITLE];
 		[leftText.layer setShadowColor:MCCOLOR_TITLE_SHADOW.CGColor];
@@ -112,56 +148,10 @@
 		[leftText.layer setShadowColor:MCCOLOR_TITLE_SHADOW.CGColor];
         
         _password = (UITextView *)[cell viewWithTag:102];
-
+        
         return cell;
     }
 }
-
-
-#pragma mark
-#pragma mark UI Callbacks
-
-- (IBAction)cancel:(id)sender
-{
-     [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (IBAction)save:(id)sender
-{
-    [self showSpinner];
-    
-    dispatch_async([AppDelegate serialGlobalBackgroundQueue], ^{
-        
-        DLog(@"attempt to add an existing account with the credentials [%@] and [%@]",_emailAddress.text, _password.text);
-        [TimeExecutionTracker startTrackingWithName:@"connection to an account"];
-        
-        GoogleMailAccount* googleAccount = [[GoogleMailAccount alloc]
-                                            initWithFullName:_fullName.text emailAddress:_emailAddress.text password:_password.text];
-        BOOL success = [googleAccount connect];
-
-        [TimeExecutionTracker stopTrackingAndPrint];
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            
-            [self hideSpinner];
-            
-            if (success){
-                
-                DLog(@"Succes");
-                [self addingAccountSuccessed:googleAccount];
-            }
-            else{
-                
-                DLog(@"Failed %@",googleAccount.connectionError);
-                [self addingAccountFailed];
-            }
-        });
-    });
-}
-
-
-#pragma mark
-#pragma mark Adding Account
 
 -(void)addingAccountSuccessed:(GoogleMailAccount*) googleAccount
 {
@@ -183,9 +173,6 @@
     [self.view.layer addAnimation:movingAnimation forKey:@"animateLayer"];
 }
 
-
-#pragma mark
-#pragma mark Spinner
 
 -(void) initSpinner
 {
@@ -210,5 +197,6 @@
     [_spinner stopAnimating];
     _tableView.userInteractionEnabled = YES;
 }
+
 
 @end

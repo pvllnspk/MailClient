@@ -2,7 +2,7 @@
 //  main.m
 //  MailClient
 //
-//  Created by Barney on 7/25/13.
+//  Created by Barney on 8/7/13.
 //  Copyright (c) 2013 pvllnspk. All rights reserved.
 //
 

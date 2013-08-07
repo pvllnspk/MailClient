@@ -2,13 +2,15 @@
 //  ComposeMessageViewController.m
 //  MailClient
 //
-//  Created by Barney on 8/4/13.
+//  Created by Barney on 8/7/13.
 //  Copyright (c) 2013 pvllnspk. All rights reserved.
 //
 
 #import "ComposeMessageViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "NSString+Additions.h"
+#import "TimeExecutionTracker.h"
+
 
 @implementation ComposeMessageViewController
 {
@@ -29,9 +31,8 @@
 {
     [super viewDidLoad];
     
-    [self initUI];
     [self initData];
-    [self initSpinner];
+    [self initViews];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
 											 selector:@selector(handleTokenFieldFrameDidChange:)
@@ -41,15 +42,23 @@
     [_fromField addTokenWithTitle:@"iosmailclienttest@gmail.com" representedObject:@"iosmailclienttest@gmail.com"];
 }
 
--(void) initUI
+
+-(void)initData
 {
-    [_topBar setBackgroundColor:BACKGROUND_COLOR];
+    _toRecipients = [NSMutableArray array];
+    _ccRecipients = [NSMutableArray array];
     
+    _subjectField.text = @"";
+    _messageBodyView.text = @"";
+}
+
+-(void) initViews
+{
     //From field
     _fromField = [[JSTokenField alloc] initWithFrame:CGRectMake(0, 0, 1040, 35)];
 	[[_fromField label] setText:@"From:"];
 	[_fromField setDelegate:self];
-	[_bodyView addSubview:_fromField];
+	[self.view addSubview:_fromField];
     
     UIView *separator = [[UIView alloc] initWithFrame:CGRectMake(0, _fromField.bounds.size.height-1, _fromField.bounds.size.width, 1)];
     [separator setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin];
@@ -60,7 +69,7 @@
 	_toField = [[JSTokenField alloc] initWithFrame:CGRectMake(0, 35, 1040, 35)];
 	[[_toField label] setText:@"To:"];
 	[_toField setDelegate:self];
-	[_bodyView addSubview:_toField];
+	[self.view addSubview:_toField];
     
     separator = [[UIView alloc] initWithFrame:CGRectMake(0, _toField.bounds.size.height-1, _toField.bounds.size.width, 1)];
     [separator setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin];
@@ -71,7 +80,7 @@
 	_ccField = [[JSTokenField alloc] initWithFrame:CGRectMake(0, 70, 1040, 35)];
 	[[_ccField label] setText:@"CC:"];
 	[_ccField setDelegate:self];
-	[_bodyView addSubview:_ccField];
+	[self.view addSubview:_ccField];
     
     separator = [[UIView alloc] initWithFrame:CGRectMake(0, _ccField.bounds.size.height-1, _ccField.bounds.size.width, 1)];
     [separator setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin];
@@ -88,27 +97,44 @@
     _subjectField.leftViewMode = UITextFieldViewModeAlways;
     _subjectField.leftView = label;
     [_subjectField setContentVerticalAlignment:UIControlContentVerticalAlignmentCenter];
-    [_bodyView addSubview:_subjectField];
+    [self.view addSubview:_subjectField];
     
     separator = [[UIView alloc] initWithFrame:CGRectMake(0, 140, 1040, 1)];
     [separator setBackgroundColor:[UIColor lightGrayColor]];
-    [_bodyView addSubview:separator];
+    [self.view addSubview:separator];
     
     //Message Body field
     _messageBodyView= [[UITextView alloc] initWithFrame:CGRectMake(0, 141, 1040, 1000)];
     [_messageBodyView setFont:[UIFont fontWithName:@"HelveticaNeue" size:18.0f]];
     _messageBodyView.contentInset = UIEdgeInsetsMake(5,5,5,5);
-    [_bodyView addSubview:_messageBodyView];
+    [self.view addSubview:_messageBodyView];
+    
+    [self initSpinner];
 }
 
--(void)initData
+-(void) initSpinner
 {
-    _toRecipients = [NSMutableArray array];
-    _ccRecipients = [NSMutableArray array];
-    
-    _subjectField.text = @"";
-    _messageBodyView.text = @"";
+    _spinner = [[UIActivityIndicatorView alloc]
+                initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    _spinner.center = CGPointMake(self.view.bounds.size.width * 3.0f / 5.0f, 34.0f);
+    _spinner.autoresizingMask = (UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleLeftMargin
+                                 | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleTopMargin);
+    _spinner.hidesWhenStopped = YES;
+    [_spinner setColor:[UIColor grayColor]];
+    [self.view addSubview:_spinner];
 }
+
+
+-(void) showSpinner
+{
+    [_spinner startAnimating];
+}
+
+-(void) hideSpinner
+{
+    [_spinner stopAnimating];
+}
+
 
 -(void)viewDidDisappear:(BOOL)animated
 {
@@ -122,7 +148,7 @@
 
 - (IBAction)sendMessage:(id)sender
 {
-        
+    
     NSMutableSet *toRecipients = [NSMutableSet set];
     NSMutableSet *ccRecipients = [NSMutableSet set];
     
@@ -141,15 +167,15 @@
         return;
     }
     
-      [self showSpinner];
+    [self showSpinner];
     
-    dispatch_async([AppDelegate serialGlobalBackgroundQueue], ^{
+    dispatch_async([AppDelegate serialBackgroundQueue], ^{
         
         DLog(@"attempt to send an email");
         [TimeExecutionTracker startTrackingWithName:@"sending an email"];
-       
+        
         CTCoreMessage *msg = [[CTCoreMessage alloc] init];
-                
+        
         [msg setTo:toRecipients];
         [msg setCc:ccRecipients];
         
@@ -195,7 +221,7 @@
 }
 
 -(void)sendingEmailFailed
-{    
+{
     CABasicAnimation *movingAnimation =[CABasicAnimation animationWithKeyPath:@"transform.translation.y"];
     [movingAnimation setDuration:0.2];
     [movingAnimation setRepeatCount:1];
@@ -233,7 +259,7 @@
 }
 
 - (BOOL)tokenFieldShouldReturn:(JSTokenField *)tokenField
-{    
+{
     NSMutableString *recipient = [NSMutableString string];
 	
 	NSMutableCharacterSet *charSet = [[NSCharacterSet whitespaceCharacterSet] mutableCopy];
@@ -264,27 +290,5 @@
 	}
 }
 
-
--(void) initSpinner
-{
-    _spinner = [[UIActivityIndicatorView alloc]
-                initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-    _spinner.center = CGPointMake(self.view.bounds.size.width * 3.0f / 5.0f, 34.0f);
-    _spinner.autoresizingMask = (UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleLeftMargin
-                                 | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleTopMargin);
-    _spinner.hidesWhenStopped = YES;
-    [_spinner setColor:[UIColor grayColor]];
-    [self.view addSubview:_spinner];
-}
-
--(void) showSpinner
-{
-    [_spinner startAnimating];
-}
-
--(void) hideSpinner
-{
-    [_spinner stopAnimating];
-}
 
 @end
