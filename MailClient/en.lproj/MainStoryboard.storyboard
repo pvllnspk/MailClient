@@ -130,7 +130,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="20" id="fEx-4t-B55"/>
-                        <segue destination="vNg-pn-ePz" kind="push" id="EDg-hs-Zjd"/>
+                        <segue destination="vNg-pn-ePz" kind="push" identifier="toMessages" id="EDg-hs-Zjd"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="23" sceneMemberID="firstResponder"/>
@@ -276,12 +276,14 @@
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="82" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="fI3-r9-pkO">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="659" id="U82-iY-YS3"/>
-                                </constraints>
+                                <imageView key="tableHeaderView" userInteractionEnabled="NO" contentMode="scaleAspectFit" id="bUx-MW-h9T">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="1"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </imageView>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="MessageCell" rowHeight="82" id="imv-B5-V8J">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="82"/>
+                                        <rect key="frame" x="0.0" y="23" width="320" height="82"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="81"/>
@@ -346,12 +348,17 @@
                             <constraint firstItem="gda-ke-6Mp" firstAttribute="top" secondItem="Hsp-fW-Oob" secondAttribute="top" type="default" id="Zkz-8Q-b77"/>
                             <constraint firstItem="fI3-r9-pkO" firstAttribute="leading" secondItem="Hsp-fW-Oob" secondAttribute="leading" type="default" id="cDn-wd-lRT"/>
                             <constraint firstItem="gda-ke-6Mp" firstAttribute="trailing" secondItem="Hsp-fW-Oob" secondAttribute="trailing" type="default" id="f9g-2M-wa7"/>
+                            <constraint firstItem="fI3-r9-pkO" firstAttribute="top" secondItem="gda-ke-6Mp" secondAttribute="bottom" type="default" id="h3Z-JK-Tmx"/>
+                            <constraint firstItem="fI3-r9-pkO" firstAttribute="bottom" secondItem="Hsp-fW-Oob" secondAttribute="bottom" type="default" id="iDa-9G-mG6"/>
                             <constraint firstItem="gda-ke-6Mp" firstAttribute="leading" secondItem="Hsp-fW-Oob" secondAttribute="leading" type="default" id="iP2-eH-wUa"/>
-                            <constraint firstItem="fI3-r9-pkO" firstAttribute="bottom" secondItem="Hsp-fW-Oob" secondAttribute="bottom" type="default" id="p3U-hW-rPC"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <navigationItem key="navigationItem" id="KSz-kc-EXm"/>
+                    <connections>
+                        <outlet property="searchBarView" destination="gda-ke-6Mp" id="vLh-Jh-gXz"/>
+                        <outlet property="tableView" destination="fI3-r9-pkO" id="4cG-CM-QzC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9IR-Lo-2kp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
