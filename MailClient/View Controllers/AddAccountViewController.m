@@ -157,8 +157,10 @@
 
 -(void)addingAccountSuccessed:(GoogleMailAccount*) googleAccount
 {
-    [_delegate accountAdded:googleAccount];
-    [self cancel:nil];
+    if(_delegate){
+        [_delegate accountAdded:googleAccount];
+        [self cancel:nil];
+    }
 }
 
 -(void)addingAccountFailed

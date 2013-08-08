@@ -124,7 +124,7 @@
                     <navigationItem key="navigationItem" title="Mailboxes" id="40">
                         <barButtonItem key="leftBarButtonItem" title="Add" id="Bnq-eg-f8j" customClass="MCNavButton">
                             <connections>
-                                <segue destination="UrX-eJ-Mgr" kind="modal" modalPresentationStyle="formSheet" id="3LN-sc-dXt"/>
+                                <segue destination="UrX-eJ-Mgr" kind="modal" identifier="toAddAccount" modalPresentationStyle="formSheet" id="3LN-sc-dXt"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -148,7 +148,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="OR0-Zf-9dB">
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" id="7Bg-Rg-Jlq">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="AddAccountCell" id="7Bg-Rg-Jlq">
                                         <rect key="frame" x="0.0" y="54" width="540" height="45"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -166,7 +166,6 @@
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BUw-TV-pMq">
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="35" id="CHY-Xq-iOk"/>
                                                         <constraint firstAttribute="width" constant="261" id="VSo-6j-7go"/>
                                                     </constraints>
                                                     <nil key="textColor"/>
@@ -177,14 +176,15 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="BUw-TV-pMq" firstAttribute="leading" secondItem="7Bg-Rg-Jlq" secondAttribute="leading" constant="236" id="3Ws-fZ-jEj"/>
-                                            <constraint firstItem="maD-Cg-ypM" firstAttribute="centerY" secondItem="7Bg-Rg-Jlq" secondAttribute="centerY" type="default" id="INg-jS-bcr"/>
-                                            <constraint firstItem="BUw-TV-pMq" firstAttribute="top" secondItem="7Bg-Rg-Jlq" secondAttribute="top" constant="9" id="ONJ-G9-JiZ"/>
+                                            <constraint firstItem="BUw-TV-pMq" firstAttribute="centerY" secondItem="7Bg-Rg-Jlq" secondAttribute="centerY" type="default" id="FW3-fD-b8U"/>
+                                            <constraint firstItem="BUw-TV-pMq" firstAttribute="top" secondItem="maD-Cg-ypM" secondAttribute="top" type="default" id="Tkf-16-YFk"/>
                                             <constraint firstItem="BUw-TV-pMq" firstAttribute="baseline" secondItem="maD-Cg-ypM" secondAttribute="baseline" type="default" id="beC-mf-qEq"/>
-                                            <constraint firstItem="maD-Cg-ypM" firstAttribute="leading" secondItem="7Bg-Rg-Jlq" secondAttribute="leading" constant="43" id="oOF-6P-IuM"/>
+                                            <constraint firstItem="BUw-TV-pMq" firstAttribute="bottom" secondItem="maD-Cg-ypM" secondAttribute="bottom" type="default" id="f5Q-13-iOW"/>
+                                            <constraint firstItem="BUw-TV-pMq" firstAttribute="leading" secondItem="7Bg-Rg-Jlq" secondAttribute="leading" constant="237" id="xJk-qz-x92"/>
+                                            <constraint firstItem="maD-Cg-ypM" firstAttribute="leading" secondItem="7Bg-Rg-Jlq" secondAttribute="leading" constant="42" id="yoO-8n-8nc"/>
                                         </constraints>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" id="S8V-1s-fGm">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="AddAccountCell2" id="S8V-1s-fGm">
                                         <rect key="frame" x="0.0" y="99" width="540" height="45"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -220,6 +220,10 @@
                                         </constraints>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="UrX-eJ-Mgr" id="bd3-SO-JQB"/>
+                                    <outlet property="delegate" destination="zh9-J0-w11" id="J6c-Fj-vvU"/>
+                                </connections>
                             </tableView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pWo-NI-TGd">
                                 <items>
@@ -251,6 +255,9 @@
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <modalFormSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="OR0-Zf-9dB" id="Rjh-mh-TSK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a4h-bu-R6v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

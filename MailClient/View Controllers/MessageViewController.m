@@ -44,6 +44,14 @@
     [self initViews];
     
     [self updateMessage];
+    
+    if (UIInterfaceOrientationIsPortrait(self.interfaceOrientation)) {
+        
+        #pragma clang diagnostic push
+        #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+        [self.navigationItem.leftBarButtonItem.target performSelector:self.navigationItem.leftBarButtonItem.action withObject:self.navigationItem];
+        #pragma clang diagnostic pop
+    }
 }
 
 
