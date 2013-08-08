@@ -88,7 +88,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E8D-Ap-XRg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1256" y="596"/>
+            <point key="canvasLocation" x="1226" y="604"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="18">
@@ -274,16 +274,20 @@
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="gda-ke-6Mp">
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="bUx-MW-h9T">
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="udO-06-Snh"/>
+                                </constraints>
+                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="82" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="fI3-r9-pkO">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <imageView key="tableHeaderView" userInteractionEnabled="NO" contentMode="scaleAspectFit" id="bUx-MW-h9T">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="1"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                </imageView>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="983" id="x45-HT-3sJ"/>
+                                </constraints>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="MessageCell" rowHeight="82" id="imv-B5-V8J">
-                                        <rect key="frame" x="0.0" y="23" width="320" height="82"/>
+                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="MessageCell" selectionStyle="blue" indentationWidth="10" reuseIdentifier="MessageCell" rowHeight="82" id="imv-B5-V8J">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="82"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="81"/>
@@ -309,6 +313,7 @@
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="103" contentMode="left" text="Subject" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vpV-Gw-AoR">
                                                     <constraints>
+                                                        <constraint firstAttribute="width" constant="271" id="56B-ZK-dbm"/>
                                                         <constraint firstAttribute="height" constant="21" id="5Um-VR-0hT"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -328,34 +333,39 @@
                                         </view>
                                         <constraints>
                                             <constraint firstItem="Nys-Uk-qE5" firstAttribute="top" secondItem="qBs-A6-RJW" secondAttribute="top" type="default" id="0At-p9-mFI"/>
+                                            <constraint firstAttribute="trailing" secondItem="qBs-A6-RJW" secondAttribute="trailing" constant="20" type="default" id="D1A-de-uJ4"/>
                                             <constraint firstItem="Nys-Uk-qE5" firstAttribute="top" secondItem="imv-B5-V8J" secondAttribute="top" constant="5" id="MSf-y3-xtt"/>
                                             <constraint firstAttribute="bottom" secondItem="42z-fu-Wow" secondAttribute="bottom" constant="6" id="P4Q-tl-Gnr"/>
                                             <constraint firstItem="Nys-Uk-qE5" firstAttribute="leading" secondItem="imv-B5-V8J" secondAttribute="leading" constant="8" id="Uxi-bM-MgI"/>
                                             <constraint firstItem="42z-fu-Wow" firstAttribute="leading" secondItem="vpV-Gw-AoR" secondAttribute="leading" type="default" id="W5u-Gw-vdR"/>
-                                            <constraint firstItem="qBs-A6-RJW" firstAttribute="leading" secondItem="Nys-Uk-qE5" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="ZcD-YA-ZhJ"/>
                                             <constraint firstItem="vpV-Gw-AoR" firstAttribute="top" secondItem="imv-B5-V8J" secondAttribute="top" constant="25" id="hyc-mx-qLV"/>
                                             <constraint firstItem="42z-fu-Wow" firstAttribute="trailing" secondItem="vpV-Gw-AoR" secondAttribute="trailing" type="default" id="nA1-mD-Kqv"/>
-                                            <constraint firstItem="vpV-Gw-AoR" firstAttribute="trailing" secondItem="qBs-A6-RJW" secondAttribute="trailing" type="default" id="nQS-GI-J1g"/>
                                             <constraint firstItem="vpV-Gw-AoR" firstAttribute="leading" secondItem="Nys-Uk-qE5" secondAttribute="leading" type="default" id="x4w-Y5-Pnc"/>
                                         </constraints>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="vNg-pn-ePz" id="gsf-wz-SHp"/>
+                                    <outlet property="delegate" destination="vNg-pn-ePz" id="yw0-7H-WPY"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="bUx-MW-h9T" firstAttribute="top" secondItem="Hsp-fW-Oob" secondAttribute="top" constant="41" id="816-MA-UDr"/>
+                            <constraint firstItem="bUx-MW-h9T" firstAttribute="leading" secondItem="Hsp-fW-Oob" secondAttribute="leading" type="default" id="Gly-AS-tss"/>
                             <constraint firstItem="fI3-r9-pkO" firstAttribute="trailing" secondItem="Hsp-fW-Oob" secondAttribute="trailing" type="default" id="NMj-jJ-YT8"/>
+                            <constraint firstItem="fI3-r9-pkO" firstAttribute="top" secondItem="gda-ke-6Mp" secondAttribute="bottom" type="default" id="Ybu-Pk-8YR"/>
                             <constraint firstItem="gda-ke-6Mp" firstAttribute="top" secondItem="Hsp-fW-Oob" secondAttribute="top" type="default" id="Zkz-8Q-b77"/>
+                            <constraint firstItem="bUx-MW-h9T" firstAttribute="trailing" secondItem="Hsp-fW-Oob" secondAttribute="trailing" type="default" id="aBO-5P-qCS"/>
                             <constraint firstItem="fI3-r9-pkO" firstAttribute="leading" secondItem="Hsp-fW-Oob" secondAttribute="leading" type="default" id="cDn-wd-lRT"/>
                             <constraint firstItem="gda-ke-6Mp" firstAttribute="trailing" secondItem="Hsp-fW-Oob" secondAttribute="trailing" type="default" id="f9g-2M-wa7"/>
-                            <constraint firstItem="fI3-r9-pkO" firstAttribute="top" secondItem="gda-ke-6Mp" secondAttribute="bottom" type="default" id="h3Z-JK-Tmx"/>
-                            <constraint firstItem="fI3-r9-pkO" firstAttribute="bottom" secondItem="Hsp-fW-Oob" secondAttribute="bottom" type="default" id="iDa-9G-mG6"/>
                             <constraint firstItem="gda-ke-6Mp" firstAttribute="leading" secondItem="Hsp-fW-Oob" secondAttribute="leading" type="default" id="iP2-eH-wUa"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <navigationItem key="navigationItem" id="KSz-kc-EXm">
-                        <barButtonItem key="leftBarButtonItem" title="Mailboxes" id="ZWY-lI-UTW" customClass="MCNavButton">
+                        <barButtonItem key="leftBarButtonItem" title="Mailboxes" width="2" id="ZWY-lI-UTW" customClass="MCNavButton">
                             <connections>
                                 <action selector="back:" destination="vNg-pn-ePz" id="3MG-x0-A2h"/>
                             </connections>
@@ -425,7 +435,6 @@
         <class className="MessagesViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MessagesViewController.h"/>
             <relationships>
-                <relationship kind="action" name="back:"/>
                 <relationship kind="action" name="returnToMailboxes:"/>
                 <relationship kind="outlet" name="searchBarView" candidateClass="UISearchBar"/>
                 <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>

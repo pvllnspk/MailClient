@@ -82,6 +82,7 @@
 		B3D9F23E17B2A2470091DFDB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D9F23D17B2A2470091DFDB /* QuartzCore.framework */; };
 		B3D9F24017B2A2520091DFDB /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D9F23F17B2A2510091DFDB /* CoreText.framework */; };
 		B3D9F24217B2A25A0091DFDB /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D9F24117B2A25A0091DFDB /* MobileCoreServices.framework */; };
+		B3DF029B17B42F80005793A9 /* MailAttributesView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DF029A17B42F80005793A9 /* MailAttributesView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -273,6 +274,8 @@
 		B3D9F23D17B2A2470091DFDB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B3D9F23F17B2A2510091DFDB /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		B3D9F24117B2A25A0091DFDB /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		B3DF029917B42F80005793A9 /* MailAttributesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailAttributesView.h; sourceTree = "<group>"; };
+		B3DF029A17B42F80005793A9 /* MailAttributesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MailAttributesView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -460,6 +463,8 @@
 				B3CA1C9617B2DD690070BB19 /* MCButton.m */,
 				B3CA1C9717B2DD690070BB19 /* MCNavButton.h */,
 				B3CA1C9817B2DD690070BB19 /* MCNavButton.m */,
+				B3DF029917B42F80005793A9 /* MailAttributesView.h */,
+				B3DF029A17B42F80005793A9 /* MailAttributesView.m */,
 				B3CA1C9917B2DD690070BB19 /* MCTreeView */,
 			);
 			path = VIews;
@@ -822,6 +827,7 @@
 				B3CA1C9F17B2DD690070BB19 /* MCNavButton.m in Sources */,
 				B3CA1CA017B2DD690070BB19 /* MCTreeItem.m in Sources */,
 				B3CA1CA117B2DD690070BB19 /* MCTreeTableViewCell.m in Sources */,
+				B3DF029B17B42F80005793A9 /* MailAttributesView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

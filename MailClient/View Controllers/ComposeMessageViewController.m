@@ -10,6 +10,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "NSString+Additions.h"
 #import "TimeExecutionTracker.h"
+#import "MailAttributesView.h"
 
 
 @implementation ComposeMessageViewController
@@ -54,60 +55,70 @@
 
 -(void) initViews
 {
-    //From field
-    _fromField = [[JSTokenField alloc] initWithFrame:CGRectMake(0, 0, 1040, 35)];
-	[[_fromField label] setText:@"From:"];
-	[_fromField setDelegate:self];
-	[self.view addSubview:_fromField];
     
-    UIView *separator = [[UIView alloc] initWithFrame:CGRectMake(0, _fromField.bounds.size.height-1, _fromField.bounds.size.width, 1)];
-    [separator setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin];
-    [_fromField addSubview:separator];
-    [separator setBackgroundColor:[UIColor lightGrayColor]];
-	
-    //To field
-	_toField = [[JSTokenField alloc] initWithFrame:CGRectMake(0, 35, 1040, 35)];
-	[[_toField label] setText:@"To:"];
-	[_toField setDelegate:self];
-	[self.view addSubview:_toField];
+    DLog(@"self.view.bounds.size.width   %f ",self.view.bounds.size.width);
+    DLog(@",self.view.frame.size.width   %f ",self.view.frame.size.width);
     
-    separator = [[UIView alloc] initWithFrame:CGRectMake(0, _toField.bounds.size.height-1, _toField.bounds.size.width, 1)];
-    [separator setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin];
-    [_toField addSubview:separator];
-    [separator setBackgroundColor:[UIColor lightGrayColor]];
-	
-    //CC field
-	_ccField = [[JSTokenField alloc] initWithFrame:CGRectMake(0, 70, 1040, 35)];
-	[[_ccField label] setText:@"CC:"];
-	[_ccField setDelegate:self];
-	[self.view addSubview:_ccField];
     
-    separator = [[UIView alloc] initWithFrame:CGRectMake(0, _ccField.bounds.size.height-1, _ccField.bounds.size.width, 1)];
-    [separator setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin];
-    [_ccField addSubview:separator];
-    [separator setBackgroundColor:[UIColor lightGrayColor]];
+    MailAttributesView *mailAttributesView = [[MailAttributesView alloc]initWithFrame:self.view.frame];
     
-    //Subject field
-    _subjectField = [[UITextField alloc] initWithFrame:CGRectMake(0, 105, 1040, 35)];
-    _subjectField.borderStyle = UITextBorderStyleNone;
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 70, 40)];
-    label.text = @" Subject:";
-    [label setFont:[UIFont fontWithName:@"HelveticaNeue" size:17.0f]];
-    [label setTextColor:TEXT_COLOR_PRIMARY];
-    _subjectField.leftViewMode = UITextFieldViewModeAlways;
-    _subjectField.leftView = label;
-    [_subjectField setContentVerticalAlignment:UIControlContentVerticalAlignmentCenter];
-    [self.view addSubview:_subjectField];
     
-    separator = [[UIView alloc] initWithFrame:CGRectMake(0, 140, 1040, 1)];
-    [separator setBackgroundColor:[UIColor lightGrayColor]];
-    [self.view addSubview:separator];
+//    //From field
+//    _fromField = [[JSTokenField alloc] initWithFrame:CGRectMake(0, 0, 1040, 35)];
+//	[[_fromField label] setText:@"From:"];
+//	[_fromField setDelegate:self];
+//	[self.view addSubview:_fromField];
+//    
+//    UIView *separator = [[UIView alloc] initWithFrame:CGRectMake(0, _fromField.bounds.size.height-1, _fromField.bounds.size.width, 1)];
+//    [separator setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin];
+//    [_fromField addSubview:separator];
+//    [separator setBackgroundColor:[UIColor lightGrayColor]];
+//	
+//    //To field
+//	_toField = [[JSTokenField alloc] initWithFrame:CGRectMake(0, 35, 1040, 35)];
+//	[[_toField label] setText:@"To:"];
+//	[_toField setDelegate:self];
+//	[self.view addSubview:_toField];
+//    
+//    separator = [[UIView alloc] initWithFrame:CGRectMake(0, _toField.bounds.size.height-1, _toField.bounds.size.width, 1)];
+//    [separator setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin];
+//    [_toField addSubview:separator];
+//    [separator setBackgroundColor:[UIColor lightGrayColor]];
+//	
+//    //CC field
+//	_ccField = [[JSTokenField alloc] initWithFrame:CGRectMake(0, 70, 1040, 35)];
+//	[[_ccField label] setText:@"CC:"];
+//	[_ccField setDelegate:self];
+//	[self.view addSubview:_ccField];
+//    
+//    separator = [[UIView alloc] initWithFrame:CGRectMake(0, _ccField.bounds.size.height-1, _ccField.bounds.size.width, 1)];
+//    [separator setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin];
+//    [_ccField addSubview:separator];
+//    [separator setBackgroundColor:[UIColor lightGrayColor]];
+//    
+//    //Subject field
+//    _subjectField = [[UITextField alloc] initWithFrame:CGRectMake(0, 105, 1040, 35)];
+//    _subjectField.borderStyle = UITextBorderStyleNone;
+//    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 70, 40)];
+//    label.text = @" Subject:";
+//    [label setFont:[UIFont fontWithName:@"HelveticaNeue" size:17.0f]];
+//    [label setTextColor:TEXT_COLOR_PRIMARY];
+//    _subjectField.leftViewMode = UITextFieldViewModeAlways;
+//    _subjectField.leftView = label;
+//    [_subjectField setContentVerticalAlignment:UIControlContentVerticalAlignmentCenter];
+//    [self.view addSubview:_subjectField];
+//    
+//    separator = [[UIView alloc] initWithFrame:CGRectMake(0, 140, 1040, 1)];
+//    [separator setBackgroundColor:[UIColor lightGrayColor]];
+//    [self.view addSubview:separator];
+//    
+//    //Message Body field
+//    _messageBodyView= [[UITextView alloc] initWithFrame:CGRectMake(0, 141, 1040, 1000)];
+//    [_messageBodyView setFont:[UIFont fontWithName:@"HelveticaNeue" size:18.0f]];
+//    _messageBodyView.contentInset = UIEdgeInsetsMake(5,5,5,5);
+//    [self.view addSubview:_messageBodyView];
     
-    //Message Body field
-    _messageBodyView= [[UITextView alloc] initWithFrame:CGRectMake(0, 141, 1040, 1000)];
-    [_messageBodyView setFont:[UIFont fontWithName:@"HelveticaNeue" size:18.0f]];
-    _messageBodyView.contentInset = UIEdgeInsetsMake(5,5,5,5);
-    [self.view addSubview:_messageBodyView];
+    [self.view addSubview:mailAttributesView];
     
     [self initSpinner];
 }
