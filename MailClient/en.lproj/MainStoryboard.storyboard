@@ -354,7 +354,13 @@
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
-                    <navigationItem key="navigationItem" id="KSz-kc-EXm"/>
+                    <navigationItem key="navigationItem" id="KSz-kc-EXm">
+                        <barButtonItem key="leftBarButtonItem" title="Mailboxes" id="ZWY-lI-UTW" customClass="MCNavButton">
+                            <connections>
+                                <action selector="back:" destination="vNg-pn-ePz" id="3MG-x0-A2h"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="searchBarView" destination="gda-ke-6Mp" id="vLh-Jh-gXz"/>
                         <outlet property="tableView" destination="fI3-r9-pkO" id="4cG-CM-QzC"/>
@@ -419,6 +425,7 @@
         <class className="MessagesViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MessagesViewController.h"/>
             <relationships>
+                <relationship kind="action" name="back:"/>
                 <relationship kind="action" name="returnToMailboxes:"/>
                 <relationship kind="outlet" name="searchBarView" candidateClass="UISearchBar"/>
                 <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
