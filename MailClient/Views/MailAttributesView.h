@@ -9,11 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "JSTokenField.h"
 
-@protocol MailAttributesViewDelegate <NSObject>
-@optional
-- (void)accountAdded:(GoogleMailAccount *)account;
-@end
-
 @interface MailAttributesView : UIView <JSTokenFieldDelegate>
+{
+@public
+    JSTokenField *fromField;
+	JSTokenField *toField;
+	JSTokenField *ccField;
+    UITextField *subjectField;
+}
+
+@property (nonatomic, assign) id <JSTokenFieldDelegate> delegate;
 
 @end

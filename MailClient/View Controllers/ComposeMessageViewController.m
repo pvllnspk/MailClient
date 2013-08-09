@@ -18,10 +18,7 @@
     NSMutableArray *_toRecipients;
 	NSMutableArray *_ccRecipients;
 	
-    JSTokenField *_fromField;
-	JSTokenField *_toField;
-	JSTokenField *_ccField;
-    UITextField *_subjectField;
+    MailAttributesView *_mailAttributesView;
     UITextView *_messageBodyView;
     
     UIActivityIndicatorView *_spinner;
@@ -39,8 +36,6 @@
 											 selector:@selector(handleTokenFieldFrameDidChange:)
 												 name:JSTokenFieldFrameDidChangeNotification
 											   object:nil];
-    
-    [_fromField addTokenWithTitle:@"iosmailclienttest@gmail.com" representedObject:@"iosmailclienttest@gmail.com"];
 }
 
 
@@ -49,76 +44,20 @@
     _toRecipients = [NSMutableArray array];
     _ccRecipients = [NSMutableArray array];
     
-    _subjectField.text = @"";
     _messageBodyView.text = @"";
 }
 
 -(void) initViews
 {
+    _mailAttributesView = [[MailAttributesView alloc]initWithFrame:self.view.frame];
+    _mailAttributesView.delegate = self;
+    [self.view addSubview:_mailAttributesView];
     
-    DLog(@"self.view.bounds.size.width   %f ",self.view.bounds.size.width);
-    DLog(@",self.view.frame.size.width   %f ",self.view.frame.size.width);
+    _messageBodyView= [[UITextView alloc] initWithFrame:CGRectMake(0, _mailAttributesView.frame.size.height, self.view.frame.size.width, 1000)];
     
-    
-    MailAttributesView *mailAttributesView = [[MailAttributesView alloc]initWithFrame:self.view.frame];
-    
-    
-//    //From field
-//    _fromField = [[JSTokenField alloc] initWithFrame:CGRectMake(0, 0, 1040, 35)];
-//	[[_fromField label] setText:@"From:"];
-//	[_fromField setDelegate:self];
-//	[self.view addSubview:_fromField];
-//    
-//    UIView *separator = [[UIView alloc] initWithFrame:CGRectMake(0, _fromField.bounds.size.height-1, _fromField.bounds.size.width, 1)];
-//    [separator setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin];
-//    [_fromField addSubview:separator];
-//    [separator setBackgroundColor:[UIColor lightGrayColor]];
-//	
-//    //To field
-//	_toField = [[JSTokenField alloc] initWithFrame:CGRectMake(0, 35, 1040, 35)];
-//	[[_toField label] setText:@"To:"];
-//	[_toField setDelegate:self];
-//	[self.view addSubview:_toField];
-//    
-//    separator = [[UIView alloc] initWithFrame:CGRectMake(0, _toField.bounds.size.height-1, _toField.bounds.size.width, 1)];
-//    [separator setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin];
-//    [_toField addSubview:separator];
-//    [separator setBackgroundColor:[UIColor lightGrayColor]];
-//	
-//    //CC field
-//	_ccField = [[JSTokenField alloc] initWithFrame:CGRectMake(0, 70, 1040, 35)];
-//	[[_ccField label] setText:@"CC:"];
-//	[_ccField setDelegate:self];
-//	[self.view addSubview:_ccField];
-//    
-//    separator = [[UIView alloc] initWithFrame:CGRectMake(0, _ccField.bounds.size.height-1, _ccField.bounds.size.width, 1)];
-//    [separator setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin];
-//    [_ccField addSubview:separator];
-//    [separator setBackgroundColor:[UIColor lightGrayColor]];
-//    
-//    //Subject field
-//    _subjectField = [[UITextField alloc] initWithFrame:CGRectMake(0, 105, 1040, 35)];
-//    _subjectField.borderStyle = UITextBorderStyleNone;
-//    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 70, 40)];
-//    label.text = @" Subject:";
-//    [label setFont:[UIFont fontWithName:@"HelveticaNeue" size:17.0f]];
-//    [label setTextColor:TEXT_COLOR_PRIMARY];
-//    _subjectField.leftViewMode = UITextFieldViewModeAlways;
-//    _subjectField.leftView = label;
-//    [_subjectField setContentVerticalAlignment:UIControlContentVerticalAlignmentCenter];
-//    [self.view addSubview:_subjectField];
-//    
-//    separator = [[UIView alloc] initWithFrame:CGRectMake(0, 140, 1040, 1)];
-//    [separator setBackgroundColor:[UIColor lightGrayColor]];
-//    [self.view addSubview:separator];
-//    
-//    //Message Body field
-//    _messageBodyView= [[UITextView alloc] initWithFrame:CGRectMake(0, 141, 1040, 1000)];
-//    [_messageBodyView setFont:[UIFont fontWithName:@"HelveticaNeue" size:18.0f]];
-//    _messageBodyView.contentInset = UIEdgeInsetsMake(5,5,5,5);
-//    [self.view addSubview:_messageBodyView];
-    
-    [self.view addSubview:mailAttributesView];
+    [_messageBodyView setFont:[UIFont fontWithName:@"HelveticaNeue" size:18.0f]];
+    _messageBodyView.contentInset = UIEdgeInsetsMake(5,5,5,5);
+    [self.view addSubview:_messageBodyView];
     
     [self initSpinner];
 }
@@ -189,10 +128,7 @@
         
         [msg setTo:toRecipients];
         [msg setCc:ccRecipients];
-        
-        DLog(@" _subjectField - %@    _subjectField.text - %@  _subjectField.text replaced  - %@ ", _subjectField, _subjectField.text, _subjectField.text);
-        
-        [msg setSubject:_subjectField.text];
+        [msg setSubject:_mailAttributesView->subjectField.text];
         [msg setBody:_messageBodyView.text];
         
         NSError *error;
@@ -247,11 +183,9 @@
 {
 	NSDictionary *recipient = [NSDictionary dictionaryWithObject:title forKey:@"email"];
     
-    if(tokenField==_toField){
-        
+    if(tokenField==_mailAttributesView->toField){
      	[_toRecipients addObject:recipient];
-    }else if(tokenField==_ccField){
-        
+    }else if(tokenField==_mailAttributesView->ccField){
         [_ccRecipients addObject:recipient];
     }
 }
@@ -260,11 +194,9 @@
 {
     NSDictionary *recipient = [NSDictionary dictionaryWithObject:title forKey:@"email"];
     
-    if(tokenField==_toField){
-        
+    if(tokenField==_mailAttributesView->toField){
      	[_toRecipients removeObject:recipient];
-    }else if(tokenField==_ccField){
-        
+    }else if(tokenField==_mailAttributesView->ccField){
         [_ccRecipients removeObject:recipient];
     }
 }
@@ -292,10 +224,12 @@
 
 - (void)handleTokenFieldFrameDidChange:(NSNotification *)note
 {
-    if ([[note object] isEqual:_toField]){
+    if ([[note object] isEqual:_mailAttributesView->toField]){
 		[UIView animateWithDuration:0.0
 						 animations:^{
-							 [_ccField setFrame:CGRectMake(0, [_toField frame].size.height + [_toField frame].origin.y, [_ccField frame].size.width, [_ccField frame].size.height)];
+							 [_mailAttributesView->ccField setFrame:CGRectMake(0,
+                                                                               [_mailAttributesView->toField frame].size.height + [_mailAttributesView->toField frame].origin.y,
+                                                                               [_mailAttributesView->ccField frame].size.width, [_mailAttributesView->ccField frame].size.height)];
 						 }
 						 completion:nil];
 	}

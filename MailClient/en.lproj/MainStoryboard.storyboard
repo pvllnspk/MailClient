@@ -42,7 +42,7 @@
                     <navigationItem key="navigationItem" title="Message" id="53">
                         <barButtonItem key="rightBarButtonItem" title="Write" style="plain" id="LSB-JF-fDb" customClass="MCNavButton">
                             <connections>
-                                <segue destination="0FJ-hu-XfG" kind="modal" identifier="toComposeMessage" id="wU4-nn-tXd"/>
+                                <segue destination="0FJ-hu-XfG" kind="modal" identifier="toComposeMessage" modalPresentationStyle="formSheet" id="wU4-nn-tXd"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -56,7 +56,7 @@
             <objects>
                 <viewController id="0FJ-hu-XfG" customClass="ComposeMessageViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ie5-wt-qTS">
-                        <rect key="frame" x="0.0" y="20" width="768" height="748"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="768"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mfA-Y2-elW">
