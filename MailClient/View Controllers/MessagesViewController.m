@@ -39,6 +39,8 @@
     
     backgroundQueue = dispatch_queue_create("dispatch_queue_#2", 0);
     _messagesDescriptions = [NSMutableDictionary dictionary];
+    
+    [self showSpinner];
 }
 
 
@@ -72,12 +74,12 @@
 {
     _spinner = [[UIActivityIndicatorView alloc]
                 initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-    _spinner.center = CGPointMake(_tableView.bounds.size.width / 2.0f, _tableView.bounds.size.height / 2.0f);
+    _spinner.center = CGPointMake(self.view.bounds.size.width / 2.0f, self.view.bounds.size.height / 2.0f);
     _spinner.autoresizingMask = (UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleLeftMargin
                                  | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleTopMargin);
     _spinner.hidesWhenStopped = YES;
     [_spinner setColor:[UIColor grayColor]];
-    [_tableView addSubview:_spinner];
+    [self.view addSubview:_spinner];
 }
 
 
@@ -209,8 +211,6 @@
 {
     if (_folder) {
         
-        [self showSpinner];
-        
         dispatch_async([AppDelegate serialBackgroundQueue], ^{
             
             DLog(@"Attempt to fetch messages from folder %@ .",[_folder path]);
@@ -239,14 +239,13 @@
 
 -(void) showSpinner
 {
-    [_messages removeAllObjects];
-    [_tableView reloadData];
-    
+    [_tableView setHidden:YES];
     [_spinner startAnimating];
 }
 
 -(void) hideSpinner
 {
+    [_tableView setHidden:NO];
     [_spinner stopAnimating];
 }
 
