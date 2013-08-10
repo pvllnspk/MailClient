@@ -35,7 +35,20 @@
     
     [[UINavigationBar appearance] setTitleTextAttributes:navbarTitleTextAttributes];
     
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    
     return YES;
+}
+
+- (void)handleError:(NSError *)error
+{
+    NSString *errorMessage = [error localizedDescription];
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Mail Client Error"
+														message:errorMessage
+													   delegate:nil
+											  cancelButtonTitle:@"OK"
+											  otherButtonTitles:nil];
+    [alertView show];
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application

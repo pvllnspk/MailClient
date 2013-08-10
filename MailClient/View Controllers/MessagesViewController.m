@@ -9,6 +9,8 @@
 #import "MessagesViewController.h"
 #import "NSString+Additions.h"
 #import "NSSet+Additions.h"
+#import "NSString+Additions.h"
+#import "TimeExecutionTracker.h"
 
 @implementation MessagesViewController
 {
@@ -20,6 +22,10 @@
     UIActivityIndicatorView *_spinner;
     
     UIRefreshControl *_refreshControl;
+    
+    NSMutableDictionary *_tableViewCells;
+    
+    dispatch_queue_t backgroundQueue;
 }
 
 
@@ -28,6 +34,9 @@
     [super viewDidLoad];
     
     [self initViews];
+    
+    backgroundQueue = dispatch_queue_create("dispatch_queue_#2", 0);
+    _tableViewCells = [NSMutableDictionary dictionary];
 }
 
 
@@ -75,33 +84,71 @@
     return [_searchResults count];
 }
 
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 {
     static NSString *CellIdentifier = @"MessageCell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil)
-    {
+    if (cell == nil){
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
     CTCoreMessage *message = [_searchResults objectAtIndex:indexPath.row];
-    UILabel *fromLabel = (UILabel *)[cell viewWithTag:101];
-    UILabel *dateLabel = (UILabel *)[cell viewWithTag:102];
-    UILabel *subjectLabel = (UILabel *)[cell viewWithTag:103];
-    UILabel *descriptionLabel = (UILabel *)[cell viewWithTag:104];
-    [subjectLabel setText:message.subject];
-    [fromLabel setText:[message.from toStringSeparatingByComma]];
-    [dateLabel setText:[NSDateFormatter localizedStringFromDate:message.senderDate
-                                                      dateStyle:NSDateFormatterShortStyle
-                                                      timeStyle:nil]];
-    BOOL isHTML;
-    NSString *shortBody = [message bodyPreferringPlainText:&isHTML];
-    shortBody = [shortBody substringToIndex: MIN(100, [shortBody length])];
-    [descriptionLabel setText:shortBody];
+    
+    [(UILabel *)[cell viewWithTag:103] setText:message.subject];
+    [(UILabel *)[cell viewWithTag:101] setText:[message.from toStringSeparatingByComma]];
+    [(UILabel *)[cell viewWithTag:102] setText:[NSDateFormatter localizedStringFromDate:message.senderDate
+                                                                              dateStyle:NSDateFormatterShortStyle
+                                                                              timeStyle:NSDateFormatterNoStyle]];
+    
+    
+    if([_tableViewCells valueForKey:[NSString stringWithFormat:@"%d",indexPath.row]] == nil){
+        
+        if([message.subject isEqualToString:@"Just fot test"]){
+            DLog(@" == nil");
+        }
+        
+        [(UILabel *)[cell viewWithTag:104] setText:@"Loading ..."];
+        
+        dispatch_async(backgroundQueue, ^{
+            
+            BOOL isHTML;
+            NSString *shortBody = [message bodyPreferringPlainText:&isHTML];
+            shortBody = [shortBody substringToIndex: MIN(100, [shortBody length])];
+            
+            if([message.subject isEqualToString:@"Just for test"]){
+                DLog(@"  [message bodyPreferringPlainText:&isHTML]");
+            }
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                [_tableViewCells setValue:shortBody forKey:[NSString stringWithFormat:@"%d",indexPath.row]];
+                [(UILabel *)[cell viewWithTag:104] setText:[_tableViewCells valueForKey:[NSString stringWithFormat:@"%d",indexPath.row]]];
+                [cell setNeedsLayout];
+                
+                if([message.subject isEqualToString:@"Just fot test"]){
+                    DLog(@"   [cell setNeedsLayout];");
+                }
+                
+                
+            });
+        });
+    }else{
+        
+        if([message.subject isEqualToString:@"Just fot test"]){
+            DLog(@" != nil");
+        }
+        
+         [(UILabel *)[cell viewWithTag:104] setText:[_tableViewCells valueForKey:[NSString stringWithFormat:@"%d",indexPath.row]]];
+    }
     
     return cell;
 }
+
+
+
+
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -114,6 +161,10 @@
     if (_folder != folder){
         
         _folder = folder;
+        
+        [self.navigationItem.leftBarButtonItem setTitle:@" / "];
+        [self.navigationItem setTitle:folder.path];
+        
         [self updateMessages];
     }
 }

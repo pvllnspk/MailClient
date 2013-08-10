@@ -13,6 +13,9 @@
 #import "MailAttributesView.h"
 
 
+#define LANDSCAPE UIDeviceOrientationIsLandscape([UIDevice currentDevice].orientation)
+
+
 @implementation ComposeMessageViewController
 {
     NSMutableArray *_toRecipients;
@@ -27,6 +30,9 @@
 
 - (void)viewDidLoad
 {
+    
+    DLog(@"w -  %f ;  h -  %f",self.view.bounds.size.width,self.view.bounds.size.height)
+    
     [super viewDidLoad];
     
     [self initData];
@@ -38,6 +44,11 @@
 											   object:nil];
 }
 
+-(void)viewWillLayoutSubviews
+{
+    [super viewWillLayoutSubviews];
+    self.view.superview.bounds = CGRectMake(0, 0, 748, 700);
+}
 
 -(void)initData
 {

@@ -58,6 +58,7 @@
 		B3CA1C9F17B2DD690070BB19 /* MCNavButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CA1C9817B2DD690070BB19 /* MCNavButton.m */; };
 		B3CA1CA017B2DD690070BB19 /* MCTreeItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CA1C9B17B2DD690070BB19 /* MCTreeItem.m */; };
 		B3CA1CA117B2DD690070BB19 /* MCTreeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CA1C9D17B2DD690070BB19 /* MCTreeTableViewCell.m */; };
+		B3D9C4DF17B61E8F007A56AA /* MailFolder.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D9C4DE17B61E8F007A56AA /* MailFolder.m */; };
 		B3D9F1BD17B29F810091DFDB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D9F1BC17B29F810091DFDB /* UIKit.framework */; };
 		B3D9F1BF17B29F810091DFDB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D9F1BE17B29F810091DFDB /* Foundation.framework */; };
 		B3D9F1C117B29F810091DFDB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D9F1C017B29F810091DFDB /* CoreGraphics.framework */; };
@@ -249,6 +250,8 @@
 		B3CA1C9B17B2DD690070BB19 /* MCTreeItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCTreeItem.m; sourceTree = "<group>"; };
 		B3CA1C9C17B2DD690070BB19 /* MCTreeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCTreeTableViewCell.h; sourceTree = "<group>"; };
 		B3CA1C9D17B2DD690070BB19 /* MCTreeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCTreeTableViewCell.m; sourceTree = "<group>"; };
+		B3D9C4DD17B61E8F007A56AA /* MailFolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailFolder.h; sourceTree = "<group>"; };
+		B3D9C4DE17B61E8F007A56AA /* MailFolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MailFolder.m; sourceTree = "<group>"; };
 		B3D9F1B917B29F810091DFDB /* MailClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MailClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3D9F1BC17B29F810091DFDB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B3D9F1BE17B29F810091DFDB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -384,10 +387,10 @@
 			children = (
 				B3CA1BF917B2A99C0070BB19 /* MailboxesViewController.h */,
 				B3CA1BFA17B2A99C0070BB19 /* MailboxesViewController.m */,
-				B3CA1BFB17B2A99C0070BB19 /* MessageViewController.h */,
-				B3CA1BFC17B2A99C0070BB19 /* MessageViewController.m */,
 				B3CA1C7417B2B1260070BB19 /* MessagesViewController.h */,
 				B3CA1C7517B2B1260070BB19 /* MessagesViewController.m */,
+				B3CA1BFB17B2A99C0070BB19 /* MessageViewController.h */,
+				B3CA1BFC17B2A99C0070BB19 /* MessageViewController.m */,
 				B3CA1C7717B2B1470070BB19 /* AddAccountViewController.h */,
 				B3CA1C7817B2B1470070BB19 /* AddAccountViewController.m */,
 				B3CA1C7A17B2B1600070BB19 /* ComposeMessageViewController.h */,
@@ -436,6 +439,8 @@
 			children = (
 				B3CA1C6117B2AF4B0070BB19 /* GoogleMailAccount.h */,
 				B3CA1C6217B2AF4B0070BB19 /* GoogleMailAccount.m */,
+				B3D9C4DD17B61E8F007A56AA /* MailFolder.h */,
+				B3D9C4DE17B61E8F007A56AA /* MailFolder.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -828,6 +833,7 @@
 				B3CA1CA017B2DD690070BB19 /* MCTreeItem.m in Sources */,
 				B3CA1CA117B2DD690070BB19 /* MCTreeTableViewCell.m in Sources */,
 				B3DF029B17B42F80005793A9 /* MailAttributesView.m in Sources */,
+				B3D9C4DF17B61E8F007A56AA /* MailFolder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

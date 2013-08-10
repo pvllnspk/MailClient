@@ -10,6 +10,7 @@
 
 @interface NSString (Additions)
 
--(BOOL) contains:(NSString*) substring;
+- (BOOL) contains:(NSString*) substring;
+- (NSString *) md5;
 
 @end
