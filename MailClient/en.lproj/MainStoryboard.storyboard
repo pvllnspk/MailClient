@@ -273,6 +273,9 @@
                         <subviews>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="gda-ke-6Mp">
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vNg-pn-ePz" id="75r-kT-uJ7"/>
+                                </connections>
                             </searchBar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="bUx-MW-h9T">
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -433,7 +436,6 @@
         <class className="MessagesViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MessagesViewController.h"/>
             <relationships>
-                <relationship kind="action" name="back:"/>
                 <relationship kind="action" name="returnToMailboxes:"/>
                 <relationship kind="outlet" name="searchBarView" candidateClass="UISearchBar"/>
                 <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>

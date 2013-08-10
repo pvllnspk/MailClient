@@ -217,6 +217,7 @@
             
             _messages = [NSMutableArray arrayWithArray:[_folder messagesFromSequenceNumber:1 to:0 withFetchAttributes:CTFetchAttrEnvelope]];
             _searchResults = [_messages mutableCopy];
+            _searchResults = [NSMutableArray arrayWithArray:[[_searchResults reverseObjectEnumerator] allObjects]];
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 
@@ -251,7 +252,7 @@
 
 
 -(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
-{
+{    
     [_searchResults removeAllObjects];
     
     if(searchText && searchText.length > 0){
@@ -267,14 +268,13 @@
         [_searchResults addObjectsFromArray:_messages];
     }
     
+     _searchResults = [NSMutableArray arrayWithArray:[[_searchResults reverseObjectEnumerator] allObjects]];
     [_tableView reloadData];
 }
 
 
 - (IBAction)returnToMailboxes:(id)sender
 {
-    DLog(@"returnToMailboxes");
-    
     if(_delegate)
         [_delegate closeChildController];
 }
