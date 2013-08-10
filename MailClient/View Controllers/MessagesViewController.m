@@ -23,7 +23,7 @@
     
     UIRefreshControl *_refreshControl;
     
-    NSMutableDictionary *_tableViewCells;
+    NSMutableDictionary *_messagesDescriptions;
     
     dispatch_queue_t backgroundQueue;
 }
@@ -36,7 +36,7 @@
     [self initViews];
     
     backgroundQueue = dispatch_queue_create("dispatch_queue_#2", 0);
-    _tableViewCells = [NSMutableDictionary dictionary];
+    _messagesDescriptions = [NSMutableDictionary dictionary];
 }
 
 
@@ -85,6 +85,7 @@
 }
 
 
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 {
     static NSString *CellIdentifier = @"MessageCell";
@@ -95,58 +96,74 @@
     }
     
     CTCoreMessage *message = [_searchResults objectAtIndex:indexPath.row];
-    
     [(UILabel *)[cell viewWithTag:103] setText:message.subject];
     [(UILabel *)[cell viewWithTag:101] setText:[message.from toStringSeparatingByComma]];
     [(UILabel *)[cell viewWithTag:102] setText:[NSDateFormatter localizedStringFromDate:message.senderDate
                                                                               dateStyle:NSDateFormatterShortStyle
                                                                               timeStyle:NSDateFormatterNoStyle]];
     
-    
-    if([_tableViewCells valueForKey:[NSString stringWithFormat:@"%d",indexPath.row]] == nil){
-        
-        if([message.subject isEqualToString:@"Just fot test"]){
-            DLog(@" == nil");
-        }
+    if([_messagesDescriptions valueForKey:[NSString stringWithFormat:@"%d",message.hash]] == nil){
         
         [(UILabel *)[cell viewWithTag:104] setText:@"Loading ..."];
         
-        dispatch_async(backgroundQueue, ^{
+        if (_tableView.dragging == NO && _tableView.decelerating == NO){
             
-            BOOL isHTML;
-            NSString *shortBody = [message bodyPreferringPlainText:&isHTML];
-            shortBody = [shortBody substringToIndex: MIN(100, [shortBody length])];
-            
-            if([message.subject isEqualToString:@"Just for test"]){
-                DLog(@"  [message bodyPreferringPlainText:&isHTML]");
-            }
-            
-            dispatch_async(dispatch_get_main_queue(), ^{
-                
-                [_tableViewCells setValue:shortBody forKey:[NSString stringWithFormat:@"%d",indexPath.row]];
-                [(UILabel *)[cell viewWithTag:104] setText:[_tableViewCells valueForKey:[NSString stringWithFormat:@"%d",indexPath.row]]];
-                [cell setNeedsLayout];
-                
-                if([message.subject isEqualToString:@"Just fot test"]){
-                    DLog(@"   [cell setNeedsLayout];");
-                }
-                
-                
-            });
-        });
+            [self loadMessageDescription:message forIndexPath:indexPath];
+        }
     }else{
         
-        if([message.subject isEqualToString:@"Just fot test"]){
-            DLog(@" != nil");
-        }
-        
-         [(UILabel *)[cell viewWithTag:104] setText:[_tableViewCells valueForKey:[NSString stringWithFormat:@"%d",indexPath.row]]];
+        [(UILabel *)[cell viewWithTag:104] setText:[_messagesDescriptions valueForKey:[NSString stringWithFormat:@"%d",message.hash]]];
     }
     
     return cell;
 }
 
+- (void) loadMessageDescription:(CTCoreMessage *)message forIndexPath:(NSIndexPath *)indexPath
+{
+    dispatch_async(backgroundQueue, ^{
+        
+        BOOL isHTML;
+        NSString *shortBody = [message bodyPreferringPlainText:&isHTML];
+        shortBody = [shortBody substringToIndex: MIN(100, [shortBody length])];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+            
+            [_messagesDescriptions setValue:shortBody forKey:[NSString stringWithFormat:@"%d",message.hash]];
+            [(UILabel *)[cell viewWithTag:104] setText:shortBody];
+            //[cell setNeedsLayout];
+        });
+    });
+}
 
+- (void)loadMessageDescriptionForOnscreenRows
+{
+    NSArray *visiblePaths = [self.tableView indexPathsForVisibleRows];
+    for (NSIndexPath *indexPath in visiblePaths)
+    {
+        CTCoreMessage *message = [_searchResults objectAtIndex:indexPath.row];
+        
+        if([_messagesDescriptions valueForKey:[NSString stringWithFormat:@"%d",message.hash]] == nil){
+            {
+                [self loadMessageDescription:message forIndexPath:indexPath];
+            }
+        }
+    }
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    if (!decelerate){
+        
+        [self loadMessageDescriptionForOnscreenRows];
+    }
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    [self loadMessageDescriptionForOnscreenRows];
+}
 
 
 

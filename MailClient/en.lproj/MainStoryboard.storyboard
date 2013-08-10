@@ -282,9 +282,6 @@
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="82" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="fI3-r9-pkO">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="983" id="x45-HT-3sJ"/>
-                                </constraints>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" restorationIdentifier="MessageCell" selectionStyle="blue" indentationWidth="10" reuseIdentifier="MessageCell" rowHeight="82" id="imv-B5-V8J">
                                         <rect key="frame" x="0.0" y="22" width="320" height="82"/>
@@ -354,8 +351,9 @@
                         <constraints>
                             <constraint firstItem="bUx-MW-h9T" firstAttribute="top" secondItem="Hsp-fW-Oob" secondAttribute="top" constant="41" id="816-MA-UDr"/>
                             <constraint firstItem="bUx-MW-h9T" firstAttribute="leading" secondItem="Hsp-fW-Oob" secondAttribute="leading" type="default" id="Gly-AS-tss"/>
+                            <constraint firstItem="fI3-r9-pkO" firstAttribute="bottom" secondItem="Hsp-fW-Oob" secondAttribute="bottom" type="default" id="KvS-6Z-hR1"/>
                             <constraint firstItem="fI3-r9-pkO" firstAttribute="trailing" secondItem="Hsp-fW-Oob" secondAttribute="trailing" type="default" id="NMj-jJ-YT8"/>
-                            <constraint firstItem="fI3-r9-pkO" firstAttribute="top" secondItem="gda-ke-6Mp" secondAttribute="bottom" type="default" id="Ybu-Pk-8YR"/>
+                            <constraint firstItem="fI3-r9-pkO" firstAttribute="top" secondItem="gda-ke-6Mp" secondAttribute="bottom" type="default" id="WqA-DA-inG"/>
                             <constraint firstItem="gda-ke-6Mp" firstAttribute="top" secondItem="Hsp-fW-Oob" secondAttribute="top" type="default" id="Zkz-8Q-b77"/>
                             <constraint firstItem="bUx-MW-h9T" firstAttribute="trailing" secondItem="Hsp-fW-Oob" secondAttribute="trailing" type="default" id="aBO-5P-qCS"/>
                             <constraint firstItem="fI3-r9-pkO" firstAttribute="leading" secondItem="Hsp-fW-Oob" secondAttribute="leading" type="default" id="cDn-wd-lRT"/>
@@ -435,6 +433,7 @@
         <class className="MessagesViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MessagesViewController.h"/>
             <relationships>
+                <relationship kind="action" name="back:"/>
                 <relationship kind="action" name="returnToMailboxes:"/>
                 <relationship kind="outlet" name="searchBarView" candidateClass="UISearchBar"/>
                 <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
