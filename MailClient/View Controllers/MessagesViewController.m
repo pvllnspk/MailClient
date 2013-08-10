@@ -11,6 +11,8 @@
 #import "NSSet+Additions.h"
 #import "NSString+Additions.h"
 #import "TimeExecutionTracker.h"
+#import "NSDate-Utilities.h"
+#import "TextUtils.h"
 
 @implementation MessagesViewController
 {
@@ -84,8 +86,6 @@
     return [_searchResults count];
 }
 
-
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 {
     static NSString *CellIdentifier = @"MessageCell";
@@ -96,11 +96,9 @@
     }
     
     CTCoreMessage *message = [_searchResults objectAtIndex:indexPath.row];
-    [(UILabel *)[cell viewWithTag:103] setText:message.subject];
+    [(UILabel *)[cell viewWithTag:103] setText:[TextUtils isEmpty:message.subject replaceWith:@"[no subject]"]];
     [(UILabel *)[cell viewWithTag:101] setText:[message.from toStringSeparatingByComma]];
-    [(UILabel *)[cell viewWithTag:102] setText:[NSDateFormatter localizedStringFromDate:message.senderDate
-                                                                              dateStyle:NSDateFormatterShortStyle
-                                                                              timeStyle:NSDateFormatterNoStyle]];
+    [(UILabel *)[cell viewWithTag:102] setText:[self getUserFriendlyDate:message.senderDate]];
     
     if([_messagesDescriptions valueForKey:[NSString stringWithFormat:@"%d",message.hash]] == nil){
         
@@ -118,6 +116,27 @@
     return cell;
 }
 
+- (NSString*)getUserFriendlyDate:(NSDate *)date
+{
+    if([date isToday]){
+        
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"hh:mm a"];
+        
+        return [formatter stringFromDate:[NSDate date]];
+        
+    }else if([date isYesterday]){
+        
+        return @"Yesterday";
+        
+    }else{
+        return [NSDateFormatter localizedStringFromDate:date
+                                              dateStyle:NSDateFormatterShortStyle
+                                              timeStyle:NSDateFormatterNoStyle];
+    }
+}
+
+
 - (void) loadMessageDescription:(CTCoreMessage *)message forIndexPath:(NSIndexPath *)indexPath
 {
     dispatch_async(backgroundQueue, ^{
@@ -130,8 +149,8 @@
             
             UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
             
-            [_messagesDescriptions setValue:shortBody forKey:[NSString stringWithFormat:@"%d",message.hash]];
-            [(UILabel *)[cell viewWithTag:104] setText:shortBody];
+            [_messagesDescriptions setValue:[TextUtils isEmpty:shortBody replaceWith:@"[no body]"] forKey:[NSString stringWithFormat:@"%d",message.hash]];
+            [(UILabel *)[cell viewWithTag:104] setText:[TextUtils isEmpty:shortBody replaceWith:@"[no body]"]];
             //[cell setNeedsLayout];
         });
     });

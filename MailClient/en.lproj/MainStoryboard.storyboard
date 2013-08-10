@@ -301,10 +301,9 @@
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="102" contentMode="left" text="Date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qBs-A6-RJW">
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="23" id="KIg-e9-eu2"/>
-                                                        <constraint firstAttribute="width" constant="62" id="oXW-uy-MQp"/>
+                                                        <constraint firstAttribute="width" constant="85" id="MyH-nv-fhG"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                     <color key="textColor" red="0.51357954660000005" green="0.66118455249999997" blue="0.9739724864" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
@@ -330,13 +329,14 @@
                                         </view>
                                         <constraints>
                                             <constraint firstItem="Nys-Uk-qE5" firstAttribute="top" secondItem="qBs-A6-RJW" secondAttribute="top" type="default" id="0At-p9-mFI"/>
-                                            <constraint firstAttribute="trailing" secondItem="qBs-A6-RJW" secondAttribute="trailing" constant="20" type="default" id="D1A-de-uJ4"/>
                                             <constraint firstItem="Nys-Uk-qE5" firstAttribute="top" secondItem="imv-B5-V8J" secondAttribute="top" constant="5" id="MSf-y3-xtt"/>
                                             <constraint firstAttribute="bottom" secondItem="42z-fu-Wow" secondAttribute="bottom" constant="6" id="P4Q-tl-Gnr"/>
                                             <constraint firstItem="Nys-Uk-qE5" firstAttribute="leading" secondItem="imv-B5-V8J" secondAttribute="leading" constant="8" id="Uxi-bM-MgI"/>
                                             <constraint firstItem="42z-fu-Wow" firstAttribute="leading" secondItem="vpV-Gw-AoR" secondAttribute="leading" type="default" id="W5u-Gw-vdR"/>
+                                            <constraint firstItem="Nys-Uk-qE5" firstAttribute="baseline" secondItem="qBs-A6-RJW" secondAttribute="baseline" type="default" id="YjA-8s-gSa"/>
                                             <constraint firstItem="vpV-Gw-AoR" firstAttribute="top" secondItem="imv-B5-V8J" secondAttribute="top" constant="25" id="hyc-mx-qLV"/>
                                             <constraint firstItem="42z-fu-Wow" firstAttribute="trailing" secondItem="vpV-Gw-AoR" secondAttribute="trailing" type="default" id="nA1-mD-Kqv"/>
+                                            <constraint firstAttribute="trailing" secondItem="qBs-A6-RJW" secondAttribute="trailing" constant="7" id="rFu-Mg-xWE"/>
                                             <constraint firstItem="vpV-Gw-AoR" firstAttribute="leading" secondItem="Nys-Uk-qE5" secondAttribute="leading" type="default" id="x4w-Y5-Pnc"/>
                                         </constraints>
                                     </tableViewCell>

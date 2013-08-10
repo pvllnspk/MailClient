@@ -35,7 +35,7 @@
     
     [[UINavigationBar appearance] setTitleTextAttributes:navbarTitleTextAttributes];
     
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+//    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     
     return YES;
 }

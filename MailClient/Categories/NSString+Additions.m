@@ -26,4 +26,9 @@
     return [hash lowercaseString];
 }
 
+-(NSString *)replaceIfEmptyWith:(NSString *)string
+{
+    
+}
+
 @end
