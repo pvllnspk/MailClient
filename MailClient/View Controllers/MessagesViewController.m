@@ -324,19 +324,23 @@
             
             UITableViewCell *cell = (UITableViewCell *)[_tableView cellForRowAtIndexPath:indexPath];
                 
-                PopoverContentViewController *popoverContentViewController = [[PopoverContentViewController alloc]init];
-//                popoverContentViewController.delegate = self;
-//                popoverContentViewController.account = account;
+                PopoverContentViewController *popoverContentViewController = [[PopoverContentViewController alloc]initWithType:PopoverReplyEmail];
+                popoverContentViewController.delegateReplyEmail = self;
+                popoverContentViewController.account = _account;
             
                 CGRect cellFrame = [self.tableView convertRect:[self.tableView rectForRowAtIndexPath:indexPath] toView:[self.tableView superview]];
                 cellFrame.size.height = cell.frame.size.height / 2;
                 _popoverController = [[UIPopoverController alloc] initWithContentViewController:popoverContentViewController];
                 
                 [_popoverController presentPopoverFromRect:cellFrame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
-                
-        
+
         }
     }
+}
+
+-(void)replyEmailPressed:(GoogleMailAccount *)account
+{
+    DLog(@"replyEmailPressed");
 }
 
 

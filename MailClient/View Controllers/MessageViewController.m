@@ -13,6 +13,7 @@
 #import "MCNavButton.h"
 #import "MailAttributesView.h"
 #import "TimeExecutionTracker.h"
+#import "TextUtils.h"
 
 
 @implementation MessageViewController
@@ -193,6 +194,10 @@
                                                                                                        options:builderOptions
                                                                                             documentAttributes:nil];
             NSAttributedString *attrString = [stringBuilder generatedAttributedString];
+            
+            if([TextUtils isEmpty:[attrString string]]){
+                attrString = [[NSAttributedString alloc] initWithString:message.body];
+            }
             
             
             dispatch_async(dispatch_get_main_queue(), ^{

@@ -370,8 +370,8 @@
             
             if([cell.treeItem.path isEqualToString:@"/"]){
                 
-                PopoverContentViewController *popoverContentViewController = [[PopoverContentViewController alloc]init];
-                popoverContentViewController.delegate = self;
+                PopoverContentViewController *popoverContentViewController = [[PopoverContentViewController alloc]initWithType:PopoverDeleteAccount];
+                popoverContentViewController.delegateDeleteAccount = self;
                 
                 MCTreeItem *treeItem = [_displayedTreeItems objectAtIndex:indexPath.row];
                 

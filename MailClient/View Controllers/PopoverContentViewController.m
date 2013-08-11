@@ -8,41 +8,52 @@
 
 #import "PopoverContentViewController.h"
 
-
 @implementation PopoverContentViewController
 {
     NSMutableArray *_rows;
+    PopoverType _popoverType;
 }
 
-
-- (id)initWithStyle:(UITableViewStyle)style
+- (id)initWithType:(PopoverType)popoverType
 {
-    self = [super initWithStyle:style];
+    self = [super init];
     if (self) {
         
         [self.tableView  setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight];
         [self.tableView  setBackgroundColor:BACKGROUND_COLOR];
         [self.tableView  setRowHeight:45.0f];
-        [self.tableView setShowsVerticalScrollIndicator:NO];
+        [self.tableView  setShowsVerticalScrollIndicator:NO];
         [self.tableView  setDelegate:self];
         [self.tableView  setDataSource:self];
+        
+        _popoverType = popoverType;
+        
+        [self initData];
+        [self initPopover];
+        
     }
     return self;
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    
-    [self initData];
-    [self initPopover];
 }
 
 
 - (void) initData
 {
     _rows = [NSMutableArray array];
-    [_rows addObject:@"Delete this account"];
+    
+    switch (_popoverType) {
+        case PopoverDeleteAccount:
+            
+            [_rows addObject:@"Delete this mailbox"];
+            break;
+            
+        case PopoverReplyEmail:
+            
+            [_rows addObject:@"Reply to this message"];
+            break;
+            
+        default:
+            break;
+    }
 }
 
 - (void) initPopover
@@ -83,6 +94,7 @@
 		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     
     cell.textLabel.text = [_rows objectAtIndex:indexPath.row];
+    [cell.textLabel setTextAlignment:NSTextAlignmentCenter];
     
     return cell;
 }
@@ -92,10 +104,24 @@
 {
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    if(_delegate){
-        [_delegate accountDeleted:_account];
+    switch (_popoverType) {
+        case PopoverDeleteAccount:
+            
+            if(_delegateDeleteAccount){
+                [_delegateDeleteAccount accountDeleted:_account];
+            }
+            break;
+            
+        case PopoverReplyEmail:
+            
+            if(_delegateReplyEmail){
+                [_delegateReplyEmail replyEmailPressed:_account];
+            }
+            break;
+            
+        default:
+            break;
     }
 }
-
 
 @end

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "GoogleMailAccount.h"
-
+#import "PopoverContentViewController.h"
 
 @protocol CloseChildControllerDelegate <NSObject>
 @optional
@@ -16,7 +16,8 @@
 @end
 
 
-@interface MessagesViewController : UIViewController <UISearchDisplayDelegate ,UISearchBarDelegate, UIGestureRecognizerDelegate, UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate>
+@interface MessagesViewController : UIViewController <UISearchDisplayDelegate ,UISearchBarDelegate, UIGestureRecognizerDelegate,
+                                                    UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate, ReplyEmailDelegate>
 
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBarView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
