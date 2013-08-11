@@ -23,7 +23,6 @@
     
     CTCoreMessage *_message;
     
-    UIView *_parentView;
     MailAttributesView *_mailAttributesView;
     DTAttributedTextView *_messageBodyView;
 }
@@ -70,9 +69,13 @@
 
 -(void) initViews
 {
-//    _parentView = [[UIView alloc]initWithFrame:self.view.frame];
     _mailAttributesView = [[MailAttributesView alloc]initWithTopPadding:0];
     [self.view addSubview:_mailAttributesView];
+    
+    [_mailAttributesView->fromField setUserInteractionEnabled:NO];
+    [_mailAttributesView->toField setUserInteractionEnabled:NO];
+    [_mailAttributesView->ccField setUserInteractionEnabled:NO];
+    [_mailAttributesView->subjectField setUserInteractionEnabled:NO];
     
     _messageBodyView= [[DTAttributedTextView alloc] initWithFrame:CGRectMake(0, _mailAttributesView.frame.size.height, self.view.frame.size.width, 1000)];
     _messageBodyView.contentInset = UIEdgeInsetsMake(5,5,5,5);
@@ -152,11 +155,11 @@
 
 
 -(void)clearMessage
-{
+{    
+    [_mailAttributesView->fromField removeAllTokens];
+    [_mailAttributesView->toField removeAllTokens];
+    [_mailAttributesView->ccField removeAllTokens];
     [_mailAttributesView->subjectField setText:@""];
-    [_mailAttributesView->fromField.textField setText:@""];
-    [_mailAttributesView->toField.textField setText:@""];
-    [_mailAttributesView->ccField.textField setText:@""];
     
     _messageBodyView.attributedString = [[NSMutableAttributedString alloc] initWithString:@""];
 }
@@ -168,11 +171,9 @@
         
         [self showSpinner];
         
-        [_mailAttributesView->subjectField setText:_message.subject];
-        [_mailAttributesView->fromField.textField setText:[_message.from toStringSeparatingByComma]];
-        [_mailAttributesView->toField.textField setText:[_message.to toStringSeparatingByComma]];
-        [_mailAttributesView->ccField.textField setText:[_message.cc toStringSeparatingByComma]];
-        
+        [self updateMessageHeader];
+
+
         dispatch_async([AppDelegate serialBackgroundQueue], ^{
             
             DLog(@"Attempt to fetch a message body.");
@@ -181,7 +182,7 @@
             NSString *body = [_message htmlBody];
             
             
-            DLog(@"body  %@ ",body);
+            DLog(@"body  [[  %@  ]]",body);
             
             
             NSDictionary *builderOptions = @{DTDefaultFontFamily: @"Helvetica"};
@@ -206,6 +207,26 @@
             });
         });
     }
+}
+
+-(void) updateMessageHeader
+{
+    NSArray *fromArray = [_message.from allObjects];
+    for(NSString *fromObj in fromArray){
+        [_mailAttributesView->fromField addTokenWithTitle:[NSString stringWithFormat:@"%@",fromObj] representedObject:[NSString stringWithFormat:@"%@",fromObj]];
+    }
+    
+    NSArray *toArray = [_message.to allObjects];
+    for(NSString *toObj in toArray){
+        [_mailAttributesView->toField addTokenWithTitle:[NSString stringWithFormat:@"%@",toObj] representedObject:[NSString stringWithFormat:@"%@",toObj]];
+    }
+    
+    NSArray *ccArray = [_message.cc allObjects];
+    for(NSString *ccObj in ccArray){
+        [_mailAttributesView->ccField addTokenWithTitle:[NSString stringWithFormat:@"%@",ccObj] representedObject:[NSString stringWithFormat:@"%@",ccObj]];
+    }
+    
+    [_mailAttributesView->subjectField setText:_message.subject];
 }
 
 

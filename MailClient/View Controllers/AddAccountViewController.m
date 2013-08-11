@@ -108,6 +108,7 @@
         
         _fullName = (UITextView *)[cell viewWithTag:102];
         
+        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
         return cell;
         
     }if(indexPath.row==1){
@@ -130,6 +131,7 @@
         
         cell.contentView.backgroundColor = [UIColor whiteColor];
         
+        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
         return cell;
     }
     
@@ -151,6 +153,7 @@
         
         _password = (UITextView *)[cell viewWithTag:102];
         
+        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
         return cell;
     }
 }
