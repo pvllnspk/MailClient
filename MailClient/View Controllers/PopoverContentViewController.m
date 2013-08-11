@@ -22,7 +22,8 @@
         
         [self.tableView  setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight];
         [self.tableView  setBackgroundColor:BACKGROUND_COLOR];
-        [self.tableView  setRowHeight:65.0f];
+        [self.tableView  setRowHeight:45.0f];
+        [self.tableView setShowsVerticalScrollIndicator:NO];
         [self.tableView  setDelegate:self];
         [self.tableView  setDataSource:self];
     }
@@ -66,7 +67,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

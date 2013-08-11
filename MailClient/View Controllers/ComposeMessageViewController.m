@@ -30,9 +30,6 @@
 
 - (void)viewDidLoad
 {
-    
-    DLog(@"w -  %f ;  h -  %f",self.view.bounds.size.width,self.view.bounds.size.height)
-    
     [super viewDidLoad];
     
     [self initData];
@@ -64,10 +61,10 @@
     _mailAttributesView.delegate = self;
     [self.view addSubview:_mailAttributesView];
     
-    _messageBodyView= [[UITextView alloc] initWithFrame:CGRectMake(0, _mailAttributesView.frame.size.height, self.view.frame.size.width, 1000)];
+    _messageBodyView= [[UITextView alloc] initWithFrame:CGRectMake(0, _mailAttributesView.frame.size.height, self.view.frame.size.width, self.view.frame.size.height)];
     
     [_messageBodyView setFont:[UIFont fontWithName:@"HelveticaNeue" size:18.0f]];
-    _messageBodyView.contentInset = UIEdgeInsetsMake(5,5,5,5);
+    _messageBodyView.contentInset = UIEdgeInsetsMake(10,10,10,10);
     [self.view addSubview:_messageBodyView];
     
     [self initSpinner];
@@ -77,7 +74,7 @@
 {
     _spinner = [[UIActivityIndicatorView alloc]
                 initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-    _spinner.center = CGPointMake(self.view.bounds.size.width * 3.0f / 5.0f, 34.0f);
+    _spinner.center = CGPointMake(self.view.bounds.size.width / 2, self.view.bounds.size.height * 3 / 5);
     _spinner.autoresizingMask = (UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleLeftMargin
                                  | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleTopMargin);
     _spinner.hidesWhenStopped = YES;

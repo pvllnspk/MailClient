@@ -81,8 +81,8 @@
     [_mailAttributesView->ccField setUserInteractionEnabled:NO];
     [_mailAttributesView->subjectField setUserInteractionEnabled:NO];
     
-    _messageBodyView= [[DTAttributedTextView alloc] initWithFrame:CGRectMake(0, _mailAttributesView.frame.size.height, self.view.frame.size.width, 1000)];
-    _messageBodyView.contentInset = UIEdgeInsetsMake(5,5,5,5);
+    _messageBodyView= [[DTAttributedTextView alloc] initWithFrame:CGRectMake(0, _mailAttributesView.frame.size.height, self.view.frame.size.width, self.view.frame.size.height)];
+    _messageBodyView.contentInset = UIEdgeInsetsMake(10,10,10,10);
     [self.view addSubview:_messageBodyView];
     
     [self initSpinner];

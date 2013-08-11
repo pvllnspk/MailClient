@@ -14,6 +14,7 @@
 #import "NSDate-Utilities.h"
 #import "TextUtils.h"
 #import "MessageViewController.h"
+#import "PopoverContentViewController.h"
 
 
 @implementation MessagesViewController
@@ -29,6 +30,8 @@
     UIRefreshControl *_refreshControl;
     
     NSMutableDictionary *_messagesDescriptions;
+    
+    UIPopoverController *_popoverController;
     
     dispatch_queue_t backgroundQueue;
 }
@@ -52,6 +55,7 @@
     [self initSeacrhBar];
     [self initRefreshControl];
     [self initSpinner];
+    [self initPopover];
 }
 
 -(void) initSeacrhBar
@@ -84,6 +88,18 @@
     [_spinner setColor:[UIColor grayColor]];
     [self.view addSubview:_spinner];
 }
+
+
+-(void) initPopover
+{
+    UILongPressGestureRecognizer *longPressGestureRecognizer = [[UILongPressGestureRecognizer alloc]
+                                                                initWithTarget:self action:@selector(tableViewLongPress:)];
+    
+    longPressGestureRecognizer.minimumPressDuration = 1.0;
+    longPressGestureRecognizer.delegate = self;
+    [_tableView addGestureRecognizer:longPressGestureRecognizer];
+}
+
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -296,5 +312,32 @@
     
     [self.navigationController popViewControllerAnimated:YES];
 }
+
+-(void)tableViewLongPress:(UILongPressGestureRecognizer *)gestureRecognizer
+{
+    if (gestureRecognizer.state == UIGestureRecognizerStateBegan){
+        
+        CGPoint point = [gestureRecognizer locationInView:_tableView];
+        NSIndexPath *indexPath = [_tableView indexPathForRowAtPoint:point];
+        
+        if (indexPath){
+            
+            UITableViewCell *cell = (UITableViewCell *)[_tableView cellForRowAtIndexPath:indexPath];
+                
+                PopoverContentViewController *popoverContentViewController = [[PopoverContentViewController alloc]init];
+//                popoverContentViewController.delegate = self;
+//                popoverContentViewController.account = account;
+            
+                CGRect cellFrame = [self.tableView convertRect:[self.tableView rectForRowAtIndexPath:indexPath] toView:[self.tableView superview]];
+                cellFrame.size.height = cell.frame.size.height / 2;
+                _popoverController = [[UIPopoverController alloc] initWithContentViewController:popoverContentViewController];
+                
+                [_popoverController presentPopoverFromRect:cellFrame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+                
+        
+        }
+    }
+}
+
 
 @end
