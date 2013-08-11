@@ -22,18 +22,22 @@
     UIPopoverController *_popoverController;
     
     CTCoreMessage *_message;
+    CTCoreFolder *_folder;
+    GoogleMailAccount *_account;
     
     MailAttributesView *_mailAttributesView;
     DTAttributedTextView *_messageBodyView;
 }
 
 
--(void) setMessage:(CTCoreMessage *)message
+- (void) setMessage:(CTCoreMessage *)message forFolder:(CTCoreFolder*) folder andAccount: (GoogleMailAccount*)account;
 {
     if(message){
         
         if (_message != message) {
             _message = message;
+            _folder = folder;
+            _account = account;
             
             [self updateMessage];
         }
@@ -178,15 +182,12 @@
             
             DLog(@"Attempt to fetch a message body.");
             
-            BOOL isHTML = '\0';
-            NSString *body = [_message htmlBody];
+            CTCoreFolder *folder = [_account folderWithPath:_folder.path];
+            CTCoreMessage *message = [folder messageWithUID:[_message uid]];
             
-            
-            DLog(@"body  [[  %@  ]]",body);
-            
+            NSString *body = [message htmlBody];
             
             NSDictionary *builderOptions = @{DTDefaultFontFamily: @"Helvetica"};
-            
             NSData *data = [body dataUsingEncoding:NSUTF8StringEncoding];
             DTHTMLAttributedStringBuilder *stringBuilder = [[DTHTMLAttributedStringBuilder alloc] initWithHTML:data
                                                                                                        options:builderOptions
@@ -196,8 +197,7 @@
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 
-                DLog(@"Success. Is HTML ? : %s",isHTML? "true" : "false");
-                DLog(@"Success. [ %@ ]",attrString);
+                DLog(@"Success.");
                 
                 _messageBodyView.attributedString = attrString;
                 _messageBodyView.contentInset = UIEdgeInsetsMake(20, 15, 15, 15);

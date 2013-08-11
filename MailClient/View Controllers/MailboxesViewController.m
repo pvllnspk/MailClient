@@ -269,7 +269,9 @@
         if([account.emailAddress isEqualToString:[treeItem.path stringByReplacingOccurrencesOfString:@"/" withString:@""]]){
             
             CTCoreFolder *folder = [account folderWithPath:treeItem.base];
-            [self performSegueWithIdentifier: @"toMessages" sender: folder];
+            NSArray *arr = [NSArray arrayWithObjects:account,folder, nil];
+            
+            [self performSegueWithIdentifier: @"toMessages" sender: arr];
             
             return;
         }
@@ -406,7 +408,7 @@
             
             MessagesViewController *messagesViewController = segue.destinationViewController;
             messagesViewController.delegate = self;
-            [messagesViewController setFolder:(CTCoreFolder *)sender];
+            [messagesViewController setFolder:[sender objectAtIndex:1] forAccount:[sender objectAtIndex:0]];
         }
 }
 

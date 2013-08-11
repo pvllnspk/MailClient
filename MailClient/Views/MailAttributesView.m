@@ -14,7 +14,7 @@
 
 #define ROW_HEIGHT 35
 #define ROW_WIDTH 780
-#define MESSAGE_BODY_PADDING 5
+#define MESSAGE_BODY_PADDING 10
 
 @implementation MailAttributesView
 {

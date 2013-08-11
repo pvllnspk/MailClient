@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GoogleMailAccount.h"
 
 
 @protocol CloseChildControllerDelegate <NSObject>
@@ -23,6 +24,6 @@
 @property (nonatomic, assign) id <CloseChildControllerDelegate> delegate;
 
 - (IBAction) returnToMailboxes:(id)sender;
-- (void) setFolder:(CTCoreFolder*) folder;
+- (void) setFolder:(CTCoreFolder*) folder forAccount: (GoogleMailAccount*)account;
 
 @end

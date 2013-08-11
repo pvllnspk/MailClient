@@ -19,6 +19,7 @@
 @implementation MessagesViewController
 {
     CTCoreFolder *_folder;
+    GoogleMailAccount *_account;
     
     NSMutableArray *_messages;
     NSMutableArray *_searchResults;
@@ -191,15 +192,16 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     MessageViewController *messageViewController =  (MessageViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
-    [messageViewController setMessage:[_searchResults objectAtIndex:indexPath.row]];
+    [messageViewController setMessage:[_searchResults objectAtIndex:indexPath.row] forFolder:_folder andAccount:_account];
 }
 
 
--(void)setFolder:(CTCoreFolder *)folder
+- (void) setFolder:(CTCoreFolder*) folder forAccount: (GoogleMailAccount*)account;
 {
     if (_folder != folder){
         
         _folder = folder;
+        _account = account;
         
         [self.navigationItem.leftBarButtonItem setTitle:@" / "];
         [self.navigationItem setTitle:folder.path];
@@ -290,7 +292,7 @@
 - (IBAction)back:(id)sender
 {
     MessageViewController *messageViewController =  (MessageViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
-    [messageViewController setMessage:nil];
+    [messageViewController setMessage:nil forFolder:nil andAccount:nil];
     
     [self.navigationController popViewControllerAnimated:YES];
 }
