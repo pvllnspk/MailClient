@@ -340,8 +340,8 @@
 
 -(void)replyEmailPressed:(GoogleMailAccount *)account
 {
-    DLog(@"replyEmailPressed");
+    [[self.splitViewController.viewControllers[1] topViewController] performSegueWithIdentifier: @"toComposeMessage" sender: nil];
+    [_popoverController dismissPopoverAnimated:YES];
 }
-
 
 @end
