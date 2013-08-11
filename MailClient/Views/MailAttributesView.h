@@ -20,4 +20,6 @@
 
 @property (nonatomic, assign) id <JSTokenFieldDelegate> delegate;
 
+-(id)initWithTopPadding:(CGFloat)topPadding;
+
 @end

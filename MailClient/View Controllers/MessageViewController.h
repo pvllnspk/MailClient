@@ -9,9 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface MessageViewController : UIViewController <UISplitViewControllerDelegate>
-
-@property (weak, nonatomic) IBOutlet DTAttributedTextView *bodyTextView;
+@interface MessageViewController : UIViewController <UISplitViewControllerDelegate ,DTAttributedTextContentViewDelegate>
 
 - (void) setMessage:(CTCoreMessage *)message;
 

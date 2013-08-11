@@ -13,6 +13,8 @@
 #import "TimeExecutionTracker.h"
 #import "NSDate-Utilities.h"
 #import "TextUtils.h"
+#import "MessageViewController.h"
+
 
 @implementation MessagesViewController
 {
@@ -186,11 +188,10 @@
     [self loadMessageDescriptionForOnscreenRows];
 }
 
-
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    [self setMessage:[_searchResults objectAtIndex:indexPath.row]];
+    MessageViewController *messageViewController =  (MessageViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+    [messageViewController setMessage:[_searchResults objectAtIndex:indexPath.row]];
 }
 
 
@@ -286,10 +287,12 @@
     }
 }
 
-- (IBAction)back:(id)sender {
+- (IBAction)back:(id)sender
+{
+    MessageViewController *messageViewController =  (MessageViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+    [messageViewController setMessage:nil];
     
     [self.navigationController popViewControllerAnimated:YES];
-    
 }
 
 @end

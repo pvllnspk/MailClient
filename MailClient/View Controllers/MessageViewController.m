@@ -11,6 +11,8 @@
 #import "NSString+Additions.h"
 #import "ComposeMessageViewController.h"
 #import "MCNavButton.h"
+#import "MailAttributesView.h"
+#import "TimeExecutionTracker.h"
 
 
 @implementation MessageViewController
@@ -20,20 +22,30 @@
     UIPopoverController *_popoverController;
     
     CTCoreMessage *_message;
+    
+    UIView *_parentView;
+    MailAttributesView *_mailAttributesView;
+    DTAttributedTextView *_messageBodyView;
 }
 
 
 -(void) setMessage:(CTCoreMessage *)message
 {
-    if (_message != message) {
-        _message = message;
+    if(message){
         
-        [self updateMessage];
+        if (_message != message) {
+            _message = message;
+            
+            [self updateMessage];
+        }
+        
+        if (_popoverController != nil) {
+            [_popoverController dismissPopoverAnimated:YES];
+        }
+    }else{
+        
+        [self hideBody];
     }
-
-    if (_popoverController != nil) {
-        [_popoverController dismissPopoverAnimated:YES];
-    }        
 }
 
 
@@ -42,6 +54,8 @@
     [super viewDidLoad];
     
     [self initViews];
+    
+    [self hideBody];
     
     [self updateMessage];
     
@@ -54,9 +68,16 @@
     }
 }
 
-
 -(void) initViews
-{    
+{
+//    _parentView = [[UIView alloc]initWithFrame:self.view.frame];
+    _mailAttributesView = [[MailAttributesView alloc]initWithTopPadding:0];
+    [self.view addSubview:_mailAttributesView];
+    
+    _messageBodyView= [[DTAttributedTextView alloc] initWithFrame:CGRectMake(0, _mailAttributesView.frame.size.height, self.view.frame.size.width, 1000)];
+    _messageBodyView.contentInset = UIEdgeInsetsMake(5,5,5,5);
+    [self.view addSubview:_messageBodyView];
+    
     [self initSpinner];
 }
 
@@ -98,31 +119,59 @@
 
 -(void) showSpinner
 {
+    [self hideBody];
     [_spinner startAnimating];
 }
 
 -(void) hideSpinner
 {
+    [self showBody];
     [_spinner stopAnimating];
 }
 
 
--(void) updateMessage
+-(void) hideBody
 {
+    [self clearMessage];
+    
+    if(_mailAttributesView)
+        [_mailAttributesView setHidden:YES];
+    
+    if(_messageBodyView)
+        [_messageBodyView setHidden:YES];
+}
+
+-(void) showBody
+{
+    if(_mailAttributesView)
+        [_mailAttributesView setHidden:NO];
+    
+    if(_messageBodyView)
+        [_messageBodyView setHidden:NO];
+}
+
+
+-(void)clearMessage
+{
+    [_mailAttributesView->subjectField setText:@""];
+    [_mailAttributesView->fromField.textField setText:@""];
+    [_mailAttributesView->toField.textField setText:@""];
+    [_mailAttributesView->ccField.textField setText:@""];
+    
+    _messageBodyView.attributedString = [[NSMutableAttributedString alloc] initWithString:@""];
+}
+
+
+-(void) updateMessage
+{    
     if(_message){
         
         [self showSpinner];
         
-        
-        NSString *body = [_message htmlBody];
-        NSData *data = [body dataUsingEncoding:NSUTF8StringEncoding];
-        
-        NSDictionary *builderOptions = @{DTDefaultFontFamily: @"Helvetica"};
-        DTHTMLAttributedStringBuilder *stringBuilder = [[DTHTMLAttributedStringBuilder alloc] initWithHTML:data
-                                                                                                   options:builderOptions
-                                                                                        documentAttributes:nil];
-        
-        self.bodyTextView.attributedString = [[NSAttributedString alloc] initWithString:@""];
+        [_mailAttributesView->subjectField setText:_message.subject];
+        [_mailAttributesView->fromField.textField setText:[_message.from toStringSeparatingByComma]];
+        [_mailAttributesView->toField.textField setText:[_message.to toStringSeparatingByComma]];
+        [_mailAttributesView->ccField.textField setText:[_message.cc toStringSeparatingByComma]];
         
         dispatch_async([AppDelegate serialBackgroundQueue], ^{
             
@@ -131,26 +180,33 @@
             BOOL isHTML = '\0';
             NSString *body = [_message htmlBody];
             
-            NSData *emtyData = [@"" dataUsingEncoding:NSUTF8StringEncoding];
-            DTHTMLAttributedStringBuilder *emptyStringBuilder = [[DTHTMLAttributedStringBuilder alloc] initWithHTML:data
-                                                                                                            options:builderOptions
-                                                                                                 documentAttributes:nil];
-            self.bodyTextView.attributedString = [emptyStringBuilder generatedAttributedString];
+            
+            DLog(@"body  %@ ",body);
+            
+            
+            NSDictionary *builderOptions = @{DTDefaultFontFamily: @"Helvetica"};
+            
+            NSData *data = [body dataUsingEncoding:NSUTF8StringEncoding];
+            DTHTMLAttributedStringBuilder *stringBuilder = [[DTHTMLAttributedStringBuilder alloc] initWithHTML:data
+                                                                                                       options:builderOptions
+                                                                                            documentAttributes:nil];
+            NSAttributedString *attrString = [stringBuilder generatedAttributedString];
+            
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 
                 DLog(@"Success. Is HTML ? : %s",isHTML? "true" : "false");
+                DLog(@"Success. [ %@ ]",attrString);
                 
-                self.bodyTextView.attributedString = [stringBuilder generatedAttributedString];
-                self.bodyTextView.contentInset = UIEdgeInsetsMake(20, 15, 15, 15);
-                self.bodyTextView.textDelegate = self;
+                _messageBodyView.attributedString = attrString;
+                _messageBodyView.contentInset = UIEdgeInsetsMake(20, 15, 15, 15);
+                _messageBodyView.textDelegate = self;
                 
                 [self hideSpinner];
             });
         });
     }
 }
-
 
 
 - (UIView *)attributedTextContentView:(DTAttributedTextContentView *)attributedTextContentView

@@ -60,7 +60,7 @@
 
 -(void) initViews
 {
-    _mailAttributesView = [[MailAttributesView alloc]initWithFrame:self.view.frame];
+    _mailAttributesView = [[MailAttributesView alloc] initWithTopPadding:50];
     _mailAttributesView.delegate = self;
     [self.view addSubview:_mailAttributesView];
     
