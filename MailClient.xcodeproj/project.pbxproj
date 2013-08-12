@@ -43,13 +43,6 @@
 		B3CA1C4A17B2AE280070BB19 /* tokenHighlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3CA1C3917B2AE280070BB19 /* tokenHighlighted@2x.png */; };
 		B3CA1C4B17B2AE280070BB19 /* tokenNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = B3CA1C3A17B2AE280070BB19 /* tokenNormal.png */; };
 		B3CA1C4C17B2AE280070BB19 /* tokenNormal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3CA1C3B17B2AE280070BB19 /* tokenNormal@2x.png */; };
-		B3CA1C6D17B2AF4B0070BB19 /* NSSet+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CA1C5D17B2AF4B0070BB19 /* NSSet+Additions.m */; };
-		B3CA1C6E17B2AF4B0070BB19 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CA1C5F17B2AF4B0070BB19 /* NSString+Additions.m */; };
-		B3CA1C6F17B2AF4B0070BB19 /* GoogleMailAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CA1C6217B2AF4B0070BB19 /* GoogleMailAccount.m */; };
-		B3CA1C7017B2AF4B0070BB19 /* MCNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CA1C6517B2AF4B0070BB19 /* MCNavigationController.m */; };
-		B3CA1C7117B2AF4B0070BB19 /* MCController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CA1C6817B2AF4B0070BB19 /* MCController.m */; };
-		B3CA1C7217B2AF4B0070BB19 /* SyncManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CA1C6A17B2AF4B0070BB19 /* SyncManager.m */; };
-		B3CA1C7317B2AF4B0070BB19 /* TimeExecutionTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CA1C6C17B2AF4B0070BB19 /* TimeExecutionTracker.m */; };
 		B3CA1C7617B2B1260070BB19 /* MessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CA1C7517B2B1260070BB19 /* MessagesViewController.m */; };
 		B3CA1C7917B2B1470070BB19 /* AddAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CA1C7817B2B1470070BB19 /* AddAccountViewController.m */; };
 		B3CA1C7C17B2B1600070BB19 /* ComposeMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CA1C7B17B2B1600070BB19 /* ComposeMessageViewController.m */; };
@@ -58,9 +51,7 @@
 		B3CA1C9F17B2DD690070BB19 /* MCNavButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CA1C9817B2DD690070BB19 /* MCNavButton.m */; };
 		B3CA1CA017B2DD690070BB19 /* MCTreeItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CA1C9B17B2DD690070BB19 /* MCTreeItem.m */; };
 		B3CA1CA117B2DD690070BB19 /* MCTreeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CA1C9D17B2DD690070BB19 /* MCTreeTableViewCell.m */; };
-		B3D9C4DF17B61E8F007A56AA /* MailFolder.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D9C4DE17B61E8F007A56AA /* MailFolder.m */; };
 		B3D9C4F917B6797D007A56AA /* NSDate-Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D9C4F817B6797D007A56AA /* NSDate-Utilities.m */; };
-		B3D9C4FC17B69EBB007A56AA /* TextUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D9C4FB17B69EBB007A56AA /* TextUtils.m */; };
 		B3D9F1BD17B29F810091DFDB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D9F1BC17B29F810091DFDB /* UIKit.framework */; };
 		B3D9F1BF17B29F810091DFDB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D9F1BE17B29F810091DFDB /* Foundation.framework */; };
 		B3D9F1C117B29F810091DFDB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D9F1C017B29F810091DFDB /* CoreGraphics.framework */; };
@@ -86,6 +77,15 @@
 		B3D9F24017B2A2520091DFDB /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D9F23F17B2A2510091DFDB /* CoreText.framework */; };
 		B3D9F24217B2A25A0091DFDB /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D9F24117B2A25A0091DFDB /* MobileCoreServices.framework */; };
 		B3DF029B17B42F80005793A9 /* MailAttributesView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DF029A17B42F80005793A9 /* MailAttributesView.m */; };
+		B3E0D13D17B935D500EC4AD7 /* NSSet+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E0D12917B935D500EC4AD7 /* NSSet+Additions.m */; };
+		B3E0D13E17B935D500EC4AD7 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E0D12B17B935D500EC4AD7 /* NSString+Additions.m */; };
+		B3E0D13F17B935D500EC4AD7 /* MCController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E0D12F17B935D500EC4AD7 /* MCController.m */; };
+		B3E0D14017B935D500EC4AD7 /* MCNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E0D13117B935D500EC4AD7 /* MCNavigationController.m */; };
+		B3E0D14117B935D500EC4AD7 /* SyncManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E0D13317B935D500EC4AD7 /* SyncManager.m */; };
+		B3E0D14217B935D500EC4AD7 /* TextUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E0D13517B935D500EC4AD7 /* TextUtils.m */; };
+		B3E0D14317B935D500EC4AD7 /* TimeExecutionTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E0D13717B935D500EC4AD7 /* TimeExecutionTracker.m */; };
+		B3E0D14417B935D500EC4AD7 /* GoogleMailAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E0D13A17B935D500EC4AD7 /* GoogleMailAccount.m */; };
+		B3E0D14517B935D500EC4AD7 /* MailFolder.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E0D13C17B935D500EC4AD7 /* MailFolder.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -221,21 +221,6 @@
 		B3CA1C3917B2AE280070BB19 /* tokenHighlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tokenHighlighted@2x.png"; sourceTree = "<group>"; };
 		B3CA1C3A17B2AE280070BB19 /* tokenNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tokenNormal.png; sourceTree = "<group>"; };
 		B3CA1C3B17B2AE280070BB19 /* tokenNormal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tokenNormal@2x.png"; sourceTree = "<group>"; };
-		B3CA1C5C17B2AF4B0070BB19 /* NSSet+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSSet+Additions.h"; sourceTree = "<group>"; };
-		B3CA1C5D17B2AF4B0070BB19 /* NSSet+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSSet+Additions.m"; sourceTree = "<group>"; };
-		B3CA1C5E17B2AF4B0070BB19 /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
-		B3CA1C5F17B2AF4B0070BB19 /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
-		B3CA1C6117B2AF4B0070BB19 /* GoogleMailAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoogleMailAccount.h; sourceTree = "<group>"; };
-		B3CA1C6217B2AF4B0070BB19 /* GoogleMailAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoogleMailAccount.m; sourceTree = "<group>"; };
-		B3CA1C6417B2AF4B0070BB19 /* MCNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCNavigationController.h; sourceTree = "<group>"; };
-		B3CA1C6517B2AF4B0070BB19 /* MCNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCNavigationController.m; sourceTree = "<group>"; };
-		B3CA1C6617B2AF4B0070BB19 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
-		B3CA1C6717B2AF4B0070BB19 /* MCController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCController.h; sourceTree = "<group>"; };
-		B3CA1C6817B2AF4B0070BB19 /* MCController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCController.m; sourceTree = "<group>"; };
-		B3CA1C6917B2AF4B0070BB19 /* SyncManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SyncManager.h; sourceTree = "<group>"; };
-		B3CA1C6A17B2AF4B0070BB19 /* SyncManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SyncManager.m; sourceTree = "<group>"; };
-		B3CA1C6B17B2AF4B0070BB19 /* TimeExecutionTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeExecutionTracker.h; sourceTree = "<group>"; };
-		B3CA1C6C17B2AF4B0070BB19 /* TimeExecutionTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeExecutionTracker.m; sourceTree = "<group>"; };
 		B3CA1C7417B2B1260070BB19 /* MessagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagesViewController.h; sourceTree = "<group>"; };
 		B3CA1C7517B2B1260070BB19 /* MessagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagesViewController.m; sourceTree = "<group>"; };
 		B3CA1C7717B2B1470070BB19 /* AddAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddAccountViewController.h; sourceTree = "<group>"; };
@@ -252,12 +237,8 @@
 		B3CA1C9B17B2DD690070BB19 /* MCTreeItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCTreeItem.m; sourceTree = "<group>"; };
 		B3CA1C9C17B2DD690070BB19 /* MCTreeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCTreeTableViewCell.h; sourceTree = "<group>"; };
 		B3CA1C9D17B2DD690070BB19 /* MCTreeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCTreeTableViewCell.m; sourceTree = "<group>"; };
-		B3D9C4DD17B61E8F007A56AA /* MailFolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailFolder.h; sourceTree = "<group>"; };
-		B3D9C4DE17B61E8F007A56AA /* MailFolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MailFolder.m; sourceTree = "<group>"; };
 		B3D9C4F717B6797D007A56AA /* NSDate-Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate-Utilities.h"; sourceTree = "<group>"; };
 		B3D9C4F817B6797D007A56AA /* NSDate-Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate-Utilities.m"; sourceTree = "<group>"; };
-		B3D9C4FA17B69EBB007A56AA /* TextUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextUtils.h; sourceTree = "<group>"; };
-		B3D9C4FB17B69EBB007A56AA /* TextUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextUtils.m; sourceTree = "<group>"; };
 		B3D9F1B917B29F810091DFDB /* MailClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MailClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3D9F1BC17B29F810091DFDB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B3D9F1BE17B29F810091DFDB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -285,6 +266,25 @@
 		B3D9F24117B2A25A0091DFDB /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		B3DF029917B42F80005793A9 /* MailAttributesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailAttributesView.h; sourceTree = "<group>"; };
 		B3DF029A17B42F80005793A9 /* MailAttributesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MailAttributesView.m; sourceTree = "<group>"; };
+		B3E0D12817B935D500EC4AD7 /* NSSet+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSSet+Additions.h"; sourceTree = "<group>"; };
+		B3E0D12917B935D500EC4AD7 /* NSSet+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSSet+Additions.m"; sourceTree = "<group>"; };
+		B3E0D12A17B935D500EC4AD7 /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
+		B3E0D12B17B935D500EC4AD7 /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
+		B3E0D12D17B935D500EC4AD7 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		B3E0D12E17B935D500EC4AD7 /* MCController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCController.h; sourceTree = "<group>"; };
+		B3E0D12F17B935D500EC4AD7 /* MCController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCController.m; sourceTree = "<group>"; };
+		B3E0D13017B935D500EC4AD7 /* MCNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCNavigationController.h; sourceTree = "<group>"; };
+		B3E0D13117B935D500EC4AD7 /* MCNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCNavigationController.m; sourceTree = "<group>"; };
+		B3E0D13217B935D500EC4AD7 /* SyncManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SyncManager.h; sourceTree = "<group>"; };
+		B3E0D13317B935D500EC4AD7 /* SyncManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SyncManager.m; sourceTree = "<group>"; };
+		B3E0D13417B935D500EC4AD7 /* TextUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextUtils.h; sourceTree = "<group>"; };
+		B3E0D13517B935D500EC4AD7 /* TextUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextUtils.m; sourceTree = "<group>"; };
+		B3E0D13617B935D500EC4AD7 /* TimeExecutionTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeExecutionTracker.h; sourceTree = "<group>"; };
+		B3E0D13717B935D500EC4AD7 /* TimeExecutionTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeExecutionTracker.m; sourceTree = "<group>"; };
+		B3E0D13917B935D500EC4AD7 /* GoogleMailAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoogleMailAccount.h; sourceTree = "<group>"; };
+		B3E0D13A17B935D500EC4AD7 /* GoogleMailAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoogleMailAccount.m; sourceTree = "<group>"; };
+		B3E0D13B17B935D500EC4AD7 /* MailFolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailFolder.h; sourceTree = "<group>"; };
+		B3E0D13C17B935D500EC4AD7 /* MailFolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MailFolder.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -430,46 +430,6 @@
 			path = JSTokenField;
 			sourceTree = "<group>";
 		};
-		B3CA1C5B17B2AF4A0070BB19 /* Categories */ = {
-			isa = PBXGroup;
-			children = (
-				B3CA1C5C17B2AF4B0070BB19 /* NSSet+Additions.h */,
-				B3CA1C5D17B2AF4B0070BB19 /* NSSet+Additions.m */,
-				B3CA1C5E17B2AF4B0070BB19 /* NSString+Additions.h */,
-				B3CA1C5F17B2AF4B0070BB19 /* NSString+Additions.m */,
-			);
-			path = Categories;
-			sourceTree = "<group>";
-		};
-		B3CA1C6017B2AF4B0070BB19 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				B3CA1C6117B2AF4B0070BB19 /* GoogleMailAccount.h */,
-				B3CA1C6217B2AF4B0070BB19 /* GoogleMailAccount.m */,
-				B3D9C4DD17B61E8F007A56AA /* MailFolder.h */,
-				B3D9C4DE17B61E8F007A56AA /* MailFolder.m */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		B3CA1C6317B2AF4B0070BB19 /* Util */ = {
-			isa = PBXGroup;
-			children = (
-				B3CA1C6417B2AF4B0070BB19 /* MCNavigationController.h */,
-				B3CA1C6517B2AF4B0070BB19 /* MCNavigationController.m */,
-				B3CA1C6617B2AF4B0070BB19 /* Constants.h */,
-				B3CA1C6717B2AF4B0070BB19 /* MCController.h */,
-				B3CA1C6817B2AF4B0070BB19 /* MCController.m */,
-				B3CA1C6917B2AF4B0070BB19 /* SyncManager.h */,
-				B3CA1C6A17B2AF4B0070BB19 /* SyncManager.m */,
-				B3CA1C6B17B2AF4B0070BB19 /* TimeExecutionTracker.h */,
-				B3CA1C6C17B2AF4B0070BB19 /* TimeExecutionTracker.m */,
-				B3D9C4FA17B69EBB007A56AA /* TextUtils.h */,
-				B3D9C4FB17B69EBB007A56AA /* TextUtils.m */,
-			);
-			path = Util;
-			sourceTree = "<group>";
-		};
 		B3CA1C9417B2DD680070BB19 /* VIews */ = {
 			isa = PBXGroup;
 			children = (
@@ -554,10 +514,9 @@
 				B3D9F1D917B29F810091DFDB /* MailClient.xcdatamodeld */,
 				B3CA1BEC17B2A99C0070BB19 /* Application */,
 				B3CA1BF817B2A99C0070BB19 /* View Controllers */,
+				B3E0D13817B935D500EC4AD7 /* Models */,
 				B3CA1C9417B2DD680070BB19 /* VIews */,
-				B3CA1C6017B2AF4B0070BB19 /* Model */,
-				B3CA1C6317B2AF4B0070BB19 /* Util */,
-				B3CA1C5B17B2AF4A0070BB19 /* Categories */,
+				B3E0D12617B935D500EC4AD7 /* Helpers */,
 				B3CA1BEF17B2A99C0070BB19 /* Resources */,
 				B3CA1BF417B2A99C0070BB19 /* Supporting Files */,
 				B3CA1C0517B2AA490070BB19 /* Vendor */,
@@ -606,6 +565,55 @@
 				B3D9F23717B2A2010091DFDB /* DTCoreText.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		B3E0D12617B935D500EC4AD7 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B3E0D12717B935D500EC4AD7 /* Categories */,
+				B3E0D12C17B935D500EC4AD7 /* Utils */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		B3E0D12717B935D500EC4AD7 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				B3E0D12817B935D500EC4AD7 /* NSSet+Additions.h */,
+				B3E0D12917B935D500EC4AD7 /* NSSet+Additions.m */,
+				B3E0D12A17B935D500EC4AD7 /* NSString+Additions.h */,
+				B3E0D12B17B935D500EC4AD7 /* NSString+Additions.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		B3E0D12C17B935D500EC4AD7 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				B3E0D12D17B935D500EC4AD7 /* Constants.h */,
+				B3E0D12E17B935D500EC4AD7 /* MCController.h */,
+				B3E0D12F17B935D500EC4AD7 /* MCController.m */,
+				B3E0D13017B935D500EC4AD7 /* MCNavigationController.h */,
+				B3E0D13117B935D500EC4AD7 /* MCNavigationController.m */,
+				B3E0D13217B935D500EC4AD7 /* SyncManager.h */,
+				B3E0D13317B935D500EC4AD7 /* SyncManager.m */,
+				B3E0D13417B935D500EC4AD7 /* TextUtils.h */,
+				B3E0D13517B935D500EC4AD7 /* TextUtils.m */,
+				B3E0D13617B935D500EC4AD7 /* TimeExecutionTracker.h */,
+				B3E0D13717B935D500EC4AD7 /* TimeExecutionTracker.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		B3E0D13817B935D500EC4AD7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B3E0D13917B935D500EC4AD7 /* GoogleMailAccount.h */,
+				B3E0D13A17B935D500EC4AD7 /* GoogleMailAccount.m */,
+				B3E0D13B17B935D500EC4AD7 /* MailFolder.h */,
+				B3E0D13C17B935D500EC4AD7 /* MailFolder.m */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -835,13 +843,6 @@
 				B3CA1C0F17B2AA490070BB19 /* JSTokenButton.m in Sources */,
 				B3CA1C1017B2AA490070BB19 /* JSTokenField.m in Sources */,
 				B3CA1C1817B2AAF00070BB19 /* main.m in Sources */,
-				B3CA1C6D17B2AF4B0070BB19 /* NSSet+Additions.m in Sources */,
-				B3CA1C6E17B2AF4B0070BB19 /* NSString+Additions.m in Sources */,
-				B3CA1C6F17B2AF4B0070BB19 /* GoogleMailAccount.m in Sources */,
-				B3CA1C7017B2AF4B0070BB19 /* MCNavigationController.m in Sources */,
-				B3CA1C7117B2AF4B0070BB19 /* MCController.m in Sources */,
-				B3CA1C7217B2AF4B0070BB19 /* SyncManager.m in Sources */,
-				B3CA1C7317B2AF4B0070BB19 /* TimeExecutionTracker.m in Sources */,
 				B3CA1C7617B2B1260070BB19 /* MessagesViewController.m in Sources */,
 				B3CA1C7917B2B1470070BB19 /* AddAccountViewController.m in Sources */,
 				B3CA1C7C17B2B1600070BB19 /* ComposeMessageViewController.m in Sources */,
@@ -851,9 +852,16 @@
 				B3CA1CA017B2DD690070BB19 /* MCTreeItem.m in Sources */,
 				B3CA1CA117B2DD690070BB19 /* MCTreeTableViewCell.m in Sources */,
 				B3DF029B17B42F80005793A9 /* MailAttributesView.m in Sources */,
-				B3D9C4DF17B61E8F007A56AA /* MailFolder.m in Sources */,
 				B3D9C4F917B6797D007A56AA /* NSDate-Utilities.m in Sources */,
-				B3D9C4FC17B69EBB007A56AA /* TextUtils.m in Sources */,
+				B3E0D13D17B935D500EC4AD7 /* NSSet+Additions.m in Sources */,
+				B3E0D13E17B935D500EC4AD7 /* NSString+Additions.m in Sources */,
+				B3E0D13F17B935D500EC4AD7 /* MCController.m in Sources */,
+				B3E0D14017B935D500EC4AD7 /* MCNavigationController.m in Sources */,
+				B3E0D14117B935D500EC4AD7 /* SyncManager.m in Sources */,
+				B3E0D14217B935D500EC4AD7 /* TextUtils.m in Sources */,
+				B3E0D14317B935D500EC4AD7 /* TimeExecutionTracker.m in Sources */,
+				B3E0D14417B935D500EC4AD7 /* GoogleMailAccount.m in Sources */,
+				B3E0D14517B935D500EC4AD7 /* MailFolder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
