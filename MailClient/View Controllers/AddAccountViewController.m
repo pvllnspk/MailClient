@@ -180,6 +180,7 @@
 		[leftText.layer setShadowColor:MCCOLOR_TITLE_SHADOW.CGColor];
         
         _password = (UITextView *)[cell viewWithTag:102];
+        [_password setSecureTextEntry:YES];
         
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
         return cell;

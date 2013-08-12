@@ -344,4 +344,22 @@
     [_popoverController dismissPopoverAnimated:YES];
 }
 
+
+- (IBAction)swipe:(id)sender
+{
+    UISwipeGestureRecognizer *swipe = sender;
+    if (swipe.state == UIGestureRecognizerStateRecognized)
+    {
+        if (swipe.direction == UISwipeGestureRecognizerDirectionRight)
+        {
+            [self back:nil];
+        }
+    }
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
+{
+    return NO;
+}
+
 @end

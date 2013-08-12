@@ -28,4 +28,6 @@
 - (IBAction) returnToMailboxes:(id)sender;
 - (void) setFolder:(CTCoreFolder*) folder forAccount: (BaseMailbox*)account;
 
+- (IBAction)swipe:(id)sender;
+
 @end

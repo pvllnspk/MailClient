@@ -342,6 +342,7 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="bUx-MW-h9T" firstAttribute="top" secondItem="Hsp-fW-Oob" secondAttribute="top" constant="41" id="816-MA-UDr"/>
                             <constraint firstItem="bUx-MW-h9T" firstAttribute="leading" secondItem="Hsp-fW-Oob" secondAttribute="leading" type="default" id="Gly-AS-tss"/>
@@ -355,6 +356,9 @@
                             <constraint firstItem="gda-ke-6Mp" firstAttribute="leading" secondItem="Hsp-fW-Oob" secondAttribute="leading" type="default" id="iP2-eH-wUa"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="xsW-Ru-753" appends="YES" id="Yhc-T7-gJx"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="KSz-kc-EXm">
                         <barButtonItem key="leftBarButtonItem" title="Mailboxes" width="2" id="ZWY-lI-UTW" customClass="MCNavButton">
@@ -370,6 +374,12 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9IR-Lo-2kp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="xsW-Ru-753">
+                    <connections>
+                        <action selector="swipe:" destination="vNg-pn-ePz" id="avH-c0-pnh"/>
+                        <outlet property="delegate" destination="vNg-pn-ePz" id="POs-jd-5cC"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1548" y="-687"/>
         </scene>
