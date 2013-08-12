@@ -9,12 +9,12 @@
 #import <UIKit/UIKit.h>
 
 
-@class GoogleMailAccount;
+@class GoogleMailbox;
 
 
 @protocol AddAccountDelegate <NSObject>
 @optional
-- (void)accountAdded:(GoogleMailAccount *)account;
+- (void)accountAdded:(GoogleMailbox *)account;
 @end
 
 

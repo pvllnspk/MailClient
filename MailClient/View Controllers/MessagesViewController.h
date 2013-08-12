@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "GoogleMailAccount.h"
+#import "GoogleMailbox.h"
 #import "PopoverContentViewController.h"
 
 
@@ -26,6 +26,6 @@
 @property (nonatomic, assign) id <CloseChildControllerDelegate> delegate;
 
 - (IBAction) returnToMailboxes:(id)sender;
-- (void) setFolder:(CTCoreFolder*) folder forAccount: (GoogleMailAccount*)account;
+- (void) setFolder:(CTCoreFolder*) folder forAccount: (GoogleMailbox*)account;
 
 @end

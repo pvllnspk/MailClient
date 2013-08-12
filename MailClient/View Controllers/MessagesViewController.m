@@ -20,7 +20,7 @@
 @implementation MessagesViewController
 {
     CTCoreFolder *_folder;
-    GoogleMailAccount *_account;
+    GoogleMailbox *_account;
     
     NSMutableArray *_messages;
     NSMutableArray *_searchResults;
@@ -212,7 +212,7 @@
 }
 
 
-- (void) setFolder:(CTCoreFolder*) folder forAccount: (GoogleMailAccount*)account;
+- (void) setFolder:(CTCoreFolder*) folder forAccount: (GoogleMailbox*)account;
 {
     if (_folder != folder){
         
@@ -338,7 +338,7 @@
     }
 }
 
--(void)replyEmailPressed:(GoogleMailAccount *)account
+-(void)replyEmailPressed:(GoogleMailbox *)account
 {
     [[self.splitViewController.viewControllers[1] topViewController] performSegueWithIdentifier: @"toComposeMessage" sender: nil];
     [_popoverController dismissPopoverAnimated:YES];

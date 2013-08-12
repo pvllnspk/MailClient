@@ -11,7 +11,7 @@
 #import "MCTreeTableViewCell.h"
 #import "MCTreeItem.h"
 #import "AddAccountViewController.h"
-#import "GoogleMailAccount.h"
+#import "GoogleMailbox.h"
 #import "PopoverContentViewController.h"
 #import "MessagesViewController.h"
 #import "AppConfig.h"
@@ -100,7 +100,7 @@
         
         DLog(@"Attempt to connect to the test account.");
         
-        GoogleMailAccount *account = [[GoogleMailAccount alloc]
+        GoogleMailbox *account = [[GoogleMailbox alloc]
                                       initWithFullName:@"iosmailclienttest" emailAddress:@"iosmailclienttest@gmail.com" password:@"testiosmailclienttest"];
         BOOL success = [account connect];
         
@@ -265,7 +265,7 @@
 {
     MCTreeItem *treeItem = [_displayedTreeItems objectAtIndex:indexPath.row];
     
-    for(GoogleMailAccount * account in _accounts){
+    for(GoogleMailbox * account in _accounts){
         if([account.emailAddress isEqualToString:[treeItem.path stringByReplacingOccurrencesOfString:@"/" withString:@""]]){
             
             CTCoreFolder *folder = [account folderWithPath:treeItem.base];
@@ -279,11 +279,11 @@
 }
 
 
--(void)accountAdded:(GoogleMailAccount *)account
+-(void)accountAdded:(GoogleMailbox *)account
 {
     BOOL alreadyAdded = FALSE;
     
-    for(GoogleMailAccount *existAccount in _accounts){
+    for(GoogleMailbox *existAccount in _accounts){
         if([existAccount.emailAddress isEqualToString:account.emailAddress]){
             alreadyAdded = TRUE;
             break;
@@ -299,7 +299,7 @@
     }
 }
 
--(void)accountDeleted:(GoogleMailAccount *)account
+-(void)accountDeleted:(GoogleMailbox *)account
 {
     [_accounts removeObject:account];
     [_subFolders removeObjectForKey:account.emailAddress];
@@ -314,7 +314,7 @@
     [_accountsTreeItems removeAllObjects];
     [_subFoldersTreeItems removeAllObjects];
     
-    for(GoogleMailAccount *account in _accounts){
+    for(GoogleMailbox *account in _accounts){
         
         MCTreeItem *accountTreeItem = [[MCTreeItem alloc] init];
         [accountTreeItem setBase:account.emailAddress];
@@ -375,7 +375,7 @@
                 
                 MCTreeItem *treeItem = [_displayedTreeItems objectAtIndex:indexPath.row];
                 
-                for(GoogleMailAccount * account in _accounts){
+                for(GoogleMailbox * account in _accounts){
                     
                     if([account.emailAddress isEqualToString:treeItem.base]){
                         popoverContentViewController.account = account;

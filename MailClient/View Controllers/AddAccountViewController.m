@@ -8,7 +8,7 @@
 
 #import "AddAccountViewController.h"
 #import <QuartzCore/QuartzCore.h>
-#import "GoogleMailAccount.h"
+#import "GoogleMailbox.h"
 #import "TimeExecutionTracker.h"
 
 
@@ -58,7 +58,7 @@
         DLog(@"attempt to add an existing account with the credentials [%@] and [%@]",_emailAddress.text, _password.text);
         [TimeExecutionTracker startTrackingWithName:@"connection to an account"];
         
-        GoogleMailAccount* googleAccount = [[GoogleMailAccount alloc]
+        GoogleMailbox* googleAccount = [[GoogleMailbox alloc]
                                             initWithFullName:_fullName.text emailAddress:_emailAddress.text password:_password.text];
         BOOL success = [googleAccount connect];
         
@@ -158,7 +158,7 @@
     }
 }
 
--(void)addingAccountSuccessed:(GoogleMailAccount*) googleAccount
+-(void)addingAccountSuccessed:(GoogleMailbox*) googleAccount
 {
     if(_delegate){
         [_delegate accountAdded:googleAccount];
