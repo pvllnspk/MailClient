@@ -8,25 +8,25 @@
 
 #import <UIKit/UIKit.h>
 
-@class GoogleMailbox;
+@class BaseMailbox;
 
 typedef enum { PopoverDeleteAccount, PopoverReplyEmail} PopoverType;
 
 @protocol DeleteAccountDelegate <NSObject>
 @optional
-- (void)accountDeleted:(GoogleMailbox *)account;
+- (void)accountDeleted:(BaseMailbox *)account;
 @end
 
 @protocol ReplyEmailDelegate <NSObject>
 @optional
-- (void)replyEmailPressed:(GoogleMailbox *)account;
+- (void)replyEmailPressed:(BaseMailbox *)account;
 @end
 
 @interface PopoverContentViewController : UITableViewController
 
 - (id)initWithType:(PopoverType)popoverType;
 
-@property (nonatomic, retain) GoogleMailbox *account;
+@property (nonatomic, retain) BaseMailbox *account;
 
 @property (nonatomic, assign) id <DeleteAccountDelegate> delegateDeleteAccount;
 @property (nonatomic, assign) id <ReplyEmailDelegate> delegateReplyEmail;

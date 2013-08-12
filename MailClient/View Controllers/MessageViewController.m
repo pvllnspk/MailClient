@@ -24,14 +24,14 @@
     
     CTCoreMessage *_message;
     CTCoreFolder *_folder;
-    GoogleMailbox *_account;
+    BaseMailbox *_account;
     
     MailAttributesView *_mailAttributesView;
     DTAttributedTextView *_messageBodyView;
 }
 
 
-- (void) setMessage:(CTCoreMessage *)message forFolder:(CTCoreFolder*) folder andAccount: (GoogleMailbox*)account;
+- (void) setMessage:(CTCoreMessage *)message forFolder:(CTCoreFolder*) folder andAccount: (BaseMailbox*)account;
 {
     if(message){
         

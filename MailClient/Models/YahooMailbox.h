@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BaseMailbox.h"
 
-@interface YahooMailbox : NSObject
+@interface YahooMailbox : BaseMailbox
 
 @end

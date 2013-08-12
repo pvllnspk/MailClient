@@ -12,6 +12,6 @@
 
 - (BOOL) contains:(NSString*) substring;
 - (NSString *) md5;
-- (NSString *) replaceIfEmptyWith:(NSString *)string;
+- (BOOL) endsWith:(NSString*)string;
 
 @end

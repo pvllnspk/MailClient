@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "GoogleMailbox.h"
+#import "BaseMailbox.h"
 
 @interface MessageViewController : UIViewController <UISplitViewControllerDelegate ,DTAttributedTextContentViewDelegate>
 
-- (void) setMessage:(CTCoreMessage *)message forFolder:(CTCoreFolder*) folder andAccount: (GoogleMailbox*)account;
+- (void) setMessage:(CTCoreMessage *)message forFolder:(CTCoreFolder*) folder andAccount: (BaseMailbox*)account;
 
 @end

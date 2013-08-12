@@ -26,9 +26,16 @@
     return [hash lowercaseString];
 }
 
--(NSString *)replaceIfEmptyWith:(NSString *)string
+
+-(BOOL) endsWith:(NSString*)string
 {
+    if([self length]!= 0){
+        
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF endswith %@", string];
+        return [predicate evaluateWithObject:self];
+    }
     
+    return NO;
 }
 
 @end

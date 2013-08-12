@@ -9,10 +9,14 @@
 #import "AddAccountViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "GoogleMailbox.h"
+#import "YahooMailbox.h"
+#import "NSString+Additions.h"
 #import "TimeExecutionTracker.h"
 
-
 #define LABELS [NSArray arrayWithObjects:@"Full Name:", @"Email Address:", @"Password:", nil]
+
+#define SUFFIX_GOOGLE @"@gmail.com"
+#define SUFFIX_YAHOO  @"@yahoo.com"
 
 
 @implementation AddAccountViewController
@@ -53,14 +57,38 @@
 {
     [self showSpinner];
     
+    BaseMailbox* account;
+    
+    
+    if([_emailAddress.text endsWith:SUFFIX_GOOGLE]){
+        
+        account = [[GoogleMailbox alloc]
+                   initWithFullName:_fullName.text emailAddress:_emailAddress.text password:_password.text];
+        
+        DLog(@"hasSuffix:SUFFIX_GOOGLE")
+        
+    }else if([_emailAddress.text endsWith:SUFFIX_YAHOO]){
+        
+        account = [[YahooMailbox alloc]
+                   initWithFullName:_fullName.text emailAddress:_emailAddress.text password:_password.text];
+        
+        DLog(@"hasSuffix:SUFFIX_YAHOO")
+        
+    }else{
+        
+         DLog(@"addingAccountFailed  [%@]  ",_emailAddress.text)
+        
+        [self addingAccountFailed];
+    }
+    
+    
     dispatch_async([AppDelegate serialBackgroundQueue], ^{
         
         DLog(@"attempt to add an existing account with the credentials [%@] and [%@]",_emailAddress.text, _password.text);
+        
         [TimeExecutionTracker startTrackingWithName:@"connection to an account"];
         
-        GoogleMailbox* googleAccount = [[GoogleMailbox alloc]
-                                            initWithFullName:_fullName.text emailAddress:_emailAddress.text password:_password.text];
-        BOOL success = [googleAccount connect];
+        BOOL success = [account connect];
         
         [TimeExecutionTracker stopTrackingAndPrint];
         
@@ -71,11 +99,11 @@
             if (success){
                 
                 DLog(@"Succes");
-                [self addingAccountSuccessed:googleAccount];
+                [self addingAccountSuccessed:account];
             }
             else{
                 
-                DLog(@"Failed %@",googleAccount.connectionError);
+                DLog(@"Failed %@",account.connectionError);
                 [self addingAccountFailed];
             }
         });
@@ -158,10 +186,10 @@
     }
 }
 
--(void)addingAccountSuccessed:(GoogleMailbox*) googleAccount
+-(void)addingAccountSuccessed:(BaseMailbox*) account
 {
     if(_delegate){
-        [_delegate accountAdded:googleAccount];
+        [_delegate accountAdded:account];
         [self cancel:nil];
     }
 }

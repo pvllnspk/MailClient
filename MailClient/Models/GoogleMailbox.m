@@ -1,5 +1,5 @@
 //
-//  GoogleMailAccount.m
+//  GoogleMailbox.m
 //  MailClient
 //
 //  Created by Barney on 8/1/13.
@@ -20,10 +20,7 @@
 @implementation GoogleMailbox
 
 -(BOOL)connectToAccount:(CTCoreAccount *)account
-{
-    
-    DLog(@"connectToAccount %@  |  %@  ",account, self.emailAddress)
-    
+{    
     BOOL success = [account connectToServer:INCOMING_SERVER_REMOTE_FOLDERS
                                        port:INCOMING_PORT
                              connectionType:INCOMING_CONNECTION_TYPE

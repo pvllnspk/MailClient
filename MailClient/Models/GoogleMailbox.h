@@ -1,5 +1,5 @@
 //
-//  GoogleMailAccount.h
+//  GoogleMailbox.h
 //  MailClient
 //
 //  Created by Barney on 8/1/13.

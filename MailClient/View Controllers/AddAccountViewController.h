@@ -9,12 +9,12 @@
 #import <UIKit/UIKit.h>
 
 
-@class GoogleMailbox;
+@class BaseMailbox;
 
 
 @protocol AddAccountDelegate <NSObject>
 @optional
-- (void)accountAdded:(GoogleMailbox *)account;
+- (void)accountAdded:(BaseMailbox *)account;
 @end
 
 
@@ -23,7 +23,6 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (nonatomic, assign) id <AddAccountDelegate> delegate;
-
 
 
 @end
