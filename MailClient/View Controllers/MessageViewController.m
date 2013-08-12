@@ -25,9 +25,6 @@
     CTCoreMessage *_message;
     CTCoreFolder *_folder;
     BaseMailbox *_account;
-    
-    MailAttributesView *_mailAttributesView;
-    DTAttributedTextView *_messageBodyView;
 }
 
 
@@ -74,17 +71,12 @@
 
 -(void) initViews
 {
-    _mailAttributesView = [[MailAttributesView alloc]initWithTopPadding:0];
-    [self.view addSubview:_mailAttributesView];
+    [_messageHeaderView->fromField setUserInteractionEnabled:NO];
+    [_messageHeaderView->toField setUserInteractionEnabled:NO];
+    [_messageHeaderView->ccField setUserInteractionEnabled:NO];
+    [_messageHeaderView->subjectField setUserInteractionEnabled:NO];
     
-    [_mailAttributesView->fromField setUserInteractionEnabled:NO];
-    [_mailAttributesView->toField setUserInteractionEnabled:NO];
-    [_mailAttributesView->ccField setUserInteractionEnabled:NO];
-    [_mailAttributesView->subjectField setUserInteractionEnabled:NO];
-    
-    _messageBodyView= [[DTAttributedTextView alloc] initWithFrame:CGRectMake(0, _mailAttributesView.frame.size.height, self.view.frame.size.width, self.view.frame.size.height)];
     _messageBodyView.contentInset = UIEdgeInsetsMake(10,10,10,10);
-    [self.view addSubview:_messageBodyView];
     
     [self initSpinner];
 }
@@ -142,8 +134,8 @@
 {
     [self clearMessage];
     
-    if(_mailAttributesView)
-        [_mailAttributesView setHidden:YES];
+    if(_messageHeaderView)
+        [_messageHeaderView setHidden:YES];
     
     if(_messageBodyView)
         [_messageBodyView setHidden:YES];
@@ -151,8 +143,8 @@
 
 -(void) showBody
 {
-    if(_mailAttributesView)
-        [_mailAttributesView setHidden:NO];
+    if(_messageHeaderView)
+        [_messageHeaderView setHidden:NO];
     
     if(_messageBodyView)
         [_messageBodyView setHidden:NO];
@@ -161,10 +153,10 @@
 
 -(void)clearMessage
 {    
-    [_mailAttributesView->fromField removeAllTokens];
-    [_mailAttributesView->toField removeAllTokens];
-    [_mailAttributesView->ccField removeAllTokens];
-    [_mailAttributesView->subjectField setText:@""];
+    [_messageHeaderView->fromField removeAllTokens];
+    [_messageHeaderView->toField removeAllTokens];
+    [_messageHeaderView->ccField removeAllTokens];
+    [_messageHeaderView->subjectField setText:@""];
     
     _messageBodyView.attributedString = [[NSMutableAttributedString alloc] initWithString:@""];
 }
@@ -218,20 +210,20 @@
 {
     NSArray *fromArray = [_message.from allObjects];
     for(NSString *fromObj in fromArray){
-        [_mailAttributesView->fromField addTokenWithTitle:[NSString stringWithFormat:@"%@",fromObj] representedObject:[NSString stringWithFormat:@"%@",fromObj]];
+        [_messageHeaderView->fromField addTokenWithTitle:[NSString stringWithFormat:@"%@",fromObj] representedObject:[NSString stringWithFormat:@"%@",fromObj]];
     }
     
     NSArray *toArray = [_message.to allObjects];
     for(NSString *toObj in toArray){
-        [_mailAttributesView->toField addTokenWithTitle:[NSString stringWithFormat:@"%@",toObj] representedObject:[NSString stringWithFormat:@"%@",toObj]];
+        [_messageHeaderView->toField addTokenWithTitle:[NSString stringWithFormat:@"%@",toObj] representedObject:[NSString stringWithFormat:@"%@",toObj]];
     }
     
     NSArray *ccArray = [_message.cc allObjects];
     for(NSString *ccObj in ccArray){
-        [_mailAttributesView->ccField addTokenWithTitle:[NSString stringWithFormat:@"%@",ccObj] representedObject:[NSString stringWithFormat:@"%@",ccObj]];
+        [_messageHeaderView->ccField addTokenWithTitle:[NSString stringWithFormat:@"%@",ccObj] representedObject:[NSString stringWithFormat:@"%@",ccObj]];
     }
     
-    [_mailAttributesView->subjectField setText:_message.subject];
+    [_messageHeaderView->subjectField setText:_message.subject];
 }
 
 

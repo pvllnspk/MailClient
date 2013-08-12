@@ -13,34 +13,26 @@
 #import "JSTokenField.h"
 
 #define ROW_HEIGHT 35
-#define ROW_WIDTH 780
-#define MESSAGE_BODY_PADDING 10
 
 @implementation MailAttributesView
 {
     UIView *_selectionView;
 }
 
--(id)initWithTopPadding:(CGFloat)topPadding
-{
-    CGRect frameRect = CGRectMake(0, topPadding , ROW_WIDTH, 4 * ROW_HEIGHT + topPadding + MESSAGE_BODY_PADDING);
-    self = [super initWithFrame:frameRect];
-    if (self) {
-        
-        [self initView];
-    }
-    return self;
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    
+    [self initView];
 }
-
 
 -(void)initView
 {
-    CGRect sectionSize = CGRectMake(0, 0 , 800, ROW_HEIGHT * 4);
+    CGRect sectionSize = CGRectMake(0, 0 , self.frame.size.width, self.frame.size.height);
     _selectionView = [[UIView alloc] initWithFrame:sectionSize];
     [_selectionView setBackgroundColor:[UIColor clearColor]];
     
-    fromField = [[JSTokenField alloc] initWithFrame:CGRectMake(0, 0, ROW_WIDTH, ROW_HEIGHT)];
-	[[fromField label] setText:@"From:"];
+    fromField = [[JSTokenField alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, ROW_HEIGHT)];
+	[[fromField label] setText:@"  From: "];
 	[fromField setDelegate:self];
 	[_selectionView addSubview:fromField];
     
@@ -49,8 +41,8 @@
     [fromField addSubview:separator];
     [separator setBackgroundColor:[UIColor lightGrayColor]];
 	
-	toField = [[JSTokenField alloc] initWithFrame:CGRectMake(0, ROW_HEIGHT, ROW_WIDTH, ROW_HEIGHT)];
-	[[toField label] setText:@"To:"];
+	toField = [[JSTokenField alloc] initWithFrame:CGRectMake(0, ROW_HEIGHT, self.frame.size.width, ROW_HEIGHT)];
+	[[toField label] setText:@"  To: "];
 	[toField setDelegate:self];
 	[_selectionView addSubview:toField];
     
@@ -59,8 +51,8 @@
     [toField addSubview:separator];
     [separator setBackgroundColor:[UIColor lightGrayColor]];
 	
-	ccField = [[JSTokenField alloc] initWithFrame:CGRectMake(0, 2 * ROW_HEIGHT, ROW_WIDTH, ROW_HEIGHT)];
-	[[ccField label] setText:@"CC:"];
+	ccField = [[JSTokenField alloc] initWithFrame:CGRectMake(0, 2 * ROW_HEIGHT, self.frame.size.width, ROW_HEIGHT)];
+	[[ccField label] setText:@"  CC: "];
 	[ccField setDelegate:self];
 	[_selectionView addSubview:ccField];
     
@@ -69,10 +61,10 @@
     [ccField addSubview:separator];
     [separator setBackgroundColor:[UIColor lightGrayColor]];
     
-    subjectField = [[UITextField alloc] initWithFrame:CGRectMake(0, 3 * ROW_HEIGHT, ROW_WIDTH, ROW_HEIGHT)];
+    subjectField = [[UITextField alloc] initWithFrame:CGRectMake(0, 3 * ROW_HEIGHT, self.frame.size.width, ROW_HEIGHT)];
     subjectField.borderStyle = UITextBorderStyleNone;
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 2 * ROW_HEIGHT, 40)];
-    label.text = @" Subject:";
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 2 * ROW_HEIGHT, 220)];
+    label.text = @"  Subject: ";
     [label setFont:[UIFont fontWithName:@"HelveticaNeue" size:17.0f]];
     [label setTextColor:TEXT_COLOR_PRIMARY];
     subjectField.leftViewMode = UITextFieldViewModeAlways;
@@ -80,7 +72,7 @@
     [subjectField setContentVerticalAlignment:UIControlContentVerticalAlignmentCenter];
     [_selectionView addSubview:subjectField];
     
-    separator = [[UIView alloc] initWithFrame:CGRectMake(0, 4 * ROW_HEIGHT, ROW_WIDTH, 1)];
+    separator = [[UIView alloc] initWithFrame:CGRectMake(0, 4 * ROW_HEIGHT, self.frame.size.width, 1)];
     [separator setBackgroundColor:[UIColor lightGrayColor]];
     [_selectionView addSubview:separator];
     
@@ -102,6 +94,5 @@
 {
     return [_delegate tokenField:tokenField shouldRemoveToken:title representedObject:obj];
 }
-
 
 @end

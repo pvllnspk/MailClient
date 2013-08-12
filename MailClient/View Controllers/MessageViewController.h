@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "BaseMailbox.h"
+#import "MailAttributesView.h"
 
-@interface MessageViewController : UIViewController <UISplitViewControllerDelegate ,DTAttributedTextContentViewDelegate>
+@interface MessageViewController : UIViewController <UISplitViewControllerDelegate, DTAttributedTextContentViewDelegate>
+
+@property (weak, nonatomic) IBOutlet MailAttributesView *messageHeaderView;
+@property (weak, nonatomic) IBOutlet DTAttributedTextView *messageBodyView;
 
 - (void) setMessage:(CTCoreMessage *)message forFolder:(CTCoreFolder*) folder andAccount: (BaseMailbox*)account;
 

@@ -20,9 +20,6 @@
 {
     NSMutableArray *_toRecipients;
 	NSMutableArray *_ccRecipients;
-	
-    MailAttributesView *_mailAttributesView;
-    UITextView *_messageBodyView;
     
     UIActivityIndicatorView *_spinner;
 }
@@ -57,15 +54,9 @@
 
 -(void) initViews
 {
-    _mailAttributesView = [[MailAttributesView alloc] initWithTopPadding:50];
-    _mailAttributesView.delegate = self;
-    [self.view addSubview:_mailAttributesView];
-    
-    _messageBodyView= [[UITextView alloc] initWithFrame:CGRectMake(0, _mailAttributesView.frame.size.height, self.view.frame.size.width, self.view.frame.size.height)];
-    
+    _messageHeaderView.delegate = self;
     [_messageBodyView setFont:[UIFont fontWithName:@"HelveticaNeue" size:18.0f]];
     _messageBodyView.contentInset = UIEdgeInsetsMake(10,10,10,10);
-    [self.view addSubview:_messageBodyView];
     
     [self initSpinner];
 }
@@ -136,7 +127,7 @@
         
         [msg setTo:toRecipients];
         [msg setCc:ccRecipients];
-        [msg setSubject:_mailAttributesView->subjectField.text];
+        [msg setSubject:_messageHeaderView->subjectField.text];
         [msg setBody:_messageBodyView.text];
         
         NSError *error;
@@ -191,9 +182,9 @@
 {
 	NSDictionary *recipient = [NSDictionary dictionaryWithObject:title forKey:@"email"];
     
-    if(tokenField==_mailAttributesView->toField){
+    if(tokenField==_messageHeaderView->toField){
      	[_toRecipients addObject:recipient];
-    }else if(tokenField==_mailAttributesView->ccField){
+    }else if(tokenField==_messageHeaderView->ccField){
         [_ccRecipients addObject:recipient];
     }
 }
@@ -202,9 +193,9 @@
 {
     NSDictionary *recipient = [NSDictionary dictionaryWithObject:title forKey:@"email"];
     
-    if(tokenField==_mailAttributesView->toField){
+    if(tokenField==_messageHeaderView->toField){
      	[_toRecipients removeObject:recipient];
-    }else if(tokenField==_mailAttributesView->ccField){
+    }else if(tokenField==_messageHeaderView->ccField){
         [_ccRecipients removeObject:recipient];
     }
 }
@@ -232,12 +223,12 @@
 
 - (void)handleTokenFieldFrameDidChange:(NSNotification *)note
 {
-    if ([[note object] isEqual:_mailAttributesView->toField]){
+    if ([[note object] isEqual:_messageHeaderView->toField]){
 		[UIView animateWithDuration:0.0
 						 animations:^{
-							 [_mailAttributesView->ccField setFrame:CGRectMake(0,
-                                                                               [_mailAttributesView->toField frame].size.height + [_mailAttributesView->toField frame].origin.y,
-                                                                               [_mailAttributesView->ccField frame].size.width, [_mailAttributesView->ccField frame].size.height)];
+							 [_messageHeaderView->ccField setFrame:CGRectMake(0,
+                                                                               [_messageHeaderView->toField frame].size.height + [_messageHeaderView->toField frame].origin.y,
+                                                                               [_messageHeaderView->ccField frame].size.width, [_messageHeaderView->ccField frame].size.height)];
 						 }
 						 completion:nil];
 	}
