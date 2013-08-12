@@ -7,10 +7,9 @@
 //
 
 #import "MessageViewController.h"
-#import "NSSet+Additions.h"
 #import "NSString+Additions.h"
 #import "ComposeMessageViewController.h"
-#import "MCNavButton.h"
+#import "MCBarButtonItem.h"
 #import "MailAttributesView.h"
 #import "TimeExecutionTracker.h"
 #import "TextUtils.h"
@@ -94,7 +93,7 @@
 }
 
 
-- (void)splitViewController:(UISplitViewController *)splitController willHideViewController:(UIViewController *)viewController withBarButtonItem:(MCNavButton *)barButtonItem forPopoverController:(UIPopoverController *)popoverController
+- (void)splitViewController:(UISplitViewController *)splitController willHideViewController:(UIViewController *)viewController withBarButtonItem:(MCBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)popoverController
 {
     barButtonItem.title = NSLocalizedString(@"Mailboxes", @"Mailboxes");
     
@@ -109,7 +108,7 @@
     _popoverController = popoverController;
 }
 
-- (void)splitViewController:(UISplitViewController *)splitController willShowViewController:(UIViewController *)viewController invalidatingBarButtonItem:(MCNavButton *)barButtonItem
+- (void)splitViewController:(UISplitViewController *)splitController willShowViewController:(UIViewController *)viewController invalidatingBarButtonItem:(MCBarButtonItem *)barButtonItem
 {
     // Called when the view is shown again in the split view, invalidating the button and popover controller.
     [self.navigationItem setLeftBarButtonItem:nil animated:YES];

@@ -47,7 +47,7 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Message" id="53">
-                        <barButtonItem key="rightBarButtonItem" title="Compose" style="plain" id="LSB-JF-fDb" customClass="MCNavButton">
+                        <barButtonItem key="rightBarButtonItem" title="Compose" style="plain" id="LSB-JF-fDb" customClass="MCBarButtonItem">
                             <connections>
                                 <segue destination="0FJ-hu-XfG" kind="modal" identifier="toComposeMessage" modalPresentationStyle="formSheet" id="wU4-nn-tXd"/>
                             </connections>
@@ -73,12 +73,12 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mfA-Y2-elW">
                                 <items>
                                     <navigationItem title="New Message" id="GRO-vY-4q2">
-                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="LY1-vO-9wI" customClass="MCNavButton">
+                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="LY1-vO-9wI" customClass="MCBarButtonItem">
                                             <connections>
                                                 <action selector="cancel:" destination="0FJ-hu-XfG" id="XG6-5a-Gal"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Send" id="Imf-eX-YBl" customClass="MCNavButton">
+                                        <barButtonItem key="rightBarButtonItem" title="Send" id="Imf-eX-YBl" customClass="MCBarButtonItem">
                                             <connections>
                                                 <action selector="sendMessage:" destination="0FJ-hu-XfG" id="T4j-uE-Xqq"/>
                                             </connections>
@@ -155,7 +155,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Mailboxes" id="40">
-                        <barButtonItem key="leftBarButtonItem" title="Add" id="Bnq-eg-f8j" customClass="MCNavButton">
+                        <barButtonItem key="leftBarButtonItem" title="Add" id="Bnq-eg-f8j" customClass="MCBarButtonItem">
                             <connections>
                                 <segue destination="UrX-eJ-Mgr" kind="modal" identifier="toAddAccount" modalPresentationStyle="formSheet" id="3LN-sc-dXt"/>
                             </connections>
@@ -261,12 +261,12 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pWo-NI-TGd">
                                 <items>
                                     <navigationItem title="Add Mailbox" id="mhh-uQ-8kn">
-                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="63T-yO-f3w" customClass="MCNavButton">
+                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="63T-yO-f3w" customClass="MCBarButtonItem">
                                             <connections>
                                                 <action selector="cancel:" destination="UrX-eJ-Mgr" id="VwX-hi-NF7"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Save" id="ckl-Mx-MrL" customClass="MCNavButton">
+                                        <barButtonItem key="rightBarButtonItem" title="Save" id="ckl-Mx-MrL" customClass="MCBarButtonItem">
                                             <connections>
                                                 <action selector="save:" destination="UrX-eJ-Mgr" id="FdW-GM-aKL"/>
                                             </connections>
@@ -403,7 +403,7 @@
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" id="KSz-kc-EXm">
-                        <barButtonItem key="leftBarButtonItem" title="Mailboxes" width="2" id="ZWY-lI-UTW" customClass="MCNavButton">
+                        <barButtonItem key="leftBarButtonItem" title="Mailboxes" width="2" id="ZWY-lI-UTW" customClass="MCBarButtonItem">
                             <connections>
                                 <action selector="back:" destination="vNg-pn-ePz" id="3MG-x0-A2h"/>
                             </connections>
@@ -463,9 +463,6 @@
                 <relationship kind="outlet" name="backgroundView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="textDelegate"/>
             </relationships>
-        </class>
-        <class className="MCNavButton" superclassName="UIBarButtonItem">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MCNavButton.h"/>
         </class>
         <class className="MailAttributesView" superclassName="UIView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MailAttributesView.h"/>

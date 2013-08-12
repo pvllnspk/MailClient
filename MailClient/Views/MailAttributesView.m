@@ -63,7 +63,7 @@
     
     subjectField = [[UITextField alloc] initWithFrame:CGRectMake(0, 3 * ROW_HEIGHT, self.frame.size.width, ROW_HEIGHT)];
     subjectField.borderStyle = UITextBorderStyleNone;
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 2 * ROW_HEIGHT, 220)];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 80, ROW_HEIGHT)];
     label.text = @"  Subject: ";
     [label setFont:[UIFont fontWithName:@"HelveticaNeue" size:17.0f]];
     [label setTextColor:TEXT_COLOR_PRIMARY];

@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MCNavButton : UIBarButtonItem
+@interface MCBarButtonItem : UIBarButtonItem
 
 @end

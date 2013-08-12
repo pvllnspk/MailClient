@@ -47,8 +47,7 @@
 		B3CA1C7917B2B1470070BB19 /* AddAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CA1C7817B2B1470070BB19 /* AddAccountViewController.m */; };
 		B3CA1C7C17B2B1600070BB19 /* ComposeMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CA1C7B17B2B1600070BB19 /* ComposeMessageViewController.m */; };
 		B3CA1C8217B2B1E50070BB19 /* PopoverContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CA1C8117B2B1E50070BB19 /* PopoverContentViewController.m */; };
-		B3CA1C9E17B2DD690070BB19 /* MCButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CA1C9617B2DD690070BB19 /* MCButton.m */; };
-		B3CA1C9F17B2DD690070BB19 /* MCNavButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CA1C9817B2DD690070BB19 /* MCNavButton.m */; };
+		B3CA1C9F17B2DD690070BB19 /* MCBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CA1C9817B2DD690070BB19 /* MCBarButtonItem.m */; };
 		B3CA1CA017B2DD690070BB19 /* MCTreeItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CA1C9B17B2DD690070BB19 /* MCTreeItem.m */; };
 		B3CA1CA117B2DD690070BB19 /* MCTreeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CA1C9D17B2DD690070BB19 /* MCTreeTableViewCell.m */; };
 		B3D9C4F917B6797D007A56AA /* NSDate-Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D9C4F817B6797D007A56AA /* NSDate-Utilities.m */; };
@@ -77,7 +76,6 @@
 		B3D9F24017B2A2520091DFDB /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D9F23F17B2A2510091DFDB /* CoreText.framework */; };
 		B3D9F24217B2A25A0091DFDB /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D9F24117B2A25A0091DFDB /* MobileCoreServices.framework */; };
 		B3DF029B17B42F80005793A9 /* MailAttributesView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DF029A17B42F80005793A9 /* MailAttributesView.m */; };
-		B3E0D13D17B935D500EC4AD7 /* NSSet+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E0D12917B935D500EC4AD7 /* NSSet+Additions.m */; };
 		B3E0D13E17B935D500EC4AD7 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E0D12B17B935D500EC4AD7 /* NSString+Additions.m */; };
 		B3E0D13F17B935D500EC4AD7 /* MCController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E0D12F17B935D500EC4AD7 /* MCController.m */; };
 		B3E0D14017B935D500EC4AD7 /* MCNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E0D13117B935D500EC4AD7 /* MCNavigationController.m */; };
@@ -88,6 +86,7 @@
 		B3E0D14517B935D500EC4AD7 /* MailFolder.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E0D13C17B935D500EC4AD7 /* MailFolder.m */; };
 		B3E0D14817B93F7C00EC4AD7 /* YahooMailbox.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E0D14717B93F7C00EC4AD7 /* YahooMailbox.m */; };
 		B3E0D14B17B93FC700EC4AD7 /* BaseMailbox.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E0D14A17B93FC700EC4AD7 /* BaseMailbox.m */; };
+		B3E0D14E17B99B0100EC4AD7 /* NSSet+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E0D14D17B99B0100EC4AD7 /* NSSet+Additions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -231,10 +230,8 @@
 		B3CA1C7B17B2B1600070BB19 /* ComposeMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComposeMessageViewController.m; sourceTree = "<group>"; };
 		B3CA1C8017B2B1E50070BB19 /* PopoverContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopoverContentViewController.h; sourceTree = "<group>"; };
 		B3CA1C8117B2B1E50070BB19 /* PopoverContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopoverContentViewController.m; sourceTree = "<group>"; };
-		B3CA1C9517B2DD690070BB19 /* MCButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCButton.h; sourceTree = "<group>"; };
-		B3CA1C9617B2DD690070BB19 /* MCButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCButton.m; sourceTree = "<group>"; };
-		B3CA1C9717B2DD690070BB19 /* MCNavButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCNavButton.h; sourceTree = "<group>"; };
-		B3CA1C9817B2DD690070BB19 /* MCNavButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCNavButton.m; sourceTree = "<group>"; };
+		B3CA1C9717B2DD690070BB19 /* MCBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCBarButtonItem.h; sourceTree = "<group>"; };
+		B3CA1C9817B2DD690070BB19 /* MCBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCBarButtonItem.m; sourceTree = "<group>"; };
 		B3CA1C9A17B2DD690070BB19 /* MCTreeItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCTreeItem.h; sourceTree = "<group>"; };
 		B3CA1C9B17B2DD690070BB19 /* MCTreeItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCTreeItem.m; sourceTree = "<group>"; };
 		B3CA1C9C17B2DD690070BB19 /* MCTreeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCTreeTableViewCell.h; sourceTree = "<group>"; };
@@ -268,8 +265,6 @@
 		B3D9F24117B2A25A0091DFDB /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		B3DF029917B42F80005793A9 /* MailAttributesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailAttributesView.h; sourceTree = "<group>"; };
 		B3DF029A17B42F80005793A9 /* MailAttributesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MailAttributesView.m; sourceTree = "<group>"; };
-		B3E0D12817B935D500EC4AD7 /* NSSet+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSSet+Additions.h"; sourceTree = "<group>"; };
-		B3E0D12917B935D500EC4AD7 /* NSSet+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSSet+Additions.m"; sourceTree = "<group>"; };
 		B3E0D12A17B935D500EC4AD7 /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
 		B3E0D12B17B935D500EC4AD7 /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
 		B3E0D12D17B935D500EC4AD7 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
@@ -291,6 +286,8 @@
 		B3E0D14717B93F7C00EC4AD7 /* YahooMailbox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YahooMailbox.m; sourceTree = "<group>"; };
 		B3E0D14917B93FC700EC4AD7 /* BaseMailbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseMailbox.h; sourceTree = "<group>"; };
 		B3E0D14A17B93FC700EC4AD7 /* BaseMailbox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseMailbox.m; sourceTree = "<group>"; };
+		B3E0D14C17B99B0100EC4AD7 /* NSSet+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSSet+Additions.h"; sourceTree = "<group>"; };
+		B3E0D14D17B99B0100EC4AD7 /* NSSet+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSSet+Additions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -439,10 +436,8 @@
 		B3CA1C9417B2DD680070BB19 /* VIews */ = {
 			isa = PBXGroup;
 			children = (
-				B3CA1C9517B2DD690070BB19 /* MCButton.h */,
-				B3CA1C9617B2DD690070BB19 /* MCButton.m */,
-				B3CA1C9717B2DD690070BB19 /* MCNavButton.h */,
-				B3CA1C9817B2DD690070BB19 /* MCNavButton.m */,
+				B3CA1C9717B2DD690070BB19 /* MCBarButtonItem.h */,
+				B3CA1C9817B2DD690070BB19 /* MCBarButtonItem.m */,
 				B3DF029917B42F80005793A9 /* MailAttributesView.h */,
 				B3DF029A17B42F80005793A9 /* MailAttributesView.m */,
 				B3CA1C9917B2DD690070BB19 /* MCTreeView */,
@@ -585,8 +580,8 @@
 		B3E0D12717B935D500EC4AD7 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				B3E0D12817B935D500EC4AD7 /* NSSet+Additions.h */,
-				B3E0D12917B935D500EC4AD7 /* NSSet+Additions.m */,
+				B3E0D14C17B99B0100EC4AD7 /* NSSet+Additions.h */,
+				B3E0D14D17B99B0100EC4AD7 /* NSSet+Additions.m */,
 				B3E0D12A17B935D500EC4AD7 /* NSString+Additions.h */,
 				B3E0D12B17B935D500EC4AD7 /* NSString+Additions.m */,
 			);
@@ -857,13 +852,11 @@
 				B3CA1C7917B2B1470070BB19 /* AddAccountViewController.m in Sources */,
 				B3CA1C7C17B2B1600070BB19 /* ComposeMessageViewController.m in Sources */,
 				B3CA1C8217B2B1E50070BB19 /* PopoverContentViewController.m in Sources */,
-				B3CA1C9E17B2DD690070BB19 /* MCButton.m in Sources */,
-				B3CA1C9F17B2DD690070BB19 /* MCNavButton.m in Sources */,
+				B3CA1C9F17B2DD690070BB19 /* MCBarButtonItem.m in Sources */,
 				B3CA1CA017B2DD690070BB19 /* MCTreeItem.m in Sources */,
 				B3CA1CA117B2DD690070BB19 /* MCTreeTableViewCell.m in Sources */,
 				B3DF029B17B42F80005793A9 /* MailAttributesView.m in Sources */,
 				B3D9C4F917B6797D007A56AA /* NSDate-Utilities.m in Sources */,
-				B3E0D13D17B935D500EC4AD7 /* NSSet+Additions.m in Sources */,
 				B3E0D13E17B935D500EC4AD7 /* NSString+Additions.m in Sources */,
 				B3E0D13F17B935D500EC4AD7 /* MCController.m in Sources */,
 				B3E0D14017B935D500EC4AD7 /* MCNavigationController.m in Sources */,
@@ -874,6 +867,7 @@
 				B3E0D14517B935D500EC4AD7 /* MailFolder.m in Sources */,
 				B3E0D14817B93F7C00EC4AD7 /* YahooMailbox.m in Sources */,
 				B3E0D14B17B93FC700EC4AD7 /* BaseMailbox.m in Sources */,
+				B3E0D14E17B99B0100EC4AD7 /* NSSet+Additions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

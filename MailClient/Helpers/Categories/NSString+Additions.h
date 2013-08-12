@@ -11,7 +11,9 @@
 @interface NSString (Additions)
 
 - (BOOL) contains:(NSString*) substring;
+
 - (NSString *) md5;
+
 - (BOOL) endsWith:(NSString*)string;
 
 @end

@@ -11,6 +11,7 @@
 @interface TextUtils : NSObject
 
 + (BOOL)isEmpty:(NSString*) string;
+
 + (NSString *)isEmpty:(NSString*)string replaceWith:(NSString*)replaceString;
 
 @end
