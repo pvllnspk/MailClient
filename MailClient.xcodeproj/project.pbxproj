@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B31CDE6717BA934B0095F984 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B31CDE6617BA934B0095F984 /* SystemConfiguration.framework */; };
+		B31CDE7517BA93680095F984 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = B31CDE7417BA93680095F984 /* Reachability.m */; };
+		B31CDE7817BA94030095F984 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B31CDE7717BA94030095F984 /* NetworkManager.m */; };
 		B3CA1BFD17B2A99C0070BB19 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CA1BEE17B2A99C0070BB19 /* AppDelegate.m */; };
 		B3CA1BFE17B2A99C0070BB19 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3CA1BF117B2A99C0070BB19 /* Default-568h@2x.png */; };
 		B3CA1BFF17B2A99C0070BB19 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B3CA1BF217B2A99C0070BB19 /* Default.png */; };
@@ -177,6 +180,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B31CDE6617BA934B0095F984 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		B31CDE7317BA93680095F984 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		B31CDE7417BA93680095F984 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		B31CDE7617BA94030095F984 /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
+		B31CDE7717BA94030095F984 /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
 		B3CA1BED17B2A99C0070BB19 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B3CA1BEE17B2A99C0070BB19 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B3CA1BF117B2A99C0070BB19 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -295,6 +303,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B31CDE6717BA934B0095F984 /* SystemConfiguration.framework in Frameworks */,
 				B3D9F24217B2A25A0091DFDB /* MobileCoreServices.framework in Frameworks */,
 				B3D9F24017B2A2520091DFDB /* CoreText.framework in Frameworks */,
 				B3D9F23E17B2A2470091DFDB /* QuartzCore.framework in Frameworks */,
@@ -328,6 +337,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B31CDE7217BA93680095F984 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				B31CDE7317BA93680095F984 /* Reachability.h */,
+				B31CDE7417BA93680095F984 /* Reachability.m */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
 		B3CA1BEC17B2A99C0070BB19 /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -415,6 +433,7 @@
 			children = (
 				B3CA1C0617B2AA490070BB19 /* JSTokenField */,
 				B3D9C4F617B6797D007A56AA /* NSDate-Extensions */,
+				B31CDE7217BA93680095F984 /* Reachability */,
 			);
 			path = Vendor;
 			sourceTree = SOURCE_ROOT;
@@ -499,6 +518,7 @@
 				B3D9F1C217B29F810091DFDB /* CoreData.framework */,
 				B3D9F1E817B29F820091DFDB /* SenTestingKit.framework */,
 				B3D9F21A17B2A0020091DFDB /* CFNetwork.framework */,
+				B31CDE6617BA934B0095F984 /* SystemConfiguration.framework */,
 				B3D9F21817B29FFA0091DFDB /* libiconv.dylib */,
 				B3D9F21617B29FF30091DFDB /* libcrypto.a */,
 				B3D9F21417B29FED0091DFDB /* libsasl2.a */,
@@ -602,6 +622,8 @@
 				B3E0D13517B935D500EC4AD7 /* TextUtils.m */,
 				B3E0D13617B935D500EC4AD7 /* TimeExecutionTracker.h */,
 				B3E0D13717B935D500EC4AD7 /* TimeExecutionTracker.m */,
+				B31CDE7617BA94030095F984 /* NetworkManager.h */,
+				B31CDE7717BA94030095F984 /* NetworkManager.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -868,6 +890,8 @@
 				B3E0D14817B93F7C00EC4AD7 /* YahooMailbox.m in Sources */,
 				B3E0D14B17B93FC700EC4AD7 /* BaseMailbox.m in Sources */,
 				B3E0D14E17B99B0100EC4AD7 /* NSSet+Additions.m in Sources */,
+				B31CDE7517BA93680095F984 /* Reachability.m in Sources */,
+				B31CDE7817BA94030095F984 /* NetworkManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
