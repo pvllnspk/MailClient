@@ -16,7 +16,18 @@
     return ([self rangeOfString:substring].location != NSNotFound);
 }
 
-- (NSString *) md5
+-(BOOL) endsWith:(NSString*)string
+{
+    if([self length]!= 0){
+        
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF endswith %@", string];
+        return [predicate evaluateWithObject:self];
+    }
+    
+    return NO;
+}
+
+- (NSString*) md5
 {
     const char *concat_str = [self UTF8String];
     unsigned char result[CC_MD5_DIGEST_LENGTH];
@@ -27,16 +38,21 @@
     return [hash lowercaseString];
 }
 
-
--(BOOL) endsWith:(NSString*)string
+- (NSArray*) splitForCharacters:(NSString*)divideCharactes
 {
-    if([self length]!= 0){
-        
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF endswith %@", string];
-        return [predicate evaluateWithObject:self];
-    }
-    
-    return NO;
+	NSCharacterSet* dividers = [NSCharacterSet characterSetWithCharactersInString:divideCharactes];
+	return[self componentsSeparatedByCharactersInSet:dividers];
+}
+
+- (NSArray*) splitForString:(NSString*)deviderString
+{
+	return [self componentsSeparatedByString:deviderString];
+}
+
+- (NSString*)trim
+{
+	NSCharacterSet* seperators = [NSCharacterSet characterSetWithCharactersInString:@" \t\r\n\f"];
+	return [self stringByTrimmingCharactersInSet:seperators];
 }
 
 @end

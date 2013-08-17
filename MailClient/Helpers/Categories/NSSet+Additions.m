@@ -12,19 +12,7 @@
 
 -(NSString *)toStringSeparatingByComma
 {
-    NSMutableString *resultString = [NSMutableString new];
-    NSEnumerator *enumerator = [self objectEnumerator];
-    NSString* value;
-    while ((value = [enumerator nextObject])) {
-        [resultString appendFormat:[NSString stringWithFormat:@" %@ ,",value]];
-    }
-    
-    NSRange lastComma = [resultString rangeOfString:@"," options:NSBackwardsSearch];
-    if(lastComma.location != NSNotFound) {
-        resultString = [resultString stringByReplacingCharactersInRange:lastComma
-                                                             withString: @""];
-    }
-    return resultString;
+    return [[self allObjects] componentsJoinedByString:@", "];
 }
 
 @end

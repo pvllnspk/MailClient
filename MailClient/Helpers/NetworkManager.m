@@ -25,7 +25,7 @@
     return netwokManager;
 }
 
--(id)init
+- (id)init
 {
     if (self = [super init]) {
         
@@ -53,21 +53,21 @@
     return  self;
 }
 
--(void)addObserver:(id)observer
+- (void)addObserver:(id)observer
 {
     if(![_observers containsObject:observer]){
         [_observers addObject:observer];
     }
 }
 
--(void)removeObserver:(id)observer
+- (void)removeObserver:(id)observer
 {
     if([_observers containsObject:observer]){
         [_observers removeObject:observer];
     }
 }
 
--(void)notifyObservers:(BOOL)isReachable
+- (void)notifyObservers:(BOOL)isReachable
 {
     for(id observer in _observers){
         

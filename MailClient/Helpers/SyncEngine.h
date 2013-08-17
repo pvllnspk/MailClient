@@ -1,13 +1,13 @@
 //
-//  SyncManager.h
+//  SyncEngine.h
 //  MailClient
 //
-//  Created by Barney on 8/6/13.
+//  Created by Barney on 8/17/13.
 //  Copyright (c) 2013 pvllnspk. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-@interface SyncManager : NSObject
+@interface SyncEngine : NSObject
 
 @end

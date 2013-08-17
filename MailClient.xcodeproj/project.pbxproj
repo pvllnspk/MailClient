@@ -9,7 +9,13 @@
 /* Begin PBXBuildFile section */
 		B31CDE6717BA934B0095F984 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B31CDE6617BA934B0095F984 /* SystemConfiguration.framework */; };
 		B31CDE7517BA93680095F984 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = B31CDE7417BA93680095F984 /* Reachability.m */; };
-		B31CDE7817BA94030095F984 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B31CDE7717BA94030095F984 /* NetworkManager.m */; };
+		B31CDE9217BAA7E10095F984 /* NSSet+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B31CDE8017BAA7E10095F984 /* NSSet+Additions.m */; };
+		B31CDE9317BAA7E10095F984 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B31CDE8217BAA7E10095F984 /* NSString+Additions.m */; };
+		B31CDE9417BAA7E10095F984 /* MCNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B31CDE8617BAA7E10095F984 /* MCNavigationController.m */; };
+		B31CDE9517BAA7E10095F984 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B31CDE8817BAA7E10095F984 /* NetworkManager.m */; };
+		B31CDE9617BAA7E10095F984 /* SettingsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B31CDE8A17BAA7E10095F984 /* SettingsManager.m */; };
+		B31CDE9817BAA7E10095F984 /* TimeExecutionTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = B31CDE8E17BAA7E10095F984 /* TimeExecutionTracker.m */; };
+		B31CDE9917BAA7E10095F984 /* TextUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = B31CDE9117BAA7E10095F984 /* TextUtils.m */; };
 		B3CA1BFD17B2A99C0070BB19 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CA1BEE17B2A99C0070BB19 /* AppDelegate.m */; };
 		B3CA1BFE17B2A99C0070BB19 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3CA1BF117B2A99C0070BB19 /* Default-568h@2x.png */; };
 		B3CA1BFF17B2A99C0070BB19 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B3CA1BF217B2A99C0070BB19 /* Default.png */; };
@@ -79,17 +85,12 @@
 		B3D9F24017B2A2520091DFDB /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D9F23F17B2A2510091DFDB /* CoreText.framework */; };
 		B3D9F24217B2A25A0091DFDB /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D9F24117B2A25A0091DFDB /* MobileCoreServices.framework */; };
 		B3DF029B17B42F80005793A9 /* MailAttributesView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DF029A17B42F80005793A9 /* MailAttributesView.m */; };
-		B3E0D13E17B935D500EC4AD7 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E0D12B17B935D500EC4AD7 /* NSString+Additions.m */; };
-		B3E0D13F17B935D500EC4AD7 /* MCController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E0D12F17B935D500EC4AD7 /* MCController.m */; };
-		B3E0D14017B935D500EC4AD7 /* MCNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E0D13117B935D500EC4AD7 /* MCNavigationController.m */; };
-		B3E0D14117B935D500EC4AD7 /* SyncManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E0D13317B935D500EC4AD7 /* SyncManager.m */; };
-		B3E0D14217B935D500EC4AD7 /* TextUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E0D13517B935D500EC4AD7 /* TextUtils.m */; };
-		B3E0D14317B935D500EC4AD7 /* TimeExecutionTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E0D13717B935D500EC4AD7 /* TimeExecutionTracker.m */; };
 		B3E0D14417B935D500EC4AD7 /* GoogleMailbox.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E0D13A17B935D500EC4AD7 /* GoogleMailbox.m */; };
 		B3E0D14517B935D500EC4AD7 /* MailFolder.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E0D13C17B935D500EC4AD7 /* MailFolder.m */; };
 		B3E0D14817B93F7C00EC4AD7 /* YahooMailbox.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E0D14717B93F7C00EC4AD7 /* YahooMailbox.m */; };
 		B3E0D14B17B93FC700EC4AD7 /* BaseMailbox.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E0D14A17B93FC700EC4AD7 /* BaseMailbox.m */; };
-		B3E0D14E17B99B0100EC4AD7 /* NSSet+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E0D14D17B99B0100EC4AD7 /* NSSet+Additions.m */; };
+		B3E2A19A17BF78D200FA44DB /* SyncEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E2A19917BF78D200FA44DB /* SyncEngine.m */; };
+		B3E399D117BD5FEC00E6E8E3 /* MCLog.c in Sources */ = {isa = PBXBuildFile; fileRef = B3E399D017BD5FEC00E6E8E3 /* MCLog.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -183,8 +184,20 @@
 		B31CDE6617BA934B0095F984 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		B31CDE7317BA93680095F984 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		B31CDE7417BA93680095F984 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
-		B31CDE7617BA94030095F984 /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
-		B31CDE7717BA94030095F984 /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
+		B31CDE7F17BAA7E10095F984 /* NSSet+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSSet+Additions.h"; sourceTree = "<group>"; };
+		B31CDE8017BAA7E10095F984 /* NSSet+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSSet+Additions.m"; sourceTree = "<group>"; };
+		B31CDE8117BAA7E10095F984 /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
+		B31CDE8217BAA7E10095F984 /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
+		B31CDE8517BAA7E10095F984 /* MCNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCNavigationController.h; sourceTree = "<group>"; };
+		B31CDE8617BAA7E10095F984 /* MCNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCNavigationController.m; sourceTree = "<group>"; };
+		B31CDE8717BAA7E10095F984 /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
+		B31CDE8817BAA7E10095F984 /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
+		B31CDE8917BAA7E10095F984 /* SettingsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsManager.h; sourceTree = "<group>"; };
+		B31CDE8A17BAA7E10095F984 /* SettingsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsManager.m; sourceTree = "<group>"; };
+		B31CDE8D17BAA7E10095F984 /* TimeExecutionTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeExecutionTracker.h; sourceTree = "<group>"; };
+		B31CDE8E17BAA7E10095F984 /* TimeExecutionTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeExecutionTracker.m; sourceTree = "<group>"; };
+		B31CDE9017BAA7E10095F984 /* TextUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextUtils.h; sourceTree = "<group>"; };
+		B31CDE9117BAA7E10095F984 /* TextUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextUtils.m; sourceTree = "<group>"; };
 		B3CA1BED17B2A99C0070BB19 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B3CA1BEE17B2A99C0070BB19 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B3CA1BF117B2A99C0070BB19 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -271,21 +284,9 @@
 		B3D9F23D17B2A2470091DFDB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B3D9F23F17B2A2510091DFDB /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		B3D9F24117B2A25A0091DFDB /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		B3DC6E1917BC0D4A00FF58A6 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = MailClient/Constants.h; sourceTree = SOURCE_ROOT; };
 		B3DF029917B42F80005793A9 /* MailAttributesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailAttributesView.h; sourceTree = "<group>"; };
 		B3DF029A17B42F80005793A9 /* MailAttributesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MailAttributesView.m; sourceTree = "<group>"; };
-		B3E0D12A17B935D500EC4AD7 /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
-		B3E0D12B17B935D500EC4AD7 /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
-		B3E0D12D17B935D500EC4AD7 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
-		B3E0D12E17B935D500EC4AD7 /* MCController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCController.h; sourceTree = "<group>"; };
-		B3E0D12F17B935D500EC4AD7 /* MCController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCController.m; sourceTree = "<group>"; };
-		B3E0D13017B935D500EC4AD7 /* MCNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCNavigationController.h; sourceTree = "<group>"; };
-		B3E0D13117B935D500EC4AD7 /* MCNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCNavigationController.m; sourceTree = "<group>"; };
-		B3E0D13217B935D500EC4AD7 /* SyncManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SyncManager.h; sourceTree = "<group>"; };
-		B3E0D13317B935D500EC4AD7 /* SyncManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SyncManager.m; sourceTree = "<group>"; };
-		B3E0D13417B935D500EC4AD7 /* TextUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextUtils.h; sourceTree = "<group>"; };
-		B3E0D13517B935D500EC4AD7 /* TextUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextUtils.m; sourceTree = "<group>"; };
-		B3E0D13617B935D500EC4AD7 /* TimeExecutionTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeExecutionTracker.h; sourceTree = "<group>"; };
-		B3E0D13717B935D500EC4AD7 /* TimeExecutionTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeExecutionTracker.m; sourceTree = "<group>"; };
 		B3E0D13917B935D500EC4AD7 /* GoogleMailbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoogleMailbox.h; sourceTree = "<group>"; };
 		B3E0D13A17B935D500EC4AD7 /* GoogleMailbox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoogleMailbox.m; sourceTree = "<group>"; };
 		B3E0D13B17B935D500EC4AD7 /* MailFolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailFolder.h; sourceTree = "<group>"; };
@@ -294,8 +295,10 @@
 		B3E0D14717B93F7C00EC4AD7 /* YahooMailbox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YahooMailbox.m; sourceTree = "<group>"; };
 		B3E0D14917B93FC700EC4AD7 /* BaseMailbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseMailbox.h; sourceTree = "<group>"; };
 		B3E0D14A17B93FC700EC4AD7 /* BaseMailbox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseMailbox.m; sourceTree = "<group>"; };
-		B3E0D14C17B99B0100EC4AD7 /* NSSet+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSSet+Additions.h"; sourceTree = "<group>"; };
-		B3E0D14D17B99B0100EC4AD7 /* NSSet+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSSet+Additions.m"; sourceTree = "<group>"; };
+		B3E2A19817BF78D200FA44DB /* SyncEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SyncEngine.h; sourceTree = "<group>"; };
+		B3E2A19917BF78D200FA44DB /* SyncEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SyncEngine.m; sourceTree = "<group>"; };
+		B3E399D017BD5FEC00E6E8E3 /* MCLog.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MCLog.c; sourceTree = "<group>"; };
+		B3E399DC17BD5FFC00E6E8E3 /* MCLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCLog.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -344,6 +347,55 @@
 				B31CDE7417BA93680095F984 /* Reachability.m */,
 			);
 			path = Reachability;
+			sourceTree = "<group>";
+		};
+		B31CDE7D17BAA7E10095F984 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B31CDE8717BAA7E10095F984 /* NetworkManager.h */,
+				B31CDE8817BAA7E10095F984 /* NetworkManager.m */,
+				B31CDE8917BAA7E10095F984 /* SettingsManager.h */,
+				B31CDE8A17BAA7E10095F984 /* SettingsManager.m */,
+				B31CDE8D17BAA7E10095F984 /* TimeExecutionTracker.h */,
+				B31CDE8E17BAA7E10095F984 /* TimeExecutionTracker.m */,
+				B3E2A19817BF78D200FA44DB /* SyncEngine.h */,
+				B3E2A19917BF78D200FA44DB /* SyncEngine.m */,
+				B3E399DC17BD5FFC00E6E8E3 /* MCLog.h */,
+				B3E399D017BD5FEC00E6E8E3 /* MCLog.c */,
+				B31CDE7E17BAA7E10095F984 /* Categories */,
+				B31CDE8F17BAA7E10095F984 /* Utils */,
+				B31CDE8317BAA7E10095F984 /* Misc */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		B31CDE7E17BAA7E10095F984 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				B31CDE7F17BAA7E10095F984 /* NSSet+Additions.h */,
+				B31CDE8017BAA7E10095F984 /* NSSet+Additions.m */,
+				B31CDE8117BAA7E10095F984 /* NSString+Additions.h */,
+				B31CDE8217BAA7E10095F984 /* NSString+Additions.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		B31CDE8317BAA7E10095F984 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				B31CDE8517BAA7E10095F984 /* MCNavigationController.h */,
+				B31CDE8617BAA7E10095F984 /* MCNavigationController.m */,
+			);
+			path = Misc;
+			sourceTree = "<group>";
+		};
+		B31CDE8F17BAA7E10095F984 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				B31CDE9017BAA7E10095F984 /* TextUtils.h */,
+				B31CDE9117BAA7E10095F984 /* TextUtils.m */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		B3CA1BEC17B2A99C0070BB19 /* Application */ = {
@@ -537,7 +589,7 @@
 				B3CA1BF817B2A99C0070BB19 /* View Controllers */,
 				B3E0D13817B935D500EC4AD7 /* Models */,
 				B3CA1C9417B2DD680070BB19 /* VIews */,
-				B3E0D12617B935D500EC4AD7 /* Helpers */,
+				B31CDE7D17BAA7E10095F984 /* Helpers */,
 				B3CA1BEF17B2A99C0070BB19 /* Resources */,
 				B3CA1BF417B2A99C0070BB19 /* Supporting Files */,
 				B3CA1C0517B2AA490070BB19 /* Vendor */,
@@ -560,6 +612,7 @@
 			children = (
 				B3D9F1F117B29F820091DFDB /* MailClientTests-Info.plist */,
 				B3D9F1F217B29F820091DFDB /* InfoPlist.strings */,
+				B3DC6E1917BC0D4A00FF58A6 /* Constants.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -586,46 +639,6 @@
 				B3D9F23717B2A2010091DFDB /* DTCoreText.framework */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		B3E0D12617B935D500EC4AD7 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				B3E0D12717B935D500EC4AD7 /* Categories */,
-				B3E0D12C17B935D500EC4AD7 /* Utils */,
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
-		B3E0D12717B935D500EC4AD7 /* Categories */ = {
-			isa = PBXGroup;
-			children = (
-				B3E0D14C17B99B0100EC4AD7 /* NSSet+Additions.h */,
-				B3E0D14D17B99B0100EC4AD7 /* NSSet+Additions.m */,
-				B3E0D12A17B935D500EC4AD7 /* NSString+Additions.h */,
-				B3E0D12B17B935D500EC4AD7 /* NSString+Additions.m */,
-			);
-			path = Categories;
-			sourceTree = "<group>";
-		};
-		B3E0D12C17B935D500EC4AD7 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				B3E0D12D17B935D500EC4AD7 /* Constants.h */,
-				B3E0D12E17B935D500EC4AD7 /* MCController.h */,
-				B3E0D12F17B935D500EC4AD7 /* MCController.m */,
-				B3E0D13017B935D500EC4AD7 /* MCNavigationController.h */,
-				B3E0D13117B935D500EC4AD7 /* MCNavigationController.m */,
-				B3E0D13217B935D500EC4AD7 /* SyncManager.h */,
-				B3E0D13317B935D500EC4AD7 /* SyncManager.m */,
-				B3E0D13417B935D500EC4AD7 /* TextUtils.h */,
-				B3E0D13517B935D500EC4AD7 /* TextUtils.m */,
-				B3E0D13617B935D500EC4AD7 /* TimeExecutionTracker.h */,
-				B3E0D13717B935D500EC4AD7 /* TimeExecutionTracker.m */,
-				B31CDE7617BA94030095F984 /* NetworkManager.h */,
-				B31CDE7717BA94030095F984 /* NetworkManager.m */,
-			);
-			path = Utils;
 			sourceTree = "<group>";
 		};
 		B3E0D13817B935D500EC4AD7 /* Models */ = {
@@ -879,19 +892,20 @@
 				B3CA1CA117B2DD690070BB19 /* MCTreeTableViewCell.m in Sources */,
 				B3DF029B17B42F80005793A9 /* MailAttributesView.m in Sources */,
 				B3D9C4F917B6797D007A56AA /* NSDate-Utilities.m in Sources */,
-				B3E0D13E17B935D500EC4AD7 /* NSString+Additions.m in Sources */,
-				B3E0D13F17B935D500EC4AD7 /* MCController.m in Sources */,
-				B3E0D14017B935D500EC4AD7 /* MCNavigationController.m in Sources */,
-				B3E0D14117B935D500EC4AD7 /* SyncManager.m in Sources */,
-				B3E0D14217B935D500EC4AD7 /* TextUtils.m in Sources */,
-				B3E0D14317B935D500EC4AD7 /* TimeExecutionTracker.m in Sources */,
 				B3E0D14417B935D500EC4AD7 /* GoogleMailbox.m in Sources */,
 				B3E0D14517B935D500EC4AD7 /* MailFolder.m in Sources */,
 				B3E0D14817B93F7C00EC4AD7 /* YahooMailbox.m in Sources */,
 				B3E0D14B17B93FC700EC4AD7 /* BaseMailbox.m in Sources */,
-				B3E0D14E17B99B0100EC4AD7 /* NSSet+Additions.m in Sources */,
 				B31CDE7517BA93680095F984 /* Reachability.m in Sources */,
-				B31CDE7817BA94030095F984 /* NetworkManager.m in Sources */,
+				B31CDE9217BAA7E10095F984 /* NSSet+Additions.m in Sources */,
+				B31CDE9317BAA7E10095F984 /* NSString+Additions.m in Sources */,
+				B31CDE9417BAA7E10095F984 /* MCNavigationController.m in Sources */,
+				B31CDE9517BAA7E10095F984 /* NetworkManager.m in Sources */,
+				B31CDE9617BAA7E10095F984 /* SettingsManager.m in Sources */,
+				B31CDE9817BAA7E10095F984 /* TimeExecutionTracker.m in Sources */,
+				B31CDE9917BAA7E10095F984 /* TextUtils.m in Sources */,
+				B3E399D117BD5FEC00E6E8E3 /* MCLog.c in Sources */,
+				B3E2A19A17BF78D200FA44DB /* SyncEngine.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

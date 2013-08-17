@@ -10,10 +10,10 @@
 
 @interface NSString (Additions)
 
-- (BOOL) contains:(NSString*) substring;
-
-- (NSString *) md5;
-
+- (BOOL) contains:(NSString*)substring;
 - (BOOL) endsWith:(NSString*)string;
+- (NSString *) md5;
+- (NSArray*) splitForCharacters:(NSString*)divideCharactes;
+- (NSArray*) splitForString:(NSString*)deviderString;
 
 @end

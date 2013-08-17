@@ -10,8 +10,7 @@
 
 @interface TimeExecutionTracker : NSObject
 
-+(void)startTrackingWithName:(NSString*)name;
-
-+(void)stopTrackingAndPrint;
++ (void)startTrackingWithName:(NSString*)name;
++ (void)stopTrackingAndPrint;
 
 @end

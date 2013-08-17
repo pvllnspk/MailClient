@@ -19,9 +19,9 @@
     UIView *_selectionView;
 }
 
-- (void)layoutSubviews {
-    [super layoutSubviews];
-    
+- (void)layoutSubviews
+{
+    [super layoutSubviews];    
     [self initView];
 }
 
