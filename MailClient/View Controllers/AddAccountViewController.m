@@ -15,10 +15,6 @@
 
 #define LABELS [NSArray arrayWithObjects:@"Full Name:", @"Email Address:", @"Password:", nil]
 
-#define SUFFIX_GOOGLE @"@gmail.com"
-#define SUFFIX_YAHOO  @"@yahoo.com"
-
-
 @implementation AddAccountViewController
 {
     UITextView *_fullName;

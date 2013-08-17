@@ -17,4 +17,7 @@
 #define TEXT_COLOR_PRIMARY [UIColor colorWithRed:0.3 green:0.3 blue:0.3 alpha:1.0] /*#665b53*/
 #define TEXT_COLOR_TERTIARY [UIColor colorWithRed:0.3 green:0.3 blue:0.3 alpha:1.0]
 
+#define SUFFIX_GOOGLE @"@gmail.com"
+#define SUFFIX_YAHOO  @"@yahoo.com"
+
 #endif

@@ -12,9 +12,12 @@
 #import "MCTreeItem.h"
 #import "AddAccountViewController.h"
 #import "GoogleMailbox.h"
+#import "YahooMailbox.h"
 #import "PopoverContentViewController.h"
 #import "MessagesViewController.h"
 #import "AppConfig.h"
+#import "MailBoxEntity.h"
+#import "NSString+Additions.h"
 
 
 @implementation MailboxesViewController
@@ -42,6 +45,8 @@
 
     
     self.detailViewController = (MessageViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+    
+    [self loadMailboxes];
     
     if(LOAD_TEST_ACCOUNT_AT_START){
         
@@ -117,6 +122,59 @@
                 
                 DLog(@"Failed with error %@ .",account.connectionError);
             }
+        });
+    });
+}
+
+-(void) loadMailboxes
+{
+    [self showSpinner];
+    
+    dispatch_async([AppDelegate serialBackgroundQueue], ^{
+        
+        NSManagedObjectContext *context = [self managedObjectContext];
+        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+        NSEntityDescription *entity = [NSEntityDescription entityForName:@"MailboxEntity"
+                                                  inManagedObjectContext:context];
+        [fetchRequest setEntity:entity];
+        NSError *error;
+        NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+        
+        for (MailboxEntity *mailboxEntity in fetchedObjects) {
+            
+             DLog(@"Attempt to connect to the %@ mailbox.",mailboxEntity.emailAddress);
+            
+            BaseMailbox* mailbox;
+            
+            if([mailboxEntity.emailAddress endsWith:SUFFIX_GOOGLE]){
+                
+                mailbox = [[GoogleMailbox alloc]
+                           initWithFullName:mailboxEntity.fullName emailAddress:mailboxEntity.emailAddress password:mailboxEntity.password];
+                
+            }else if([mailboxEntity.emailAddress endsWith:SUFFIX_YAHOO]){
+                
+                mailbox = [[YahooMailbox alloc]
+                          initWithFullName:mailboxEntity.fullName emailAddress:mailboxEntity.emailAddress password:mailboxEntity.password];
+                
+            }
+            
+            BOOL success = [mailbox connect];
+            
+            DLog(@"Success %d",success);
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                [_accounts addObject:mailbox];
+                [_subFolders setObject:[mailbox subscribedFolders] forKey:mailbox.emailAddress];
+                
+            });
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            [self hideSpinner];            
+            [self refreshTableViewTree];
+
         });
     });
 }
@@ -292,6 +350,19 @@
     
     if(!alreadyAdded){
         
+        NSManagedObjectContext *context = [self managedObjectContext];
+        MailboxEntity *mailboxEntity = [NSEntityDescription
+                                        insertNewObjectForEntityForName:@"MailboxEntity"
+                                        inManagedObjectContext:context];
+        mailboxEntity.fullName = account.fullName;
+        mailboxEntity.emailAddress = account.emailAddress;
+        mailboxEntity.password = account.password;
+        
+        NSError *error;
+        if (![context save:&error]) {
+            NSLog(@"Couldn't save: %@", [error localizedDescription]);
+        }
+        
         [_accounts addObject:account];
         [_subFolders setObject:[account subscribedFolders] forKey:account.emailAddress];
         
@@ -301,6 +372,20 @@
 
 -(void)accountDeleted:(BaseMailbox *)account
 {
+    NSManagedObjectContext *context = [self managedObjectContext];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"MailboxEntity"
+                                              inManagedObjectContext:context];
+    [fetchRequest setEntity:entity];
+    NSError *error;
+    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+    for (MailboxEntity *mailbox in fetchedObjects) {
+        if([mailbox.emailAddress isEqualToString:account.emailAddress]){
+            
+            [context deleteObject:mailbox];
+        }
+    }
+    
     [_accounts removeObject:account];
     [_subFolders removeObjectForKey:account.emailAddress];
     [self refreshTableViewTree];

@@ -86,10 +86,10 @@
 		B3D9F24217B2A25A0091DFDB /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D9F24117B2A25A0091DFDB /* MobileCoreServices.framework */; };
 		B3DF029B17B42F80005793A9 /* MailAttributesView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DF029A17B42F80005793A9 /* MailAttributesView.m */; };
 		B3E0D14417B935D500EC4AD7 /* GoogleMailbox.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E0D13A17B935D500EC4AD7 /* GoogleMailbox.m */; };
-		B3E0D14517B935D500EC4AD7 /* MailFolder.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E0D13C17B935D500EC4AD7 /* MailFolder.m */; };
 		B3E0D14817B93F7C00EC4AD7 /* YahooMailbox.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E0D14717B93F7C00EC4AD7 /* YahooMailbox.m */; };
 		B3E0D14B17B93FC700EC4AD7 /* BaseMailbox.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E0D14A17B93FC700EC4AD7 /* BaseMailbox.m */; };
 		B3E2A19A17BF78D200FA44DB /* SyncEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E2A19917BF78D200FA44DB /* SyncEngine.m */; };
+		B3E2A1E817BFD35200FA44DB /* MailboxEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E2A1E717BFD35200FA44DB /* MailboxEntity.m */; };
 		B3E399D117BD5FEC00E6E8E3 /* MCLog.c in Sources */ = {isa = PBXBuildFile; fileRef = B3E399D017BD5FEC00E6E8E3 /* MCLog.c */; };
 /* End PBXBuildFile section */
 
@@ -289,14 +289,14 @@
 		B3DF029A17B42F80005793A9 /* MailAttributesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MailAttributesView.m; sourceTree = "<group>"; };
 		B3E0D13917B935D500EC4AD7 /* GoogleMailbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoogleMailbox.h; sourceTree = "<group>"; };
 		B3E0D13A17B935D500EC4AD7 /* GoogleMailbox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoogleMailbox.m; sourceTree = "<group>"; };
-		B3E0D13B17B935D500EC4AD7 /* MailFolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailFolder.h; sourceTree = "<group>"; };
-		B3E0D13C17B935D500EC4AD7 /* MailFolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MailFolder.m; sourceTree = "<group>"; };
 		B3E0D14617B93F7C00EC4AD7 /* YahooMailbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YahooMailbox.h; sourceTree = "<group>"; };
 		B3E0D14717B93F7C00EC4AD7 /* YahooMailbox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YahooMailbox.m; sourceTree = "<group>"; };
 		B3E0D14917B93FC700EC4AD7 /* BaseMailbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseMailbox.h; sourceTree = "<group>"; };
 		B3E0D14A17B93FC700EC4AD7 /* BaseMailbox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseMailbox.m; sourceTree = "<group>"; };
 		B3E2A19817BF78D200FA44DB /* SyncEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SyncEngine.h; sourceTree = "<group>"; };
 		B3E2A19917BF78D200FA44DB /* SyncEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SyncEngine.m; sourceTree = "<group>"; };
+		B3E2A1E617BFD35200FA44DB /* MailboxEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailboxEntity.h; sourceTree = "<group>"; };
+		B3E2A1E717BFD35200FA44DB /* MailboxEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MailboxEntity.m; sourceTree = "<group>"; };
 		B3E399D017BD5FEC00E6E8E3 /* MCLog.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MCLog.c; sourceTree = "<group>"; };
 		B3E399DC17BD5FFC00E6E8E3 /* MCLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCLog.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -650,8 +650,8 @@
 				B3E0D13A17B935D500EC4AD7 /* GoogleMailbox.m */,
 				B3E0D14617B93F7C00EC4AD7 /* YahooMailbox.h */,
 				B3E0D14717B93F7C00EC4AD7 /* YahooMailbox.m */,
-				B3E0D13B17B935D500EC4AD7 /* MailFolder.h */,
-				B3E0D13C17B935D500EC4AD7 /* MailFolder.m */,
+				B3E2A1E617BFD35200FA44DB /* MailboxEntity.h */,
+				B3E2A1E717BFD35200FA44DB /* MailboxEntity.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -893,7 +893,6 @@
 				B3DF029B17B42F80005793A9 /* MailAttributesView.m in Sources */,
 				B3D9C4F917B6797D007A56AA /* NSDate-Utilities.m in Sources */,
 				B3E0D14417B935D500EC4AD7 /* GoogleMailbox.m in Sources */,
-				B3E0D14517B935D500EC4AD7 /* MailFolder.m in Sources */,
 				B3E0D14817B93F7C00EC4AD7 /* YahooMailbox.m in Sources */,
 				B3E0D14B17B93FC700EC4AD7 /* BaseMailbox.m in Sources */,
 				B31CDE7517BA93680095F984 /* Reachability.m in Sources */,
@@ -906,6 +905,7 @@
 				B31CDE9917BAA7E10095F984 /* TextUtils.m in Sources */,
 				B3E399D117BD5FEC00E6E8E3 /* MCLog.c in Sources */,
 				B3E2A19A17BF78D200FA44DB /* SyncEngine.m in Sources */,
+				B3E2A1E817BFD35200FA44DB /* MailboxEntity.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
