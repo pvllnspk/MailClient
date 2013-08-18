@@ -10,6 +10,6 @@ A [work-in-progress] simplified Mail Client for iPad
 # Installation
 ```sh
 git clone https://github.com/pvllnspk/MailClient.git
-cd MailClient\
+cd MailClient/
 sh pull_dependencies.sh
 ```
