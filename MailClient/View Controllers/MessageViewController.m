@@ -14,6 +14,7 @@
 #import "TimeExecutionTracker.h"
 #import "TextUtils.h"
 #import "BaseMailbox.h"
+#import "TextUtils.h"
 
 @interface MessageViewController() <UISplitViewControllerDelegate, DTAttributedTextContentViewDelegate>
 
@@ -194,7 +195,7 @@
             NSAttributedString *attrString = [stringBuilder generatedAttributedString];
             
             if([TextUtils isEmpty:[attrString string]]){
-                attrString = [[NSAttributedString alloc] initWithString:message.body];
+                attrString = [[NSAttributedString alloc] initWithString:[TextUtils isEmpty:message.body replaceWith:@""]];
             }
             
             
