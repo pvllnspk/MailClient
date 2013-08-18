@@ -11,12 +11,12 @@
 
 @implementation NSString (Additions)
 
--(BOOL) contains:(NSString*) substring
+- (BOOL) contains:(NSString*) substring
 {
     return ([self rangeOfString:substring].location != NSNotFound);
 }
 
--(BOOL) endsWith:(NSString*)string
+- (BOOL) endsWith:(NSString*)string
 {
     if([self length]!= 0){
         

@@ -8,21 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-
 @class BaseMailbox;
-
 
 @protocol AddAccountDelegate <NSObject>
 @optional
 - (void)accountAdded:(BaseMailbox *)account;
 @end
 
-
-@interface AddAccountViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
-
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@interface AddAccountViewController : UIViewController
 
 @property (nonatomic, assign) id <AddAccountDelegate> delegate;
-
 
 @end

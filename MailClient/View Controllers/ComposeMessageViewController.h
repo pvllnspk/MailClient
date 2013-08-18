@@ -7,16 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <AddressBookUI/AddressBookUI.h>
-#import <AddressBook/AddressBook.h>
-#import "JSTokenField.h"
-#import "MailAttributesView.h"
-#import "PopoverContentViewController.h"
 
-@interface ComposeMessageViewController : UIViewController <JSTokenFieldDelegate, ChooseSenderDelegate, UITextFieldDelegate>
-
-@property (weak, nonatomic) IBOutlet MailAttributesView *messageHeaderView;
-@property (weak, nonatomic) IBOutlet UITextView *messageBodyView;
+@interface ComposeMessageViewController : UIViewController
 
 @property (copy, nonatomic) NSString *sender;
 

@@ -10,7 +10,7 @@
 
 @implementation NSSet (Additions)
 
--(NSString *)toStringSeparatingByComma
+- (NSString *)toStringSeparatingByComma
 {
     return [[self allObjects] componentsJoinedByString:@", "];
 }

@@ -15,6 +15,12 @@
 
 #define LABELS [NSArray arrayWithObjects:@"Full Name:", @"Email Address:", @"Password:", nil]
 
+@interface AddAccountViewController() <UITableViewDataSource, UITableViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+@end
+
 @implementation AddAccountViewController
 {
     UITextView *_fullName;
@@ -61,18 +67,18 @@
         account = [[GoogleMailbox alloc]
                    initWithFullName:_fullName.text emailAddress:_emailAddress.text password:_password.text];
         
-        DLog(@"hasSuffix:SUFFIX_GOOGLE")
+        DLog(@"hasSuffix:SUFFIX_GOOGLE");
         
     }else if([_emailAddress.text endsWith:SUFFIX_YAHOO]){
         
         account = [[YahooMailbox alloc]
                    initWithFullName:_fullName.text emailAddress:_emailAddress.text password:_password.text];
         
-        DLog(@"hasSuffix:SUFFIX_YAHOO")
+        DLog(@"hasSuffix:SUFFIX_YAHOO");
         
     }else{
         
-         DLog(@"addingAccountFailed  [%@]  ",_emailAddress.text)
+        DLog(@"addingAccountFailed  [%@]  ",_emailAddress.text);
         
         [self addingAccountFailed];
     }

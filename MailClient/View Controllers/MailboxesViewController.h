@@ -7,19 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <CoreData/CoreData.h>
-#import "MCTreeTableViewCell.h"
-#import "AddAccountViewController.h"
-#import "PopoverContentViewController.h"
-#import "MessagesViewController.h"
 
 @class MessageViewController;
 
-@interface MailboxesViewController : UIViewController <NSFetchedResultsControllerDelegate, UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate, AddAccountDelegate, DeleteAccountDelegate, CloseChildControllerDelegate>
+@interface MailboxesViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
-
-@property (strong, nonatomic) MessageViewController *detailViewController;
+@property (strong, nonatomic) MessageViewController *messageViewController;
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;

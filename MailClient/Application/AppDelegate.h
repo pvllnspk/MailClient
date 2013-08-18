@@ -17,7 +17,6 @@
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
 - (void)saveContext;
-
 - (NSURL *)applicationDocumentsDirectory;
 
 + (dispatch_queue_t) serialBackgroundQueue;

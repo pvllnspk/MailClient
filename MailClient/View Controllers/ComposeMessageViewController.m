@@ -11,10 +11,19 @@
 #import "NSString+Additions.h"
 #import "TimeExecutionTracker.h"
 #import "MailAttributesView.h"
-
+#import <AddressBookUI/AddressBookUI.h>
+#import <AddressBook/AddressBook.h>
+#import "JSTokenField.h"
+#import "PopoverContentViewController.h"
 
 #define LANDSCAPE UIDeviceOrientationIsLandscape([UIDevice currentDevice].orientation)
 
+@interface ComposeMessageViewController() <JSTokenFieldDelegate, ChooseSenderDelegate, UITextFieldDelegate>
+
+@property (weak, nonatomic) IBOutlet MailAttributesView *messageHeaderView;
+@property (weak, nonatomic) IBOutlet UITextView *messageBodyView;
+
+@end
 
 @implementation ComposeMessageViewController
 {

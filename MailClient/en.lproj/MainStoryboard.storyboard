@@ -412,7 +412,7 @@
                     <connections>
                         <outlet property="searchBarView" destination="gda-ke-6Mp" id="vLh-Jh-gXz"/>
                         <outlet property="tableView" destination="fI3-r9-pkO" id="4cG-CM-QzC"/>
-                        <segue destination="0FJ-hu-XfG" kind="custom" identifier="toComposeMessage" id="gad-EY-roP"/>
+                        <segue destination="0FJ-hu-XfG" kind="modal" identifier="toComposeMessage" modalPresentationStyle="formSheet" id="gad-EY-roP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9IR-Lo-2kp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -464,6 +464,9 @@
                 <relationship kind="outlet" name="textDelegate"/>
             </relationships>
         </class>
+        <class className="MCBarButtonItem" superclassName="UIBarButtonItem">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MCBarButtonItem.h"/>
+        </class>
         <class className="MailAttributesView" superclassName="UIView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MailAttributesView.h"/>
         </class>
@@ -483,6 +486,7 @@
         <class className="MessagesViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MessagesViewController.h"/>
             <relationships>
+                <relationship kind="action" name="back:"/>
                 <relationship kind="action" name="returnToMailboxes:"/>
                 <relationship kind="action" name="swipe:"/>
                 <relationship kind="outlet" name="searchBarView" candidateClass="UISearchBar"/>
@@ -499,6 +503,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="wU4-nn-tXd"/>
+        <segue reference="gad-EY-roP"/>
     </inferredMetricsTieBreakers>
 </document>

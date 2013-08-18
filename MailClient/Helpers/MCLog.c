@@ -8,4 +8,4 @@
 
 #include "MCLog.h"
 
-int MCLogDetailed = 1;
+int MCLogDetailed = 0;

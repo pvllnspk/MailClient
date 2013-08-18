@@ -32,7 +32,6 @@ typedef enum { PopoverDeleteAccount, PopoverReplyEmail, PopoverChooseSender} Pop
 - (id)initWithType:(PopoverType)popoverType;
 
 @property (nonatomic, retain) BaseMailbox *account;
-
 @property (nonatomic, retain) NSArray *mailboxes;
 
 @property (nonatomic, assign) id <DeleteAccountDelegate> delegateDeleteAccount;

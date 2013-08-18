@@ -13,7 +13,14 @@
 #import "MailAttributesView.h"
 #import "TimeExecutionTracker.h"
 #import "TextUtils.h"
+#import "BaseMailbox.h"
 
+@interface MessageViewController() <UISplitViewControllerDelegate, DTAttributedTextContentViewDelegate>
+
+@property (weak, nonatomic) IBOutlet MailAttributesView *messageHeaderView;
+@property (weak, nonatomic) IBOutlet DTAttributedTextView *messageBodyView;
+
+@end
 
 @implementation MessageViewController
 {

@@ -30,7 +30,6 @@
         
         [self initData];
         [self initPopover];
-        
     }
     return self;
 }

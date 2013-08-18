@@ -8,8 +8,10 @@
 
 #import "MailboxesViewController.h"
 #import "MessageViewController.h"
+#import "MessagesViewController.h"
+#import <CoreData/CoreData.h>
 #import "MCTreeTableViewCell.h"
-#import "MCTreeItem.h"
+#import "MCTreeNode.h"
 #import "AddAccountViewController.h"
 #import "GoogleMailbox.h"
 #import "YahooMailbox.h"
@@ -19,6 +21,12 @@
 #import "MailBoxEntity.h"
 #import "NSString+Additions.h"
 
+@interface MailboxesViewController() <NSFetchedResultsControllerDelegate, UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate,
+                                     AddAccountDelegate, DeleteAccountDelegate, CloseChildControllerDelegate>
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+@end
 
 @implementation MailboxesViewController
 {
@@ -44,7 +52,7 @@
     [self initViews];
 
     
-    self.detailViewController = (MessageViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+    self.messageViewController = (MessageViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     
     [self loadMailboxes];
     
@@ -207,7 +215,7 @@
 	if (!cell)
 		cell = [[MCTreeTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"mailboxesTableViewCell"];
 	
-	MCTreeItem *treeItem = [_displayedTreeItems objectAtIndex:indexPath.row];
+	MCTreeNode *treeItem = [_displayedTreeItems objectAtIndex:indexPath.row];
 	cell.treeItem = treeItem;
 	
 	if ([treeItem.path isEqualToString:@"/"]){
@@ -245,7 +253,7 @@
 	NSMutableArray *removeIndexPaths = [NSMutableArray array];
 	NSMutableArray *treeItemsToRemove = [NSMutableArray array];
 	
-	for (MCTreeItem *tmpTreeItem in insertselectingItems) {
+	for (MCTreeNode *tmpTreeItem in insertselectingItems) {
 		[tmpTreeItem setPath:[cell.treeItem.path stringByAppendingPathComponent:cell.treeItem.base]];
 		[tmpTreeItem setParentSelectingItem:cell.treeItem];
 		
@@ -256,7 +264,7 @@
 		
 		BOOL contains = NO;
 		
-		for (MCTreeItem *tmp2TreeItem in _displayedTreeItems) {
+		for (MCTreeNode *tmp2TreeItem in _displayedTreeItems) {
 			if ([tmp2TreeItem isEqualToSelectingItem:tmpTreeItem]) {
 				contains = YES;
 				
@@ -275,10 +283,10 @@
 		}
 	}
     
-    for (MCTreeItem *tmp2TreeItem in treeItemsToRemove) {
+    for (MCTreeNode *tmp2TreeItem in treeItemsToRemove) {
         [_displayedTreeItems removeObject:tmp2TreeItem];
         
-        for (MCTreeItem *tmp3TreeItem in selectedTreeItems) {
+        for (MCTreeNode *tmp3TreeItem in selectedTreeItems) {
             if ([tmp3TreeItem isEqualToSelectingItem:tmp2TreeItem]) {
                 [selectedTreeItems removeObject:tmp2TreeItem];
                 break;
@@ -294,9 +302,9 @@
 }
 
 
-- (void)selectingItemsToDelete:(MCTreeItem *)selItems saveToArray:(NSMutableArray *)deleteSelectingItems
+- (void)selectingItemsToDelete:(MCTreeNode *)selItems saveToArray:(NSMutableArray *)deleteSelectingItems
 {
-	for (MCTreeItem *obj in selItems.ancestorSelectingItems) {
+	for (MCTreeNode *obj in selItems.ancestorSelectingItems) {
 		[self selectingItemsToDelete:obj saveToArray:deleteSelectingItems];
 	}
 	
@@ -310,8 +318,8 @@
 	for (NSInteger i = 0; i < [_tableView numberOfRowsInSection:0]; ++i) {
 		NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
         
-        MCTreeItem *treeNode = [_displayedTreeItems objectAtIndex:i];
-		for (MCTreeItem *tmpTreeItem in treeItemsToRemove) {
+        MCTreeNode *treeNode = [_displayedTreeItems objectAtIndex:i];
+		for (MCTreeNode *tmpTreeItem in treeItemsToRemove) {
 			if ([treeNode isEqualToSelectingItem:tmpTreeItem])
 				[result addObject:indexPath];
 		}
@@ -321,7 +329,7 @@
 
 - (void)tableViewAction:(UITableView *)tableView withIndexPath:(NSIndexPath *)indexPath
 {
-    MCTreeItem *treeItem = [_displayedTreeItems objectAtIndex:indexPath.row];
+    MCTreeNode *treeItem = [_displayedTreeItems objectAtIndex:indexPath.row];
     
     for(BaseMailbox * account in _accounts){
         if([account.emailAddress isEqualToString:[treeItem.path stringByReplacingOccurrencesOfString:@"/" withString:@""]]){
@@ -409,7 +417,7 @@
     
     for(BaseMailbox *account in _accounts){
         
-        MCTreeItem *accountTreeItem = [[MCTreeItem alloc] init];
+        MCTreeNode *accountTreeItem = [[MCTreeNode alloc] init];
         [accountTreeItem setBase:account.emailAddress];
         [accountTreeItem setPath:@"/"];
         [accountTreeItem setSubmersionLevel:0];
@@ -419,7 +427,7 @@
         
         for(NSString *folder in [_subFolders objectForKey:account.emailAddress]){
             
-            MCTreeItem *childItem = [[MCTreeItem alloc] init];
+            MCTreeNode *childItem = [[MCTreeNode alloc] init];
             [childItem setBase:folder];
             [childItem setPath:[NSString stringWithFormat:@"/%@",account.emailAddress]];
             [childItem setSubmersionLevel:1];
@@ -466,7 +474,7 @@
                 PopoverContentViewController *popoverContentViewController = [[PopoverContentViewController alloc]initWithType:PopoverDeleteAccount];
                 popoverContentViewController.delegateDeleteAccount = self;
                 
-                MCTreeItem *treeItem = [_displayedTreeItems objectAtIndex:indexPath.row];
+                MCTreeNode *treeItem = [_displayedTreeItems objectAtIndex:indexPath.row];
                 
                 for(BaseMailbox * account in _accounts){
                     

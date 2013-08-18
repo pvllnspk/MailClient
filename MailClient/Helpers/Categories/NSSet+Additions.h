@@ -10,6 +10,6 @@
 
 @interface NSSet (Additions)
 
--(NSString*)toStringSeparatingByComma;
+- (NSString*)toStringSeparatingByComma;
 
 @end

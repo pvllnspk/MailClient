@@ -15,7 +15,16 @@
 #import "TextUtils.h"
 #import "MessageViewController.h"
 #import "PopoverContentViewController.h"
+#import "ComposeMessageViewController.h"
+#import "BaseMailbox.h"
 
+@interface MessagesViewController() <UISearchDisplayDelegate ,UISearchBarDelegate, UIGestureRecognizerDelegate,
+                                    UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate, ReplyEmailDelegate>
+
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBarView;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+@end
 
 @implementation MessagesViewController
 {
@@ -301,7 +310,9 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if([segue.identifier isEqualToString:@"toComposeMessage"]){
-        // segue.destinationViewController;
+        
+        ComposeMessageViewController *composeMessageViewController = segue.destinationViewController;
+        [composeMessageViewController setSender:_account.emailAddress];
     }
 }
 
@@ -340,7 +351,7 @@
 
 -(void)replyEmailPressed:(BaseMailbox *)account
 {
-    [[self.splitViewController.viewControllers[1] topViewController] performSegueWithIdentifier: @"toComposeMessage" sender: nil];
+    [[self.splitViewController.viewControllers[1] topViewController] performSegueWithIdentifier: @"toComposeMessage" sender: self];
     [_popoverController dismissPopoverAnimated:YES];
 }
 

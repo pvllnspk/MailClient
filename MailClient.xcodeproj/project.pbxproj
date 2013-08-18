@@ -11,7 +11,6 @@
 		B31CDE7517BA93680095F984 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = B31CDE7417BA93680095F984 /* Reachability.m */; };
 		B31CDE9217BAA7E10095F984 /* NSSet+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B31CDE8017BAA7E10095F984 /* NSSet+Additions.m */; };
 		B31CDE9317BAA7E10095F984 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B31CDE8217BAA7E10095F984 /* NSString+Additions.m */; };
-		B31CDE9417BAA7E10095F984 /* MCNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B31CDE8617BAA7E10095F984 /* MCNavigationController.m */; };
 		B31CDE9517BAA7E10095F984 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B31CDE8817BAA7E10095F984 /* NetworkManager.m */; };
 		B31CDE9617BAA7E10095F984 /* SettingsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B31CDE8A17BAA7E10095F984 /* SettingsManager.m */; };
 		B31CDE9817BAA7E10095F984 /* TimeExecutionTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = B31CDE8E17BAA7E10095F984 /* TimeExecutionTracker.m */; };
@@ -28,26 +27,13 @@
 		B3CA1C1617B2AAF00070BB19 /* MailClient-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B3CA1C1117B2AAF00070BB19 /* MailClient-Info.plist */; };
 		B3CA1C1817B2AAF00070BB19 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CA1C1517B2AAF00070BB19 /* main.m */; };
 		B3CA1C1B17B2AB650070BB19 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B3CA1C1917B2AB650070BB19 /* InfoPlist.strings */; };
-		B3CA1C2417B2AE1A0070BB19 /* attachment_header@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3CA1C1D17B2AE1A0070BB19 /* attachment_header@2x.png */; };
-		B3CA1C2517B2AE1A0070BB19 /* attachment@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3CA1C1E17B2AE1A0070BB19 /* attachment@2x.png */; };
-		B3CA1C2617B2AE1A0070BB19 /* CircleArrowDown_sml.png in Resources */ = {isa = PBXBuildFile; fileRef = B3CA1C1F17B2AE1A0070BB19 /* CircleArrowDown_sml.png */; };
-		B3CA1C2717B2AE1A0070BB19 /* CircleArrowRight_sml.png in Resources */ = {isa = PBXBuildFile; fileRef = B3CA1C2017B2AE1A0070BB19 /* CircleArrowRight_sml.png */; };
 		B3CA1C2817B2AE1A0070BB19 /* copymove-cell-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = B3CA1C2117B2AE1A0070BB19 /* copymove-cell-bg.png */; };
 		B3CA1C2917B2AE1A0070BB19 /* create-email-nav-bar-button.png in Resources */ = {isa = PBXBuildFile; fileRef = B3CA1C2217B2AE1A0070BB19 /* create-email-nav-bar-button.png */; };
 		B3CA1C2A17B2AE1A0070BB19 /* create-email-nav-bar-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3CA1C2317B2AE1A0070BB19 /* create-email-nav-bar-button@2x.png */; };
-		B3CA1C3C17B2AE280070BB19 /* item-counter.png in Resources */ = {isa = PBXBuildFile; fileRef = B3CA1C2B17B2AE280070BB19 /* item-counter.png */; };
-		B3CA1C3D17B2AE280070BB19 /* item-counter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3CA1C2C17B2AE280070BB19 /* item-counter@2x.png */; };
 		B3CA1C3E17B2AE280070BB19 /* item-icon-folder-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = B3CA1C2D17B2AE280070BB19 /* item-icon-folder-selected.png */; };
 		B3CA1C3F17B2AE280070BB19 /* item-icon-folder-selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3CA1C2E17B2AE280070BB19 /* item-icon-folder-selected@2x.png */; };
 		B3CA1C4017B2AE280070BB19 /* item-icon-folder.png in Resources */ = {isa = PBXBuildFile; fileRef = B3CA1C2F17B2AE280070BB19 /* item-icon-folder.png */; };
 		B3CA1C4117B2AE280070BB19 /* item-icon-folder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3CA1C3017B2AE280070BB19 /* item-icon-folder@2x.png */; };
-		B3CA1C4217B2AE280070BB19 /* mail_open.png in Resources */ = {isa = PBXBuildFile; fileRef = B3CA1C3117B2AE280070BB19 /* mail_open.png */; };
-		B3CA1C4317B2AE280070BB19 /* mail.png in Resources */ = {isa = PBXBuildFile; fileRef = B3CA1C3217B2AE280070BB19 /* mail.png */; };
-		B3CA1C4417B2AE280070BB19 /* mainSplitterBar.png in Resources */ = {isa = PBXBuildFile; fileRef = B3CA1C3317B2AE280070BB19 /* mainSplitterBar.png */; };
-		B3CA1C4517B2AE280070BB19 /* mainSplitterBar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3CA1C3417B2AE280070BB19 /* mainSplitterBar@2x.png */; };
-		B3CA1C4617B2AE280070BB19 /* mainSplitterBarVertical.png in Resources */ = {isa = PBXBuildFile; fileRef = B3CA1C3517B2AE280070BB19 /* mainSplitterBarVertical.png */; };
-		B3CA1C4717B2AE280070BB19 /* mainSplitterBarVertical@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3CA1C3617B2AE280070BB19 /* mainSplitterBarVertical@2x.png */; };
-		B3CA1C4817B2AE280070BB19 /* note-background-gradient@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3CA1C3717B2AE280070BB19 /* note-background-gradient@2x.png */; };
 		B3CA1C4917B2AE280070BB19 /* tokenHighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = B3CA1C3817B2AE280070BB19 /* tokenHighlighted.png */; };
 		B3CA1C4A17B2AE280070BB19 /* tokenHighlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3CA1C3917B2AE280070BB19 /* tokenHighlighted@2x.png */; };
 		B3CA1C4B17B2AE280070BB19 /* tokenNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = B3CA1C3A17B2AE280070BB19 /* tokenNormal.png */; };
@@ -57,7 +43,7 @@
 		B3CA1C7C17B2B1600070BB19 /* ComposeMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CA1C7B17B2B1600070BB19 /* ComposeMessageViewController.m */; };
 		B3CA1C8217B2B1E50070BB19 /* PopoverContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CA1C8117B2B1E50070BB19 /* PopoverContentViewController.m */; };
 		B3CA1C9F17B2DD690070BB19 /* MCBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CA1C9817B2DD690070BB19 /* MCBarButtonItem.m */; };
-		B3CA1CA017B2DD690070BB19 /* MCTreeItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CA1C9B17B2DD690070BB19 /* MCTreeItem.m */; };
+		B3CA1CA017B2DD690070BB19 /* MCTreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CA1C9B17B2DD690070BB19 /* MCTreeNode.m */; };
 		B3CA1CA117B2DD690070BB19 /* MCTreeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CA1C9D17B2DD690070BB19 /* MCTreeTableViewCell.m */; };
 		B3D9C4F917B6797D007A56AA /* NSDate-Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D9C4F817B6797D007A56AA /* NSDate-Utilities.m */; };
 		B3D9F1BD17B29F810091DFDB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D9F1BC17B29F810091DFDB /* UIKit.framework */; };
@@ -188,8 +174,6 @@
 		B31CDE8017BAA7E10095F984 /* NSSet+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSSet+Additions.m"; sourceTree = "<group>"; };
 		B31CDE8117BAA7E10095F984 /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
 		B31CDE8217BAA7E10095F984 /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
-		B31CDE8517BAA7E10095F984 /* MCNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCNavigationController.h; sourceTree = "<group>"; };
-		B31CDE8617BAA7E10095F984 /* MCNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCNavigationController.m; sourceTree = "<group>"; };
 		B31CDE8717BAA7E10095F984 /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
 		B31CDE8817BAA7E10095F984 /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
 		B31CDE8917BAA7E10095F984 /* SettingsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsManager.h; sourceTree = "<group>"; };
@@ -219,26 +203,13 @@
 		B3CA1C1517B2AAF00070BB19 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = MailClient/main.m; sourceTree = SOURCE_ROOT; };
 		B3CA1C1A17B2AB650070BB19 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = MailClient/en.lproj/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
 		B3CA1C1C17B2ABBC0070BB19 /* AppConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppConfig.h; sourceTree = "<group>"; };
-		B3CA1C1D17B2AE1A0070BB19 /* attachment_header@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "attachment_header@2x.png"; sourceTree = "<group>"; };
-		B3CA1C1E17B2AE1A0070BB19 /* attachment@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "attachment@2x.png"; sourceTree = "<group>"; };
-		B3CA1C1F17B2AE1A0070BB19 /* CircleArrowDown_sml.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CircleArrowDown_sml.png; sourceTree = "<group>"; };
-		B3CA1C2017B2AE1A0070BB19 /* CircleArrowRight_sml.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CircleArrowRight_sml.png; sourceTree = "<group>"; };
 		B3CA1C2117B2AE1A0070BB19 /* copymove-cell-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "copymove-cell-bg.png"; sourceTree = "<group>"; };
 		B3CA1C2217B2AE1A0070BB19 /* create-email-nav-bar-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "create-email-nav-bar-button.png"; sourceTree = "<group>"; };
 		B3CA1C2317B2AE1A0070BB19 /* create-email-nav-bar-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "create-email-nav-bar-button@2x.png"; sourceTree = "<group>"; };
-		B3CA1C2B17B2AE280070BB19 /* item-counter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "item-counter.png"; sourceTree = "<group>"; };
-		B3CA1C2C17B2AE280070BB19 /* item-counter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "item-counter@2x.png"; sourceTree = "<group>"; };
 		B3CA1C2D17B2AE280070BB19 /* item-icon-folder-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "item-icon-folder-selected.png"; sourceTree = "<group>"; };
 		B3CA1C2E17B2AE280070BB19 /* item-icon-folder-selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "item-icon-folder-selected@2x.png"; sourceTree = "<group>"; };
 		B3CA1C2F17B2AE280070BB19 /* item-icon-folder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "item-icon-folder.png"; sourceTree = "<group>"; };
 		B3CA1C3017B2AE280070BB19 /* item-icon-folder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "item-icon-folder@2x.png"; sourceTree = "<group>"; };
-		B3CA1C3117B2AE280070BB19 /* mail_open.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mail_open.png; sourceTree = "<group>"; };
-		B3CA1C3217B2AE280070BB19 /* mail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mail.png; sourceTree = "<group>"; };
-		B3CA1C3317B2AE280070BB19 /* mainSplitterBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainSplitterBar.png; sourceTree = "<group>"; };
-		B3CA1C3417B2AE280070BB19 /* mainSplitterBar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mainSplitterBar@2x.png"; sourceTree = "<group>"; };
-		B3CA1C3517B2AE280070BB19 /* mainSplitterBarVertical.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainSplitterBarVertical.png; sourceTree = "<group>"; };
-		B3CA1C3617B2AE280070BB19 /* mainSplitterBarVertical@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mainSplitterBarVertical@2x.png"; sourceTree = "<group>"; };
-		B3CA1C3717B2AE280070BB19 /* note-background-gradient@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "note-background-gradient@2x.png"; sourceTree = "<group>"; };
 		B3CA1C3817B2AE280070BB19 /* tokenHighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tokenHighlighted.png; sourceTree = "<group>"; };
 		B3CA1C3917B2AE280070BB19 /* tokenHighlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tokenHighlighted@2x.png"; sourceTree = "<group>"; };
 		B3CA1C3A17B2AE280070BB19 /* tokenNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tokenNormal.png; sourceTree = "<group>"; };
@@ -253,8 +224,8 @@
 		B3CA1C8117B2B1E50070BB19 /* PopoverContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopoverContentViewController.m; sourceTree = "<group>"; };
 		B3CA1C9717B2DD690070BB19 /* MCBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCBarButtonItem.h; sourceTree = "<group>"; };
 		B3CA1C9817B2DD690070BB19 /* MCBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCBarButtonItem.m; sourceTree = "<group>"; };
-		B3CA1C9A17B2DD690070BB19 /* MCTreeItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCTreeItem.h; sourceTree = "<group>"; };
-		B3CA1C9B17B2DD690070BB19 /* MCTreeItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCTreeItem.m; sourceTree = "<group>"; };
+		B3CA1C9A17B2DD690070BB19 /* MCTreeNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCTreeNode.h; sourceTree = "<group>"; };
+		B3CA1C9B17B2DD690070BB19 /* MCTreeNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCTreeNode.m; sourceTree = "<group>"; };
 		B3CA1C9C17B2DD690070BB19 /* MCTreeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCTreeTableViewCell.h; sourceTree = "<group>"; };
 		B3CA1C9D17B2DD690070BB19 /* MCTreeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCTreeTableViewCell.m; sourceTree = "<group>"; };
 		B3D9C4F717B6797D007A56AA /* NSDate-Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate-Utilities.h"; sourceTree = "<group>"; };
@@ -364,7 +335,6 @@
 				B3E399D017BD5FEC00E6E8E3 /* MCLog.c */,
 				B31CDE7E17BAA7E10095F984 /* Categories */,
 				B31CDE8F17BAA7E10095F984 /* Utils */,
-				B31CDE8317BAA7E10095F984 /* Misc */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -378,15 +348,6 @@
 				B31CDE8217BAA7E10095F984 /* NSString+Additions.m */,
 			);
 			path = Categories;
-			sourceTree = "<group>";
-		};
-		B31CDE8317BAA7E10095F984 /* Misc */ = {
-			isa = PBXGroup;
-			children = (
-				B31CDE8517BAA7E10095F984 /* MCNavigationController.h */,
-				B31CDE8617BAA7E10095F984 /* MCNavigationController.m */,
-			);
-			path = Misc;
 			sourceTree = "<group>";
 		};
 		B31CDE8F17BAA7E10095F984 /* Utils */ = {
@@ -419,27 +380,14 @@
 		B3CA1BF017B2A99C0070BB19 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				B3CA1C2B17B2AE280070BB19 /* item-counter.png */,
-				B3CA1C2C17B2AE280070BB19 /* item-counter@2x.png */,
 				B3CA1C2D17B2AE280070BB19 /* item-icon-folder-selected.png */,
 				B3CA1C2E17B2AE280070BB19 /* item-icon-folder-selected@2x.png */,
 				B3CA1C2F17B2AE280070BB19 /* item-icon-folder.png */,
 				B3CA1C3017B2AE280070BB19 /* item-icon-folder@2x.png */,
-				B3CA1C3117B2AE280070BB19 /* mail_open.png */,
-				B3CA1C3217B2AE280070BB19 /* mail.png */,
-				B3CA1C3317B2AE280070BB19 /* mainSplitterBar.png */,
-				B3CA1C3417B2AE280070BB19 /* mainSplitterBar@2x.png */,
-				B3CA1C3517B2AE280070BB19 /* mainSplitterBarVertical.png */,
-				B3CA1C3617B2AE280070BB19 /* mainSplitterBarVertical@2x.png */,
-				B3CA1C3717B2AE280070BB19 /* note-background-gradient@2x.png */,
 				B3CA1C3817B2AE280070BB19 /* tokenHighlighted.png */,
 				B3CA1C3917B2AE280070BB19 /* tokenHighlighted@2x.png */,
 				B3CA1C3A17B2AE280070BB19 /* tokenNormal.png */,
 				B3CA1C3B17B2AE280070BB19 /* tokenNormal@2x.png */,
-				B3CA1C1D17B2AE1A0070BB19 /* attachment_header@2x.png */,
-				B3CA1C1E17B2AE1A0070BB19 /* attachment@2x.png */,
-				B3CA1C1F17B2AE1A0070BB19 /* CircleArrowDown_sml.png */,
-				B3CA1C2017B2AE1A0070BB19 /* CircleArrowRight_sml.png */,
 				B3CA1C2117B2AE1A0070BB19 /* copymove-cell-bg.png */,
 				B3CA1C2217B2AE1A0070BB19 /* create-email-nav-bar-button.png */,
 				B3CA1C2317B2AE1A0070BB19 /* create-email-nav-bar-button@2x.png */,
@@ -519,8 +467,8 @@
 		B3CA1C9917B2DD690070BB19 /* MCTreeView */ = {
 			isa = PBXGroup;
 			children = (
-				B3CA1C9A17B2DD690070BB19 /* MCTreeItem.h */,
-				B3CA1C9B17B2DD690070BB19 /* MCTreeItem.m */,
+				B3CA1C9A17B2DD690070BB19 /* MCTreeNode.h */,
+				B3CA1C9B17B2DD690070BB19 /* MCTreeNode.m */,
 				B3CA1C9C17B2DD690070BB19 /* MCTreeTableViewCell.h */,
 				B3CA1C9D17B2DD690070BB19 /* MCTreeTableViewCell.m */,
 			);
@@ -817,26 +765,13 @@
 				B3CA1C0017B2A99C0070BB19 /* Default@2x.png in Resources */,
 				B3CA1C1617B2AAF00070BB19 /* MailClient-Info.plist in Resources */,
 				B3CA1C1B17B2AB650070BB19 /* InfoPlist.strings in Resources */,
-				B3CA1C2417B2AE1A0070BB19 /* attachment_header@2x.png in Resources */,
-				B3CA1C2517B2AE1A0070BB19 /* attachment@2x.png in Resources */,
-				B3CA1C2617B2AE1A0070BB19 /* CircleArrowDown_sml.png in Resources */,
-				B3CA1C2717B2AE1A0070BB19 /* CircleArrowRight_sml.png in Resources */,
 				B3CA1C2817B2AE1A0070BB19 /* copymove-cell-bg.png in Resources */,
 				B3CA1C2917B2AE1A0070BB19 /* create-email-nav-bar-button.png in Resources */,
 				B3CA1C2A17B2AE1A0070BB19 /* create-email-nav-bar-button@2x.png in Resources */,
-				B3CA1C3C17B2AE280070BB19 /* item-counter.png in Resources */,
-				B3CA1C3D17B2AE280070BB19 /* item-counter@2x.png in Resources */,
 				B3CA1C3E17B2AE280070BB19 /* item-icon-folder-selected.png in Resources */,
 				B3CA1C3F17B2AE280070BB19 /* item-icon-folder-selected@2x.png in Resources */,
 				B3CA1C4017B2AE280070BB19 /* item-icon-folder.png in Resources */,
 				B3CA1C4117B2AE280070BB19 /* item-icon-folder@2x.png in Resources */,
-				B3CA1C4217B2AE280070BB19 /* mail_open.png in Resources */,
-				B3CA1C4317B2AE280070BB19 /* mail.png in Resources */,
-				B3CA1C4417B2AE280070BB19 /* mainSplitterBar.png in Resources */,
-				B3CA1C4517B2AE280070BB19 /* mainSplitterBar@2x.png in Resources */,
-				B3CA1C4617B2AE280070BB19 /* mainSplitterBarVertical.png in Resources */,
-				B3CA1C4717B2AE280070BB19 /* mainSplitterBarVertical@2x.png in Resources */,
-				B3CA1C4817B2AE280070BB19 /* note-background-gradient@2x.png in Resources */,
 				B3CA1C4917B2AE280070BB19 /* tokenHighlighted.png in Resources */,
 				B3CA1C4A17B2AE280070BB19 /* tokenHighlighted@2x.png in Resources */,
 				B3CA1C4B17B2AE280070BB19 /* tokenNormal.png in Resources */,
@@ -888,7 +823,7 @@
 				B3CA1C7C17B2B1600070BB19 /* ComposeMessageViewController.m in Sources */,
 				B3CA1C8217B2B1E50070BB19 /* PopoverContentViewController.m in Sources */,
 				B3CA1C9F17B2DD690070BB19 /* MCBarButtonItem.m in Sources */,
-				B3CA1CA017B2DD690070BB19 /* MCTreeItem.m in Sources */,
+				B3CA1CA017B2DD690070BB19 /* MCTreeNode.m in Sources */,
 				B3CA1CA117B2DD690070BB19 /* MCTreeTableViewCell.m in Sources */,
 				B3DF029B17B42F80005793A9 /* MailAttributesView.m in Sources */,
 				B3D9C4F917B6797D007A56AA /* NSDate-Utilities.m in Sources */,
@@ -898,7 +833,6 @@
 				B31CDE7517BA93680095F984 /* Reachability.m in Sources */,
 				B31CDE9217BAA7E10095F984 /* NSSet+Additions.m in Sources */,
 				B31CDE9317BAA7E10095F984 /* NSString+Additions.m in Sources */,
-				B31CDE9417BAA7E10095F984 /* MCNavigationController.m in Sources */,
 				B31CDE9517BAA7E10095F984 /* NetworkManager.m in Sources */,
 				B31CDE9617BAA7E10095F984 /* SettingsManager.m in Sources */,
 				B31CDE9817BAA7E10095F984 /* TimeExecutionTracker.m in Sources */,

@@ -7,27 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BaseMailbox.h"
-#import "PopoverContentViewController.h"
 
+@class BaseMailbox;
 
 @protocol CloseChildControllerDelegate <NSObject>
 @optional
 - (void)closeChildController;
 @end
 
-
-@interface MessagesViewController : UIViewController <UISearchDisplayDelegate ,UISearchBarDelegate, UIGestureRecognizerDelegate,
-                                                    UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate, ReplyEmailDelegate>
-
-@property (weak, nonatomic) IBOutlet UISearchBar *searchBarView;
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@interface MessagesViewController : UIViewController
 
 @property (nonatomic, assign) id <CloseChildControllerDelegate> delegate;
 
 - (IBAction) returnToMailboxes:(id)sender;
 - (void) setFolder:(CTCoreFolder*) folder forAccount: (BaseMailbox*)account;
-
 - (IBAction)swipe:(id)sender;
 
 @end

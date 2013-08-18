@@ -10,14 +10,14 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MCTreeItem : NSObject
+@interface MCTreeNode : NSObject
 
 @property (nonatomic, strong) NSString *base, *path;
 @property (nonatomic) NSInteger numberOfSubitems;
-@property (nonatomic, strong) MCTreeItem *parentSelectingItem;
+@property (nonatomic, strong) MCTreeNode *parentSelectingItem;
 @property (nonatomic, strong) NSMutableArray *ancestorSelectingItems;
 @property (nonatomic) NSInteger submersionLevel;
 
-- (BOOL)isEqualToSelectingItem:(MCTreeItem *)selectingItem;
+- (BOOL)isEqualToSelectingItem:(MCTreeNode *)selectingItem;
 
 @end

@@ -11,7 +11,6 @@
 
 extern int MCLogDetailed;
 
-#define MCLogDebug(fmt, ...) if(MCLogDetailed){NSLog((@"DEBUG:%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);}
-#define MCLogMailCore(fmt, ...) if(MCLogDetailed){NSLog((@"MAILCORE:%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);}
+#define MCLogMailCore(fmt, ...) if(MCLogDetailed){NSLog((@"MAILCORE : %s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);}
 
 #endif

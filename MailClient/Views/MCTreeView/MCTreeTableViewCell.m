@@ -11,10 +11,10 @@
 #import "MCTreeTableViewCell.h"
 #import <QuartzCore/QuartzCore.h>
 
-#define MCCOLOR_TITLE [UIColor colorWithRed:0.4 green:0.357 blue:0.325 alpha:1] /*#665b53*/
-#define MCCOLOR_TITLE_SHADOW [UIColor colorWithRed:1 green:1 blue:1 alpha:1] /*#ffffff*/
-#define MCCOLOR_COUNTER [UIColor colorWithRed:0.608 green:0.376 blue:0.251 alpha:1] /*#9b6040*/
-#define MCCOLOR_COUNTER_SHADOW [UIColor colorWithRed:1 green:1 blue:1 alpha:0.35] /*#ffffff*/
+#define MCCOLOR_TITLE [UIColor colorWithRed:0.4 green:0.357 blue:0.325 alpha:1]
+#define MCCOLOR_TITLE_SHADOW [UIColor colorWithRed:1 green:1 blue:1 alpha:1]
+#define MCCOLOR_COUNTER [UIColor colorWithRed:0.608 green:0.376 blue:0.251 alpha:1]
+#define MCCOLOR_COUNTER_SHADOW [UIColor colorWithRed:1 green:1 blue:1 alpha:0.35]
 #define MCFONT_TITLE [UIFont fontWithName:@"HelveticaNeue" size:19.0f]
 #define MCFONT_COUNTER [UIFont fontWithName:@"HelveticaNeue-Bold" size:12.0f]
 

@@ -8,9 +8,9 @@
 
 //Thanks https://github.com/adamhoracek/KOTree
 
-#import "MCTreeItem.h"
+#import "MCTreeNode.h"
 
-@implementation MCTreeItem
+@implementation MCTreeNode
 
 @synthesize base, path;
 @synthesize numberOfSubitems;
@@ -26,7 +26,7 @@
     return [self isEqualToSelectingItem:other];
 }
 
-- (BOOL)isEqualToSelectingItem:(MCTreeItem *)selectingItem {
+- (BOOL)isEqualToSelectingItem:(MCTreeNode *)selectingItem {
 	if (self == selectingItem)
         return YES;
 	

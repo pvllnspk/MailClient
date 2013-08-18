@@ -10,7 +10,7 @@
 
 #import <UIKit/UIKit.h>
 
-@class MCTreeItem;
+@class MCTreeNode;
 
 @interface MCTreeTableViewCell : UITableViewCell
 
@@ -18,7 +18,7 @@
 @property (nonatomic, strong) UIButton *iconButton;
 @property (nonatomic, strong) UITextField *titleTextField;
 @property (nonatomic, strong) UILabel *countLabel;
-@property (nonatomic, strong) MCTreeItem *treeItem;
+@property (nonatomic, strong) MCTreeNode *treeItem;
 
 - (void)setLevel:(NSInteger)level;
 
