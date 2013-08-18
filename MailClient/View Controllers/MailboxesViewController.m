@@ -379,10 +379,18 @@
     [fetchRequest setEntity:entity];
     NSError *error;
     NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+    
     for (MailboxEntity *mailbox in fetchedObjects) {
+    
         if([mailbox.emailAddress isEqualToString:account.emailAddress]){
             
             [context deleteObject:mailbox];
+            
+            NSError *error;
+            if (![context save:&error]) {
+                NSLog(@"Couldn't delete: %@", [error localizedDescription]);
+            }
+            break;
         }
     }
     

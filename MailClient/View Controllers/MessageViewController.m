@@ -249,8 +249,9 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if([segue.identifier isEqualToString:@"toComposeMessage"]){
+        
         ComposeMessageViewController *composeMessageViewController = segue.destinationViewController;
-        //
+        [composeMessageViewController setSender:_account.emailAddress];
     }
 }
 

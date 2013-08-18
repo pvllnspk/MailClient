@@ -10,7 +10,7 @@
 
 @class BaseMailbox;
 
-typedef enum { PopoverDeleteAccount, PopoverReplyEmail} PopoverType;
+typedef enum { PopoverDeleteAccount, PopoverReplyEmail, PopoverChooseSender} PopoverType;
 
 @protocol DeleteAccountDelegate <NSObject>
 @optional
@@ -22,13 +22,21 @@ typedef enum { PopoverDeleteAccount, PopoverReplyEmail} PopoverType;
 - (void)replyEmailPressed:(BaseMailbox *)account;
 @end
 
+@protocol ChooseSenderDelegate <NSObject>
+@optional
+- (void)senderChoosed:(NSString *)sender;
+@end
+
 @interface PopoverContentViewController : UITableViewController
 
 - (id)initWithType:(PopoverType)popoverType;
 
 @property (nonatomic, retain) BaseMailbox *account;
 
+@property (nonatomic, retain) NSArray *mailboxes;
+
 @property (nonatomic, assign) id <DeleteAccountDelegate> delegateDeleteAccount;
 @property (nonatomic, assign) id <ReplyEmailDelegate> delegateReplyEmail;
+@property (nonatomic, assign) id <ChooseSenderDelegate> delegateChooseSender;
 
 @end

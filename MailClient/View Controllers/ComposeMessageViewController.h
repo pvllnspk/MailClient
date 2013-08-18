@@ -11,11 +11,14 @@
 #import <AddressBook/AddressBook.h>
 #import "JSTokenField.h"
 #import "MailAttributesView.h"
+#import "PopoverContentViewController.h"
 
-@interface ComposeMessageViewController : UIViewController <JSTokenFieldDelegate>
+@interface ComposeMessageViewController : UIViewController <JSTokenFieldDelegate, ChooseSenderDelegate, UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet MailAttributesView *messageHeaderView;
 @property (weak, nonatomic) IBOutlet UITextView *messageBodyView;
+
+@property (copy, nonatomic) NSString *sender;
 
 - (IBAction)cancel:(id)sender;
 - (IBAction)sendMessage:(id)sender;

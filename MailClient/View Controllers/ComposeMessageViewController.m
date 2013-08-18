@@ -73,6 +73,11 @@
     [self.view addSubview:_spinner];
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    [_messageHeaderView->fromField addTokenWithTitle:_sender representedObject:_sender];
+}
+
 
 -(void) showSpinner
 {
@@ -223,16 +228,15 @@
 
 - (void)handleTokenFieldFrameDidChange:(NSNotification *)note
 {
-    if ([[note object] isEqual:_messageHeaderView->toField]){
-		[UIView animateWithDuration:0.0
-						 animations:^{
-							 [_messageHeaderView->ccField setFrame:CGRectMake(0,
-                                                                               [_messageHeaderView->toField frame].size.height + [_messageHeaderView->toField frame].origin.y,
-                                                                               [_messageHeaderView->ccField frame].size.width, [_messageHeaderView->ccField frame].size.height)];
-						 }
-						 completion:nil];
-	}
+//    if ([[note object] isEqual:_messageHeaderView->toField]){
+//		[UIView animateWithDuration:0.0
+//						 animations:^{
+//							 [_messageHeaderView->ccField setFrame:CGRectMake(0,
+//                                                                               [_messageHeaderView->toField frame].size.height + [_messageHeaderView->toField frame].origin.y,
+//                                                                               [_messageHeaderView->ccField frame].size.width, [_messageHeaderView->ccField frame].size.height)];
+//						 }
+//						 completion:nil];
+//	}
 }
-
 
 @end

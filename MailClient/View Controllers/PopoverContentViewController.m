@@ -51,6 +51,11 @@
             [_rows addObject:@"Reply to this message"];
             break;
             
+        case PopoverChooseSender:
+            
+            [_rows addObjectsFromArray:_mailboxes];
+            break;
+            
         default:
             break;
     }
@@ -116,6 +121,13 @@
             
             if(_delegateReplyEmail){
                 [_delegateReplyEmail replyEmailPressed:_account];
+            }
+            break;
+            
+        case PopoverChooseSender:
+            
+            if(_delegateChooseSender){
+                [_delegateChooseSender senderChoosed:[_mailboxes objectAtIndex:indexPath.row]];
             }
             break;
             
