@@ -373,4 +373,18 @@
     return NO;
 }
 
+- (void)dealloc
+{
+    _folder = nil;
+    _account = nil;
+    _messages = nil;
+    _searchResults = nil;
+    _spinner = nil;
+    _refreshControl = nil;
+    _messagesDescriptions = nil;
+    _popoverController = nil;
+    backgroundQueue = nil;
+    _delegate = nil;
+}
+
 @end

@@ -189,7 +189,7 @@
     }
 }
 
--(void)addingAccountSuccessed:(BaseMailbox*) account
+- (void)addingAccountSuccessed:(BaseMailbox*) account
 {
     if(_delegate){
         [_delegate accountAdded:account];
@@ -197,7 +197,7 @@
     }
 }
 
--(void)addingAccountFailed
+- (void)addingAccountFailed
 {
     _emailAddress.text = @"";
     _password.text = @"";
@@ -212,7 +212,7 @@
 }
 
 
--(void) initSpinner
+- (void) initSpinner
 {
     _spinner = [[UIActivityIndicatorView alloc]
                 initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
@@ -224,17 +224,25 @@
     [self.view addSubview:_spinner];
 }
 
--(void) showSpinner
+- (void) showSpinner
 {
     [_spinner startAnimating];
     _tableView.userInteractionEnabled = NO;
 }
 
--(void) hideSpinner
+- (void) hideSpinner
 {
     [_spinner stopAnimating];
     _tableView.userInteractionEnabled = YES;
 }
 
+- (void)dealloc
+{
+    _delegate = nil;
+    _fullName = nil;
+    _emailAddress = nil;
+    _password = nil;
+    _spinner = nil;
+}
 
 @end

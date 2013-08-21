@@ -37,6 +37,8 @@
 
 - (void) setMessage:(CTCoreMessage *)message forFolder:(CTCoreFolder*) folder andAccount: (BaseMailbox*)account;
 {
+    [_messageHeaderView->subjectField setText:@""];
+    
     if(message){
         
         if (_message != message) {
@@ -261,6 +263,17 @@
         ComposeMessageViewController *composeMessageViewController = segue.destinationViewController;
         [composeMessageViewController setSender:_account.emailAddress];
     }
+}
+
+-(void)dealloc
+{
+    _messageHeaderView = nil;
+    _messageBodyView = nil;
+    _spinner = nil;
+    _popoverController = nil;
+    _message = nil;
+    _folder = nil;
+    _account = nil;
 }
 
 

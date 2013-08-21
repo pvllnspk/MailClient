@@ -135,4 +135,14 @@
     }
 }
 
+- (void)dealloc
+{
+    _account = nil;
+    _mailboxes = nil;
+    _delegateDeleteAccount = nil;
+    _delegateReplyEmail = nil;
+    _delegateChooseSender = nil;
+    _rows = nil;
+}
+
 @end

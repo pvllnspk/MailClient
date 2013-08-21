@@ -248,4 +248,12 @@
 //	}
 }
 
+-(void)dealloc
+{
+    _sender = nil;
+    _toRecipients = nil;
+    _ccRecipients = nil;
+    _spinner = nil;
+}
+
 @end
